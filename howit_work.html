@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Living Walls - Creative Design Agency</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+ <header class="header">
+  <div class="containerr">
+    <div class="logo">
+      <img src="img/logo-removebg.png" alt="LivinWalls" class="logo-img">
+    </div>
+
+    <nav class="nav">
+      <ul class="nav__list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">How it Works</a></li>
+        <li><a href="packages.html">Construction Packages</a></li>
+        <li><a href="#"> Design packages </a></li>
+        <li><a href="calculator.html">Cost Calculator</a></li>
+        <li><a href="work.html">Our Work</a></li>
+
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">More ▾</a>
+         <ul class="dropdown-content">
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Floor plans</a></li>
+          <li><a href="#">Designs</a></li>
+        </ul>
+      </li>
+
+    </nav>
+
+    <!-- RIGHT BUTTONS -->
+    <div class="right-buttons">
+
+        <a href="GetQuote.html" class="get-quote">Customer Support</a>
+          <a href="/login" class="login-link">
+        <img src="https://i.pinimg.com/736x/97/21/05/972105c5a775f38cf33d3924aea053f1.jpg" alt="Login" class="login-icon" />
+        Login
+      </a>
+
+    </div>
+  </div>
+</header>
+
+  <script>
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('.header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+</script>
+
+<!-- Floating WhatsApp Button -->
+<div style="position: fixed; bottom: 20px; right: 20px; z-index: 999;">
+  <a href="https://wa.me/919146478677" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <img src="https://techfocus24.com/wp-content/uploads/2021/01/whatsapp-button.png" alt="WhatsApp Button" style="width: 200px; height: 70px;" />
+  </a>
+</div>
+
+
+<!--main content  -->
+
+<style>
+
+    .how-it-workss {
+      max-width: 900px;
+      margin: 120px auto;
+      padding: 80px;
+      text-align: center;
+    }
+
+    .how-it-workss h2 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .carousel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      margin-top: 40px;
+    }
+
+    .arrow {
+      font-size: 3rem;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .step {
+      display: none;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+      max-width: 100%;
+      gap: 20px;
+    }
+
+    .step.active {
+      display: flex;
+    }
+
+    .step img {
+      width: 250px;
+      max-width: 100%;
+    }
+
+    .step-content {
+      max-width: 400px;
+    }
+
+    .step-content h4 {
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+      color: #494848;
+    }
+
+    .step-content h3 {
+      font-size: 2.50rem;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .step-content p {
+      color: #4e4d4d;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .step {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .carousel {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section class="how-it-workss">
+  <p style="color: #999; letter-spacing: 1px;">HOW IT WORKS?</p>
+  <h2>See how it works</h2>
+
+  <div class="carousel">
+    <button class="arrow" onclick="changeStep(-1)">&#8592;</button>
+
+    <div class="step active">
+      <img src="https://img.freepik.com/free-vector/customer-support-flat-design-illustration_23-2148887720.jpg" alt="Step 1">
+      <div class="step-content">
+        <h4>Step 1</h4>
+        <h3>Book with us</h3>
+        <p>Begin your home construction journey by booking with us. You can set-up a meeting using our website, give us a call, or contact us via WhatsApp.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <img src="https://img.freepik.com/free-vector/foreman-architects-contractors-showing-site-engineer-building-plans-draftsbuilder-inspector-holding-blueprint-clipart_575670-995.jpg" alt="Step 2">
+      <div class="step-content">
+        <h4>Step 2</h4>
+        <h3>Meet Our Experts</h3>
+        <p>Our professional team will schedule a consultation and understand your construction requirements in detail.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <img src="https://www.shreejeeinfosolution.com/assets/img/sellexpert_home.svg" alt="Step 3">
+      <div class="step-content">
+        <h4>Step 3</h4>
+        <h3>Complete Your Design</h3>
+        <p>Our team crafts your ideal home based on your preferences, using Virtual Reality for real-time adjustments. Once the design is perfected, we’ll create a budget to bring your vision to life.</p>
+      </div>
+    </div>
+
+    
+    <div class="step">
+      <img src="https://img.freepik.com/premium-vector/man-grimacing-hands-ears-laptop-displaying-fake-news-headline-frustration-disbelief-evident-his-expression-as-he-shields-himself-from-false-information-cartoon-vector-illustration_1016-17563.jpg" alt="Step 3">
+      <div class="step-content">
+        <h4>Step 4</h4>
+        <h3>Monitor Your Construction</h3>
+        <p>As the building phase begins, our mobile app keeps you updated. Track daily progress from anywhere, ensuring that your dream home is coming together as expected.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <img src="https://img.freepik.com/premium-vector/happy-family-with-house-concept-illustration-mortgage-buying-house-real-estate_113065-211.jpg?w=360" alt="Step 3">
+      <div class="step-content">
+        <h4>Step 5</h4>
+        <h3>Move In</h3>
+        <p>After performing over 1000 thorough quality checks, we ensure your home meets the planned budget and timeline. Handing you the keys to your happiness is our greatest joy.</p>
+      </div>
+    </div>
+
+
+    <button class="arrow" onclick="changeStep(1)">&#8594;</button>
+  </div>
+</section>
+
+<script>
+  let currentStep = 0;
+  const steps = document.querySelectorAll('.step');
+
+  function changeStep(direction) {
+    steps[currentStep].classList.remove('active');
+    currentStep = (currentStep + direction + steps.length) % steps.length;
+    steps[currentStep].classList.add('active');
+  }
+</script>
+
+</body>
+</html>
+
+
+    
+  <!--footer section-->
+
+    
+    <!--footer section -->
+    <footer class="footer">
+      <div class="footercontainer">
+        <div class="footer-sections">
+          <!-- Column 1: Constructions -->
+          <div class="footer-column">
+            <h3>Constructions</h3>
+            <ul>
+              <li><a href="#residential">Residential Construction</a></li>
+              <li><a href="#commercial">Commercial Construction</a></li>
+              <li><a href="#home">Home Construction</a></li>
+              <li><a href="#farmhouse">Farm House Construction</a></li>
+              <li><a href="#addfloor">Add New Floor</a></li>
+              <li><a href="#duplex">Duplex Home Construction</a></li>
+              <li><a href="#independent">Independent House Construction</a></li>
+              <li><a href="#villa">Villa Construction</a></li>
+              <li><a href="#luxury">Luxury Home Construction</a></li>
+              <li><a href="#cost">Cost of New Home Construction</a></li>
+            </ul>
+          </div>
+    
+          <!-- Column 2: Interiors -->
+          <div class="footer-column">
+            <h3>Interiors</h3>
+            <ul>
+              <li><a href="#res-interior">Residential Interior Design</a></li>
+              <li><a href="#living">Living Room Interior Design</a></li>
+              <li><a href="#kitchen">Kitchen Interior Design</a></li>
+              <li><a href="#bedroom">Bedroom Interior Design</a></li>
+              <li><a href="#bathroom">Bathroom Interior Design</a></li>
+              <li><a href="#office">Office Interior Design</a></li>
+              <li><a href="#commercial-interior">Commercial Interior Design</a></li>
+              <li><a href="#apartment">Apartment Interior Design</a></li>
+            </ul>
+          </div>
+    
+          <!-- Column 3: Calculator -->
+          <div class="footer-column">
+            <h3>Calculator</h3>
+            <ul>
+              <li><a href="#res-cost">Residential Cost Estimator</a></li>
+              <li><a href="#comm-cost">Commercial Cost Estimator</a></li>
+              <li><a href="#interior-cost">Interior Cost Estimator</a></li>
+            </ul>
+            <h3>Packages</h3>
+            <ul>
+              <li><a href="#luxury">Luxury</a></li>
+              <li><a href="#commercial">Commercial</a></li>
+              <li><a href="#interior">Interior</a></li>
+            </ul>
+          </div>
+    
+          <!-- Column 4: Info -->
+          <div class="footer-column">
+            <h3>Your Floor Plan Solution</h3>
+            <p>Find the perfect floor plan for your dream home. We offer a wide selection of customizable designs from top architects and designers.</p>
+    
+            <h4>Get in Touch</h4>
+            <p><a href="tel:+919739011656">+91 9739011656</a><br>
+               <a href="mailto:rajashekarreddy@livinwalls.com">rajashekarreddy@livinwalls.com</a>
+            </p>
+    
+            <h4>Social</h4>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Optional links -->
+        <div class="footer-links">
+          <a href="#support">Support</a>
+          <a href="#terms">Terms & Services</a>
+          <a href="#privacy">Privacy & Policy</a>
+        </div>
+      </div>
+      </div>
+    </footer>
+    <hr>
+    
+
+    <!-- New Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-row">
+      <div class="footer-column">
+        <h4>Construction Services</h4>
+        <ul>
+          <li><a href="#">Residential Projects</a></li>
+          <li><a href="#">Commercial Construction</a></li>
+          <li><a href="#">Interior Design</a></li>
+          <li><a href="#">Renovation</a></li>
+          <li><a href="#">Turnkey Solutions</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Project Features</h4>
+        <ul>
+          <li><a href="#">Modular Kitchens</a></li>
+          <li><a href="#">Smart Home Integration</a></li>
+          <li><a href="#">Green Buildings</a></li>
+          <li><a href="#">Vastu-Compliant Designs</a></li>
+          <li><a href="#">Premium Materials</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>About Living Walls</h4>
+        <ul>
+          <li><a href="#">Our Vision</a></li>
+          <li><a href="#">Meet the Team</a></li>
+          <li><a href="#">Our Projects</a></li>
+          <li><a href="#">Certifications</a></li>
+          <li><a href="#">Client Testimonials</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Help & Support</h4>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Get a Quote</a></li>
+          <li><a href="#">Site Map</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+</footer>
+<hr>
+
+
+<!-- Living WallsConstruction - Extended Footer Section -->
+<section class="extended-footer">
+  <div class="ext-container">
+    <div class="ext-section">
+      <h2>Build Your Dream with Living Walls</h2>
+      <p>
+        At Living Walls Construction, we believe every strong foundation begins with a smart floor plan.
+        Whether you’re building your first home or planning a commercial space, we provide expertly
+        designed layouts that balance style, strength, and functionality.
+      </p>
+    </div>
+
+    <div class="ext-section">
+      <h2>Why Choose Our Plans?</h2>
+      <p>
+        Living Walls offers precision-engineered floor plans tailored to meet your specific needs.
+        Our experienced architects ensure each plan is not only visually appealing but also
+        structurally sound and compliant with modern construction standards.
+      </p>
+    </div>
+    
+    <div class="ext-section">
+
+      <h3>Our Services</h3>
+      <ul class="ext-services">
+        <li>Residential Floor Plan Design</li>
+        <li>Custom Home Layouts</li>
+        <li>3D Elevation & Visualization</li>
+        <li>Plan Modifications</li>
+        <li>Vastu-Compliant Plans</li>
+        <li>1 BHK to 5 BHK Designs</li>
+        <li>Duplex and Villa Plans</li>
+        <li>Commercial Layout Planning</li>
+      </ul>
+    </div>
+  </div>
+  <hr>
+
+
+<!-- Living Walls Construction - Services Footer Section B2B -->
+<section class="construction-footer">
+  <div class="footer-content">
+    <h2>B2B Construction Services</h2>
+    <p>
+      Partner with Living Walls Construction for commercial building solutions. With over 800 contractors and 470+ quality checks,
+      we deliver robust, scalable commercial spaces that empower businesses to grow with confidence.
+    </p>
+
+    <h3>Commercial Construction</h3>
+    <p>
+      Our team crafts commercial spaces designed for optimal productivity, ensuring every square foot serves your business goals.
+    </p>
+
+    <h3>Warehouse Construction</h3>
+    <p>
+      We build secure, accessible warehouses engineered to preserve and manage inventory efficiently.
+    </p>
+
+    <h3>Retail Construction</h3>
+    <p>
+      Our designers create dynamic retail environments that enhance customer engagement and streamline shopping experiences.
+    </p>
+
+    <h3>Hospital Construction</h3>
+    <p>
+      Constructing hospitals that combine medical functionality with safety and comfort, customized for both patients and staff.
+    </p>
+
+    <h3>Hospitality Construction</h3>
+    <p>
+      We design memorable hospitality spaces that prioritize guest experience, ambiance, and operational flow.
+    </p>
+
+    <h3>School Construction</h3>
+    <p>
+      Building schools that foster creativity, learning, and growth — aligned with modern education needs and safety standards.
+    </p>
+
+    <hr>
+    <h3>Locations</h3>
+    <p class="location-text">
+      House Construction in Bengaluru, Chennai, Mysuru, NCR Faridabad, NCR Ghaziabad, NCR Noida, NCR Delhi, NCR Gurgaon, Hyderabad, Pune, Hubli
+    </p>
+
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>
+      Copyright &copy;
+      <script>document.write(new Date().getFullYear());</script> All Rights Reserved | Powered by <a href="https://meghplat.com/" target="_blank" class="text-primary">Meghplat Analytics</a>
+  </p>
+  </div>
+</section>
+
+ <!--EndB2B-->
+
+
+  <script>
+    // Simple script for the mobile menu toggle
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('.nav').classList.toggle('nav--active');
+      this.classList.toggle('menu-toggle--active');
+    });
+
+    // Custom cursor
+    const cursor = document.querySelector('.cursor');
+    
+    document.addEventListener('mousemove', e => {
+      cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
+    });
+    
+    document.addEventListener('click', () => {
+      cursor.classList.add("cursor--expand");
+      setTimeout(() => {
+        cursor.classList.remove("cursor--expand");
+      }, 500);
+    });
+  </script>
+</body>
+</html>
