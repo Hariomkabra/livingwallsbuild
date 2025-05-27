@@ -174,7 +174,7 @@
 
 /* Get Quote / Let's Talk */
 .get-quote {
-  background-color: #e84118;
+  background-color: #675f5ddb;
   color: white;
   padding: 10px 18px;
   border-radius: 16px;
@@ -184,7 +184,7 @@
 }
 
 .get-quote:hover {
-  background-color: #d62828;
+  background-color: #332a2a;
 }
 
 /* Dropdown wrapper */
