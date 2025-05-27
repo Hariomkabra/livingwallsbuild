@@ -114,7 +114,7 @@
 /* Header container */
 .containerr {
   width: 90%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -123,7 +123,7 @@
 
 /* Logo */
 .logo-img {
-  height: 60px;
+  height: 80px;
 }
 
 /* Navigation */
@@ -131,7 +131,7 @@
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 30px;
+  gap: 40px;
   margin: 0;
   padding: 0;
 }
@@ -168,7 +168,7 @@
 .login-icon {
   width: 20px;
   height: 20px;
-  margin-right: 6px;
+  margin-right: 10px;
 }
 
 /* Get Quote / Let's Talk */
@@ -240,7 +240,7 @@
 .hero {
   position: relative;
   height: 100vh;
-  background: url('https://static.asianpaints.com/content/dam/asianpaintsbeautifulhomes/spaces/living-rooms/luxury-living-room-design-ideas-you-hadnt-thought-of-yet/minimal-luxury-living-room.jpg') no-repeat center center;
+  background: url('https://img.freepik.com/free-photo/beautiful-view-construction-site-city-sunset_181624-9347.jpg?semt=ais_hybrid&w=740') no-repeat center center;
   background-size: cover;
   display: flex;
   align-items: center;
