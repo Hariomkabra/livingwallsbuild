@@ -2713,3 +2713,35 @@ h2::after {
   }
 }
 
+
+/*user profile*/ 
+
+  .user-name {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+    color: #333;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+  }
+  .user-name:hover {
+    background-color: #f22121;
+    color: white;
+    border-color: #be2020;
+  }
+  .logout-btn {
+    background: none;
+    border: none;
+    color: #e81e1e;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  .logout-btn:hover {
+    color: #ffffff;
+  }

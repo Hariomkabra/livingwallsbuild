@@ -10,8 +10,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  
 </head>
 <body>
+
 
  <header class="header">
   <div class="containerr">
@@ -25,13 +28,13 @@
         <li><a href="howit_work.html">How it Works</a></li>
         <li><a href="packages.html">Construction Packages</a></li>
         <li><a href="#"> Design packages </a></li>
-        <li><a href="#">Cost Calculator</a></li>
+        <li><a href="calculator.html">Cost Calculator</a></li>
         <li><a href="work.html">Our Work</a></li>
 
 
       <li class="dropdown">
         <a href="#" class="dropdown-toggle">More ▾</a>
-        <ul class="dropdown-content">
+           <ul class="dropdown-content">
           <li><a href="about.html">About us</a></li>
           <li><a href="contact.html">Contact us</a></li>
           <li><a href="#">Blogs</a></li>
@@ -47,15 +50,14 @@
 
     <!-- RIGHT BUTTONS -->
     <div class="right-buttons">
-    
-        <a href="GetQuote.html" class="get-quote">Let's Talk</a>
-        
-          <a href="/login" class="login-link">
-        <img src="https://i.pinimg.com/736x/97/21/05/972105c5a775f38cf33d3924aea053f1.jpg" alt="Login" class="login-icon" />
-        Login
-      </a>
+        <a href="GetQuote.html" class="get-quote">Lets Talk </a>
+       
+        <a href="login.html" class="login-link" id="login-link">
+  <img src="https://i.pinimg.com/736x/97/21/05/972105c5a775f38cf33d3924aea053f1.jpg" alt="Login" class="login-icon" />
+  <span id="login-text">Login</span>
+</a>
 
-    </div>
+      </div>
   </div>
 </header>
 
@@ -524,5 +526,8 @@
       }, 500);
     });
   </script>
+
+   <script src="auth.js"></script>
+
 </body>
 </html>
