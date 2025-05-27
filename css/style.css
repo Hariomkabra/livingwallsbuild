@@ -99,9 +99,9 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 800;
   background-color: transparent;
-  padding: 20px 0;
+  
   transition: all 0.3s ease;
 }
 
