@@ -92,259 +92,145 @@
 }
 
 
-/* Header */
-
 .header {
-  display: flex;
-  align-items: center;
-  padding: 20px 0;
-  background-color: transparent; /* Transparent at the top */
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+  background-color: transparent;
+  padding: 20px 0;
+  transition: all 0.3s ease;
 }
 
 .header.scrolled {
-  background-color: rgba(250, 247, 247, 0.925); /* Glassmorphism effect when scrolled */
-  backdrop-filter: blur(8px); /* Blurry background for modern look */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  height: 60px; /* Reduced height */
-  padding: 0 20px; /* Optional: Adjust horizontal padding */
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Header container */
 .containerr {
   width: 90%;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-}
-
-/* Shrink logo when header is scrolled */
-.header.scrolled .logo-img {
-  height: 70px;     /* Smaller size when scrolled */
-
-}
-
-/* Endduring the scrolled down*/
-
-.logo-img {
-  height: 120px;    /* Adjust height as needed */
-  width: 200px;     /* Maintains aspect ratio */
-  display: block;
-  transition: height 0.3s ease, width 0.3s ease;
-  display: block;
-}
-.logo span {
-  color: #fff; /* White for contrast over hero section */
-}
-
-.header.scrolled .logo span {
-  color: #000; /* Black when scrolled for readability */
-}
-
-.nav__list {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  gap: 40px;
-}
-.nav__list li {
-  position: relative;
-}
-
-:root {
-  --primary-color: #e63946;
-  --primary-hover: #d62828;
-  --text-dark: #000;
-  --text-light: #fff;
-  --bg-light: #ffffff;
-  --bg-dark: #090909;
-  --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  --transition: 0.3s ease;
 }
 
 /* Logo */
 .logo-img {
-  height: 100px;
-  width: auto;
-  display: block;
-  
-}
-.logo span {
-  color: var(--text-light);
-}
-.header.scrolled .logo span {
-  color: var(--text-dark);
+  height: 60px;
 }
 
 /* Navigation */
 .nav__list {
-  list-style: none;
   display: flex;
   align-items: center;
+  list-style: none;
+  gap: 30px;
   margin: 0;
   padding: 0;
-  gap: 40px;
-}
-.nav__list li {
-  position: relative;
 }
 
 .nav__list a {
   text-decoration: none;
-  color: var(--text-dark);
-  font-size: 18px;
+  color: #222;
+  font-size: 16px;
   font-weight: 500;
-  transition: color var(--transition), transform var(--transition);
-}
-.header.scrolled .nav__list a {
-  color: #333;
-}
-.nav__list a:hover,
-.nav__list a:focus {
-  color: var(--primary-color);
-  transform: translateY(-2px);
+  transition: color 0.3s ease;
 }
 
-/* Dropdown */
+.nav__list a:hover {
+  color: #e84118;
+}
+
+/* Right-aligned buttons */
+.right-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Login */
+.login-link {
+  display: flex;
+  align-items: center;
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.login-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+}
+
+/* Get Quote / Let's Talk */
+.get-quote {
+  background-color: #e84118;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.get-quote:hover {
+  background-color: #d62828;
+}
+
+/* Dropdown wrapper */
 .dropdown {
   position: relative;
 }
+
+.dropdown > a {
+  cursor: pointer;
+}
+
+/* Hidden dropdown menu */
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%;
+  top: 35px;
   left: 0;
-  min-width: 200px;
-  background-color: var(--bg-light);
-  box-shadow: var(--shadow);
-  border-radius: 6px;
-  opacity: 0;
-  transform: translateY(10px);
-  pointer-events: none;
-  transition: opacity var(--transition), transform var(--transition);
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  min-width: 180px;
   z-index: 999;
+  padding: 10px 0;
 }
 
-.dropdown:hover .dropdown-content,
-.dropdown:focus-within .dropdown-content {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+/* Dropdown items */
+.dropdown-content li {
+  list-style: none;
+  padding: 0;
 }
 
 .dropdown-content a {
   display: block;
-  padding: 12px 20px;
-  color: #333;
+  padding: 10px 20px;
+  color: #222;
   text-decoration: none;
-  font-size: 16px;
-  transition: background-color var(--transition), color var(--transition);
+  font-size: 14px;
+  transition: background 0.10s;
 }
+
 .dropdown-content a:hover {
-  background-color: #f2f2f2;
-  color: var(--text-dark);
+  background-color: #f4f4f4;
 }
 
-/* Quote Button */
-.get-quote {
-  background-color: var(--primary-color);
-  color: var(--text-light);
-  padding: 12px 24px;
-  border-radius: 5px;
-  font-size: 18px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background-color var(--transition), transform var(--transition);
-}
-.get-quote:hover {
-  background-color: var(--primary-hover);
-  transform: scale(1.05);
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
-/* Hamburger Menu */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-.menu-toggle span {
-  width: 100%;
-  height: 3px;
-  background-color: var(--text-light);
-  transition: background-color var(--transition);
-}
-.header.scrolled .menu-toggle span {
-  background-color: var(--text-dark);
-}
-
-/* Mobile Styles */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-  }
-
-  .nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: var(--bg-light);
-    padding: 20px 0;
-    box-shadow: var(--shadow);
-    z-index: 999;
-  }
-
-  .nav.nav--active {
-    display: block;
-  }
-
-  .nav__list {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .nav__list a {
-    color: var(--text-dark);
-    font-size: 20px;
-  }
-
-  .dropdown-content {
-    position: static;
-    box-shadow: none;
-    background-color: var(--bg-dark);
-    opacity: 1;
-    transform: none;
-    display: none;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  .get-quote {
-    display: block;
-    margin: 20px auto;
-    text-align: center;
-  }
-}
-
-/*end header*/
 
 /* Hero Section */
 
