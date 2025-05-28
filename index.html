@@ -596,6 +596,58 @@
   <!-- differ -->
 
 
+<!--tracker-section-->
+  <section class="tracker-section">
+  <div class="tracker-text">
+   <h2>Real-Time Construction Tracker</h2>
+<p style="text-align: justify;">Stay connected to your dream home's journey, right from the ground up. Our real-time tracker provides live updates directly from the construction site, keeping you informed at every stage.</p><br>
+<p style="text-align: justify;">Get instant notifications on project milestones, view detailed timelines, and track the progress of your build with ease. Whether you're at home or on the go, our platform ensures you never miss a beat.</p> <br>
+  <p style="text-align: justify;">Monitor progress with intuitive charts, view on-site photos and videos, and securely access important documents and files related to your build.</p> <br>
+  <p style="text-align: justify;">Stay informed and in control with our user-friendly interface designed for homeowners.</p>
+  </div>
+
+  <div class="tracker-ui">
+    <div class="tracker-header">
+     <h2 style="text-align: center; font-weight:bolder;">Living Walls</h2>
+      <strong>Hello Priya 👋</strong>
+      <span>Project ID: #DJS45678</span>
+    </div>
+
+    <div class="tracker-stage">
+      <h3>Stage: Roof Concrete</h3>
+      <p>Started on: <span id="startDate">2025-04-20</span></p>
+      <div class="status on-track">On-Schedule</div>
+      <p><span id="daysLeft">Loading...</span> days left</p>
+    </div>
+
+    <div class="tracker-info">
+      <p><b>Site Area:</b> 4200 sqft</p>
+      <p><b>Floors:</b> G+2</p>
+      <button class="photo-btn">📸 View Site Photos</button>
+    </div>
+
+    <ul class="tracker-timeline">
+      <li><b>Foundation Completed</b> - 05 Mar 2025 ✅</li>
+      <li><b>Ground Floor Slab</b> - 28 Mar 2025 ✅</li>
+      <li><b>Roof Concrete</b> - In Progress 🚧</li>
+      <li><b>Plastering</b> - Scheduled for 10 Jun 2025 📅</li>
+    </ul>
+  </div>
+</section>
+
+<script>
+  const startDate = new Date(document.getElementById('startDate').innerText);
+  const deadline = new Date(startDate);
+  deadline.setDate(deadline.getDate() + 60); // 60-day deadline
+
+  const now = new Date();
+  const timeDiff = Math.ceil((deadline - now) / (1000 * 60 * 60 * 24));
+  document.getElementById('daysLeft').innerText = timeDiff > 0 ? `${timeDiff}` : "Completed";
+</script>
+
+<!--End tracker-section-->
+
+
   
   <!--End Why Living Walls-->
 
@@ -654,6 +706,55 @@
 </div>
 
 <!--End Quality Checklist-->
+
+<!--why shoose moder  -->
+
+<section class="why-modern-container">
+  <h2 class="why-modern-title">Why <span>LivingWalls?</span></h2>
+
+  <div class="why-modern-stats">
+    <div class="why-modern-card">
+      <h3 data-count="16">10+</h3>
+      <p>Years of Experience</p>
+    </div>
+    <div class="why-modern-card">
+      <h3 data-count="725">210</h3>
+      <p>Completed Projects</p>
+    </div>
+    <div class="why-modern-card">
+      <h3 data-count="280">25+</h3>
+      <p>Ongoing Projects</p>
+    </div>
+    <div class="why-modern-card">
+      <h3 data-count="280">1k</h3>
+      <p>Full Time Employees</p>
+    </div>
+    <div class="why-modern-card">
+      <h3 data-count="4000">2000</h3>
+      <p>Construction Workers</p>
+    </div>
+    <div class="why-modern-card">
+      <h3 data-count="6">7</h3>
+      <p>Offices in 5 Cities</p>
+    </div>
+    <div class="why-modern-card">
+      <h3 data-count="425">100%</h3>
+      <p>Quality Checks</p>
+    </div>
+  </div>
+
+  <div class="why-modern-features">
+    <div class="why-modern-feature">Bank Loan & Building Approval Support</div>
+    <div class="why-modern-feature">Dedicated Full Time Site Engineer</div>
+    <div class="why-modern-feature">APP for Realtime Project Tracking</div>
+    <div class="why-modern-feature">On-Time Handover</div>
+    <div class="why-modern-feature">One Stop Solution <br><small>Design + Construction + Interior</small></div>
+  </div>
+</section>
+
+
+<!--End why shoose moder  -->
+
 
 
   <!-- Our Partners-->
