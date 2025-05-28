@@ -653,26 +653,76 @@
 
 
   <!--What Our Home Owners Say-->
-  <section class="testimonial-section">
-    <div class="overlaay">
+ <section class="testimoniall-section">
+  <h3 class="testimonial-title">TESTIMONIALS</h3>
+  <h2 class="testimonial-subtitle">Hear from our happy customers</h2>
+
+  <div class="testimonial-wrapper">
+    
+    <div class="testimonial-card">
+      <div class="testimonial-video-container">
       
-      <div class="heading">
-        <h2 style="color: #fff;">What Our Home Owners Say</h2>
-        <div class="icon">
-          <i class="fa-solid fa-circle-user" style="color: #d98c20; font-size :60px;"></i>
-        </div>
+        <div class="testimonial-play-btn" onclick="openVideo('https://www.youtube.com/embed/oNIKG0OUHb4?start=25');">&#9658;</div>
       </div>
-  
-      <p class="testimonial">
-        “The team at Living Walls are always the most conscientious group of professionals I've had the good fortune to work with.
-        Quality work performed by quality-driven people who really get it.”
-      </p>
-  
-      <p class="author">MR GANESH BABU • HOME OWNER AT DEVANAHALLI</p>
+      <div class="testimonial-info">
+        <img src="https://www.lmvfinancialservices.com/images/Home%20Loan-01.jpg" alt="Abu Anirudhan" class="testimonial-profile">
+        <h4 class="testimonial-name">Raman Patel</h4>
+       
+        <p class="testimonial-text">BuildNext has satisfied all my requirements and has done a very beautiful and quality construction. Their architects visited the site and made a convenient plan despite difficulties due to COVID-19. Overall we are very happy with the construction of our house.</p>
+      </div>
     </div>
-  </section>
+
+    <div class="testimonial-card">
+      <div class="testimonial-video-container">
+ 
+        <div class="testimonial-play-btn"   onclick="openVideo('https://www.youtube.com/embed/twEfT5ydJIY?autoplay=1');">&#9658;</div>
+      </div>
+      <div class="testimonial-info">
+        <img src="https://www.shutterstock.com/image-photo/happy-young-indian-couple-holding-260nw-2337176563.jpg" alt="Itihas" class="testimonial-profile">
+        <h4 class="testimonial-name">Mayak Raina</h4>
+       
+        <p class="testimonial-text">We are in the pharmaceutical business and had a long-standing dream of creating a countryside retreat. BuildNext turned our dream into reality by managing every aspect from initial design to execution, just as promised.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Video Modal -->
+<div class="video-modal" id="videoModal">
+  <div class="video-content">
+    <span class="video-close" onclick="closeVideo()">&times;</span>
+    <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+  function openVideo(url) {
+    document.getElementById("videoModal").style.display = "flex";
+    document.getElementById("videoFrame").src = url;
+  }
+
+  function closeVideo() {
+    document.getElementById("videoModal").style.display = "none";
+    document.getElementById("videoFrame").src = "";
+  }
+</script>
   
     <!--EndWhat Our Home Owners Say-->
+
+<!--Referral Program-->
+
+<div class="card">
+  <div class="left">
+    <img src="https://dwlrs858nh2or.cloudfront.net/wp-content/uploads/2023/01/21130806/bootcamp_actors.png" alt="Refer and Earn" />
+  </div>
+  <div class="right">
+    <h2>Refer your friends and family looking to build their dream home and earn up to <span>₹1,00,000</span></h2>
+    <button onclick="alert('Thank you for showing interest! 🎉')">Learn More</button>
+  </div>
+</div>
+
+  <!--End Referral Program-->
 
 
 <!--Quality Checklist-->
@@ -694,7 +744,7 @@
           to ensure definitive quality norms are adhered to at all stages of
           construction with maximum efficiency and minimum wastage.
         </p>
-        <button class="know-more-btn">Know more ></button>
+        <button class="know-more-btn">Know more </button>
       </div>
     </div>
   </div>

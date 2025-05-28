@@ -1839,55 +1839,318 @@ h2 {
 
 /*End tracker-section*/
 
-
-
 /*What Our Home Owners Say*/
-.testimonial-section {
-  
-  background-size: cover;
-  background-position: center;
-  padding: 100px 20px;
-  position: relative;
-  color: white;
-  letter-spacing: 1px;
+.testimoniall-section {
+  padding: 40px 15px; /* Slightly reduced padding */
   text-align: center;
+  background-color: #f9f9f9;
 }
 
-
-.overlaay {
-  background-image: url('https://img.freepik.com/premium-vector/luxurious-dark-background-with-gold-glitter_95742-389.jpg?w=360'); /* replace with your image */
-  padding: 30px 10px;
-  max-width: 800px;
-  margin:  auto;
-  border-radius: 15px;
+.testimonial-title {
+  font-size: 2.1rem; /* Slightly smaller title */
+  color: #333;
+  margin-bottom: 8px; /* Reduced margin */
+  font-weight: 800;
 }
 
-.testimonial-section h2 {
-  letter-spacing: 2px;
-  font-size: 32px;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
+.testimonial-subtitle {
+  font-size: 1.1rem; /* Slightly smaller subtitle */
+  color: #777;
+  margin-bottom: 25px; /* Reduced margin */
 }
 
-.underline {
+.testimonial-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Reduced gap between cards */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); /* More subtle shadow */
+  overflow: hidden;
+  width: calc(50% - 20px); /* Adjust for two cards per row in this layout */
+  min-width: 280px; /* Adjusted minimum width */
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-3px); /* Less pronounced hover effect */
+}
+
+.testimonial-video-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid #eee; /* Subtle separator */
+}
+
+.testimonial-video-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px; /* Slightly smaller play button */
+  height: 48px;
+  background-color: rgba(0, 0, 0, 0.5); /* Slightly more transparent */
+  color: #fff;
+  border-radius: 50%;
+  font-size: 20px; /* Smaller play icon */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.testimonial-play-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.testimonial-info {
+  padding: 15px;
+  text-align: left; /* Align text to the left */
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically align items */
+  gap: 10px; /* Space between image and text */
+  font-size: 1.8rem;
+}
+
+.testimonial-profile {
   width: 60px;
-  height: 2px;
-  background-color: #e74c3c;
-  margin: 10px auto 30px;
-  border: none;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px; /* Add space to the right of the image */
 }
 
-.testimonial {
-  font-size: 18px;
-  font-style: italic;
-  margin-bottom: 10px;
+.testimonial-details {
+  flex-grow: 1; /* Allow text to take up remaining space */
 }
 
-.author {
+.testimonial-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 3px;
+}
+
+.testimonial-location {
+  font-size: 0.8rem;
+  color: #777;
+  margin-bottom: 0; /* Remove default bottom margin */
+}
+
+.testimonial-text {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.5;
+  margin-top: 10px; /* Add some space above the text */
+  text-align: justify;
+}
+
+.testimonial-profile {
+  width: 60px; /* Smaller profile image */
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px; /* Reduced margin */
+}
+
+.testimonial-location {
+  font-size: 0.8rem; /* Smaller location */
+  color: #777;
+  margin-bottom: 8px; /* Reduced margin */
+}
+
+/* Video Modal Styles (no significant changes needed here for spacing) */
+.video-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.video-content {
+  position: relative;
+  background-color: #fff;
+  border-radius: 8px;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.video-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #333;
+  font-size: 24px;
   font-weight: bold;
-  letter-spacing: 2px;
-  font-size: 16px;
+  cursor: pointer;
+  z-index: 1001;
 }
+
+.video-close:hover {
+  color: #555;
+}
+
+.video-content iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .testimonial-card {
+    width: calc(50% - 15px); /* Adjust gap for two cards */
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    width: 100%;
+  }
+
+  .testimonial-wrapper {
+    gap: 15px;
+  }
+}
+
+
+
+/*End What Our Home Owners Say*/
+
+/*refer and earn */
+ * {
+  box-sizing: border-box;
+}
+.card {
+  display: flex;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  max-width: 1600px;
+  width: 100%;
+  animation: fadeInUp 1s ease;
+}
+
+.card .left {
+  flex: 1;
+  background: #fef7f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.card .left img {
+  max-width: 100%;
+  height: auto;
+  animation: float 3s ease-in-out infinite;
+}
+
+.card .right {
+  flex: 2;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.card .right h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.card .right h2 span {
+  color: #ff0000;
+  font-weight: 700;
+}
+
+.card .right button {
+  padding: 12px 24px;
+  font-size: 15px;
+  color: #ff5a00;
+  background-color: transparent;
+  border: 2px solid #ff0000;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  width: fit-content;
+}
+
+.card .right button:hover {
+  background-color: #ea3737;
+  color: #fff;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  .card .right, .card .left {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .card .right h2 {
+    font-size: 20px;
+  }
+
+  .card .right button {
+    margin: 0 auto;
+  }
+}
+
+    /*End refer and earn */
 
 
 /*Quality Checks*/
