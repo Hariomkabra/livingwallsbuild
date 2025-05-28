@@ -574,6 +574,66 @@ h2::after {
   background-color: #d62828;
 }
 
+
+/* our 3d work section */
+
+.threeD-gallery {
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
+}
+
+.threeD-gallery h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.threeD-gallery h2 strong {
+  color: #000;
+  font-weight: 700;
+}
+
+.threeD-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.threeD-card {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 250px; /* Set a fixed height to ensure uniformity */
+  position: relative;
+}
+
+.threeD-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fully covers the box without distortion */
+  display: block;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: brightness(0.95);
+}
+
+.threeD-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.threeD-card:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+
+/* End  our 3d work section */
+
 /* Work Section */
 .work {
   padding: 120px 0;
