@@ -153,7 +153,7 @@
 .right-buttons {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 25px;
 }
 
 /* Login */
@@ -176,7 +176,7 @@
 .get-quote {
   background-color: #e32222db;
   color: white;
-  padding: 10px 18px;
+  padding: 8px 12px;
   border-radius: 16px;
   text-decoration: none;
   font-weight: 600;
