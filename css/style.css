@@ -1998,16 +1998,21 @@ h2 {
   position: relative;
   background-color: #fff;
   border-radius: 8px;
-  max-width: 90%;
-  max-height: 90%;
+  width: 80vw;           /* Increased width */
+  height: 45vw;          /* Maintains 16:9 ratio */
+  max-width: 1000px;
+  max-height: 562.5px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
+
 .video-close {
-  position: absolute;
+  position:absolute;
   top: 10px;
   right: 15px;
-  color: #333;
-  font-size: 24px;
+  color: #282626;
+  font-size: 44px;
   font-weight: bold;
   cursor: pointer;
   z-index: 1001;
