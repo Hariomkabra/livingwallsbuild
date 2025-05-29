@@ -11,154 +11,377 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
-  
-</head>
-<body>
-
-
-  <header class="header">
-  <div class="containerr">
-    <div class="logo">
-      <img src="img/logo-removebg.png" alt="LivinWalls" class="logo-img">
-    </div>
-
-    <nav class="nav">
-      <ul class="nav__list">
-        <li><a href="index.html">Home</a></li>
-       <li><a href="howit_work.html">How it Works</a></li>
-        <li><a href="packages.html">Construction Packages</a></li>
-        <li><a href="#"> Design packages </a></li>
-        <li><a href="calculator.html">Cost Calculator</a></li>
-        <li><a href="work.html">Our Work</a></li>
-
-<!--
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">More ▾</a>
-         <ul class="dropdown-content">
-          <li><a href="about.html">About us</a></li>
-          <li><a href="contact.html">Contact us</a></li>
-          <li><a href="#">Blogs</a></li>
-          <li><a href="#">Testimonials</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Floor plans</a></li>
-          <li><a href="#">Designs</a></li>
-        </ul>
-      </li> -->
-
-    </nav>
-
-   
-   <!-- RIGHT BUTTONS -->
-    <div class="right-buttons">
-            <a href="GetQuote.html" class="get-quote">Lets Talk </a>
-              <a href="login.html" class="login-link" id="login-link">
-              <span id="login-text">Login</span>
-          </a>
-
-      </div>
-  </div>
-</header>
-
-  <script>
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('.header');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-</script>
-
-
-
-<!-- Main Content -->
-<style>
-    
+  <style>
+    /* Luxurious Styling with Enhanced Animations */
     .hccc_container {
-      width: 1000px;
-      background-color: white;
+      width: 90%;
+      max-width: 1000px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
       padding: 100px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      margin-top: 80px;
-      position-relative;
-        top: 0;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 30px;
+      margin: 100px auto;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+      position: relative;
+      overflow: hidden;
+      animation: containerReveal 1.2s ease-out;
     }
+
+    .hccc_container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 30%, rgba(245, 158, 11, 0.2), transparent 70%);
+      animation: parallaxBg 20s linear infinite;
+      z-index: -1;
+    }
+
+    .hccc_container:hover {
+      transform: translateY(-8px);
+      transition: transform 0.4s ease;
+    }
+
     .hccc_header {
-      background-color: #e2e9f4;
-      padding: 40px;
-      margin: -20px -20px 20px -20px;
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-      font-weight: bold;
-      font-size: 14px;
+      background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+      color: #fff;
+      padding: 30px;
+      margin: -60px -60px 40px -60px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      animation: headerSlide 0.8s ease-out;
     }
+
+    .hccc_header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      animation: shine 4s infinite;
+    }
+
     .hccc_title {
-      font-size: 24px;
-      margin: 10px 0;
+      font-size: 30px;
+      font-weight: 700;
+      color: #1e3a8a;
+      margin: 20px 0;
+      text-align: center;
+      animation: titleReveal 1s ease-out 0.2s both;
     }
+
     .hccc_subtitle {
-      font-size: 14px;
-      colorterre: #666;
-      margin-bottom: 20px;
+      font-size: 16px;
+      color: #6b7280;
+      margin-bottom: 30px;
+      text-align: center;
+      animation: titleReveal 1s ease-out 0.3s both;
     }
+
     .hccc_options {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 20px;
+      gap: 20px;
+      margin-bottom: 40px;
     }
+
     .hccc_options select {
-      padding: 5px;
-      width: 48%;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      width: 100%;
+      padding: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #1e3a8a;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%231e3a8a'%3E%3Cpath d='M10 12l-5-5h10l-5 5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 16px;
+      animation: fadeInUp 1s ease-out 0.4s both;
     }
+
+    .hccc_options select:focus {
+      outline: none;
+      border-color: #f59e0b;
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.3);
+      animation: pulseGlow 1.5s infinite;
+    }
+
     .hccc_table {
       width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-bottom: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      overflow: hidden;
     }
+
     .hccc_table th, .hccc_table td {
-      border: 1.5px solid #ddd;
-      padding: 10px;
+      padding: 16px;
       text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease;
     }
+
     .hccc_table th {
-      background-color: #f9f9f9;
-      font-weight: bold;
+      background: #1e3a8a;
+      color: #fff;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
+
+    .hccc_table td {
+      background: rgba(255, 255, 255, 0.05);
+      color: #1e3a8a;
+    }
+
+    .hccc_table tr {
+      animation: rowReveal 0.8s ease-out var(--delay) both;
+    }
+
+    .hccc_table td:hover {
+      transform: scale(1.02);
+    }
+
     .hccc_table td input {
       width: 100%;
-      padding: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    .hccc_total_row {
-      font-weight: bold;
-      background-color: #f0f0f0;
-    }
-    .hccc_button {
-      background-color: #82829d;
       padding: 10px;
-      border-radius: 4px;
-      font-weight: bold;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #1e3a8a;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .hccc_table td input:focus {
+      outline: none;
+      border-color: #f59e0b;
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.3);
+      animation: pulseGlow 1.5s infinite;
+    }
+
+    .hccc_table td input::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(245, 158, 11, 0.2);
+      border-radius: 50%;
+      transition: all 0.5s ease;
+      pointer-events: none;
+    }
+
+    .hccc_table td input:focus::after {
+      width: 200px;
+      height: 200px;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+
+    .hccc_total_row {
+      font-weight: 700;
+      background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+      color: #fff;
+      animation: totalReveal 1.2s ease-out 0.8s both;
+    }
+
+    .hccc_button {
+      display: inline-block;
+      background: linear-gradient(90deg, #f59e0b, #d97706);
+      color: #fff;
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
       cursor: pointer;
+      position: relative;
+      overflow: hidden;
       margin-top: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .hccc_button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+    }
+
+    .hccc_button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transition: all 0.6s ease;
+    }
+
+    .hccc_button:hover::before {
+      left: 100%;
+    }
+
+    .hccc_button::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.5s ease;
+      pointer-events: none;
+    }
+
+    .hccc_button:active::after {
+      width: 200px;
+      height: 200px;
+      opacity: 0;
+    }
+
+    /* Advanced Animations */
+    @keyframes containerReveal {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes headerSlide {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes titleReveal {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes rowReveal {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes totalReveal {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.3); }
+      50% { box-shadow: 0 0 0 6px rgba(245, 158, 11, 0.5); }
+      100% { box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.3); }
+    }
+
+    @keyframes parallaxBg {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-50%, -50%); }
+    }
+
+    @keyframes shine {
+      0% { left: -100%; }
+      50% { left: 100%; }
+      100% { left: 100%; }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hccc_container {
+        padding: 30px;
+        margin: 50px auto;
+      }
+
+      .hccc_header {
+        margin: -30px -30px 20px -30px;
+        padding: 20px;
+      }
+
+      .hccc_options {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hccc_options select {
+        width: 100%;
+      }
+
+      .hccc_table th, .hccc_table td {
+        padding: 12px;
+        font-size: 14px;
+      }
+
+      .hccc_table td input {
+        font-size: 12px;
+      }
     }
   </style>
+</head>
+<body>
+  <header class="header">
+    <div class="containerr">
+      <div class="logo">
+        <img src="img/logo-removebg.png" alt="LivinWalls" class="logo-img">
+      </div>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="howit_work.html">How it Works</a></li>
+          <li><a href="packages.html">Construction Packages</a></li>
+          <li><a href="#">Design packages</a></li>
+          <li><a href="calculator.html">Cost Calculator</a></li>
+          <li><a href="work.html">Our Work</a></li>
+        </ul>
+      </nav>
+      <div class="right-buttons">
+        <a href="GetQuote.html" class="get-quote">Lets Talk</a>
+        <a href="login.html" class="login-link" id="login-link">
+          <span id="login-text">Login</span>
+        </a>
+      </div>
+    </div>
+  </header>
 
+  <script>
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
 
-
-   <div class="hccc_container">
+  <!-- Main Content with Enhanced Animations -->
+  <div class="hccc_container">
     <div class="hccc_header">GET FREE ESTIMATE WITH MATERIAL & BRAND SPECIFICATION</div>
-    <h1 class="hccc_title">Home Construction Cost Calculator (2025) Bangalore</h1>
-    <p class="hccc_subtitle">You can arrive your Construction estimate here</p>
+    <h1 class="hccc_title">Home Construction Cost Calculator </h1>
+    <p class="hccc_subtitle">You can arrive at your Construction estimate here</p>
     
     <div class="hccc_options">
       <select id="floors">
@@ -182,28 +405,28 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr style="--delay: 0.1s">
           <td>Enter required Built up Area for GROUND FLOOR</td>
           <td><input type="number" id="builtUpArea" placeholder="Area in sqft" min="0" oninput="debounceCalculate()"></td>
           <td>sqft</td>
           <td>Rs.1849</td>
           <td id="builtUpCost">Rs. 0</td>
         </tr>
-        <tr>
+        <tr style="--delay: 0.2s">
           <td>Size of RCC Water Sump (A 4 member family will require 9000 ltr capacity)</td>
           <td><input type="number" id="waterSump" placeholder="No. of Liters" min="0" oninput="debounceCalculate()"></td>
           <td>ltr</td>
           <td>Rs.24</td>
           <td id="waterSumpCost">Rs. 0</td>
         </tr>
-        <tr>
+        <tr style="--delay: 0.3s">
           <td>Size of Septic Tank</td>
           <td><input type="number" id="septicTank" placeholder="No. of Liters" min="0" oninput="debounceCalculate()"></td>
           <td>ltr</td>
           <td>Rs.24</td>
           <td id="septicTankCost">Rs. 0</td>
         </tr>
-        <tr>
+        <tr style="--delay: 0.4s">
           <td>Plain Compound Wall</td>
           <td>
             <input type="number" id="wallLength" placeholder="Length" min="0" oninput="debounceCalculate()" style="width: 48%;">
@@ -213,7 +436,7 @@
           <td>Rs.425</td>
           <td id="wallCost">Rs. 0</td>
         </tr>
-        <tr class="hccc_total_row">
+        <tr class="hccc_total_row" style="--delay: 0.5s">
           <td colspan="4">TOTAL Construction COST</td>
           <td id="totalCost">Rs. 0</td>
         </tr>
@@ -265,269 +488,236 @@
       // Calculate total cost
       const totalCost = builtUpCost + waterSumpCost + septicTankCost + wallCost;
       document.getElementById('totalCost').textContent = `Rs. ${formatNumber(Math.round(totalCost))}`;
+
+      // Trigger total row animation
+      const totalRow = document.querySelector('.hccc_total_row');
+      totalRow.style.animation = 'none';
+      totalRow.offsetHeight; // Trigger reflow
+      totalRow.style.animation = 'totalReveal 1.2s ease-out';
     }
   </script>
 
-
-<!--footer section-->
-
-    
-    <!--footer section -->
-    <footer class="footer">
-      <div class="footercontainer">
-        <div class="footer-sections">
-          <!-- Column 1: Constructions -->
-          <div class="footer-column">
-            <h3>Constructions</h3>
-            <ul>
-              <li><a href="#residential">Residential Construction</a></li>
-              <li><a href="#commercial">Commercial Construction</a></li>
-              <li><a href="#home">Home Construction</a></li>
-              <li><a href="#farmhouse">Farm House Construction</a></li>
-              <li><a href="#addfloor">Add New Floor</a></li>
-              <li><a href="#duplex">Duplex Home Construction</a></li>
-              <li><a href="#independent">Independent House Construction</a></li>
-              <li><a href="#villa">Villa Construction</a></li>
-              <li><a href="#luxury">Luxury Home Construction</a></li>
-              <li><a href="#cost">Cost of New Home Construction</a></li>
-            </ul>
-          </div>
-    
-          <!-- Column 2: Interiors -->
-          <div class="footer-column">
-            <h3>Interiors</h3>
-            <ul>
-              <li><a href="#res-interior">Residential Interior Design</a></li>
-              <li><a href="#living">Living Room Interior Design</a></li>
-              <li><a href="#kitchen">Kitchen Interior Design</a></li>
-              <li><a href="#bedroom">Bedroom Interior Design</a></li>
-              <li><a href="#bathroom">Bathroom Interior Design</a></li>
-              <li><a href="#office">Office Interior Design</a></li>
-              <li><a href="#commercial-interior">Commercial Interior Design</a></li>
-              <li><a href="#apartment">Apartment Interior Design</a></li>
-            </ul>
-          </div>
-    
-          <!-- Column 3: Calculator -->
-          <div class="footer-column">
-            <h3>Calculator</h3>
-            <ul>
-              <li><a href="#res-cost">Residential Cost Estimator</a></li>
-              <li><a href="#comm-cost">Commercial Cost Estimator</a></li>
-              <li><a href="#interior-cost">Interior Cost Estimator</a></li>
-            </ul>
-            <h3>Packages</h3>
-            <ul>
-              <li><a href="#luxury">Luxury</a></li>
-              <li><a href="#commercial">Commercial</a></li>
-              <li><a href="#interior">Interior</a></li>
-            </ul>
-          </div>
-    
-          <!-- Column 4: Info -->
-          <div class="footer-column">
-            <h3>Your Floor Plan Solution</h3>
-            <p>Find the perfect floor plan for your dream home. We offer a wide selection of customizable designs from top architects and designers.</p>
-    
-            <h4>Get in Touch</h4>
-            <p><a href="tel:+919739011656">+91 9739011656</a><br>
-               <a href="mailto:rajashekarreddy@livinwalls.com">rajashekarreddy@livinwalls.com</a>
-            </p>
-    
-            <h4>Social</h4>
-            <div class="social-icons">
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
+  <!-- Footer Sections (Unchanged) -->
+  <footer class="footer">
+    <div class="footercontainer">
+      <div class="footer-sections">
+        <div class="footer-column">
+          <h3>Constructions</h3>
+          <ul>
+            <li><a href="#residential">Residential Construction</a></li>
+            <li><a href="#commercial">Commercial Construction</a></li>
+            <li><a href="#home">Home Construction</a></li>
+            <li><a href="#farmhouse">Farm House Construction</a></li>
+            <li><a href="#addfloor">Add New Floor</a></li>
+            <li><a href="#duplex">Duplex Home Construction</a></li>
+            <li><a href="#independent">Independent House Construction</a></li>
+            <li><a href="#villa">Villa Construction</a></li>
+            <li><a href="#luxury">Luxury Home Construction</a></li>
+            <li><a href="#cost">Cost of New Home Construction</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Interiors</h3>
+          <ul>
+            <li><a href="#res-interior">Residential Interior Design</a></li>
+            <li><a href="#living">Living Room Interior Design</a></li>
+            <li><a href="#kitchen">Kitchen Interior Design</a></li>
+            <li><a href="#bedroom">Bedroom Interior Design</a></li>
+            <li><a href="#bathroom">Bathroom Interior Design</a></li>
+            <li><a href="#office">Office Interior Design</a></li>
+            <li><a href="#commercial-interior">Commercial Interior Design</a></li>
+            <li><a href="#apartment">Apartment Interior Design</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Calculator</h3>
+          <ul>
+            <li><a href="#res-cost">Residential Cost Estimator</a></li>
+            <li><a href="#comm-cost">Commercial Cost Estimator</a></li>
+            <li><a href="#interior-cost">Interior Cost Estimator</a></li>
+          </ul>
+          <h3>Packages</h3>
+          <ul>
+            <li><a href="#luxury">Luxury</a></li>
+            <li><a href="#commercial">Commercial</a></li>
+            <li><a href="#interior">Interior</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Your Floor Plan Solution</h3>
+          <p>Find the perfect floor plan for your dream home. We offer a wide selection of customizable designs from top architects and designers.</p>
+          <h4>Get in Touch</h4>
+          <p><a href="tel:+919739011656">+91 9739011656</a><br>
+             <a href="mailto:rajashekarreddy@livinwalls.com">rajashekarreddy@livinwalls.com</a>
+          </p>
+          <h4>Social</h4>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
-    
-        <!-- Optional links -->
-        <div class="footer-links">
-          <a href="#support">Support</a>
-          <a href="#terms">Terms & Services</a>
-          <a href="#privacy">Privacy & Policy</a>
-        </div>
       </div>
-      </div>
-    </footer>
-    <hr>
-    
-
-    <!-- New Footer Section -->
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-row">
-      <div class="footer-column">
-        <h4>Construction Services</h4>
-        <ul>
-          <li><a href="#">Residential Projects</a></li>
-          <li><a href="#">Commercial Construction</a></li>
-          <li><a href="#">Interior Design</a></li>
-          <li><a href="#">Renovation</a></li>
-          <li><a href="#">Turnkey Solutions</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Project Features</h4>
-        <ul>
-          <li><a href="#">Modular Kitchens</a></li>
-          <li><a href="#">Smart Home Integration</a></li>
-          <li><a href="#">Green Buildings</a></li>
-          <li><a href="#">Vastu-Compliant Designs</a></li>
-          <li><a href="#">Premium Materials</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>About Living Walls</h4>
-        <ul>
-          <li><a href="#">Our Vision</a></li>
-          <li><a href="#">Meet the Team</a></li>
-          <li><a href="#">Our Projects</a></li>
-          <li><a href="#">Certifications</a></li>
-          <li><a href="#">Client Testimonials</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Help & Support</h4>
-        <ul>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#">FAQs</a></li>
-          <li><a href="#">Get a Quote</a></li>
-          <li><a href="#">Site Map</a></li>
-          <li><a href="#">Terms & Conditions</a></li>
-        </ul>
+      <div class="footer-links">
+        <a href="#support">Support</a>
+        <a href="#terms">Terms & Services</a>
+        <a href="#privacy">Privacy & Policy</a>
       </div>
     </div>
-    
-  </div>
-</footer>
-<hr>
-
-
-<!-- Living WallsConstruction - Extended Footer Section -->
-<section class="extended-footer">
-  <div class="ext-container">
-    <div class="ext-section">
-      <h2>Build Your Dream with Living Walls</h2>
-      <p>
-        At Living Walls Construction, we believe every strong foundation begins with a smart floor plan.
-        Whether you’re building your first home or planning a commercial space, we provide expertly
-        designed layouts that balance style, strength, and functionality.
-      </p>
-    </div>
-
-    <div class="ext-section">
-      <h2>Why Choose Our Plans?</h2>
-      <p>
-        Living Walls offers precision-engineered floor plans tailored to meet your specific needs.
-        Our experienced architects ensure each plan is not only visually appealing but also
-        structurally sound and compliant with modern construction standards.
-      </p>
-    </div>
-    
-    <div class="ext-section">
-
-      <h3>Our Services</h3>
-      <ul class="ext-services">
-        <li>Residential Floor Plan Design</li>
-        <li>Custom Home Layouts</li>
-        <li>3D Elevation & Visualization</li>
-        <li>Plan Modifications</li>
-        <li>Vastu-Compliant Plans</li>
-        <li>1 BHK to 5 BHK Designs</li>
-        <li>Duplex and Villa Plans</li>
-        <li>Commercial Layout Planning</li>
-      </ul>
-    </div>
-  </div>
+  </footer>
   <hr>
 
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-row">
+        <div class="footer-column">
+          <h4>Construction Services</h4>
+          <ul>
+            <li><a href="#">Residential Projects</a></li>
+            <li><a href="#">Commercial Construction</a></li>
+            <li><a href="#">Interior Design</a></li>
+            <li><a href="#">Renovation</a></li>
+            <li><a href="#">Turnkey Solutions</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Project Features</h4>
+          <ul>
+            <li><a href="#">Modular Kitchens</a></li>
+            <li><a href="#">Smart Home Integration</a></li>
+            <li><a href="#">Green Buildings</a></li>
+            <li><a href="#">Vastu-Compliant Designs</a></li>
+            <li><a href="#">Premium Materials</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>About Living Walls</h4>
+          <ul>
+            <li><a href="#">Our Vision</a></li>
+            <li><a href="#">Meet the Team</a></li>
+            <li><a href="#">Our Projects</a></li>
+            <li><a href="#">Certifications</a></li>
+            <li><a href="#">Client Testimonials</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Help & Support</h4>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Get a Quote</a></li>
+            <li><a href="#">Site Map</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <hr>
 
-<!-- Living Walls Construction - Services Footer Section B2B -->
-<section class="construction-footer">
-  <div class="footer-content">
-    <h2>B2B Construction Services</h2>
-    <p>
-      Partner with Living Walls Construction for commercial building solutions. With over 800 contractors and 470+ quality checks,
-      we deliver robust, scalable commercial spaces that empower businesses to grow with confidence.
-    </p>
+  <section class="extended-footer">
+    <div class="ext-container">
+      <div class="ext-section">
+        <h2>Build Your Dream with Living Walls</h2>
+        <p>
+          At Living Walls Construction, we believe every strong foundation begins with a smart floor plan.
+          Whether you’re building your first home or planning a commercial space, we provide expertly
+          designed layouts that balance style, strength, and functionality.
+        </p>
+      </div>
+      <div class="ext-section">
+        <h2>Why Choose Our Plans?</h2>
+        <p>
+          Living Walls offers precision-engineered floor plans tailored to meet your specific needs.
+          Our experienced architects ensure each plan is not only visually appealing but also
+          structurally sound and compliant with modern construction standards.
+        </p>
+      </div>
+      <div class="ext-section">
+        <h3>Our Services</h3>
+        <ul class="ext-services">
+          <li>Residential Floor Plan Design</li>
+          <li>Custom Home Layouts</li>
+          <li>3D Elevation & Visualization</li>
+          <li>Plan Modifications</li>
+          <li>Vastu-Compliant Plans</li>
+          <li>1 BHK to 5 BHK Designs</li>
+          <li>Duplex and Villa Plans</li>
+          <li>Commercial Layout Planning</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <hr>
 
-    <h3>Commercial Construction</h3>
-    <p>
-      Our team crafts commercial spaces designed for optimal productivity, ensuring every square foot serves your business goals.
-    </p>
-
-    <h3>Warehouse Construction</h3>
-    <p>
-      We build secure, accessible warehouses engineered to preserve and manage inventory efficiently.
-    </p>
-
-    <h3>Retail Construction</h3>
-    <p>
-      Our designers create dynamic retail environments that enhance customer engagement and streamline shopping experiences.
-    </p>
-
-    <h3>Hospital Construction</h3>
-    <p>
-      Constructing hospitals that combine medical functionality with safety and comfort, customized for both patients and staff.
-    </p>
-
-    <h3>Hospitality Construction</h3>
-    <p>
-      We design memorable hospitality spaces that prioritize guest experience, ambiance, and operational flow.
-    </p>
-
-    <h3>School Construction</h3>
-    <p>
-      Building schools that foster creativity, learning, and growth — aligned with modern education needs and safety standards.
-    </p>
-
-    <hr>
-    <h3>Locations</h3>
-    <p class="location-text">
-      House Construction in Bengaluru, Chennai, Mysuru, NCR Faridabad, NCR Ghaziabad, NCR Noida, NCR Delhi, NCR Gurgaon, Hyderabad, Pune, Hubli
-    </p>
-
-
-  </div>
-
-  <div class="footer-bottom">
-    <p>
-      Copyright &copy;
-      <script>document.write(new Date().getFullYear());</script> All Rights Reserved | Powered by <a href="https://meghplat.com/" target="_blank" class="text-primary">Meghplat Analytics</a>
-  </p>
-  </div>
-</section>
-
- <!--EndB2B-->
-
+  <section class="construction-footer">
+    <div class="footer-content">
+      <h2>B2B Construction Services</h2>
+      <p>
+        Partner with Living Walls Construction for commercial building solutions. With over 800 contractors and 470+ quality checks,
+        we deliver robust, scalable commercial spaces that empower businesses to grow with confidence.
+      </p>
+      <h3>Commercial Construction</h3>
+      <p>
+        Our team crafts commercial spaces designed for optimal productivity, ensuring every square foot serves your business goals.
+      </p>
+      <h3>Warehouse Construction</h3>
+      <p>
+        We build secure, accessible warehouses engineered to preserve and manage inventory efficiently.
+      </p>
+      <h3>Retail Construction</h3>
+      <p>
+        Our designers create dynamic retail environments that enhance customer engagement and streamline shopping experiences.
+      </p>
+      <h3>Hospital Construction</h3>
+      <p>
+        Constructing hospitals that combine medical functionality with safety and comfort, customized for both patients and staff.
+      </p>
+      <h3>Hospitality Construction</h3>
+      <p>
+        We design memorable hospitality spaces that prioritize guest experience, ambiance, and operational flow.
+      </p>
+      <h3>School Construction</h3>
+      <p>
+        Building schools that foster creativity, learning, and growth — aligned with modern education needs and safety standards.
+      </p>
+      <hr>
+      <h3>Locations</h3>
+      <p class="location-text">
+        House Construction in Bengaluru, Chennai, Mysuru, NCR Faridabad, NCR Ghaziabad, NCR Noida, NCR Delhi, NCR Gurgaon, Hyderabad, Pune, Hubli
+      </p>
+    </div>
+    <div class="footer-bottom">
+      <p>
+        Copyright ©
+        <script>document.write(new Date().getFullYear());</script> All Rights Reserved | Powered by <a href="https://meghplat.com/" target="_blank" class="text-primary">Meghplat Analytics</a>
+      </p>
+    </div>
+  </section>
 
   <script>
     // Simple script for the mobile menu toggle
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.menu-toggle')?.addEventListener('click', function() {
       document.querySelector('.nav').classList.toggle('nav--active');
       this.classList.toggle('menu-toggle--active');
     });
 
     // Custom cursor
     const cursor = document.querySelector('.cursor');
-    
-    document.addEventListener('mousemove', e => {
-      cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
-    });
-    
-    document.addEventListener('click', () => {
-      cursor.classList.add("cursor--expand");
-      setTimeout(() => {
-        cursor.classList.remove("cursor--expand");
-      }, 500);
-    });
+    if (cursor) {
+      document.addEventListener('mousemove', e => {
+        cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
+      });
+      document.addEventListener('click', () => {
+        cursor.classList.add("cursor--expand");
+        setTimeout(() => {
+          cursor.classList.remove("cursor--expand");
+        }, 500);
+      });
+    }
   </script>
 
-   <script src="auth.js"></script>
-
+  <script src="auth.js"></script>
 </body>
 </html>
