@@ -122,7 +122,7 @@
   padding: 25px;
   align-items: center;
   justify-content: space-between;
-  font-size: 1.45rem;
+  font-weight: bolder;
 }
 
 /* Logo */
@@ -139,7 +139,7 @@
   list-style: none;
   gap: 30px;
   margin: 0;
-  padding: 0;
+  padding: 0;;
 }
 
 .nav__list a {
@@ -181,10 +181,10 @@
 .get-quote {
   background-color: #e32222db;
   color: white;
-  padding: 8px 12px;
-  border-radius: 16px;
+  padding: 4px 8px;
+  border-radius: 12px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400;
   transition: background-color 0.3s ease;
 }
 
