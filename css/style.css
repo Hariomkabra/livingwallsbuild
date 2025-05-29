@@ -1617,99 +1617,112 @@ h2 {
 /*End how it work*/
 
 /*Why change to living walls */
-.why-us {
-  padding: 60px 0;
-  background-color: #fff5e6;
-  text-align: center;
-  position: relative;
-}
+   .why-us {
+      padding: 50px 0;
+      background-color: #f5f5f5;
+    }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    .container {
+      width: 90%;
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 25px;
+      font-size: 2.2rem;
+      font-weight: bold;
+    }
 
-h2 {
-  font-size: 36px;
-  color: #000;
-  margin-bottom: 10px;
-}
+    h2 {
+      font-size: 3.5rem;
+      text-align: center;
+      margin-bottom: 10px;
+      color: #333;
+    }
 
-.subtitle {
-  font-size: 18px;
-  color: #666;
-  margin-bottom: 40px;
-}
+    .subtitle {
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #666;
+      font-weight: normal;
+    }
 
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: 20px;
+      font-size: 1rem;
+    }
 
-.card {
-  perspective: 1000px;
-}
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 300px;
+      height: 200px;
+      transition: transform 0.3s ease, background-color 0.5s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
 
-.card-inner {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
+    .card:hover {
+      transform: scale(1.1); /* Increased scale for more noticeable zoom */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
 
-.card:hover .card-inner {
-  transform: rotateY(180deg);
-}
+    .card-img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 10px;
+      transition: width 0.3s ease, height 0.3s ease, filter 0.3s ease;;
+    }
 
-.card-front, .card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+    .card:hover .card-img {
+      width: 58px; /* Slightly larger image on hover */
+      height: 58px;
+      filter: brightness(1.2); /* Increase brightness for clarity */
+    }
 
-.card-front {
-  background-color: #fff;
-}
+    .card h3 {
+      font-size: 1.8rem;
+      margin: 0;
+      color: #333;
+      font-weight: bold;
+      transition: font-size 0.3s ease;
+    }
 
-.card-back {
-  background-color: #e63946;
-  color: #fff;
-  transform: rotateY(180deg);
-}
+    .card:hover h3 {
+      font-size: 1.6rem; /* Slightly larger font on hover for clarity */
+    }
 
-.card-front img {
-  width: 140px;
-  height: 120px;
-  margin-bottom: 20px;
-}
+    .card p {
+      font-size: 1.4rem;
+      color: #666;
+      margin: 0;
+      line-height: 1.5;
+      font-weight: normal;
+      transition: font-size 0.3s ease;
+    }
 
-.card-front h3, .card-back h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
+    .card:hover p {
+      font-size: 1.4rem; /* Slightly larger font on hover for clarity */
+    }
 
-.card-front p, .card-back p {
-  font-size: 14px;
-  color: #666;
-}
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .cards-container {
+        grid-template-columns: 1fr;
+      }
 
-.card-back p {
-  color: #fff;
-}
-
+      .card {
+        width: 100%;
+        height: auto;
+      }
+    }
 
 /*End Why 100Pillars*/
 
@@ -2067,109 +2080,110 @@ h2 {
 /*End What Our Home Owners Say*/
 
 /*refer and earn */
- * {
-  box-sizing: border-box;
-}
-.card {
-  display: flex;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  overflow: hidden;
-  max-width: 1600px;
-  width: 100%;
-  animation: fadeInUp 1s ease;
-}
 
-.card .left {
-  flex: 1;
-  background: #fef7f3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
-}
-
-.card .left img {
-  max-width: 100%;
-  height: auto;
-  animation: float 3s ease-in-out infinite;
-}
-
-.card .right {
-  flex: 2;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: #ffffff;
-}
-
-.card .right h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #1a1a1a;
-  font-weight: 600;
-  line-height: 1.4;
-}
-
-.card .right h2 span {
-  color: #ff0000;
-  font-weight: 700;
-}
-
-.card .right button {
-  padding: 12px 24px;
-  font-size: 15px;
-  color: #ff5a00;
-  background-color: transparent;
-  border: 2px solid #ff0000;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-  width: fit-content;
-}
-
-.card .right button:hover {
-  background-color: #ea3737;
-  color: #fff;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@media (max-width: 768px) {
-  .card {
-    flex-direction: column;
-    margin: 20px;
+  .refer-earn-card {
+    display: flex;
+    max-width: 1400px;
+    background: linear-gradient(45deg, #e0f7fa, #b2ebf2);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.6s ease;
+    position: relative;
+    margin: 20px auto;
   }
 
-  .card .right, .card .left {
+  .refer-earn-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #b2ebf2, #80deea);
+  }
+
+  .refer-earn-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
     padding: 20px;
-    text-align: center;
   }
 
-  .card .right h2 {
-    font-size: 20px;
+  .refer-earn-card-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.4s ease, filter 0.4s ease;
   }
 
-  .card .right button {
-    margin: 0 auto;
+  .refer-earn-card:hover .refer-earn-card-img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
   }
-}
+
+  .refer-earn-right {
+    flex: 2;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .refer-earn-right h2 {
+    font-size: 3.8rem;
+    color: #1a3c5e;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .refer-earn-right h2 span {
+    color: #d81b60;
+    font-weight: bold;
+  }
+
+  .refer-earn-right p {
+    font-size: 2rem;
+    color: #555;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .refer-earn-right button {
+    padding: 28px 45px;
+    background: linear-gradient(90deg, #ff6f61, #d81b60);
+    color: #fff;
+    border: none;
+    border-radius: 35px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.5s ease;
+    width: fit-content;
+  }
+
+  .refer-earn-right button:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(90deg, #d81b60, #ff6f61);
+    box-shadow: 0 5px 15px rgba(216, 27, 96, 0.4);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .refer-earn-card {
+      flex-direction: column;
+      max-width: 90%;
+    }
+
+    .refer-earn-left, .refer-earn-right {
+      width: 100%;
+      text-align: center;
+    }
+
+    .refer-earn-right button {
+      margin: 0 auto;
+    }
+  }
+
 
     /*End refer and earn */
 
