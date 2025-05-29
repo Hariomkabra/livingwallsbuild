@@ -10,74 +10,337 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* Luxurious Theme Styles */
+    :root {
+      --primary-color: #2D2D2D; /* Light black */
+      --accent-color: #FF6B6B; /* Light red */
+      --secondary-color: #F5E6E6; /* Light pinkish-white for contrast */
+      --text-color: #211f1f;
+      --card-bg: rgba(255, 107, 107, 0.1); /* Light red with transparency */
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Work Section */
+    .work {
+      padding: 140px 0;
+      position: relative;
+    }
+
+    .section-title {
+      font-size: 3.5rem;
+      text-align: center;
+      margin-bottom: 20px;
+      color:black;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .section-subtitle {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 40px;
+      color: black;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out 0.3s forwards;
+    }
+
+    .work__filters {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--accent-color);
+      color: var(--text-color);
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      transform: scale(1);
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--accent-color);
+      transform: scale(1.1);
+      box-shadow: var(--shadow);
+    }
+
+    .work__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 35px;
+    }
+
+    .work__item {
+      background: var(--card-bg);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transform: translateY(50px);
+      opacity: 0;
+      animation: slideInUp 0.6s ease-out forwards;
+      animation-delay: calc(0.1s * var(--index));
+    }
+
+    .work__image img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .work__item:hover .work__image img {
+      transform: scale(1.1);
+    }
+
+    .work__info {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .work__title {
+      font-size: 1.7rem;
+      margin-bottom: 10px;
+      color: black;
+    }
+
+    .work__category {
+      font-size: 2rem;
+      color: black;
+      margin-bottom: 15px;
+    }
+
+    .view-details-btn {
+      background: var(--accent-color);
+      color: var(--text-color);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .view-details-btn:hover {
+      background: #E55A5A; /* Darker light red */
+      transform: translateY(-3px);
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      overflow-y: auto;
+    }
+
+    .modal-content {
+      background: rgba(223, 146, 114, 0.581);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      max-width: 800px;
+      margin: 5% auto;
+      padding: 20px;
+      position: relative;
+      animation: zoomIn 0.5s ease-out;
+      font-size: large;
+      color: white;
+    }
+
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 4rem;
+      color: black;
+      cursor: pointer;
+    }
+
+    .modal-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .modal-images img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .modal-images img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Future Homes Section */
+    .future-homes {
+      padding: 80px 0;
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+
+    .future-homes h2 {
+      font-size: 2.7rem;
+      color: black;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .future-homes .description {
+      font-size: 1.4rem;
+      color: black;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out 0.3s forwards;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .feature {
+      background: var(--card-bg);
+      border-radius: 15px;
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transform: translateY(50px);
+      opacity: 0;
+      animation: slideInUp 0.6s ease-out forwards;
+      animation-delay: calc(0.2s * var(--index));
+    }
+
+    .feature img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px;
+    }
+
+    .feature p {
+      font-size: 1rem;
+      color: var(--text-color);
+    }
+
+   
+    /* Menu Toggle */
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      color: var(--text-color);
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav {
+        display: none;
+      }
+      .nav--active {
+        display: block;
+      }
+      .nav__list {
+        flex-direction: column;
+        background: var(--primary-color);
+        padding: 20px;
+      }
+      .nav__list li {
+        margin: 10px 0;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
 </head>
 <body>
+ 
   <header class="header">
-  <div class="containerr">
-    <div class="logo">
-      <img src="img/logo-removebg.png" alt="LivinWalls" class="logo-img">
-    </div>
-
-    <nav class="nav">
-      <ul class="nav__list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="howit_work.html">How it Works</a></li>
-        <li><a href="packages.html">Construction Packages</a></li>
-        <li><a href="#"> Design packages </a></li>
-        <li><a href="calculator.html">Cost Calculator</a></li>
-        <li><a href="work.html">Our Work</a></li>
-
-<!--
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">More ▾</a>
-        <ul class="dropdown-content">
-          <li><a href="about.html">About us</a></li>
-          <li><a href="contact.html">Contact us</a></li>
-          <li><a href="#">Blogs</a></li>
-          <li><a href="#">Testimonials</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Floor plans</a></li>
-          <li><a href="#">Designs</a></li>
-        </ul>
-      </li>
- -->
-    </nav>
-
-    <!-- RIGHT BUTTONS -->
-  <div class="right-buttons">
-            <a href="GetQuote.html" class="get-quote">Lets Talk </a>
-              <a href="login.html" class="login-link" id="login-link">
-              <span id="login-text">Login</span>
-          </a>
-
+    <div class="containerr">
+      <div class="logo">
+        <img src="img/logo-removebg.png" alt="LivinWalls" class="logo-img">
       </div>
-  
-  </div>
-</header>
+      <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="howit_work.html">How it Works</a></li>
+          <li><a href="packages.html">Construction Packages</a></li>
+          <li><a href="#"> Design packages </a></li>
+          <li><a href="calculator.html">Cost Calculator</a></li>
+          <li><a href="work.html">Our Work</a></li>
+        </ul>
+      </nav>
+      <div class="right-buttons">
+        <a href="GetQuote.html" class="get-quote">Lets Talk </a>
+        <a href="login.html" class="login-link" id="login-link">
+          <span id="login-text">Login</span>
+        </a>
+      </div>
+    </div>
+  </header>
 
   <script>
     window.addEventListener('scroll', () => {
-        const header = document.querySelector('.header');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
+      const header = document.querySelector('.header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
     });
-</script>
+  </script>
 
+  <div style="position: fixed; bottom: 20px; right: 20px; z-index: 999;">
+    <a href="https://wa.me/919146478677" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+      <img src="https://techfocus24.com/wp-content/uploads/2021/01/whatsapp-button.png" alt="WhatsApp Button" style="width: 200px; height: 70px;" />
+    </a>
+  </div>
 
-<!-- Floating WhatsApp Button -->
-<div style="position: fixed; bottom: 20px; right: 20px; z-index: 999;">
-  <a href="https://wa.me/919146478677" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
-    <img src="https://techfocus24.com/wp-content/uploads/2021/01/whatsapp-button.png" alt="WhatsApp Button" style="width: 200px; height: 70px;" />
-  </a>
-</div>
-
-  <!-- floating whats app -->
-
-<main>
+  <main>
     <section class="work">
       <div class="container">
         <h2 class="section-title">Our Work</h2>
@@ -90,7 +353,7 @@
           <button class="filter-btn" data-filter="industrial">Industrial</button>
         </div>
         <div class="work__grid">
-          <div class="work__item" data-category="3bhk residential">
+          <div class="work__item" data-category="3bhk residential" style="--index: 1;">
             <div class="work__image">
               <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Shiv Residency">
             </div>
@@ -100,7 +363,7 @@
               <button class="view-details-btn" onclick="openModal(1)">View Details</button>
             </div>
           </div>
-          <div class="work__item" data-category="2bhk residential">
+          <div class="work__item" data-category="2bhk residential" style="--index: 2;">
             <div class="work__image">
               <img src="https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Palm Grove">
             </div>
@@ -110,7 +373,7 @@
               <button class="view-details-btn" onclick="openModal(2)">View Details</button>
             </div>
           </div>
-          <div class="work__item" data-category="3bhk residential">
+          <div class="work__item" data-category="3bhk residential" style="--index: 3;">
             <div class="work__image">
               <img src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Redwood Estates">
             </div>
@@ -120,7 +383,7 @@
               <button class="view-details-btn" onclick="openModal(3)">View Details</button>
             </div>
           </div>
-          <div class="work__item" data-category="industrial">
+          <div class="work__item" data-category="industrial" style="--index: 4;">
             <div class="work__image">
               <img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Tech Industrial Park">
             </div>
@@ -130,7 +393,7 @@
               <button class="view-details-btn" onclick="openModal(4)">View Details</button>
             </div>
           </div>
-          <div class="work__item" data-category="2bhk residential">
+          <div class="work__item" data-category="2bhk residential" style="--index: 5;">
             <div class="work__image">
               <img src="https://images.pexels.com/photos/1571470/pexels-photo-1571470.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Pruthvi Residency">
             </div>
@@ -140,7 +403,7 @@
               <button class="view-details-btn" onclick="openModal(5)">View Details</button>
             </div>
           </div>
-          <div class="work__item" data-category="3bhk residential">
+          <div class="work__item" data-category="3bhk residential" style="--index: 6;">
             <div class="work__image">
               <img src="https://images.pexels.com/photos/164558/pexels-photo-164558.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Skyline Towers">
             </div>
@@ -152,7 +415,6 @@
           </div>
         </div>
       </div>
-      <!-- Modal for Project Details -->
       <div class="modal" id="project-modal">
         <div class="modal-content">
           <span class="close-btn" onclick="closeModal()">×</span>
@@ -174,7 +436,6 @@
       </div>
     </section>
     <script>
-      // Filter functionality
       document.querySelectorAll('.filter-btn').forEach(button => {
         button.addEventListener('click', () => {
           document.querySelector('.filter-btn.active').classList.remove('active');
@@ -191,7 +452,6 @@
         });
       });
 
-      // Modal functionality
       const projects = {
         1: {
           title: "Shiv Residency",
@@ -216,7 +476,7 @@
             "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "https://images.pexels.com/photos/259751/pexels-photo-259751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/87303511.jpg?k=401c2feaf1a1b1798d163cc16ee4e0cf4ae54dce271a43c7d4b2a9970a2482b1&o=&hp=1",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtafnIT7ZMxfp29w5FbulMjTIXlqhmnGpEqxXvoGIfktu1Bp8A1Kf1HBW6Ut9t1mF7fHI&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=IT7ZMxfp29w5FbulMjTIXlqhmnGpEqxXvoGIfktu1Bp8A1Kf1HBW6Ut9t1mF7fHI&usqp=CAU",
             "https://cf.bstatic.com/xdata/images/hotel/max200/87303537.jpg?k=190f506dd7492168c9ba853edebeba67f49963ad596e2951e2a11a8e49365b54&o=&hp=1",
             "https://palm-grove-resort-pattaya.nochi.com/data/Photos/OriginalPhoto/4149/414968/414968844/Palm-Grove-Resort-Pattaya-Na-Chom-Thian-Facilities.JPEG"
           ]
@@ -229,10 +489,10 @@
           images: [
             "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "https://images.pexels.com/photos/1571457/pexels-photo-1571457.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzDhNO6A7NqpO7-6SIFNz7hwSDzK0up2armQ&s",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY3msZcSDbI2hUdrtwnSF6F5rRNTNy5shhM_TZ69KKm6UHvpFQ6UtQqJ8txWsqS03mWNM&usqp=CAU",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT30Bbmeynmg9RALcpQYNR6aTZI75vMM4Cnen2gYhWCBECjDsTn9z05fYNNyuCSkcGLndI&usqp=CAU",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe7rZjnczrXRB489AnvLpAJjigJW4biEXbbQwXsfq5cFA9cVUi7aFsjgsKD4g_oT4D3Xg&usqp=CAU"
+            "https://encrypted-tbn0.gstatic.com/images?q=NO6A7NqpO7-6SIFNz7hwSDzK0up2armQ&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=TY3msZcSDbI2hUdrtwnSF6F5rRNTNy5shhM_TZ69KKm6UHvpFQ6UtQqJ8txWsqS03mWNM&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=T30Bbmeynmg9RALcpQYNR6aTZI75vMM4Cnen2gYhWCBECjDsTn9z05fYNNyuCSkcGLndI&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=Te7rZjnczrXRB489AnvLpAJjigJW4biEXbbQwXsfq5cFA9cVUi7aFsjgsKD4g_oT4D3Xg&usqp=CAU"
           ]
         },
         4: {
@@ -272,7 +532,7 @@
             "https://images.pexels.com/photos/164558/pexels-photo-164558.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1200/s3/2/94336/eb6751e4-cb3f-4f97-94ad-ccad31b75002.jpg",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadl01RYFCN2RTWM-uPSQF_mUyMLDZPme08cj8UcCkXrliy94GDRvYZ42xb6c11LQ-AMM&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=RYFCN2RTWM-uPSQF_mUyMLDZPme08cj8UcCkXrliy94GDRvYZ42xb6c11LQ-AMM&usqp=CAU",
             "https://photos.zillowstatic.com/fp/db530549226b5e7ae4f6f0bd95509922-p_i.jpg",
             "https://photos.zillowstatic.com/fp/077df24c0fea5299aad22550e5a91d87-p_i.jpg"
           ]
@@ -313,7 +573,6 @@
     </script>
   </main>
 
-  <!-- Future Homes – Smart & Leisure -->
   <section class="future-homes">
     <h2>Future Homes – Smart & Leisure</h2>
     <p class="description">
@@ -321,109 +580,90 @@
       We can help you to build smart homes with fully supporting automation & leisure homes just for you.
     </p>
     <div class="features">
-      <div class="feature">
+      <div class="feature" style="--index: 1;">
         <img src="https://secureitsolutions.net/wp-content/uploads/2022/08/secureit-icons-4.png" alt="Smart Home Automation">
         <p>Smart Home Automation</p>
       </div>
-      <div class="feature">
+      <div class="feature" style="--index: 2;">
         <img src="https://roofbuildingtt.com/wp-content/uploads/2020/03/roof.png" alt="Wooden Home Construction">
         <p>Wooden Home Construction</p>
       </div>
-      <div class="feature">
+      <div class="feature" style="--index: 3;">
         <img src="https://logosquiz.net/data/logoquiz-canadadroid/images/x_airwalk.png" alt="Yurts & Tent Building">
         <p>Yurts & Tent Building</p>
       </div>
     </div>
   </section>
 
-  <!-- Footer-->
-
-  
-       <!--footer section -->
-       <footer class="footer">
-        <div class="footercontainer">
-          <div class="footer-sections">
-            <!-- Column 1: Constructions -->
-            <div class="footer-column">
-              <h3>Constructions</h3>
-              <ul>
-                <li><a href="#residential">Residential Construction</a></li>
-                <li><a href="#commercial">Commercial Construction</a></li>
-                <li><a href="#home">Home Construction</a></li>
-                <li><a href="#farmhouse">Farm House Construction</a></li>
-                <li><a href="#addfloor">Add New Floor</a></li>
-                <li><a href="#duplex">Duplex Home Construction</a></li>
-                <li><a href="#independent">Independent House Construction</a></li>
-                <li><a href="#villa">Villa Construction</a></li>
-                <li><a href="#luxury">Luxury Home Construction</a></li>
-                <li><a href="#cost">Cost of New Home Construction</a></li>
-              </ul>
-            </div>
-      
-            <!-- Column 2: Interiors -->
-            <div class="footer-column">
-              <h3>Interiors</h3>
-              <ul>
-                <li><a href="#res-interior">Residential Interior Design</a></li>
-                <li><a href="#living">Living Room Interior Design</a></li>
-                <li><a href="#kitchen">Kitchen Interior Design</a></li>
-                <li><a href="#bedroom">Bedroom Interior Design</a></li>
-                <li><a href="#bathroom">Bathroom Interior Design</a></li>
-                <li><a href="#office">Office Interior Design</a></li>
-                <li><a href="#commercial-interior">Commercial Interior Design</a></li>
-                <li><a href="#apartment">Apartment Interior Design</a></li>
-              </ul>
-            </div>
-      
-            <!-- Column 3: Calculator -->
-            <div class="footer-column">
-              <h3>Calculator</h3>
-              <ul>
-                <li><a href="#res-cost">Residential Cost Estimator</a></li>
-                <li><a href="#comm-cost">Commercial Cost Estimator</a></li>
-                <li><a href="#interior-cost">Interior Cost Estimator</a></li>
-              </ul>
-              <h3>Packages</h3>
-              <ul>
-                <li><a href="#luxury">Luxury</a></li>
-                <li><a href="#commercial">Commercial</a></li>
-                <li><a href="#interior">Interior</a></li>
-              </ul>
-            </div>
-      
-            <!-- Column 4: Info -->
-            <div class="footer-column">
-              <h3>Your Floor Plan Solution</h3>
-              <p>Find the perfect floor plan for your dream home. We offer a wide selection of customizable designs from top architects and designers.</p>
-      
-              <h4>Get in Touch</h4>
-              <p><a href="tel:+919739011656">+91 9739011656</a><br>
-                 <a href="mailto:rajashekarreddy@livinwalls.com">rajashekarreddy@livinwalls.com</a>
-              </p>
-      
-              <h4>Social</h4>
-              <div class="social-icons">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-              </div>
-            </div>
-          </div>
-      
-          <!-- Optional links -->
-          <div class="footer-links">
-            <a href="#support">Support</a>
-            <a href="#terms">Terms & Services</a>
-            <a href="#privacy">Privacy & Policy</a>
+  <footer class="footer">
+    <div class="footercontainer">
+      <div class="footer-sections">
+        <div class="footer-column">
+          <h3>Constructions</h3>
+          <ul>
+            <li><a href="#residential">Residential Construction</a></li>
+            <li><a href="#commercial">Commercial Construction</a></li>
+            <li><a href="#home">Home Construction</a></li>
+            <li><a href="#farmhouse">Farm House Construction</a></li>
+            <li><a href="#addfloor">Add New Floor</a></li>
+            <li><a href="#duplex">Duplex Home Construction</a></li>
+            <li><a href="#independent">Independent House Construction</a></li>
+            <li><a href="#villa">Villa Construction</a></li>
+            <li><a href="#luxury">Luxury Home Construction</a></li>
+            <li><a href="#cost">Cost of New Home Construction</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Interiors</h3>
+          <ul>
+            <li><a href="#res-interior">Residential Interior Design</a></li>
+            <li><a href="#living">Living Room Interior Design</a></li>
+            <li><a href="#kitchen">Kitchen Interior Design</a></li>
+            <li><a href="#bedroom">Bedroom Interior Design</a></li>
+            <li><a href="#bathroom">Bathroom Interior Design</a></li>
+            <li><a href="#office">Office Interior Design</a></li>
+            <li><a href="#commercial-interior">Commercial Interior Design</a></li>
+            <li><a href="#apartment">Apartment Interior Design</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Calculator</h3>
+          <ul>
+            <li><a href="#res-cost">Residential Cost Estimator</a></li>
+            <li><a href="#comm-cost">Commercial Cost Estimator</a></li>
+            <li><a href="#interior-cost">Interior Cost Estimator</a></li>
+          </ul>
+          <h3>Packages</h3>
+          <ul>
+            <li><a href="#luxury">Luxury</a></li>
+            <li><a href="#commercial">Commercial</a></li>
+            <li><a href="#interior">Interior</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Your Floor Plan Solution</h3>
+          <p>Find the perfect floor plan for your dream home. We offer a wide selection of customizable designs from top architects and designers.</p>
+          <h4>Get in Touch</h4>
+          <p><a href="tel:+919739011656">+91 9739011656</a><br>
+             <a href="mailto:rajashekarreddy@livinwalls.com">rajashekarreddy@livinwalls.com</a>
+          </p>
+          <h4>Social</h4>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
-        </div>
-      </footer>
-      <hr>
-      
-  
-      <!-- New Footer Section -->
+      </div>
+      <div class="footer-links">
+        <a href="#support">Support</a>
+        <a href="#terms">Terms & Services</a>
+        <a href="#privacy">Privacy & Policy</a>
+      </div>
+    </div>
+  </footer>
+  <hr>
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-row">
@@ -468,13 +708,9 @@
           </ul>
         </div>
       </div>
-      
     </div>
   </footer>
   <hr>
-  
-  
-  <!-- Living WallsConstruction - Extended Footer Section -->
   <section class="extended-footer">
     <div class="ext-container">
       <div class="ext-section">
@@ -485,7 +721,6 @@
           designed layouts that balance style, strength, and functionality.
         </p>
       </div>
-  
       <div class="ext-section">
         <h2>Why Choose Our Plans?</h2>
         <p>
@@ -494,9 +729,7 @@
           structurally sound and compliant with modern construction standards.
         </p>
       </div>
-      
       <div class="ext-section">
-  
         <h3>Our Services</h3>
         <ul class="ext-services">
           <li>Residential Floor Plan Design</li>
@@ -510,10 +743,8 @@
         </ul>
       </div>
     </div>
-    <hr>
-  
-  
-  <!-- Living Walls Construction - Services Footer Section B2B -->
+  </section>
+  <hr>
   <section class="construction-footer">
     <div class="footer-content">
       <h2>B2B Construction Services</h2>
@@ -521,79 +752,61 @@
         Partner with Living Walls Construction for commercial building solutions. With over 800 contractors and 470+ quality checks,
         we deliver robust, scalable commercial spaces that empower businesses to grow with confidence.
       </p>
-  
       <h3>Commercial Construction</h3>
       <p>
         Our team crafts commercial spaces designed for optimal productivity, ensuring every square foot serves your business goals.
       </p>
-  
       <h3>Warehouse Construction</h3>
       <p>
         We build secure, accessible warehouses engineered to preserve and manage inventory efficiently.
       </p>
-  
       <h3>Retail Construction</h3>
       <p>
         Our designers create dynamic retail environments that enhance customer engagement and streamline shopping experiences.
       </p>
-  
       <h3>Hospital Construction</h3>
       <p>
         Constructing hospitals that combine medical functionality with safety and comfort, customized for both patients and staff.
       </p>
-  
       <h3>Hospitality Construction</h3>
       <p>
         We design memorable hospitality spaces that prioritize guest experience, ambiance, and operational flow.
       </p>
-  
       <h3>School Construction</h3>
       <p>
         Building schools that foster creativity, learning, and growth — aligned with modern education needs and safety standards.
       </p>
-  
       <hr>
       <h3>Locations</h3>
       <p class="location-text">
         House Construction in Bengaluru, Chennai, Mysuru, NCR Faridabad, NCR Ghaziabad, NCR Noida, NCR Delhi, NCR Gurgaon, Hyderabad, Pune, Hubli
       </p>
-  
-  
     </div>
-  
     <div class="footer-bottom">
       <p>
-        Copyright &copy;
+        Copyright ©
         <script>document.write(new Date().getFullYear());</script> All Rights Reserved | Powered by <a href="https://meghplat.com/" target="_blank" class="text-primary">Meghplat Analytics</a>
-    </p>
+      </p>
     </div>
   </section>
-  
-   <!--EndB2B-->
-  
-    <script>
-      // Simple script for the mobile menu toggle
-      document.querySelector('.menu-toggle').addEventListener('click', function() {
-        document.querySelector('.nav').classList.toggle('nav--active');
-        this.classList.toggle('menu-toggle--active');
-      });
-  
-      // Custom cursor
-      const cursor = document.querySelector('.cursor');
-      
-      document.addEventListener('mousemove', e => {
-        cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
-      });
-      
-      document.addEventListener('click', () => {
-        cursor.classList.add("cursor--expand");
-        setTimeout(() => {
-          cursor.classList.remove("cursor--expand");
-        }, 500);
-      });
-    </script>
-     <script src="auth.js"></script>
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('.nav').classList.toggle('nav--active');
+      this.classList.toggle('menu-toggle--active');
+    });
+
+    const cursor = document.querySelector('.cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
+    });
+
+    document.addEventListener('click', () => {
+      cursor.classList.add("cursor--expand");
+      setTimeout(() => {
+        cursor.classList.remove("cursor--expand");
+      }, 500);
+    });
+  </script>
+  <script src="auth.js"></script>
 </body>
 </html>
-
-
