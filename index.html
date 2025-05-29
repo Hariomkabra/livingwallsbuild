@@ -11,6 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="auth.js"></script>
 
@@ -120,137 +122,225 @@
     
 
     <!--Recent Works Section-->
-
-    <section class="recent-works" id="recent-works">
-      <div class="container">
-        <h2>Our <strong>Recent Works</strong></h2>
-        <p class="subtitle">Experience the essence of thoughtful construction in Bangalore—our work speaks volumes about who we are and what we build.</p>
-        <div class="works-grid">
-          <div class="work-item">
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <img src="https://api.makemyhouse.com/public/Media/rimage/1024/designers_project/1614855820_705.jpeg?watermark=false" alt="Project 1" data-location="Shiv Residency" data-details="project_details.html?project=1">
-                </div>
-                <div class="flip-card-back">
-                  <button class="details-btn" onclick="goToDetails('project_details.html?project=1')">More Details</button>
-                </div>
+<section class="recent-works" id="recent-works">
+    <div class="container">
+      <h2 id="main-heading">Our <strong>Recent Works</strong></h2>
+      <p class="subtitle">Experience the essence of thoughtful construction in Bangalore—our work speaks volumes about who we are and what we build.</p>
+      <div class="works-grid">
+        <div class="work-item sparkle-effect">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://api.makemyhouse.com/public/Media/rimage/1024/designers_project/1614855820_705.jpeg?watermark=false" alt="Project 1" data-location="Shiv Residency" data-details="project_details.html?project=1">
+              </div>
+              <div class="flip-card-back">
+                <button class="details-btn" onclick="goToDetails('project_details.html?project=1')">More Details</button>
               </div>
             </div>
-            <div class="location-overlay">Shiv Residency</div>
           </div>
-          <div class="work-item">
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <img src="https://housystan.com/_next/image?url=https%3A%2F%2Foss-brigade.s3.ap-southeast-1.amazonaws.com%2Fnpd%2FSita-Aditya-Serene-County.webp&w=1920&q=75" alt="Project 2" data-location="Palm Grove" data-details="project_details.html?project=2">
-                </div>
-                <div class="flip-card-back">
-                  <button class="details-btn" onclick="goToDetails('project_details.html?project=2')">More Details</button>
-                </div>
+          <div class="location-overlay">Shiv Residency</div>
+        </div>
+        <div class="work-item sparkle-effect">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://housystan.com/_next/image?url=https%3A%2F%2Foss-brigade.s3.ap-southeast-1.amazonaws.com%2Fnpd%2FSita-Aditya-Serene-County.webp&w=1920&q=75" alt="Project 2" data-location="Palm Grove" data-details="project_details.html?project=2">
+              </div>
+              <div class="flip-card-back">
+                <button class="details-btn" onclick="goToDetails('project_details.html?project=2')">More Details</button>
               </div>
             </div>
-            <div class="location-overlay">Palm Grove</div>
           </div>
-          <div class="work-item">
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <img src="https://img.squareyards.com/secondaryPortal/IN_638719549195583066-0801250541594159.jpg" alt="Project 3" data-location="Redwood Estates" data-details="project_details.html?project=3">
-                </div>
-                <div class="flip-card-back">
-                  <button class="details-btn" onclick="goToDetails('project_details.html?project=3')">More Details</button>
-                </div>
+          <div class="location-overlay">Palm Grove</div>
+        </div>
+        <div class="work-item sparkle-effect">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://img.squareyards.com/secondaryPortal/IN_638719549195583066-0801250541594159.jpg" alt="Project 3" data-location="Redwood Estates" data-details="project_details.html?project=3">
+              </div>
+              <div class="flip-card-back">
+                <button class="details-btn" onclick="goToDetails('project_details.html?project=3')">More Details</button>
               </div>
             </div>
-            <div class="location-overlay">Redwood Estates</div>
           </div>
-          <div class="work-item">
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <img src="https://is1-3.housingcdn.com/4f2250e8/4534c19d0807d406b5a86ff9b5e3e12c/v0/fs/shiv_residency-tarsali-vadodara-shiv_developers.jpeg" alt="Project 4" data-location="Shiv Residency" data-details="project_details.html?project=4">
-                </div>
-                <div class="flip-card-back">
-                  <button class="details-btn" onclick="goToDetails('project_details.html?project=4')">More Details</button>
-                </div>
+          <div class="location-overlay">Redwood Estates</div>
+        </div>
+        <div class="work-item sparkle-effect">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://is1-3.housingcdn.com/4f2250e8/4534c19d0807d406b5a86ff9b5e3e12c/v0/fs/shiv_residency-tarsali-vadodara-shiv_developers.jpeg" alt="Project 4" data-location="Shiv Residency" data-details="project_details.html?project=4">
+              </div>
+              <div class="flip-card-back">
+                <button class="details-btn" onclick="goToDetails('project_details.html?project=4')">More Details</button>
               </div>
             </div>
-            <div class="location-overlay">Shiv Residency</div>
           </div>
-          <div class="work-item">
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <img src="https://www.svadhabuilders.in/wp-content/uploads/2020/03/12.jpg" alt="Project 5" data-location="Pruthvi Residency" data-details="project_details.html?project=5">
-                </div>
-                <div class="flip-card-back">
-                  <button class="details-btn" onclick="goToDetails('project_details.html?project=5')">More Details</button>
-                </div>
+          <div class="location-overlay">Shiv Residency</div>
+        </div>
+        <div class="work-item sparkle-effect">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://www.svadhabuilders.in/wp-content/uploads/2020/03/12.jpg" alt="Project 5" data-location="Pruthvi Residency" data-details="project_details.html?project=5">
+              </div>
+              <div class="flip-card-back">
+                <button class="details-btn" onclick="goToDetails('project_details.html?project=5')">More Details</button>
               </div>
             </div>
-            <div class="location-overlay">Pruthvi Residency</div>
           </div>
-          <div class="work-item">
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <img src="https://www.vikasjoshi.in/wp-content/uploads/2022/05/Luxuryresidentialprojectsinnoida.jpg" alt="Project 6" data-location="Skyline Towers" data-details="project_details.html?project=6">
-                </div>
-                <div class="flip-card-back">
-                  <button class="details-btn" onclick="goToDetails('project_details.html?project=6')">More Details</button>
-                </div>
+          <div class="location-overlay">Pruthvi Residency</div>
+        </div>
+        <div class="work-item sparkle-effect">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://www.vikasjoshi.in/wp-content/uploads/2022/05/Luxuryresidentialprojectsinnoida.jpg" alt="Project 6" data-location="Skyline Towers" data-details="project_details.html?project=6">
+              </div>
+              <div class="flip-card-back">
+                <button class="details-btn" onclick="goToDetails('project_details.html?project=6')">More Details</button>
               </div>
             </div>
-            <div class="location-overlay">Skyline Towers</div>
           </div>
-          <div class="work-item">
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <img src=" https://s3.ap-south-1.amazonaws.com/investormart/uploads/images/202409/image_750x_66f15a9b0b56d.jpg" alt="Project 7" data-location="Maple Heights" data-details="project_details.html?project=7">
-                </div>
-                <div class="flip-card-back">
-                  <button class="details-btn" onclick="goToDetails('project_details.html?project=7')">More Details</button>
-                </div>
+          <div class="location-overlay">Skyline Towers</div>
+        </div>
+        <div class="work-item sparkle-effect">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://s3.ap-south-1.amazonaws.com/investormart/uploads/images/202409/image_750x_66f15a9b0b56d.jpg" alt="Project 7" data-location="Maple Heights" data-details="project_details.html?project=7">
+              </div>
+              <div class="flip-card-back">
+                <button class="details-btn" onclick="goToDetails('project_details.html?project=7')">More Details</button>
               </div>
             </div>
-            <div class="location-overlay">Maple Heights</div>
           </div>
-          <div class="work-item">
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <img src="https://is1-2.housingcdn.com/4f2250e8/7a49675c43758d839e754a84879a6b8b/v0/fs/fortune_kumkum_heights-kondapur_hyderabad-hyderabad-fortune_group_builders_%26_developers.jpg" alt="Project 8" data-location="Pruthvi Residency" data-details="project_details.html?project=8">
-                </div>
-                <div class="flip-card-back">
-                  <button class="details-btn" onclick="goToDetails('project_details.html?project=8')">More Details</button>
-                </div>
+          <div class="location-overlay">Maple Heights</div>
+        </div>
+        <div class="work-item sparkle-effect">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://is1-2.housingcdn.com/4f2250e8/7a49675c43758d839e754a84879a6b8b/v0/fs/fortune_kumkum_heights-kondapur_hyderabad-hyderabad-fortune_group_builders_%26_developers.jpg" alt="Project 8" data-location="Pruthvi Residency" data-details="project_details.html?project=8">
+              </div>
+              <div class="flip-card-back">
+                <button class="details-btn" onclick="goToDetails('project_details.html?project=8')">More Details</button>
               </div>
             </div>
-            <div class="location-overlay">Pruthvi Residency</div>
           </div>
+          <div class="location-overlay">Pruthvi Residency</div>
         </div>
       </div>
-    </section>
-    
-    <script>
-      function goToDetails(url) {
-        window.location.href = url;
+    </div>
+  </section>
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    // Navigation Function with Fallback
+    function goToDetails(url) {
+      try {
+        window.location.assign(url); // Use assign for better history management
+      } catch (e) {
+        console.error('Navigation failed:', e);
+        alert('Sorry, the details page is not available.');
       }
-  
+    }
+
+    // Reinitialize Animations on Page Load
+    function initializeAnimations() {
+      // Split Heading into Letters
+      const heading = document.getElementById('main-heading');
+      heading.innerHTML = heading.textContent
+        .split('')
+        .map((char, i) => `<span class="letter" style="animation-delay: ${i * 0.06}s">${char}</span>`)
+        .join('');
+
+      // GSAP Animations
+      gsap.from('.letter', {
+        duration: 1,
+        animation: 'letter-bounce',
+        stagger: 0.06,
+        ease: 'bounce.out',
+        onStart: () => {
+          heading.style.opacity = 1;
+        }
+      });
+
+      gsap.to('.subtitle', {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: 'power3.out',
+        delay: 0.6
+      });
+
+      gsap.from('.work-item', {
+        opacity: 0,
+        scale: 0.7,
+        rotate: 5,
+        duration: 1.5,
+        stagger: 0.25,
+        ease: 'elastic.out(1, 0.4)',
+        scrollTrigger: {
+          trigger: '.works-grid',
+          start: 'top 75%',
+          toggleActions: 'play none none none'
+        }
+      });
+
+      // Particle Sparkle on Hover
+      document.querySelectorAll('.work-item').forEach(item => {
+        item.addEventListener('mousemove', (e) => {
+          const rect = item.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          gsap.to(item.querySelector('.sparkle-effect::before'), {
+            backgroundPosition: `${x}px ${y}px`,
+            opacity: 0.7,
+            duration: 0.3
+          });
+        });
+
+        item.addEventListener('mouseleave', () => {
+          gsap.to(item.querySelector('.sparkle-effect::before'), {
+            opacity: 0,
+            duration: 0.3
+          });
+        });
+      });
+
+      // Overlay Animation on Image Click
       document.querySelectorAll('.work-item img').forEach(img => {
         img.addEventListener('click', (e) => {
           const overlay = e.target.parentElement.parentElement.parentElement.nextElementSibling;
-          overlay.style.opacity = '1';
-          setTimeout(() => {
-            overlay.style.opacity = '0';
-          }, 2000);
+          gsap.to(overlay, {
+            opacity: 1,
+            y: 0,
+            duration: 0.4,
+            ease: 'power2.in',
+            onComplete: () => {
+              gsap.to(overlay, {
+                opacity: 0,
+                y: 20,
+                duration: 0.6,
+                ease: 'power2.out',
+                delay: 1.5
+              });
+            }
+          });
         });
       });
-    </script>
+    }
 
-     <!--Recent Works Section-->
+    // Run Animations on Load and Popstate
+    window.addEventListener('load', initializeAnimations);
+    window.addEventListener('popstate', initializeAnimations);
+  </script>
+
+     <!--EndRecent Works Section-->
 
 
      <!-- our 3d work-->
@@ -385,120 +475,164 @@
   
     <!--Construction Services-->
 
-    <section class="services">
-      <div class="container">
-        <h2>Construction Services</h2>
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="image-wrapper">
-              <img src="https://i0.wp.com/theconstructor.org/wp-content/uploads/2014/10/Residential-building.jpg?fit=1158%2C690&ssl=1" alt="Residential">
-              <a href="#" class="btn btn-secondary" onclick="showDetails('residential')">Know More</a>
-            </div>
-            <h3>Residential</h3>
-            <p>Customize your home from Material, Interiors, Furnishing to Courtyards or Swimming pools! We cover everything to make the perfect</p>
+    <section class="luxury-section" id="construction-services">
+    <div class="luxury-container">
+      <h2 class="luxury-heading">Construction Services</h2>
+      <div class="luxury-grid">
+        <div class="luxury-card">
+          <div class="luxury-image-wrapper">
+            <img src="https://i0.wp.com/theconstructor.org/wp-content/uploads/2014/10/Residential-building.jpg?fit=1158%2C690&ssl=1" alt="Residential">
+            <a href="#" class="luxury-btn" onclick="showDetails('residential')">Know More</a>
           </div>
-          <div class="service-card">
-            <div class="image-wrapper">
-              <img src="https://bimsmithstorage.blob.core.windows.net/news-content/2020723_b_office-building-designs-architectures-ideas_office-decoration.jpg" alt="Commercial">
-              <a href="#" class="btn btn-secondary" onclick="showDetails('commercial')">Know More</a>
-            </div>
-            <h3>Commercial</h3>
-            <p>Modify or redevelop an existing building material refurbished or unrestored, interiors repurposed, office exteriors redesigned. We at Build Nest will do them for you make truly more.</p>
-          </div>
-          <div class="service-card">
-            <div class="image-wrapper">
-              <img src="https://havitsteelstructure.com/wp-content/uploads/2023/09/Industrial-buildings.jpg" alt="Industrial">
-              <a href="#" class="btn btn-primary" onclick="showDetails('industrial')"> More detailed</a>
-            </div>
-            <h3>Industrial</h3>
-            <p>Be it material customization, structuring every section of your factory, or refurbishing the entire structure, we will make sure that you get what you pay for us, paying attention to the details is our specialty</p>
-          </div>
+          <h3>Residential</h3>
+          <p>Customize your home from premium materials, bespoke interiors, and luxurious additions like courtyards or infinity pools. We craft perfection in every detail.</p>
         </div>
-        <div id="details-modal" class="modal">
-          <div class="modal-content">
-            <span class="close-btn" onclick="closeDetails()">×</span>
-            <h3 id="modal-title"></h3>
-            <div id="modal-body"></div>
-            <a href="#" class="btn btn-secondary" id="modal-btn" onclick="showMoreDetails()">Learn More</a>
-            <div id="more-details" class="more-details hidden">
-              <p id="more-details-body"></p>
-              <a href="#" class="btn btn-secondary" onclick="closeDetails()">Close</a>
-            </div>
+        <div class="luxury-card">
+          <div class="luxury-image-wrapper">
+            <img src="https://bimsmithstorage.blob.core.windows.net/news-content/2020723_b_office-building-designs-architectures-ideas_office-decoration.jpg" alt="Commercial">
+            <a href="#" class="luxury-btn" onclick="showDetails('commercial')">Know More</a>
+          </div>
+          <h3>Commercial</h3>
+          <p>Transform your commercial space with sophisticated redesigns, premium refurbishments, and tailored interiors to elevate your business environment.</p>
+        </div>
+        <div class="luxury-card">
+          <div class="luxury-image-wrapper">
+            <img src="https://havitsteelstructure.com/wp-content/uploads/2023/09/Industrial-buildings.jpg" alt="Industrial">
+            <a href="#" class="luxury-btn" onclick="showDetails('industrial')">More Detailed</a>
+          </div>
+          <h3>Industrial</h3>
+          <p>Precision-engineered industrial solutions, from custom material selection to full-scale facility refurbishments, designed for efficiency and durability.</p>
+        </div>
+      </div>
+      <div id="luxury-details-modal" class="luxury-modal">
+        <div class="luxury-modal-content">
+          <span class="luxury-close-btn" onclick="closeDetails()">×</span>
+          <h3 id="luxury-modal-title"></h3>
+          <div id="luxury-modal-body"></div>
+          <a href="#" class="luxury-modal-btn" id="luxury-modal-btn" onclick="showMoreDetails()">Learn More</a>
+          <div id="luxury-more-details" class="luxury-more-details">
+            <p id="luxury-more-details-body"></p>
+            <a href="#" class="luxury-close-details" onclick="closeDetails()">Close</a>
           </div>
         </div>
       </div>
-    </section>
-    <script>
-      function showDetails(type) {
-        const modal = document.getElementById('details-modal');
-        const modalTitle = document.getElementById('modal-title');
-        const modalBody = document.getElementById('modal-body');
-        const modalBtn = document.getElementById('modal-btn');
-        const moreDetails = document.getElementById('more-details');
-        const moreDetailsBody = document.getElementById('more-details-body');
-  
-        let title = '', body = '', moreBody = '', btnText = '';
-        if (type === 'residential') {
-          title = 'Residential Services';
-          body = `
-            <p>Our residential services include comprehensive customization options to transform your living space. From high-quality materials and modern interiors to luxurious additions like courtyards and swimming pools, we ensure every detail is tailored to your needs.</p>
-            <p><strong>Features:</strong> Material Selection, Interior Design, Outdoor Enhancements, Full Project Management.</p>
-          `;
-          moreBody = `
-            <p>We also offer end-to-end support, including architectural planning, 3D modeling, and post-construction services. Whether you're building a new home or renovating an existing one, our team ensures a seamless experience with a focus on quality and sustainability.</p>
-            <p><strong>Additional Services:</strong> Energy-efficient Designs, Smart Home Integration, Landscape Design.</p>
-          `;
-          btnText = 'Learn More';
-        } else if (type === 'commercial') {
-          title = 'Commercial Services';
-          body = `
-            <p>We specialize in modifying and redeveloping commercial properties to meet your business needs. Whether it's refurbishing existing structures, repurposing interiors, or redesigning office exteriors, our team at Build Nest ensures a seamless process.</p>
-            <p><strong>Features:</strong> Refurbishment, Interior Repurposing, Exterior Redesign, Project Oversight.</p>
-          `;
-          moreBody = `
-            <p>Our commercial services also include space optimization, compliance with local regulations, and integration of modern amenities to enhance functionality. We cater to offices, retail spaces, and more, delivering projects that align with your business goals.</p>
-            <p><strong>Additional Services:</strong> Safety Compliance, Modular Design, Tenant Improvements.</p>
-          `;
-          btnText = 'Learn More';
-        } else if (type === 'industrial') {
-          title = 'Industrial Services';
-          body = `
-            <p>Our industrial services focus on customizing and structuring every section of your factory or facility. From material selection to complete refurbishment, we pay meticulous attention to detail.</p>
-            <p><strong>Features:</strong> Material Customization, Structural Design, Full Refurbishment, Quality Assurance.</p>
-          `;
-          moreBody = `
-            <p>We also provide specialized services like heavy-duty structural reinforcements, industrial-grade material sourcing, and adherence to safety standards. Our goal is to create a robust and efficient facility that supports your operational needs.</p>
-            <p><strong>Additional Services:</strong> Industrial Safety Audits, Equipment Installation, Facility Expansion.</p>
-          `;
-          btnText = 'More detailed';
-        }
-  
-        modalTitle.textContent = title;
-        modalBody.innerHTML = body;
-        moreDetailsBody.innerHTML = moreBody;
-        modalBtn.textContent = btnText;
-        moreDetails.classList.add('hidden');
-        modal.style.display = 'block';
+    </div>
+  </section>
+  <script>
+    function showDetails(type) {
+      const modal = document.getElementById('luxury-details-modal');
+      const modalTitle = document.getElementById('luxury-modal-title');
+      const modalBody = document.getElementById('luxury-modal-body');
+      const modalBtn = document.getElementById('luxury-modal-btn');
+      const moreDetails = document.getElementById('luxury-more-details');
+      const moreDetailsBody = document.getElementById('luxury-more-details-body');
+
+      let title = '', body = '', moreBody = '', btnText = '';
+      if (type === 'residential') {
+        title = 'Residential Services';
+        body = `
+          <p>Our residential services offer bespoke customization options to create your dream home. From premium materials and exquisite interiors to luxurious additions like infinity pools and private courtyards, we ensure every detail reflects your vision.</p>
+          <p><strong>Features:</strong> Premium Material Selection, Bespoke Interior Design, Outdoor Enhancements, Full Project Management.</p>
+        `;
+        moreBody = `
+          <p>We provide end-to-end support, including architectural planning, 3D modeling, and post-construction services. Whether building anew or renovating, our team delivers a seamless experience with a focus on luxury and sustainability.</p>
+          <p><strong>Additional Services:</strong> Energy-efficient Designs, Smart Home Integration, Landscape Architecture.</p>
+        `;
+        btnText = 'Learn More';
+      } else if (type === 'commercial') {
+        title = 'Commercial Services';
+        body = `
+          <p>We specialize in transforming commercial properties to align with your business vision. From premium refurbishments to innovative interior repurposing and exterior redesigns, Build Nest delivers sophistication and functionality.</p>
+          <p><strong>Features:</strong> Premium Refurbishment, Interior Repurposing, Exterior Redesign, Project Oversight.</p>
+        `;
+        moreBody = `
+          <p>Our commercial services include space optimization, compliance with local regulations, and integration of modern amenities to enhance functionality. We cater to offices, retail spaces, and more, delivering projects that elevate your brand.</p>
+          <p><strong>Additional Services:</strong> Safety Compliance, Modular Design, Tenant Improvements.</p>
+        `;
+        btnText = 'Learn More';
+      } else if (type === 'industrial') {
+        title = 'Industrial Services';
+        body = `
+          <p>Our industrial services focus on precision customization and robust structuring for factories and facilities. From high-grade material selection to complete refurbishments, we ensure durability and efficiency.</p>
+          <p><strong>Features:</strong> Material Customization, Structural Design, Full Refurbishment, Quality Assurance.</p>
+        `;
+        moreBody = `
+          <p>We offer specialized services like heavy-duty structural reinforcements, industrial-grade material sourcing, and adherence to safety standards. Our goal is to create facilities that support your operational excellence.</p>
+          <p><strong>Additional Services:</strong> Industrial Safety Audits, Equipment Installation, Facility Expansion.</p>
+        `;
+        btnText = 'More Detailed';
       }
-  
-      function showMoreDetails() {
-        const moreDetails = document.getElementById('more-details');
-        const modalBtn = document.getElementById('modal-btn');
-        moreDetails.classList.remove('hidden');
-        modalBtn.style.display = 'none';
-      }
-  
-      function closeDetails() {
-        document.getElementById('details-modal').style.display = 'none';
-      }
-  
-      window.onclick = function(event) {
-        const modal = document.getElementById('details-modal');
-        if (event.target == modal) {
+
+      modalTitle.textContent = title;
+      modalBody.innerHTML = body;
+      moreDetailsBody.innerHTML = moreBody;
+      modalBtn.textContent = btnText;
+      moreDetails.style.display = 'none';
+      modal.style.display = 'flex';
+
+      // GSAP animations for modal
+      gsap.fromTo(
+        '.luxury-modal-content',
+        { scale: 0.8, opacity: 0, y: 50 },
+        { scale: 1, opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }
+      );
+    }
+
+    function showMoreDetails() {
+      const moreDetails = document.getElementById('luxury-more-details');
+      const modalBtn = document.getElementById('luxury-modal-btn');
+      moreDetails.style.display = 'block';
+      modalBtn.style.display = 'none';
+
+      // GSAP animation for more details
+      gsap.fromTo(
+        '.luxury-more-details',
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }
+      );
+    }
+
+    function closeDetails() {
+      const modal = document.getElementById('luxury-details-modal');
+      gsap.to('.luxury-modal-content', {
+        scale: 0.8,
+        opacity: 0,
+        y: 50,
+        duration: 0.3,
+        ease: 'power3.in',
+        onComplete: () => {
           modal.style.display = 'none';
+          // Smooth scroll to construction services section
+          document.getElementById('construction-services').scrollIntoView({ behavior: 'smooth' });
         }
+      });
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('luxury-details-modal');
+      if (event.target == modal) {
+        closeDetails();
       }
-    </script>
+    }
+
+    // GSAP animations for cards on load
+    gsap.from('.luxury-card', {
+      opacity: 0,
+      y: 50,
+      stagger: 0.2,
+      duration: 0.8,
+      ease: 'power3.out',
+      delay: 0.3
+    });
+
+    // GSAP animation for heading
+    gsap.from('.luxury-heading', {
+      opacity: 0,
+      y: -50,
+      duration: 1,
+      ease: 'power3.out'
+    });
+  </script>
 
     <!--End Construction Services-->
   <!--EndWhy Living Walls-->

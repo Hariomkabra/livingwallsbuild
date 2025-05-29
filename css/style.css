@@ -307,10 +307,7 @@
   gap: 20px;
 }
 
-.work-item {
-  position: relative;
-  cursor: pointer;
-}
+
 
 .flip-card {
   perspective: 1000px;
@@ -2040,67 +2037,192 @@
 }
 
 /* Construction Services */
-.services-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
-
-.service-card {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.luxury-section {
+  background: linear-gradient(135deg, #f9ecec 0%, #f5e6e6 100%); /* Adjusted to match the image's light pinkish gradient */
+  padding: 4rem 0; /* Reduced padding to match the tighter spacing in the image */
   overflow: hidden;
-  width: 330px;
-  transition: transform var(--transition-fast);
 }
 
-.service-card:hover {
-  transform: translateY(-5px);
+.luxury-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-.image-wrapper {
+.luxury-heading {
+  font-size: 2.5rem; /* Adjusted to match the image's heading size */
+  font-weight: 700;
+  color: #333; /* Slightly lighter than your original #2a2a2a to match the image */
+  text-transform: uppercase;
+  letter-spacing: 1px; /* Reduced letter spacing for better match */
+  text-align: center;
+  margin-bottom: 2rem; /* Reduced margin to match the image */
   position: relative;
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
 }
 
-.image-wrapper img {
+.luxury-heading::after {
+  content: '';
+  width: 80px; /* Slightly smaller to match the image's proportions */
+  height: 2px; /* Thinner line */
+  background: #f4c4c7; /* Softer pink to match the image's aesthetic */
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.luxury-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.8rem; /* Reduced gap to match the image's tighter spacing */
+  align-items: stretch;
+}
+
+.luxury-card {
+  background: #595454; /* Keeping your original card background */
+  border-radius: 15px; /* Slightly larger radius to match the image */
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Softer shadow to match the image */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  min-height: 350px; /* Adjusted to match the image's card proportions */
+  display: flex;
+  flex-direction: column;
+}
+
+.luxury-card:hover {
+  transform: translateY(-8px); /* Slightly reduced hover lift to match the image's subtle effect */
+  box-shadow: 0 10px 20px rgba(47, 46, 46, 0.3);
+}
+
+.luxury-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 200px; /* Adjusted to match the image's proportions */
+}
+
+.luxury-image-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.image-wrapper .btn {
+.luxury-card:hover .luxury-image-wrapper img {
+  transform: scale(1.1);
+}
+
+.luxury-btn {
   position: absolute;
   bottom: 15px;
-  left: 15px;
-  padding: 10px 20px;
-  background-color: #e63946;
-  color: white;
-  font-size: 14px;
-  text-decoration: none;
-  border: none;
-  border-radius: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f4c4c7; /* Adjusted to match the image's pink tone */
+  color: #333; /* Lighter text color to match the image */
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.luxury-card:hover .luxury-btn {
+  opacity: 1;
+}
+
+.luxury-card h3 {
+  font-size: 1.5rem; /* Adjusted to match the image's title size */
+  font-weight: 700; /* Added weight to match the image */
+  color: #f4c4c7; /* Adjusted to a softer pink */
+  padding: 1rem 1.2rem 0; /* Reduced padding to match the image */
+  margin: 0;
+  text-transform: uppercase; /* Added to match the image */
+}
+
+.luxury-card p {
+  color: #cccccc; /* Keeping your original color */
+  padding: 0.8rem 1.2rem; /* Adjusted padding to match the image */
+  font-size: 1.5rem; /* Reduced to match the image's description size */
+  line-height: 1.5; /* Adjusted for better readability */
+  flex-grow: 1;
+}
+
+/* Modal styles remain unchanged as they aren't visible in the image */
+.luxury-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.luxury-modal-content {
+  background: #2a2a2a;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(78, 76, 76, 0.5);
+}
+
+.luxury-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: #f8d7da;
   cursor: pointer;
 }
 
-.image-wrapper .btn:hover {
-  background-color: #cc2c3a;
+.luxury-modal-content h3 {
+  font-size: 2rem;
+  color: #f8d7da;
+  margin-bottom: 1rem;
 }
 
-.service-card h3 {
-  font-size: 22px;
-  margin: 15px;
-  color: #222;
+.luxury-modal-content p {
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  
 }
 
-.service-card p {
-  font-size: 14px;
-  padding: 0 15px 20px;
-  color: #555;
+.luxury-modal-btn {
+  background: #f8d7da;
+  color: #2a2a2a;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.luxury-more-details {
+  display: none;
+  margin-top: 1rem;
+}
+
+.luxury-more-details p {
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+.luxury-close-details {
+  background: #978e8e;
+  color: #f8d7da;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-top: 1rem;
 }
 
 /* Contact Section */
