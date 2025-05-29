@@ -242,8 +242,6 @@
 
 
 /* Hero Section */
-
-
  * {
       margin: 0;
       padding: 0;
@@ -292,9 +290,10 @@
 }
 
 .hero p {
-  font-size: 18px;
+  font-size: 32px;
   line-height: 1.7;
-  color: #f0eaea; /* lighter gray or any color you prefer */
+  color: #ffffff; /* lighter gray or any color you prefer */
+  font-weight: bolder;
 }
 
     .hero-slide {
@@ -2469,7 +2468,7 @@ h2::after {
   font-size: 18px;
   margin-bottom: 30px;
   line-height: 1.6;
-  font-weight: 300;
+  font-weight: 700;
 }
 
 .features {
