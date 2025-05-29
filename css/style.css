@@ -369,8 +369,9 @@
 
 .location-overlay {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the element */
   background-color: rgba(0, 0, 0, 0.7);
   color: #fff;
   padding: 5px 10px;
@@ -378,15 +379,14 @@
   font-size: 14px;
   opacity: 0;
   transition: opacity var(--transition-fast);
+  text-align: center; /* Ensures text is centered within the overlay */
+  width: fit-content; /* Adjusts width to content size */
 }
 
 .work-item:hover .location-overlay {
   opacity: 1;
 }
 
-.work-item img {
-  transition: opacity var(--transition-fast);
-}
 
 /* Project Details */
 .project-details {
