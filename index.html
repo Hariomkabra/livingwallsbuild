@@ -616,7 +616,7 @@
   <!-- differ -->
 
 
-<!--tracker-section-->
+<!--tracker-section
   <section class="tracker-section">
   <div class="tracker-text">
    <h2>Real-Time Construction Tracker</h2>
@@ -663,70 +663,115 @@
   const now = new Date();
   const timeDiff = Math.ceil((deadline - now) / (1000 * 60 * 60 * 24));
   document.getElementById('daysLeft').innerText = timeDiff > 0 ? `${timeDiff}` : "Completed";
-</script>
+</script> --> 
 
-<!--End tracker-section-->
-
-
-  
+<!--End tracker-section-->  
   <!--End Why Living Walls-->
 
 
   <!--What Our Home Owners Say-->
- <section class="testimoniall-section">
-  <h3 class="testimonial-title">TESTIMONIALS</h3>
-  <h2 class="testimonial-subtitle">Hear from our happy customers</h2>
+<section class="testimoniall-section">
+    <h3 class="testimonial-title">TESTIMONIALS</h3>
+    <h2 class="testimonial-subtitle">Hear from our happy customers</h2>
 
-  <div class="testimonial-wrapper">
-    
-    <div class="testimonial-card">
-      <div class="testimonial-video-container">
-      <img src="https://surajestate.com/wp-content/uploads/2024/11/luxury-flats-in-mumbai.jpg" alt="Testimonial Image" class="testimonial-thumbnail">
-        <div class="testimonial-play-btn" onclick="openVideo('https://www.youtube.com/embed/oNIKG0OUHb4?start=25');">&#9658;</div>
+    <div class="testimonial-wrapper">
+      <div class="nav-arrow left" onclick="prevCard()">←</div>
+      <div class="testimonial-card active">
+        <div class="testimonial-video-container">
+          <img src="https://surajestate.com/wp-content/uploads/2024/11/luxury-flats-in-mumbai.jpg" alt="Testimonial Image" class="testimonial-thumbnail">
+          <div class="testimonial-play-btn" onclick="openVideo('https://www.youtube.com/embed/oNIKG0OUHb4?start=25');">►</div>
+        </div>
+        <div class="testimonial-info">
+          <img src="https://www.lmvfinancialservices.com/images/Home%20Loan-01.jpg" alt="Abu Anirudhan" class="testimonial-profile">
+          <h4 class="testimonial-name">Raman Patel</h4>
+          <p class="testimonial-text">BuildNext has satisfied all my requirements and has done a very beautiful and quality construction. Their architects visited the site and made a convenient plan despite difficulties due to COVID-19. Overall we are very happy with the construction of our house.</p>
+        </div>
       </div>
-      <div class="testimonial-info">
-        <img src="https://www.lmvfinancialservices.com/images/Home%20Loan-01.jpg" alt="Abu Anirudhan" class="testimonial-profile">
-        <h4 class="testimonial-name">Raman Patel</h4>
-       
-        <p class="testimonial-text">BuildNext has satisfied all my requirements and has done a very beautiful and quality construction. Their architects visited the site and made a convenient plan despite difficulties due to COVID-19. Overall we are very happy with the construction of our house.</p>
+
+      <div class="testimonial-card">
+        <div class="testimonial-video-container">
+          <img src="https://www.sunteckindia.com/blog/isystem/wp-content/uploads/2024/08/Luxury-Apartment-in-Mumbai.webp" alt="Testimonial Image" class="testimonial-thumbnail">
+          <div class="testimonial-play-btn" onclick="openVideo('https://www.youtube.com/embed/twEfT5ydJIY?autoplay=1');">►</div>
+        </div>
+        <div class="testimonial-info">
+          <img src="https://www.shutterstock.com/image-photo/happy-young-indian-couple-holding-260nw-2337176563.jpg" alt="Itihas" class="testimonial-profile">
+          <h4 class="testimonial-name">Mayak Raina</h4>
+          <p class="testimonial-text">We are in the pharmaceutical business and had a long-standing dream of creating a countryside retreat. BuildNext turned our dream into reality by managing every aspect from initial design to execution, just as promised.</p>
+        </div>
       </div>
+      <div class="nav-arrow right" onclick="nextCard()">→</div>
     </div>
+  </section>
 
-    <div class="testimonial-card">
-      <div class="testimonial-video-container">
-        <img src="https://www.sunteckindia.com/blog/isystem/wp-content/uploads/2024/08/Luxury-Apartment-in-Mumbai.webp" alt="Testimonial Image" class="testimonial-thumbnail">
-        <div class="testimonial-play-btn"   onclick="openVideo('https://www.youtube.com/embed/twEfT5ydJIY?autoplay=1');">&#9658;</div>
-      </div>
-      <div class="testimonial-info">
-        <img src="https://www.shutterstock.com/image-photo/happy-young-indian-couple-holding-260nw-2337176563.jpg" alt="Itihas" class="testimonial-profile">
-        <h4 class="testimonial-name">Mayak Raina</h4>
-       
-        <p class="testimonial-text">We are in the pharmaceutical business and had a long-standing dream of creating a countryside retreat. BuildNext turned our dream into reality by managing every aspect from initial design to execution, just as promised.</p>
-      </div>
+  <!-- Video Modal -->
+  <div class="video-modal" id="videoModal">
+    <div class="video-content">
+      <span class="video-close" onclick="closeVideo()">×</span>
+      <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
     </div>
-
   </div>
-</section>
 
-<!-- Video Modal -->
-<div class="video-modal" id="videoModal">
-  <div class="video-content">
-    <span class="video-close" onclick="closeVideo()">&times;</span>
-    <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
-  </div>
-</div>
+  <script>
+    // Video Modal Functions
+    function openVideo(url) {
+      document.getElementById("videoModal").style.display = "flex";
+      document.getElementById("videoFrame").src = url;
+    }
 
-<script>
-  function openVideo(url) {
-    document.getElementById("videoModal").style.display = "flex";
-    document.getElementById("videoFrame").src = url;
-  }
+    function closeVideo() {
+      document.getElementById("videoModal").style.display = "none";
+      document.getElementById("videoFrame").src = "";
+    }
 
-  function closeVideo() {
-    document.getElementById("videoModal").style.display = "none";
-    document.getElementById("videoFrame").src = "";
-  }
-</script>
+    // Slideshow Logic
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll(".testimonial-card");
+      let currentIndex = 0;
+      let interval = setInterval(nextCard, 5000); // Auto-slide every 5 seconds
+
+      function showCard(index) {
+        cards.forEach((card, i) => {
+          card.classList.remove("active");
+          if (i === index) {
+            card.classList.add("active");
+          }
+        });
+      }
+
+      function nextCard() {
+        currentIndex = (currentIndex + 1) % cards.length; // Loop to first card
+        showCard(currentIndex);
+      }
+
+      function prevCard() {
+        currentIndex = (currentIndex - 1 + cards.length) % cards.length; // Loop to last card
+        showCard(currentIndex);
+      }
+
+      // Expose functions to global scope for onclick
+      window.nextCard = nextCard;
+      window.prevCard = prevCard;
+
+      // Pause slideshow on hover or arrow click
+      const wrapper = document.querySelector(".testimonial-wrapper");
+      wrapper.addEventListener("mouseenter", () => clearInterval(interval));
+      wrapper.addEventListener("mouseleave", () => {
+        clearInterval(interval); // Clear any existing interval
+        interval = setInterval(nextCard, 5000); // Restart interval
+      });
+
+      // Pause and reset interval on arrow click
+      document.querySelectorAll(".nav-arrow").forEach(arrow => {
+        arrow.addEventListener("click", () => {
+          clearInterval(interval); // Pause slideshow
+          interval = setInterval(nextCard, 5000); // Restart after 5 seconds
+        });
+      });
+
+      // Show the first card immediately
+      showCard(currentIndex);
+    });
+  </script>
   
     <!--EndWhat Our Home Owners Say-->
 
