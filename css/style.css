@@ -119,7 +119,6 @@
   max-width: 1600px;
   margin: 0 auto;
   display: flex;
-  padding: 25px;
   align-items: center;
   justify-content: space-between;
   font-weight: bolder;
@@ -129,9 +128,27 @@
 
 
 .logo-img {
-  height: 75px;
+  height: 120px; /* Increased height */
+  width: 210px; /* Added width for balanced proportions */
+  object-fit: contain; /* Ensures logo scales properly without distortion */
+  display: block; /* Ensures proper alignment */
+  margin: 0 auto; /* Centers the logo horizontally */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth hover effects */
 }
 
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .logo-img {
+    height: 90px; /* Smaller height for mobile */
+    width: 85px; /* Smaller width for mobile */
+  }
+}
+
+/* Hover effect */
+.logo-img:hover {
+  transform: scale(1.2); /* Slight zoom on hover */
+  opacity: 0.9; /* Slight fade on hover */
+}
 /* Navigation */
 .nav__list {
   display: flex;
