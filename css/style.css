@@ -1287,14 +1287,14 @@ html {
     }
 
     .testimonial-title {
-      font-size: 2.1rem;
+      font-size: 3.1rem;
       color: #333;
       margin-bottom: 8px;
       font-weight: 800;
     }
 
     .testimonial-subtitle {
-      font-size: 1.1rem;
+      font-size: 1.5rem;
       color: #777;
       margin-bottom: 25px;
     }
@@ -1476,11 +1476,12 @@ html {
     .nav-arrow.right {
       right: 5px;
     }
+    
 /* Refer and Earn */
 .refer-earn-card {
   display: flex;
   max-width: 1400px;
-  background: linear-gradient(45deg, #e0f7fa, #b2ebf2);
+  background: linear-gradient(45deg, #ffffff, #ffffff);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -1491,7 +1492,7 @@ html {
 .refer-earn-card:hover {
   transform: scale(1.05);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(45deg, #b2ebf2, #80deea);
+  background: linear-gradient(45deg, #ffffff, #ffffff);
 }
 
 .refer-earn-left {
@@ -1566,6 +1567,7 @@ html {
 .section-heading {
   text-align: center;
   margin: 40px 0 20px;
+  font-size: 4rem;
 }
 
 .section-heading h1 {
@@ -1663,8 +1665,8 @@ html {
 
 /* Why Choose Modern */
 .why-modern-container {
-  background: linear-gradient(to right, #fff5e6, #e3d49e);
-  padding: 60px 30px;
+  background: linear-gradient(to right, #F5F5F5, #FFFFFF); /* Luxurious white gradient */
+  padding: 60px 25px;
   font-family: 'Poppins', sans-serif;
   text-align: center;
 }
@@ -1672,15 +1674,25 @@ html {
 .why-modern-title {
   font-size: 36px;
   font-weight: 700;
-  color: #222;
+  color: #2D3041; /* Dark navy for title */
   margin-bottom: 40px;
+  transition: color var(--transition-fast); /* Smooth color transition on hover */
+}
+
+.why-modern-title:hover {
+  color: #C9183C; /* Vibrant red on hover for title */
 }
 
 .why-modern-title span {
-  background: #111;
-  color: #fff;
+  background: #2D3041; /* Dark navy background */
+  color: #E6E9F0; /* Light blue-gray for contrast */
   padding: 0 10px;
   border-radius: 6px;
+  transition: background var(--transition-fast); /* Smooth background transition */
+}
+
+.why-modern-title span:hover {
+  background: #C9183C; /* Red on hover for span */
 }
 
 .why-modern-stats {
@@ -1691,28 +1703,41 @@ html {
 }
 
 .why-modern-card {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
   backdrop-filter: blur(8px);
   padding: 25px 20px;
   border-radius: 12px;
-  transition: transform var(--transition-fast);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid #E6E9F0; /* Light blue-gray border for subtle elegance */
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  box-shadow: 0 8px 25px rgba(45, 48, 65, 0.1);
 }
 
 .why-modern-card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(45, 48, 65, 0.15); /* Enhanced shadow on hover */
+  border-color: #C9183C; /* Red border on hover */
 }
 
 .why-modern-card h3 {
   font-size: 36px;
   font-weight: 700;
-  color: #000;
+  color: #2D3041; /* Dark navy */
   margin-bottom: 10px;
+  transition: color var(--transition-fast);
+}
+
+.why-modern-card:hover h3 {
+  color: #C9183C; /* Red on card hover */
 }
 
 .why-modern-card p {
   font-size: 15px;
   color: #333;
+  transition: color var(--transition-fast);
+}
+
+.why-modern-card:hover p {
+  color: #000000; /* Light blue-gray text on hover */
 }
 
 .why-modern-features {
@@ -1723,44 +1748,61 @@ html {
 }
 
 .why-modern-feature {
-  border: 2px solid #111;
-  background: #f4f1e2;
+  border: 2px solid #E6E9F0; /* Light blue-gray border */
+  background: #FFFFFF; /* Pure white background */
   padding: 16px 22px;
   font-size: 15px;
   border-radius: 10px;
   transition: all var(--transition-fast);
   min-width: 240px;
   font-weight: 500;
+  color: #2D3041; /* Dark navy text */
 }
 
 .why-modern-feature:hover {
-  background: #e1e093;
+  background: #E6E9F0; /* Light blue-gray on hover */
+  color: #2D3041; /* Maintain navy text for readability */
+  border-color: #C9183C; /* Red border on hover */
   transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 15px rgba(201, 24, 60, 0.2); /* Subtle red shadow */
 }
 
 .why-modern-feature small {
   display: block;
   font-size: 13px;
   color: #555;
-  margin-top: 6px;
+  transition: color var(--transition-fast);
 }
 
+.why-modern-feature:hover small {
+  color: #C9183C; /* Red for small text on hover */
+}
 /* Our Partners */
 .partners {
-  padding: 60px 0;
+  padding: 80px 0; /* Increased padding for more vertical space */
   background-color: #fff;
   text-align: center;
+}
+
+.partners h2 {
+  font-size: 4rem; /* Increased heading size from 2.2rem to 3rem for prominence */
+  font-weight: 700;
+  color: #2D3041; /* Using dark blue-gray for heading */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 3rem; /* Added gap between heading and partner logos */
 }
 
 .partner-logos {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  gap: 40px;
+  gap: 48px; /* Increased gap from 40px to 48px for better spacing */
   padding: 20px 0;
-  scroll-behavior: smooth;
   justify-content: center;
+  align-items: center; /* Added to ensure vertical alignment of logos */
+  max-width: 1200px; /* Added to constrain width and improve alignment */
+  margin: 0 auto; /* Center the container */
 }
 
 .partner-logos img {
@@ -1768,7 +1810,7 @@ html {
   height: 100px;
   object-fit: contain;
   flex-shrink: 0;
-  transition: transform var(--transition-fast);
+  transition: transform 0.3s ease; /* Replaced var(--transition-fast) with explicit value for consistency */
   cursor: pointer;
 }
 
@@ -1785,23 +1827,24 @@ html {
   scrollbar-width: none;
 }
 
-.scroll-right {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #e63946;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 20px;
-  transition: background-color var(--transition-fast);
-}
+  .scroll-right {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #C9183C;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 20px;
+      transition: background-color 0.3s ease;
+    }
 
+ 
 .scroll-right:hover {
-  background-color: #d62828;
+  background-color: #a1122f; /* Darkened shade of #C9183C for hover effect */
 }
 
 /* Construction Hero */
@@ -1864,33 +1907,33 @@ html {
 
 /* Construction Services */
 .luxury-section {
-  background: linear-gradient(135deg, #f9ecec 0%, #f5e6e6 100%); /* Adjusted to match the image's light pinkish gradient */
-  padding: 4rem 0; /* Reduced padding to match the tighter spacing in the image */
+  background: linear-gradient(135deg, #fffeff 0%, #dadada 100%); /* Replaced pinkish gradient with vibrant red gradient */
+  padding: 4rem 0;
   overflow: hidden;
 }
 
 .luxury-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
 .luxury-heading {
-  font-size: 2.5rem; /* Adjusted to match the image's heading size */
+  font-size: 2.5rem;
   font-weight: 700;
-  color: #333; /* Slightly lighter than your original #2a2a2a to match the image */
+  color: #2D3041; /* Replaced #333 with dark blue-gray */
   text-transform: uppercase;
-  letter-spacing: 1px; /* Reduced letter spacing for better match */
+  letter-spacing: 1px;
   text-align: center;
-  margin-bottom: 2rem; /* Reduced margin to match the image */
+  margin-bottom: 2rem;
   position: relative;
 }
 
 .luxury-heading::after {
   content: '';
-  width: 80px; /* Slightly smaller to match the image's proportions */
-  height: 2px; /* Thinner line */
-  background: #f4c4c7; /* Softer pink to match the image's aesthetic */
+  width: 80px;
+  height: 2px;
+  background: #f95c7b; /* Replaced soft pink with vibrant red */
   position: absolute;
   bottom: -8px;
   left: 50%;
@@ -1900,31 +1943,32 @@ html {
 .luxury-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.8rem; /* Reduced gap to match the image's tighter spacing */
+  gap: 1.8rem;
   align-items: stretch;
 }
 
 .luxury-card {
-  background: #595454; /* Keeping your original card background */
-  border-radius: 15px; /* Slightly larger radius to match the image */
+  background: #2D3041; /* Replaced #595454 with dark blue-gray */
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Softer shadow to match the image */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  min-height: 350px; /* Adjusted to match the image's card proportions */
+  min-height: 350px;
   display: flex;
   flex-direction: column;
+  bottom: 30px;
 }
 
 .luxury-card:hover {
-  transform: translateY(-8px); /* Slightly reduced hover lift to match the image's subtle effect */
-  box-shadow: 0 10px 20px rgba(47, 46, 46, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(45, 48, 65, 0.3); /* Adjusted shadow to match #2D3041 */
 }
 
 .luxury-image-wrapper {
   position: relative;
   overflow: hidden;
-  height: 200px; /* Adjusted to match the image's proportions */
+  height: 200px;
 }
 
 .luxury-image-wrapper img {
@@ -1943,8 +1987,8 @@ html {
   bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
-  background: #f4c4c7; /* Adjusted to match the image's pink tone */
-  color: #333; /* Lighter text color to match the image */
+  background: #cb2848; /* Replaced soft pink with vibrant red */
+  color: #2D3041; /* Replaced #333 with dark blue-gray */
   padding: 0.5rem 1.2rem;
   border-radius: 20px;
   font-weight: 600;
@@ -1958,23 +2002,22 @@ html {
 }
 
 .luxury-card h3 {
-  font-size: 1.5rem; /* Adjusted to match the image's title size */
-  font-weight: 700; /* Added weight to match the image */
-  color: #f4c4c7; /* Adjusted to a softer pink */
-  padding: 1rem 1.2rem 0; /* Reduced padding to match the image */
+  font-size: 1.5rem;
+  font-weight: 750;
+  color: #f6f2f2; /* Replaced soft pink with vibrant red */
+  padding: 1rem 1.2rem 0;
   margin: 0;
-  text-transform: uppercase; /* Added to match the image */
+  text-transform: uppercase;
 }
 
 .luxury-card p {
-  color: #cccccc; /* Keeping your original color */
-  padding: 0.8rem 1.2rem; /* Adjusted padding to match the image */
-  font-size: 1.5rem; /* Reduced to match the image's description size */
-  line-height: 1.5; /* Adjusted for better readability */
+  color: #d9d9d9; /* Lightened slightly for contrast against #2D3041 */
+  padding: 0.8rem 1.2rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
   flex-grow: 1;
 }
 
-/* Modal styles remain unchanged as they aren't visible in the image */
 .luxury-modal {
   display: none;
   position: fixed;
@@ -1982,20 +2025,20 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(45, 48, 65, 0.8); /* Adjusted to use #2D3041 with opacity */
   z-index: 1000;
   justify-content: center;
   align-items: center;
 }
 
 .luxury-modal-content {
-  background: #2a2a2a;
+  background: #2D3041; /* Replaced #2a2a2a with dark blue-gray */
   border-radius: 12px;
   max-width: 600px;
   width: 90%;
   padding: 2rem;
   position: relative;
-  box-shadow: 0 10px 20px rgba(78, 76, 76, 0.5);
+  box-shadow: 0 10px 20px rgba(45, 48, 65, 0.5);
 }
 
 .luxury-close-btn {
@@ -2003,26 +2046,25 @@ html {
   top: 1rem;
   right: 1rem;
   font-size: 1.5rem;
-  color: #f8d7da;
+  color: #C9183C; /* Replaced soft pink with vibrant red */
   cursor: pointer;
 }
 
 .luxury-modal-content h3 {
   font-size: 2rem;
-  color: #f8d7da;
+  color: #C9183C; /* Replaced soft pink with vibrant red */
   margin-bottom: 1rem;
 }
 
 .luxury-modal-content p {
-  color: #cccccc;
+  color: #d9d9d9; /* Lightened for contrast */
   line-height: 1.6;
   margin-bottom: 1rem;
-  
 }
 
 .luxury-modal-btn {
-  background: #f8d7da;
-  color: #2a2a2a;
+  background: #C9183C; /* Replaced soft pink with vibrant red */
+  color: #2D3041; /* Replaced #2a2a2a with dark blue-gray */
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
   font-weight: 600;
@@ -2036,13 +2078,13 @@ html {
 }
 
 .luxury-more-details p {
-  color: #cccccc;
+  color: #d9d9d9;
   line-height: 1.6;
 }
 
 .luxury-close-details {
-  background: #978e8e;
-  color: #f8d7da;
+  background: #4a4e64; /* Slightly lighter shade of #2D3041 for contrast */
+  color: #C9183C; /* Replaced soft pink with vibrant red */
   padding: 0.5rem 1rem;
   border-radius: 25px;
   font-weight: 600;
@@ -2050,7 +2092,6 @@ html {
   display: inline-block;
   margin-top: 1rem;
 }
-
 /* Contact Section */
 .reach-out {
   padding: 120px 0;
