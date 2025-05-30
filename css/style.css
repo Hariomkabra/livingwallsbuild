@@ -451,6 +451,7 @@
             }
         }
         /* End of Book Free Consultation Popup */
+        
 /* Hero Section */
 .hero {
   position: relative;
@@ -1282,24 +1283,28 @@ html {
 .why-us {
   padding: 50px 0;
   background-color: var(--color-gray-100);
+  text-align: center; /* Ensure all content is centered by default */
 }
 
 .why-us .container {
+  max-width: 1200px; /* Added for consistent container width */
+  margin: 0 auto; /* Center the container */
   font-size: 2.2rem;
   font-weight: bold;
 }
 
 .why-us h2 {
   font-size: 3.5rem;
-  text-align: center;
-  margin-bottom: 10px;
+  margin: 0 auto 20px; /* Adjusted margin for better spacing */
   color: #333;
+  line-height: 1.2; /* Added for better readability */
 }
 
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+  padding: 0 20px; /* Added padding for better spacing on smaller screens */
 }
 
 .card {
@@ -1315,7 +1320,7 @@ html {
 }
 
 .card:hover {
-  transform: scale(1.1);
+  transform: scale(1.05); /* Reduced scale for smoother effect */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -1327,8 +1332,8 @@ html {
 }
 
 .card:hover .card-img {
-  width: 58px;
-  height: 58px;
+  width: 48px; /* Slightly reduced for subtlety */
+  height: 48px;
   filter: brightness(1.2);
 }
 
@@ -1336,11 +1341,12 @@ html {
   font-size: 1.8rem;
   color: #333;
   font-weight: bold;
+  margin: 0; /* Added for consistency */
   transition: font-size var(--transition-fast);
 }
 
 .card:hover h3 {
-  font-size: 1.6rem;
+  font-size: 1.7rem; /* Adjusted for less drastic change */
 }
 
 .card p {
@@ -1348,13 +1354,13 @@ html {
   color: #666;
   line-height: 1.5;
   font-weight: normal;
+  margin: 0; /* Added for consistency */
   transition: font-size var(--transition-fast);
 }
 
 .card:hover p {
-  font-size: 1.4rem;
+  font-size: 1.3rem; /* Adjusted for subtle change */
 }
-
 /* Tracker Section */
 /*
 .tracker-section {
