@@ -301,13 +301,20 @@
   text-align: center;
 }
 
+.recent-works h2 {
+  font-size: 36px; /* Larger heading size */
+  font-weight: bold; /* Emphasize the heading */
+  margin-bottom: 40px; /* Space below the heading */
+  color: #333; /* Darker color for contrast */
+  line-height: 1.2; /* Improved readability */
+}
+
 .works-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+  padding: 25px;
 }
-
-
 
 .flip-card {
   perspective: 1000px;
@@ -383,7 +390,6 @@
 .work-item:hover .location-overlay {
   opacity: 1;
 }
-
 
 /* Project Details */
 .project-details {
@@ -995,6 +1001,7 @@ html {
     .how-it-works h2 {
       font-size: 3.2rem;
       margin-bottom: 10px;
+        font-weight: bold;
     }
 
     .carousel {
