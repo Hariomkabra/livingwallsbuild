@@ -11,7 +11,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    /* Existing CSS with Updated FAQs Section to Ensure Answers Are Visible */
+    :root {
+      --primary-color: #2D3041;
+      --accent-color: #C9183C;
+    }
 
     .main-container {
       max-width: 1600px;
@@ -109,6 +112,12 @@
       line-height: 1.5;
     }
 
+    .form-section-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
     .form-container, .card, .contact-info {
       background-color: white;
       padding: 25px;
@@ -125,72 +134,117 @@
     .form-container label {
       display: block;
       color: var(--primary-color);
-      font-size: 2.20rem;
+      font-size: 1.2rem;
       font-weight: 500;
-      margin-bottom: 5px;
+      margin-bottom: 8px;
       transition: color 0.3s ease;
+      position: relative;
+      transform: translateY(10px);
+      opacity: 0;
+      animation: slideInLabel 0.5s ease forwards;
+      animation-delay: calc(0.1s * var(--input-index));
     }
 
     .form-container input, .form-container textarea {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       margin-bottom: 15px;
       border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 1.5rem;
+      border-radius: 6px;
+      font-size: 1rem;
       outline: none;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+      transition: all 0.3s ease;
+      background: linear-gradient(145deg, #f0f0f0, #ffffff);
+      box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: slideInInput 0.5s ease forwards;
+      animation-delay: calc(0.2s * var(--input-index));
     }
 
     .form-container input:focus, .form-container textarea:focus {
       border-color: var(--accent-color);
-      box-shadow: 0 0 5px rgba(201, 24, 60, 0.3);
-      transform: scale(1.02);
+      box-shadow: 0 0 10px rgba(201, 24, 60, 0.4), 0 0 20px rgba(201, 24, 60, 0.2);
+      transform: scale(1.02) translateY(0);
+      background: #fff;
     }
 
     .form-container button {
-      background-color: var(--accent-color);
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      font-size: 1.5rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
       position: relative;
+      background: linear-gradient(45deg, var(--accent-color), #e63946);
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      cursor: pointer;
       overflow: hidden;
+      transition: all 0.3s ease;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: slideInInput 0.5s ease forwards;
+      animation-delay: 0.6s;
+      width: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-container button:hover {
+      background: linear-gradient(45deg, var(--primary-color), #3f4255);
+      box-shadow: 0 0 15px rgba(45, 48, 65, 0.5);
+      transform: translateY(-2px) scale(1.05);
     }
 
     .form-container button::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-      transition: left 0.5s ease;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
     }
 
     .form-container button:hover::before {
-      left: 100%;
+      width: 300px;
+      height: 300px;
     }
 
-    .form-container button:hover {
-      background-color: var(--primary-color);
-      transform: scale(1.05);
+    .form-container button.loading::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      border: 3px solid #fff;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      transform: translate(-50%, -50%);
     }
 
-    .form-message, .ticket-message {
+    .form-container button.loading span {
+      opacity: 0;
+    }
+
+    .form-message {
       color: var(--accent-color);
-      font-size: 1.5rem;
-      margin-top: 10px;
+      font-size: 1rem;
+      margin-top: 15px;
       display: none;
       opacity: 0;
-      transition: opacity 0.5s ease;
+      transform: translateY(10px);
+      animation: fadeInMessage 0.5s ease forwards;
+      text-align: center;
     }
 
-    .form-message.show, .ticket-message.show {
+    .form-message.show {
       display: block;
       opacity: 1;
     }
@@ -266,7 +320,6 @@
       opacity: 1;
     }
 
-    /* Updated FAQs Section - Accordion Style with Visible Answers */
     .faq-container {
       max-width: 800px;
       margin: 0 auto;
@@ -310,24 +363,23 @@
     }
 
     .faq-answer {
-      padding: 15px; /* Always show padding */
+      padding: 15px;
       font-size: 1rem;
       color: #4a4a4a;
       line-height: 1.5;
-      display: block; /* Ensure answers are visible by default */
+      display: block;
       transition: opacity 0.3s ease, max-height 0.3s ease;
-      max-height: 200px; /* Default max-height to show content */
-      opacity: 1; /* Ensure visibility */
+      max-height: 200px;
+      opacity: 1;
     }
 
     .faq-item:not(.active) .faq-answer {
       max-height: 0;
       opacity: 0;
-      padding: 0 15px; /* Smooth padding transition */
+      padding: 0 15px;
       overflow: hidden;
     }
 
-    /* Customer Support Highlights */
     .support-highlights {
       display: flex;
       flex-wrap: wrap;
@@ -339,7 +391,7 @@
     .highlight-card {
       flex: 1;
       min-width: 250px;
-      background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+      background: linear-gradient(135deg, #f4f0f0, #dee9eb);
       padding: 20px;
       border-radius: 10px;
       text-align: center;
@@ -374,7 +426,6 @@
       line-height: 1.5;
     }
 
-    /* Keyframes for Animations */
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -416,6 +467,45 @@
         left: 100%;
       }
     }
+
+    @keyframes slideInLabel {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInInput {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInMessage {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes spin {
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
   </style>
 </head>
 <body>
@@ -428,29 +518,26 @@
       <nav class="nav">
         <ul class="nav__list">
           <li><a href="index.html">Home</a></li>
-     
           <li><a href="packages.html">Construction Packages</a></li>
           <li><a href="#"> Design packages </a></li>
           <li><a href="calculator.html">Cost Calculator</a></li>
           <li><a href="work.html">Our Work</a></li>
-
-            <li class="dropdown">
-        <a href="#" class="dropdown-toggle">More ▾</a>
-         <ul class="dropdown-content">
-          <li><a href="about.html">About us</a></li>
-          <li><a href="contact.html">Contact us</a></li>
-          <li><a href="#">Blogs</a></li>
-          <li><a href="#">Testimonials</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Floor plans</a></li>
-          <li><a href="#">Designs</a></li>
-        </ul>
-      </li> 
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">More ▾</a>
+            <ul class="dropdown-content">
+              <li><a href="about.html">About us</a></li>
+              <li><a href="contact.html">Contact us</a></li>
+              <li><a href="#">Blogs</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Floor plans</a></li>
+              <li><a href="#">Designs</a></li>
+            </ul>
+          </li> 
         </ul>
       </nav>
 
-      <!-- RIGHT BUTTONS -->
       <div class="right-buttons">
         <a href="GetQuote.html" class="get-quote">Lets Talk </a>
         <a href="login.html" class="login-link" id="login-link">
@@ -471,16 +558,13 @@
     });
   </script>
 
-  <!-- WhatsApp Button -->
   <div style="position: fixed; bottom: 20px; right: 20px; z-index: 999;">
     <a href="https://wa.me/919146478677" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
       <img src="https://techfocus24.com/wp-content/uploads/2021/01/whatsapp-button.png" alt="WhatsApp Button" style="width: 200px; height: 70px;" />
     </a>
   </div>
 
-  <!-- Main Content -->
   <main class="main-container">
-    <!-- Hero Section with Image -->
     <section class="hero-section">
       <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Construction site">
       <div class="hero-overlay">
@@ -488,48 +572,31 @@
       </div>
     </section>
 
-    <!-- Contact Form -->
     <section class="section">
       <h2>Get in Touch</h2>
       <p>Have a question or need assistance? Fill out the form below, and our team will respond within 24 hours.</p>
-      <div class="form-container">
-        <form id="contactForm" onsubmit="handleSubmit(event)">
-          <div>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div>
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-          <button type="submit">Send Message</button>
-        </form>
-        <p id="formMessage" class="form-message">Your message has been sent successfully!</p>
-      </div>
-    </section>
-
-    <!-- Project Updates -->
-    <section class="section">
-      <h2>Project Updates</h2>
-      <div class="project-grid">
-        <div class="card" style="--card-index: 1;">
-          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Construction progress">
-          <h3>Downtown Office Complex</h3>
-          <p>Phase 2 is on track for completion by Q3 2025. Check back for updates!</p>
-        </div>
-        <div class="card" style="--card-index: 2;">
-          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Construction site">
-          <h3>Residential Development</h3>
-          <p>Foundation work completed. Framing begins next month.</p>
+      <div class="form-section-container">
+        <div class="form-container">
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div style="--input-index: 1;">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div style="--input-index: 2;">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div style="--input-index: 3;">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-button"><span>Submit</span></button>
+          </form>
+          <p id="formMessage" class="form-message">Your message has been sent successfully!</p>
         </div>
       </div>
     </section>
 
-    <!-- Updated FAQs Section with Visible Answers -->
     <section class="section">
       <h2>Frequently Asked Questions</h2>
       <div class="faq-container">
@@ -548,7 +615,7 @@
             <i class="fas fa-chevron-down"></i>
           </div>
           <div class="faq-answer">
-            <p>Use the contact form above or call our safety hotline at (555) 123-4567 immediately. We take safety concerns seriously and will address them promptly.</p>
+            <p>Use the form above or call our safety hotline at (555) 123-4567 immediately. We take safety concerns seriously and will address them promptly.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -580,7 +647,6 @@
         </div>
       </div>
 
-      <!-- Customer Support Highlights -->
       <div class="support-highlights">
         <div class="highlight-card" style="--highlight-index: 1;">
           <i class="fas fa-headset"></i>
@@ -600,22 +666,6 @@
       </div>
     </section>
 
-    <!-- Support Ticket Tracker -->
-    <section class="section">
-      <h2>Track Your Support Ticket</h2>
-      <div class="form-container">
-        <form id="ticketForm" onsubmit="handleTicketSubmit(event)">
-          <div>
-            <label for="ticketNumber">Ticket Number</label>
-            <input type="text" id="ticketNumber" name="ticketNumber" required>
-          </div>
-          <button type="submit">Check Status</button>
-        </form>
-        <p id="ticketMessage" class="ticket-message">Ticket status: In progress. We'll contact you soon.</p>
-      </div>
-    </section>
-
-    <!-- Contact Information -->
     <section class="section">
       <h2>Contact Information</h2>
       <div class="contact-info">
@@ -626,11 +676,9 @@
     </section>
   </main>
 
-  <!-- Footer Section -->
   <footer class="footer">
     <div class="footercontainer">
       <div class="footer-sections">
-        <!-- Column 1: Constructions -->
         <div class="footer-column">
           <h3>Constructions</h3>
           <ul>
@@ -647,7 +695,6 @@
           </ul>
         </div>
   
-        <!-- Column 2: Interiors -->
         <div class="footer-column">
           <h3>Interiors</h3>
           <ul>
@@ -662,7 +709,6 @@
           </ul>
         </div>
   
-        <!-- Column 3: Calculator -->
         <div class="footer-column">
           <h3>Calculator</h3>
           <ul>
@@ -678,7 +724,6 @@
           </ul>
         </div>
   
-        <!-- Column 4: Info -->
         <div class="footer-column">
           <h3>Your Floor Plan Solution</h3>
           <p>Find the perfect floor plan for your dream home. We offer a wide selection of customizable designs from top architects and designers.</p>
@@ -698,7 +743,6 @@
         </div>
       </div>
   
-      <!-- Optional links -->
       <div class="footer-links">
         <a href="#support">Support</a>
         <a href="#terms">Terms & Services</a>
@@ -708,7 +752,6 @@
   </footer>
   <hr>
 
-  <!-- New Footer Section -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-row">
@@ -757,7 +800,6 @@
   </footer>
   <hr>
 
-  <!-- Living Walls Construction - Extended Footer Section -->
   <section class="extended-footer">
     <div class="ext-container">
       <div class="ext-section">
@@ -795,7 +837,6 @@
     <hr>
   </section>
 
-  <!-- Living Walls Construction - Services Footer Section B2B -->
   <section class="construction-footer">
     <div class="footer-content">
       <h2>B2B Construction Services</h2>
@@ -849,29 +890,30 @@
     </div>
   </section>
 
-  <!-- End B2B -->
-
   <script>
-    // Form Submission Handlers
     function handleSubmit(event) {
       event.preventDefault();
+      const form = event.target;
+      const button = form.querySelector('.submit-button');
+      const buttonText = button.querySelector('span');
       const formMessage = document.getElementById('formMessage');
-      formMessage.classList.add('show');
-      document.getElementById('contactForm').reset();
+
+      button.classList.add('loading');
+      button.disabled = true;
+
+      setTimeout(() => {
+        button.classList.remove('loading');
+        button.disabled = false;
+        formMessage.classList.add('show');
+        form.reset();
+        setTimeout(() => {
+          formMessage.classList.remove('show');
+        }, 3000);
+      }, 2000);
     }
 
-    function handleTicketSubmit(event) {
-      event.preventDefault();
-      const ticketMessage = document.getElementById('ticketMessage');
-      ticketMessage.classList.add('show');
-      document.getElementById('ticketForm').reset();
-    }
-
-    // Accordion Functionality for FAQs with First Item Open by Default
     document.addEventListener('DOMContentLoaded', () => {
       const faqItems = document.querySelectorAll('.faq-item');
-
-      // Open the first FAQ item by default
       if (faqItems.length > 0) {
         faqItems[0].classList.add('active');
       }
@@ -879,23 +921,20 @@
       faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
         question.addEventListener('click', () => {
-          // Toggle active class on the clicked item
           const isActive = item.classList.contains('active');
-          faqItems.forEach(i => i.classList.remove('active')); // Close all
+          faqItems.forEach(i => i.classList.remove('active'));
           if (!isActive) {
-            item.classList.add('active'); // Open the clicked one
+            item.classList.add('active');
           }
         });
       });
     });
 
-    // Simple script for the mobile menu toggle (unchanged)
     document.querySelector('.menu-toggle')?.addEventListener('click', function() {
       document.querySelector('.nav').classList.toggle('nav--active');
       this.classList.toggle('menu-toggle--active');
     });
 
-    // Custom cursor (unchanged)
     const cursor = document.querySelector('.cursor');
     if (cursor) {
       document.addEventListener('mousemove', e => {
