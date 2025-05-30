@@ -29,7 +29,7 @@
     <nav class="nav">
       <ul class="nav__list">
         <li><a href="index.html">Home</a></li>
-        <li><a href="howit_work.html">How it Works</a></li>
+        <li><a href="#howit_work.html">How it Works</a></li>
         <li><a href="packages.html">Construction Packages</a></li>
         <li><a href="#"> Design packages </a></li>
         <li><a href="calculator.html">Cost Calculator</a></li>
@@ -120,6 +120,82 @@
   </a>
 </div>
     
+ <!-- End floating whats app -->
+
+   <!--how it work-->
+   <section class="how-it-workss">
+  <p style="color: #8c8a8a; letter-spacing: 1.1px;">HOW IT WORKS?</p>
+  <h2>See how it works</h2>
+
+  <div class="carousel">
+    <button class="arrow" onclick="changeStep(-1)">&#8592;</button>
+
+    <div class="step active">
+      <img src="https://img.freepik.com/free-vector/customer-support-flat-design-illustration_23-2148887720.jpg" alt="Step 1">
+      <div class="step-content">
+        <h4>Step 1</h4>
+        <h3>Book with us</h3>
+        <p>Begin your home construction journey by booking with us. You can set-up a meeting using our website, give us a call, or contact us via WhatsApp.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <img src="https://img.freepik.com/free-vector/foreman-architects-contractors-showing-site-engineer-building-plans-draftsbuilder-inspector-holding-blueprint-clipart_575670-995.jpg" alt="Step 2">
+      <div class="step-content">
+        <h4>Step 2</h4>
+        <h3>Meet Our Experts</h3>
+        <p>Our professional team will schedule a consultation and understand your construction requirements in detail.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <img src="https://www.shreejeeinfosolution.com/assets/img/sellexpert_home.svg" alt="Step 3">
+      <div class="step-content">
+        <h4>Step 3</h4>
+        <h3>Complete Your Design</h3>
+        <p>Our team crafts your ideal home based on your preferences, using Virtual Reality for real-time adjustments. Once the design is perfected, we’ll create a budget to bring your vision to life.</p>
+      </div>
+    </div>
+
+    
+    <div class="step">
+      <img src="https://img.freepik.com/premium-vector/man-grimacing-hands-ears-laptop-displaying-fake-news-headline-frustration-disbelief-evident-his-expression-as-he-shields-himself-from-false-information-cartoon-vector-illustration_1016-17563.jpg" alt="Step 3">
+      <div class="step-content">
+        <h4>Step 4</h4>
+        <h3>Monitor Your Construction</h3>
+        <p>As the building phase begins, our mobile app keeps you updated. Track daily progress from anywhere, ensuring that your dream home is coming together as expected.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <img src="https://img.freepik.com/premium-vector/happy-family-with-house-concept-illustration-mortgage-buying-house-real-estate_113065-211.jpg?w=360" alt="Step 3">
+      <div class="step-content">
+        <h4>Step 5</h4>
+        <h3>Move In</h3>
+        <p>After performing over 1000 thorough quality checks, we ensure your home meets the planned budget and timeline. Handing you the keys to your happiness is our greatest joy.</p>
+      </div>
+    </div>
+
+
+    <button class="arrow" onclick="changeStep(1)">&#8594;</button>
+  </div>
+</section>
+
+<script>
+  let currentStep = 0;
+  const steps = document.querySelectorAll('.step');
+
+  function changeStep(direction) {
+    steps[currentStep].classList.remove('active');
+    currentStep = (currentStep + direction + steps.length) % steps.length;
+    steps[currentStep].classList.add('active');
+  }
+</script>
+
+
+ 
+
+ <!--End how it work-->
 
     <!--Recent Works Section-->
 <section class="recent-works" id="recent-works">
@@ -366,112 +442,7 @@
 
      <!-- our 3d work-->
 
-      <!--how it work-->
-
-  <section class="how-it-works">
-    <div class="container">
-      <h2><span class="highlight">How it works</span></h2>
-      <p class="subtitle">Our steps are simple and easy to understand: Plan - Build - Track - Settle in.</p>
-      <div class="steps-container">
-        <div class="step" data-step="1">
-          <span class="step-number">1</span>
-          <p class="step-title">Book with us</p>
-        </div>
-        <div class="step-line"></div>
-        <div class="step" data-step="2">
-          <span class="step-number">2</span>
-          <p class="step-title">Meet Our Experts</p>
-        </div>
-        <div class="step-line"></div>
-        <div class="step" data-step="3">
-          <span class="step-number">3</span>
-          <p class="step-title">Complete Your Design</p>
-        </div>
-        <div class="step-line"></div>
-        <div class="step" data-step="4">
-          <span class="step-number">4</span>
-          <p class="step-title">Monitor Your Construction </p>
-        </div>
-        <div class="step-line"></div>
-        <div class="step" data-step="5">
-          <span class="step-number">5</span>
-          <p class="step-title">Track & Build</p>
-        </div>
-        <div class="step-line"></div>
-        <div class="step" data-step="6">
-          <span class="step-number">6</span>
-          <p class="step-title">Move In </p>
-        </div>
-      </div>
-      <div class="details-container">
-        <div class="details active" data-step="1">
-          <img src="https://strapi-cdn.downtobid.com/Screenshot_2024_06_25_at_11_02_27_PM_min_84caa78a8c/Screenshot_2024_06_25_at_11_02_27_PM_min_84caa78a8c.png" alt="Raise a Request">
-          <p>Submit your project details and requirements to get started.</p>
-        </div>
-        <div class="details" data-step="2">
-          <img src="https://media.istockphoto.com/id/1189913170/photo/engineer-and-businessman-handshake-at-construction-site.jpg?s=612x612&w=0&k=20&c=LAGNJv533KQKPrb71GiavOCaTKVI5IfR_QioV_t88hM=" alt="Meet our Expert">
-          <p>Schedule a consultation with our expert team for personalized advice.</p>
-        </div>
-        <div class="details" data-step="3">
-          <img src="https://a-us.storyblok.com/f/1005140/480x322/41a86620e7/construction-contract.png" alt="Book with Us">
-          <p>Finalize your booking and confirm the project timeline.</p>
-        </div>
-        <div class="details" data-step="4">
-          <img src="https://bicjsc.com/upload/3site/files/TinTucNoiBo/ThietKeXayDungLagi/thiet-ke-xay-dung.jpg" alt="Receive Designs">
-          <p>Receive tailored design proposals for your approval.</p>
-        </div>
-        <div class="details" data-step="5">
-          <img src="https://www.sydle.com/blog/assets/post/dcr-67926c6ea210ee6f3de8b526/AdobeStock_637648103.webp" alt="Track & Transact">
-          <p>Track progress and handle transactions securely online.</p>
-        </div>
-        <div class="details" data-step="6">
-          <img src="https://builtrighthomesva.com/wp-content/uploads/2021/01/concept-of-housing-for-family-1024x683.jpg" alt="Settle In">
-          <p>Move into your completed, custom-built space.</p>
-        </div>
-  </section>
-  <script>
-    document.querySelectorAll('.step').forEach(step => {
-      step.addEventListener('click', () => {
-        const stepNumber = step.getAttribute('data-step');
-        document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-        step.classList.add('active');
-        document.querySelectorAll('.details').forEach(detail => {
-          detail.classList.remove('active');
-          if (detail.getAttribute('data-step') === stepNumber) {
-            detail.classList.add('active');
-          }
-        });
-      });
-    });
-  </script>
-
-  <script>
-    let currentStep = 0;
-    const steps = document.querySelectorAll('.step');
-    const details = document.querySelectorAll('.details');
-    const totalSteps = steps.length;
-  
-    function showStep(index) {
-      // Remove active classes
-      steps.forEach(step => step.classList.remove('active'));
-      details.forEach(detail => detail.classList.remove('active'));
-  
-      // Add active class to current
-      steps[index].classList.add('active');
-      details[index].classList.add('active');
-    }
-  
-    function nextStep() {
-      currentStep = (currentStep + 1) % totalSteps;
-      showStep(currentStep);
-    }
-  
-    // Start cycling every 3 seconds
-    showStep(currentStep); // Show first step
-    setInterval(nextStep, 3000);
-  </script>
-
- <!--End how it work-->
+   
   
     <!--Construction Services-->
 

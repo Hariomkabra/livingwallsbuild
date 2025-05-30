@@ -22,7 +22,7 @@
     <nav class="nav">
       <ul class="nav__list">
         <li><a href="index.html">Home</a></li>
-        <li><a href="howit_work.html">How it Works</a></li>
+        <li><a href="#howit_work.html">How it Works</a></li>
         <li><a href="packages.html">Construction Packages</a></li>
         <li><a href="#"> Design packages </a></li>
         <li><a href="calculator.html">Cost Calculator</a></li>
@@ -78,157 +78,11 @@
 
 <style>
 
-    .how-it-workss {
-      max-width: 1100px;
-      margin: 120px auto;
-      padding: 50px;
-      text-align: center;
-    }
-
-    .how-it-workss h2 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    .carousel {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: relative;
-      margin-top: 40px;
-    }
-
-    .arrow {
-      font-size: 3rem;
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-      color: #333;
-    }
-
-    .step {
-      display: none;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      text-align: left;
-      max-width: 100%;
-      gap: 20px;
-    }
-
-    .step.active {
-      display: flex;
-    }
-
-    .step img {
-      width: 400px;
-      max-width: 100%;
-    }
-
-    .step-content {
-      max-width: 400px;
-    }
-
-    .step-content h4 {
-      font-size: 2.2rem;
-      margin-bottom: 8px;
-      color: #494848;
-    }
-
-    .step-content h3 {
-      font-size: 2.50rem;
-      margin-bottom: 10px;
-      color: #222;
-    }
-
-    .step-content p {
-      color: #4e4d4d;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 768px) {
-      .step {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .carousel {
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
+  
   </style>
 </head>
 <body>
 
-<section class="how-it-workss">
-  <p style="color: #999; letter-spacing: 1px;">HOW IT WORKS?</p>
-  <h2>See how it works</h2>
-
-  <div class="carousel">
-    <button class="arrow" onclick="changeStep(-1)">&#8592;</button>
-
-    <div class="step active">
-      <img src="https://img.freepik.com/free-vector/customer-support-flat-design-illustration_23-2148887720.jpg" alt="Step 1">
-      <div class="step-content">
-        <h4>Step 1</h4>
-        <h3>Book with us</h3>
-        <p>Begin your home construction journey by booking with us. You can set-up a meeting using our website, give us a call, or contact us via WhatsApp.</p>
-      </div>
-    </div>
-
-    <div class="step">
-      <img src="https://img.freepik.com/free-vector/foreman-architects-contractors-showing-site-engineer-building-plans-draftsbuilder-inspector-holding-blueprint-clipart_575670-995.jpg" alt="Step 2">
-      <div class="step-content">
-        <h4>Step 2</h4>
-        <h3>Meet Our Experts</h3>
-        <p>Our professional team will schedule a consultation and understand your construction requirements in detail.</p>
-      </div>
-    </div>
-
-    <div class="step">
-      <img src="https://www.shreejeeinfosolution.com/assets/img/sellexpert_home.svg" alt="Step 3">
-      <div class="step-content">
-        <h4>Step 3</h4>
-        <h3>Complete Your Design</h3>
-        <p>Our team crafts your ideal home based on your preferences, using Virtual Reality for real-time adjustments. Once the design is perfected, we’ll create a budget to bring your vision to life.</p>
-      </div>
-    </div>
-
-    
-    <div class="step">
-      <img src="https://img.freepik.com/premium-vector/man-grimacing-hands-ears-laptop-displaying-fake-news-headline-frustration-disbelief-evident-his-expression-as-he-shields-himself-from-false-information-cartoon-vector-illustration_1016-17563.jpg" alt="Step 3">
-      <div class="step-content">
-        <h4>Step 4</h4>
-        <h3>Monitor Your Construction</h3>
-        <p>As the building phase begins, our mobile app keeps you updated. Track daily progress from anywhere, ensuring that your dream home is coming together as expected.</p>
-      </div>
-    </div>
-
-    <div class="step">
-      <img src="https://img.freepik.com/premium-vector/happy-family-with-house-concept-illustration-mortgage-buying-house-real-estate_113065-211.jpg?w=360" alt="Step 3">
-      <div class="step-content">
-        <h4>Step 5</h4>
-        <h3>Move In</h3>
-        <p>After performing over 1000 thorough quality checks, we ensure your home meets the planned budget and timeline. Handing you the keys to your happiness is our greatest joy.</p>
-      </div>
-    </div>
-
-
-    <button class="arrow" onclick="changeStep(1)">&#8594;</button>
-  </div>
-</section>
-
-<script>
-  let currentStep = 0;
-  const steps = document.querySelectorAll('.step');
-
-  function changeStep(direction) {
-    steps[currentStep].classList.remove('active');
-    currentStep = (currentStep + direction + steps.length) % steps.length;
-    steps[currentStep].classList.add('active');
-  }
-</script>
 
 </body>
 </html>
