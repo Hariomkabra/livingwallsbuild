@@ -188,16 +188,7 @@
     currentStep = (currentStep + direction + steps.length) % steps.length;
     steps[currentStep].classList.add('active');
   }
-
-  let currentStep = 0;
-const steps = document.querySelectorAll('.step');
-const totalSteps = steps.length;
-
-function changeStep(direction) {
-  steps[currentStep].classList.remove('active');
-  currentStep = (currentStep + direction + totalSteps) % totalSteps;
-  steps[currentStep].classList.add('active');
-}
+  
 </script>
 
 
