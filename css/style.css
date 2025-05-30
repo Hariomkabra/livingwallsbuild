@@ -2164,7 +2164,7 @@ html {
 }
 
 .luxury-card {
-  background: #2D3041; /* Replaced #595454 with dark blue-gray */
+  background: #3a4161; /* Replaced #595454 with dark blue-gray */
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -2241,7 +2241,7 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(45, 48, 65, 0.8); /* Adjusted to use #2D3041 with opacity */
+
   z-index: 1000;
   justify-content: center;
   align-items: center;
