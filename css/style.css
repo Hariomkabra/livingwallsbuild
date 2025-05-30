@@ -2204,7 +2204,7 @@ html {
   left: 50%;
   transform: translateX(-50%);
   background: #cb2848; /* Replaced soft pink with vibrant red */
-  color: #2D3041; /* Replaced #333 with dark blue-gray */
+  color: #f7f7fa; /* Replaced #333 with dark blue-gray */
   padding: 0.5rem 1.2rem;
   border-radius: 20px;
   font-weight: 600;
@@ -2262,13 +2262,13 @@ html {
   top: 1rem;
   right: 1rem;
   font-size: 1.5rem;
-  color: #C9183C; /* Replaced soft pink with vibrant red */
+  color: #f3ebec; /* Replaced soft pink with vibrant red */
   cursor: pointer;
 }
 
 .luxury-modal-content h3 {
   font-size: 2rem;
-  color: #C9183C; /* Replaced soft pink with vibrant red */
+  color: #fdf3f5; /* Replaced soft pink with vibrant red */
   margin-bottom: 1rem;
 }
 
@@ -2280,7 +2280,7 @@ html {
 
 .luxury-modal-btn {
   background: #C9183C; /* Replaced soft pink with vibrant red */
-  color: #2D3041; /* Replaced #2a2a2a with dark blue-gray */
+  color: #f2f3fb; /* Replaced #2a2a2a with dark blue-gray */
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
   font-weight: 600;
@@ -2739,4 +2739,3 @@ html {
     grid-template-columns: 1fr;
   }
 }
-
