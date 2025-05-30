@@ -77,41 +77,68 @@
 
 <!--Hero Section -->
 <div class="hero">
-  <div class="hero-slide active" style="background-image: url('https://img1.wsimg.com/isteam/getty/2166714891/:/cr=t:12.35%25,l:0%25,w:100%25,h:75.3%25/rs=w:2125,h:1063,cg:true');">
-    <div class="hero-content">
-      <h1>Modern Infrastructure</h1>
-      <p>Designing structures that stand the test of time.</p>
-    </div>
-  </div>
-
-  <div class="hero-slide" style="background-image: url('https://images.squarespace-cdn.com/content/v1/5e82939525f53d07de1d635c/1593140315014-OZ0ABA51K3L52SXDDVYC/Mason%26Wales-Clyde-Crib-Clyde-Houses-Contemporary-Hero.jpg?format=2500w');">
-    <div class="hero-content">
-        <h1>YOUR DREAM HOME EXPERTS</h1>
-      <p>A RESIDENTIAL CONSTRUCTION COMPANY.</p>
+    <div class="hero-slide active">
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src=" https://videos.pexels.com/video-files/1197802/1197802-hd_1920_1080_25fps.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
      
+      <div class="hero-content">
+        <h1>Modern Infrastructure</h1>
+        <p>Designing structures that stand the test of time.</p>
+      </div>
+    </div>
+
+    <div class="hero-slide">
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="https://videos.pexels.com/video-files/7578542/7578542-uhd_2560_1440_30fps.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="hero-content">
+        <h1>YOUR DREAM HOME EXPERTS</h1>
+        <p>A RESIDENTIAL CONSTRUCTION COMPANY.</p>
+      </div>
+    </div>
+
+    <div class="hero-slide">
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="https://videos.pexels.com/video-files/7578547/7578547-uhd_2560_1440_30fps.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="hero-content">
+        <h1>EXPERTLY BUILT.</h1>
+        <p>Your Residential Construction Solution.</p>
+      </div>
     </div>
   </div>
 
-  <div class="hero-slide" style="background-image: url('https://images.squarespace-cdn.com/content/v1/5e82939525f53d07de1d635c/94c35342-c6df-470d-9899-fd5467b618a1/Belfast+Terrace+Devitt+1.jpg?format=2500w');">
-    <div class="hero-content">
-      <h1>EXPERTLY BUILT.</h1>
-      <p>Your Residential Construction Solution.</p>
-    </div>
-  </div>
-</div>
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+    const videos = document.querySelectorAll('.hero-video');
 
-<script>
-  let currentIndex = 0;
-  const slides = document.querySelectorAll('.hero-slide');
+    // Play only the active slide's video
+    function updateSlide() {
+      slides.forEach((slide, index) => {
+        if (index === currentIndex) {
+          slide.classList.add('active');
+          videos[index].play();
+        } else {
+          slide.classList.remove('active');
+          videos[index].pause(); // Pause non-active videos to save resources
+        }
+      });
+    }
 
-  setInterval(() => {
-    slides[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex + 1) % slides.length;
-    slides[currentIndex].classList.add('active');
-  }, 4000); // Change every 5 seconds
-</script>
+    // Initial setup
+    updateSlide();
 
-
+    // Change slide every 4 seconds
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateSlide();
+    }, 5000);
+  </script>
 
     <!-- floating whats app -->
      <div style="position: fixed; bottom: 20px; right: 20px; z-index: 999;">
