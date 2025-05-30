@@ -245,6 +245,212 @@
   display: block;
 }
 
+/* book free consultation */
+   /* Overlay for dimming background */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Popup container */
+        .popup {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            transform: scale(0.7);
+            opacity: 0;
+        }
+
+        /* Popup header */
+        .popup h2 {
+            font-size: 20px;
+            color: #2D3041;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .popup h2 span {
+            text-decoration: underline;
+            text-decoration-color: #2D3041;
+            text-decoration-thickness: 2px;
+        }
+
+        /* Form styling */
+        .popup form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .popup label {
+            text-align: left;
+            font-size: 14px;
+            color: #2D3041;
+            font-weight: 500;
+        }
+
+        .popup input,
+        .popup select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #2D3041;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #2D3041;
+            box-sizing: border-box;
+        }
+
+        .popup input:focus,
+        .popup select:focus {
+            outline: none;
+            border-color: #C9183C;
+        }
+
+        /* Submit button */
+        .popup .submit-btn {
+            background-color: #C9183C;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .popup .submit-btn:hover {
+            background-color: #a61432;
+            transform: translateY(-2px);
+        }
+
+        /* Thank You message styling */
+        .thank-you-message {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            opacity: 0;
+            background: linear-gradient(135deg, #fff5f5, #ffebeb);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(201, 24, 60, 0.2);
+        }
+
+        .thank-you-message h3 {
+            font-size: 18px;
+            color: #2D3041;
+            margin: 0;
+        }
+
+        .thank-you-message p {
+            font-size: 14px;
+            color: #2D3041;
+            margin: 0;
+        }
+
+        /* Checkmark icon */
+        .checkmark {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #C9183C;
+            position: relative;
+            transform: scale(0);
+        }
+
+        .checkmark::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 16px;
+            width: 8px;
+            height: 16px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+        }
+
+        /* Close button */
+        .popup .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            color: #C9183C;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .popup .close-btn:hover {
+            color: #a61432;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .popup {
+                padding: 15px;
+                max-width: 300px;
+            }
+
+            .popup h2 {
+                font-size: 18px;
+            }
+
+            .popup label,
+            .popup input,
+            .popup select {
+                font-size: 12px;
+            }
+
+            .popup .submit-btn {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .thank-you-message {
+                padding: 15px;
+            }
+
+            .thank-you-message h3 {
+                font-size: 16px;
+            }
+
+            .thank-you-message p {
+                font-size: 12px;
+            }
+
+            .checkmark {
+                width: 30px;
+                height: 30px;
+            }
+
+            .checkmark::before {
+                top: 9px;
+                left: 12px;
+                width: 6px;
+                height: 12px;
+                border-width: 0 2px 2px 0;
+            }
+        }
+        /* End of Book Free Consultation Popup */
 /* Hero Section */
 .hero {
   position: relative;
@@ -282,16 +488,16 @@
 
 .hero h1 {
   font-size: 48px;
-  font-weight: bold;
+  font-weight: bolder;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: #ff4040;
 }
 
 .hero p {
-  font-size: 32px;
+  font-size: 34px;
   line-height: 1.7;
-  color: #ffffff;
-  font-weight: bold;
+  color: #ff4040;
+  font-weight: bolder;
 }
 
 /* Recent Works */
@@ -1605,6 +1811,7 @@ html {
   font-size: 22px;
   margin-bottom: 16px;
   color: #333;
+  font-weight: bold;
 }
 
 .text-content p {

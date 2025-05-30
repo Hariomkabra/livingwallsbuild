@@ -13,14 +13,13 @@
   <style>
     /* Luxurious Theme Styles */
     :root {
-      --primary-color: #2D2D2D; /* Light black */
-      --accent-color: #FF6B6B; /* Light red */
-      --secondary-color: #F5E6E6; /* Light pinkish-white for contrast */
-      --text-color: #211f1f;
-      --card-bg: rgba(255, 107, 107, 0.1); /* Light red with transparency */
+      --primary-color: #2D3041; /* Dark blue-gray */
+      --accent-color: #C9183C; /* Vibrant red */
+      --secondary-color: #E6E8ED; /* Light gray for contrast */
+      --text-color: #1A1C2B;
+      --card-bg: rgba(201, 24, 60, 0.1); /* Vibrant red with transparency */
       --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
-
 
     .container {
       max-width: 1200px;
@@ -38,7 +37,7 @@
       font-size: 3.5rem;
       text-align: center;
       margin-bottom: 20px;
-      color:black;
+      color: var(--text-color);
       animation: fadeInDown 1s ease-out;
     }
 
@@ -46,7 +45,7 @@
       font-size: 2.2rem;
       text-align: center;
       margin-bottom: 40px;
-      color: black;
+      color: var(--text-color);
       opacity: 0;
       animation: fadeInUp 1s ease-out 0.3s forwards;
     }
@@ -71,6 +70,7 @@
 
     .filter-btn:hover, .filter-btn.active {
       background: var(--accent-color);
+      color: #FFFFFF;
       transform: scale(1.1);
       box-shadow: var(--shadow);
     }
@@ -111,18 +111,18 @@
     .work__title {
       font-size: 1.7rem;
       margin-bottom: 10px;
-      color: black;
+      color: var(--text-color);
     }
 
     .work__category {
       font-size: 2rem;
-      color: black;
+      color: var(--text-color);
       margin-bottom: 15px;
     }
 
     .view-details-btn {
       background: var(--accent-color);
-      color: var(--text-color);
+      color: #FFFFFF;
       border: none;
       padding: 10px 20px;
       border-radius: 25px;
@@ -131,7 +131,7 @@
     }
 
     .view-details-btn:hover {
-      background: #E55A5A; /* Darker light red */
+      background: #A51232; /* Darker vibrant red */
       transform: translateY(-3px);
     }
 
@@ -149,45 +149,159 @@
     }
 
     .modal-content {
-      background: rgba(223, 146, 114, 0.581);
+      background: rgba(201, 24, 60, 0.2);
       backdrop-filter: blur(10px);
       border-radius: 15px;
-      max-width: 800px;
+      max-width: 900px;
       margin: 5% auto;
-      padding: 20px;
+      padding: 30px;
       position: relative;
       animation: zoomIn 0.5s ease-out;
-      font-size: large;
-      color: white;
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
     }
-
 
     .close-btn {
       position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 4rem;
-      color: black;
+      top: 15px;
+      right: 25px;
+      font-size: 3rem;
+      color: var(--text-color);
       cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .close-btn:hover {
+      color: var(--accent-color);
+    }
+
+    .modal-body {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .modal-slider {
+      position: relative;
+      width: 100%;
+      height: 450px;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
     }
 
     .modal-images {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 10px;
-      margin-bottom: 20px;
+      display: flex;
+      transition: transform 0.5s ease-in-out;
     }
 
     .modal-images img {
       width: 100%;
-      height: 150px;
+      height: 450px;
       object-fit: cover;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      border-radius: 15px;
     }
 
-    .modal-images img:hover {
-      transform: scale(1.05);
+    .slider-controls {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+    }
+
+    .slider-dot {
+      width: 12px;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .slider-dot:hover {
+      transform: scale(1.2);
+    }
+
+    .slider-dot.active {
+      background: #FFFFFF;
+      transform: scale(1.4);
+    }
+
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: #FFFFFF;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background 0.3s ease;
+    }
+
+    .slider-arrow:hover {
+      background: var(--accent-color);
+    }
+
+    .slider-arrow.left {
+      left: 10px;
+    }
+
+    .slider-arrow.right {
+      right: 10px;
+    }
+
+    .modal-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #FFFFFF;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .modal-category {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--secondary-color);
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .modal-description {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #E6E8ED;
+      text-align: justify;
+      margin-bottom: 20px;
+      padding: 0 20px;
+    }
+
+    .modal-features {
+      list-style: none;
+      padding: 0 20px;
+      margin-bottom: 20px;
+    }
+
+    .modal-features li {
+      font-size: 1.1rem;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .modal-features li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: var(--accent-color);
+      font-size: 1.2rem;
     }
 
     /* Future Homes Section */
@@ -200,14 +314,14 @@
 
     .future-homes h2 {
       font-size: 2.7rem;
-      color: black;
+      color: var(--text-color);
       margin-bottom: 20px;
       animation: fadeInDown 1s ease-out;
     }
 
     .future-homes .description {
       font-size: 1.4rem;
-      color: black;
+      color: var(--text-color);
       max-width: 800px;
       margin: 0 auto 40px;
       opacity: 0;
@@ -245,7 +359,6 @@
       color: var(--text-color);
     }
 
-   
     /* Menu Toggle */
     .menu-toggle {
       display: none;
@@ -272,6 +385,28 @@
       .nav__list li {
         margin: 10px 0;
       }
+      .modal-content {
+        padding: 20px;
+        max-width: 90%;
+      }
+      .modal-slider {
+        height: 300px;
+      }
+      .modal-images img {
+        height: 300px;
+      }
+      .modal-title {
+        font-size: 2rem;
+      }
+      .modal-category {
+        font-size: 1.3rem;
+      }
+      .modal-description {
+        font-size: 1rem;
+      }
+      .modal-features li {
+        font-size: 1rem;
+      }
     }
 
     /* Animations */
@@ -297,7 +432,6 @@
   </style>
 </head>
 <body>
- 
   <header class="header">
     <div class="containerr">
       <div class="logo">
@@ -311,6 +445,21 @@
           <li><a href="#"> Design packages </a></li>
           <li><a href="calculator.html">Cost Calculator</a></li>
           <li><a href="work.html">Our Work</a></li>
+
+            <li class="dropdown">
+        <a href="#" class="dropdown-toggle">More ▾</a>
+         <ul class="dropdown-content">
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Floor plans</a></li>
+          <li><a href="#">Designs</a></li>
+        </ul>
+      </li> 
+      
         </ul>
       </nav>
       <div class="right-buttons">
@@ -418,23 +567,39 @@
         <div class="modal-content">
           <span class="close-btn" onclick="closeModal()">×</span>
           <div class="modal-body">
-            <div class="modal-images">
-              <img id="modal-image-1" src="" alt="Project Image 1">
-              <img id="modal-image-2" src="" alt="Project Image 2">
-              <img id="modal-image-3" src="" alt="Project Image 3">
-              <img id="modal-image-4" src="" alt="Project Image 4">
-              <img id="modal-image-5" src="" alt="Project Image 5">
-              <img id="modal-image-6" src="" alt="Project Image 6">
+            <div class="modal-slider">
+              <div class="modal-images" id="modal-images">
+                <img id="modal-image-1" src="" alt="Project Image 1">
+                <img id="modal-image-2" src="" alt="Project Image 2">
+                <img id="modal-image-3" src="" alt="Project Image 3">
+                <img id="modal-image-4" src="" alt="Project Image 4">
+                <img id="modal-image-5" src="" alt="Project Image 5">
+                <img id="modal-image-6" src="" alt="Project Image 6">
+              </div>
+              <div class="slider-arrow left" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></div>
+              <div class="slider-arrow right" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></div>
+              <div class="slider-controls" id="slider-controls">
+                <div class="slider-dot" data-index="0"></div>
+                <div class="slider-dot" data-index="1"></div>
+                <div class="slider-dot" data-index="2"></div>
+                <div class="slider-dot" data-index="3"></div>
+                <div class="slider-dot" data-index="4"></div>
+                <div class="slider-dot" data-index="5"></div>
+              </div>
             </div>
-            <h3 id="modal-title"></h3>
-            <p id="modal-category"></p>
-            <p id="modal-description"></p>
-            <ul id="modal-features"></ul>
+            <h3 id="modal-title" class="modal-title"></h3>
+            <p id="modal-category" class="modal-category"></p>
+            <p id="modal-description" class="modal-description"></p>
+            <ul id="modal-features" class="modal-features"></ul>
           </div>
         </div>
       </div>
     </section>
     <script>
+      let currentSlide = 0;
+      let slideInterval;
+      let totalSlides = 0;
+
       document.querySelectorAll('.filter-btn').forEach(button => {
         button.addEventListener('click', () => {
           document.querySelector('.filter-btn.active').classList.remove('active');
@@ -540,6 +705,8 @@
 
       function openModal(projectId) {
         const project = projects[projectId];
+        const modalImages = document.getElementById('modal-images');
+        const dots = document.querySelectorAll('.slider-dot');
         document.getElementById('modal-title').textContent = project.title;
         document.getElementById('modal-category').textContent = project.category;
         document.getElementById('modal-description').textContent = project.description;
@@ -556,10 +723,64 @@
           li.textContent = feature;
           featuresList.appendChild(li);
         });
+
+        // Initialize slider
+        totalSlides = project.images.length;
+        currentSlide = 0;
+        modalImages.style.transform = `translateX(0)`;
+        dots.forEach(dot => {
+          dot.style.display = project.images[dot.getAttribute('data-index')] ? 'block' : 'none';
+          dot.classList.remove('active');
+        });
+        if (dots[0]) dots[0].classList.add('active');
+
+        // Start auto-slide
+        clearInterval(slideInterval);
+        slideInterval = setInterval(() => {
+          currentSlide = (currentSlide + 1) % totalSlides;
+          modalImages.style.transform = `translateX(-${currentSlide * 100}%)`;
+          dots.forEach(dot => dot.classList.remove('active'));
+          if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+        }, 3000);
+
+        // Add dot click functionality
+        dots.forEach(dot => {
+          dot.addEventListener('click', () => {
+            currentSlide = parseInt(dot.getAttribute('data-index'));
+            modalImages.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach(d => d.classList.remove('active'));
+            dot.classList.add('active');
+            clearInterval(slideInterval);
+            slideInterval = setInterval(() => {
+              currentSlide = (currentSlide + 1) % totalSlides;
+              modalImages.style.transform = `translateX(-${currentSlide * 100}%)`;
+              dots.forEach(d => d.classList.remove('active'));
+              if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+            }, 3000);
+          });
+        });
+
         document.getElementById('project-modal').style.display = 'block';
       }
 
+      function changeSlide(direction) {
+        const modalImages = document.getElementById('modal-images');
+        const dots = document.querySelectorAll('.slider-dot');
+        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+        modalImages.style.transform = `translateX(-${currentSlide * 100}%)`;
+        dots.forEach(dot => dot.classList.remove('active'));
+        if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+        clearInterval(slideInterval);
+        slideInterval = setInterval(() => {
+          currentSlide = (currentSlide + 1) % totalSlides;
+          modalImages.style.transform = `translateX(-${currentSlide * 100}%)`;
+          dots.forEach(d => d.classList.remove('active'));
+          if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+        }, 3000);
+      }
+
       function closeModal() {
+        clearInterval(slideInterval);
         document.getElementById('project-modal').style.display = 'none';
       }
 
