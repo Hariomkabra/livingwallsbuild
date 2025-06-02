@@ -109,16 +109,17 @@
   width: 100%;
   z-index: 800;
   background-color: transparent;
-  transition: all var(--transition-fast);
+  transition: all var(--transition-fast, 0.3s);
 }
 
 .header.scrolled {
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  max-height: 90px;
+  max-height: 70px;
 }
 
+/* Container */
 .containerr {
   width: 90%;
   max-width: 1600px;
@@ -127,21 +128,32 @@
   align-items: center;
   justify-content: space-between;
   font-weight: bold;
+  padding: 10px 0;
 }
 
 /* Logo */
 .logo-img {
-  height: 120px;
-  width: 210px;
+  height: 80px;
+  width: 140px;
   object-fit: contain;
   display: block;
-  margin: 0 auto;
-  transition: transform var(--transition-fast), opacity var(--transition-fast);
+  transition: transform var(--transition-fast, 0.3s), opacity var(--transition-fast, 0.3s);
 }
 
 .logo-img:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   opacity: 0.9;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #222;
+  cursor: pointer;
+  padding: 10px;
 }
 
 /* Navigation */
@@ -149,7 +161,7 @@
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 30px;
+  gap: 20px;
   margin: 0;
   padding: 0;
 }
@@ -159,17 +171,18 @@
   color: #222;
   font-size: 16px;
   font-weight: 500;
-  transition: color var(--transition-fast);
+  transition: color var(--transition-fast, 0.3s);
 }
 
 .nav__list a:hover {
   color: #e84118;
 }
 
+/* Right Buttons */
 .right-buttons {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 15px;
 }
 
 .login-link {
@@ -178,50 +191,45 @@
   color: #000;
   text-decoration: none;
   font-weight: 500;
-  font-size: 15px;
-}
-
-.login-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
+  font-size: 14px;
 }
 
 .get-quote {
   background-color: #e32222db;
   color: white;
-  padding: 4px 8px;
-  border-radius: 12px;
+  padding: 6px 12px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 400;
-  transition: background-color var(--transition-fast);
+  font-size: 14px;
+  transition: background-color var(--transition-fast, 0.3s);
 }
 
 .get-quote:hover {
   background-color: #f53535db;
 }
 
-/* Dropdown */
+/* Dropdown (for when uncommented) */
 .dropdown {
   position: relative;
 }
 
-.dropdown > a {
+.dropdown-toggle {
   cursor: pointer;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 35px;
+  top: 30px;
   left: 0;
   background-color: white;
   border: 1px solid #ddd;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  min-width: 180px;
+  min-width: 160px;
   z-index: 999;
-  padding: 10px 0;
+  padding: 8px 0;
 }
 
 .dropdown-content li {
@@ -230,10 +238,10 @@
 
 .dropdown-content a {
   display: block;
-  padding: 10px 20px;
+  padding: 8px 16px;
   color: #222;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
   transition: background-color 0.1s ease;
 }
 
@@ -243,6 +251,100 @@
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .containerr {
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  .nav__list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 20px;
+    gap: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav__list.active {
+    display: flex;
+  }
+
+  .right-buttons {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 220px; /* Adjust based on nav__list height */
+    left: 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 10px;
+  }
+
+  .right-buttons.active {
+    display: flex;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    border: none;
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+  }
+
+  .logo-img {
+    height: 60px;
+    width: 100px;
+  }
+}
+
+/* Very Small Screens */
+@media screen and (max-width: 480px) {
+  .containerr {
+    padding: 8px 0;
+  }
+
+  .logo-img {
+    height: 50px;
+    width: 90px;
+  }
+
+  .hamburger {
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  .nav__list {
+    top: 60px;
+    padding: 15px;
+  }
+
+  .right-buttons {
+    top: 200px; /* Adjust for smaller nav */
+  }
+
+  .get-quote {
+    padding: 5px 10px;
+    font-size: 13px;
+  }
 }
 
 /* book free consultation */
@@ -1779,63 +1881,66 @@ html {
 }
 
 /* Quality Checks */
+
+/* Quality Checks */
 .section-heading {
   text-align: center;
-  margin: 40px 0 20px;
-  font-size: 4rem;
+  margin: 2rem 0 1rem;
+  font-size: 2.5rem; /* Reduced for smaller screens */
 }
 
 .section-heading h1 {
-  font-size: 24px;
+  font-size: 1.5rem; /* Adjusted for mobile */
   font-weight: bolder;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
 }
 
 .quality-banner {
   display: flex;
+  flex-direction: row; /* Default row layout */
   justify-content: space-between;
   background-color: #fff;
-  padding: 40px;
+  padding: 2rem; /* Reduced padding */
   border-radius: 10px;
   max-width: 1200px;
-  margin: 40px auto;
+  margin: 2rem auto;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .left-section {
   flex: 1;
-  padding-right: 40px;
+  padding-right: 2rem; /* Reduced padding */
   display: flex;
   align-items: center;
 }
 
 .logo-and-text {
   display: flex;
-  gap: 20px;
+  gap: 1rem; /* Reduced gap */
   align-items: flex-start;
 }
 
 .text-content h2 {
-  font-size: 22px;
-  margin-bottom: 16px;
+  font-size: 1.375rem; /* Adjusted for mobile */
+  margin-bottom: 1rem;
   color: #333;
   font-weight: bold;
 }
 
 .text-content p {
   color: #666;
-  font-size: 15px;
+  font-size: 0.9375rem; /* Adjusted for mobile */
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 
 .know-more-btn {
   background-color: #f2654a;
   color: #fff;
   border: none;
-  padding: 12px 18px;
-  font-size: 14px;
+  padding: 0.75rem 1.125rem; /* Adjusted padding */
+  font-size: 0.875rem; /* Adjusted for mobile */
   border-radius: 6px;
   cursor: pointer;
 }
@@ -1856,27 +1961,100 @@ html {
 
 .quality-checks {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 1rem;
+  left: 1rem;
   background: #f2654a;
   color: #fff;
-  padding: 8px 14px;
-  font-size: 14px;
+  padding: 0.5rem 0.875rem; /* Adjusted padding */
+  font-size: 0.875rem; /* Adjusted for mobile */
   font-weight: bold;
   border-radius: 6px;
 }
 
 .consultation-btn {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  bottom: 1rem;
+  left: 1rem;
   background-color: #f2654a;
   color: #fff;
   border: none;
-  padding: 12px 18px;
-  font-size: 14px;
+  padding: 0.75rem 1.125rem; /* Adjusted padding */
+  font-size: 0.875rem; /* Adjusted for mobile */
   border-radius: 6px;
   cursor: pointer;
+}
+
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
+  .quality-banner {
+    flex-direction: column; /* Stack vertically on mobile */
+    padding: 1.5rem; /* Further reduced padding */
+  }
+
+  .left-section {
+    padding-right: 0;
+    margin-bottom: 1.5rem; /* Space between sections */
+  }
+
+  .logo-and-text {
+    flex-direction: column; /* Stack logo and text vertically */
+    align-items: center;
+    text-align: center;
+  }
+
+  .text-content h2 {
+    font-size: 1.25rem; /* Further reduced for smaller screens */
+  }
+
+  .text-content p {
+    font-size: 0.875rem;
+  }
+
+  .know-more-btn {
+    width: 100%; /* Full-width button */
+    text-align: center;
+  }
+
+  .right-section {
+    justify-content: center;
+  }
+
+  .checklist-img {
+    max-width: 100%; /* Full width on mobile */
+  }
+
+  .quality-checks {
+    font-size: 0.75rem; /* Smaller text for mobile */
+    padding: 0.4rem 0.7rem;
+  }
+
+  .consultation-btn {
+    font-size: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    width: auto; /* Auto width for better fit */
+  }
+}
+
+@media (max-width: 480px) {
+  .section-heading {
+    font-size: 2rem;
+  }
+
+  .section-heading h1 {
+    font-size: 1.25rem;
+  }
+
+  .quality-banner {
+    padding: 1rem;
+  }
+
+  .text-content h2 {
+    font-size: 1.125rem;
+  }
+
+  .text-content p {
+    font-size: 0.8125rem;
+  }
 }
 
 /* Why Choose Modern */
@@ -2742,3 +2920,6 @@ html {
     grid-template-columns: 1fr;
   }
 }
+
+
+
