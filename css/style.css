@@ -1039,7 +1039,7 @@
 }
 
 .tab.active {
-  background-color: #ff4848;
+  background-color: #e32222db;
   color: #fff;
   border-color: #6b48ff;
 }
@@ -1069,7 +1069,7 @@
 .package-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  border-color: #e63946;
+  border-color: #e32222db;
 }
 
 .package-card h3 {
@@ -1080,7 +1080,7 @@
 }
 
 .package-card:hover h3 {
-  color: #e63946;
+  color:#e32222db;
 }
 
 .package-card p {
@@ -1114,7 +1114,7 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border-left: 5px solid #ef281e;
+  border-left: 5px solid #e32222db;
 }
 
 /* Stats Section */
@@ -1151,7 +1151,7 @@
   font-size: 48px;
   margin: 0;
   font-weight: bold;
-  color: var(--color-error);
+  color: #e32222db;
 }
 
 .stat-box p {
@@ -1177,7 +1177,7 @@
 }
 
 .btn-primary {
-  background-color: #a72828;
+  background-color: #e32222db;
   color: #fff;
   padding: 12px 25px;
   border-radius: 25px;
@@ -2495,7 +2495,7 @@ html {
 .footer-column,
 .ext-section {
   flex: 1 1 220px;
-  margin: 15px;
+  margin: 25px;
 }
 
 .footer-column h3,
@@ -2507,6 +2507,7 @@ html {
   color: #fff;
   margin-bottom: 15px;
   font-weight: 600;
+  letter-spacing: 0.75px;
 }
 
 .footer-column ul,
@@ -2524,13 +2525,15 @@ html {
 .ext-services li {
   color: #ccc;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
   transition: color var(--transition-fast);
+  letter-spacing: 0.5px;
 }
 
 .footer-column ul li a:hover {
   color: #fff;
   text-decoration: underline;
+  
 }
 
 .footer-links {
