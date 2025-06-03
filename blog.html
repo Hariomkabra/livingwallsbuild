@@ -10,10 +10,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="auth.js"></script>
+
+
   <link rel="stylesheet" href="styles.css">
+
+
 </head>
 <body>
+
 <!-- Header HTML (to be included in all pages, e.g., index.html, packages.html, etc.) -->
 <header class="header">
   <div class="containerr">
@@ -31,9 +40,9 @@
         <li><a href="design_packages.html">Design Packages</a></li>
         <li><a href="calculator.html">Cost Calculator</a></li>
         <li><a href="work.html">Our Work</a></li>
-        <li class="dropdown">
-     <!--    <a href="#" class="dropdown-toggle">More ▾</a>
-         <ul class="dropdown-content">
+<!--        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">More ▾</a>
+          <ul class="dropdown-content">
             <li><a href="about.html">About us</a></li>
             <li><a href="contact.html">Contact us</a></li>
             <li><a href="blog.html">Blogs</a></li>
@@ -42,7 +51,7 @@
             <li><a href="#">FAQ</a></li>
             <li><a href="#">Floor plans</a></li>
             <li><a href="#">Designs</a></li>
-          </ul> -->
+          </ul>
         </li>
       </ul>
     </nav>
@@ -67,253 +76,12 @@
 </script>
 
 
-<!-- Floating WhatsApp Button -->
-  <div class="whatsapp-button-container">
-    <a href="https://wa.me/919146478677" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
-      <img src="https://techfocus24.com/wp-content/uploads/2021/01/whatsapp-button.png" alt="WhatsApp Button" class="whatsapp-button-image" />
-    </a>
-  </div>
 
-
-<!--MAin section  -->
+<!--Hero Section -->
 
 
 
-  <style>
-  
-    .features-section {
-      max-width: 1000px;
-      margin: 50px auto;
-      padding-top: 80px;
-    }
-
-    .feature-block {
-      display: flex;
-      gap: 30px;
-      margin-bottom: 50px;
-      align-items: flex-start;
-      flex-wrap: wrap;
-    }
-
-    .feature-block img {
-    
-      height: 280px;
-      width: 380px;
-    }
-
-    .feature-content {
-      flex: 1;
-      min-width: 250px;
-    padding-top: 40px;
-    }
-
-    .feature-content h3 {
-      font-size: 1.5rem;
-      color: #333;
-      margin-bottom: 10px;
-    }
-
-    .feature-content ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .feature-content ul li {
-      position: relative;
-      padding-left: 20px;
-      margin-bottom: 10px;
-    }
-
-    .feature-content ul li::before {
-      content: "■";
-      color: #f04c24;
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      .feature-block {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .feature-content {
-        text-align: left;
-      }
-    }
-  </style>
-
-
-<section class="features-section">
-
-  <!-- Feature 1 -->
-  <div class="feature-block">
-    <img src="https://d2d4xyu1zrrrws.cloudfront.net/website/web-ui/assets/images/illustrations/illustration-safemoney.svg" alt="Safe Money Transaction" alt="Escrow Model">
-    <div class="feature-content">
-      <h3>Escrow Payment Security</h3>
-      <ul>
-        <li>All payments are secured via our Escrow system to ensure contractors are paid only after successful stage completion.</li>
-        <li>Each project is split into multiple phases, allowing transparent tracking and controlled disbursal of funds.</li>
-        <li>Once quality is verified by our experts, payments are automatically released to the respective contractors.</li>
-        <li>This mechanism ensures your investment is protected throughout the construction process.</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Feature 2 -->
-  <div class="feature-block">
-    <img src="https://cdn-icons-png.flaticon.com/512/12702/12702611.png" alt="Transparency">
-    <div class="feature-content">
-      <h3>Absolute Transparency</h3>
-      <ul>
-        <li>Every step of your project is logged and shared in real-time through our digital dashboard.</li>
-        <li>Get full access to contracts, timelines, vendor details, and billing information — all in one place.</li>
-        <li>Eliminate confusion with a centralized communication platform for customers, engineers, and contractors.</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Feature 3 -->
-  <div class="feature-block">
-    <img src="https://d2d4xyu1zrrrws.cloudfront.net/website/web-ui/assets/images/illustrations/illustration-quality.svg" alt="Quality Check">
-    <div class="feature-content">
-      <h3>Assured Quality Control</h3>
-      <ul>
-        <li>Every site is inspected with a 450+ point checklist approved by certified quality engineers.</li>
-        <li>From foundation to finishing, each stage is validated using photos, videos, and real-time data tracking.</li>
-        <li>Automated tools alert the team in case of any deviation from quality benchmarks.</li>
-        <li>Our commitment: Industry-grade construction quality, every single time.</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Feature 4 -->
-  <div class="feature-block">
-    <img src="https://d2d4xyu1zrrrws.cloudfront.net/website/web-ui/assets/images/illustrations/illustration-time.svg" alt="Zero Delays">
-    <div class="feature-content">
-      <h3>Zero Delays</h3>
-      <ul>
-        <li>Our strict workflow and real-time monitoring ensure timelines are adhered to without compromise.</li>
-        <li>If a delay occurs, we provide clear accountability and offer compensation as per contract terms.</li>
-        <li>Intelligent scheduling algorithms help us optimize contractor availability and material delivery.</li>
-        <li>We value your time and deliver on our promises, always.</li>
-      </ul>
-    </div>
-  </div>
-
-</section>
-
-
-<!-- differ -->
-    <section class="differ-section">
-  <div class="differ-header">
-    <h2>How We Differ</h2>
-    <p>From design to delivery, we make your construction journey smarter, faster, and fully transparent.</p>
-  </div>
-  
-  <div class="comparison-table">
-    <div class="column header">
-      
-    </div>
-    <div class="column header">
-
-    </div>
-
-    <div class="column">
-      <ul>
-        <li><strong>Live project tracking</strong> through mobile app & client dashboard</li>
-        <li><strong>300+ smart quality checks</strong> with real-time reports</li>
-        <li><strong>Fixed pricing</strong> with zero cost surprises</li>
-        <li><strong>Contractor accountability</strong> enforced with delay penalties</li>
-        <li><strong>Milestone-based payments</strong> tied to work verification</li>
-        <li><strong>15-year warranty</strong> on structural & foundational work</li>
-        <li><strong>Verified professionals</strong> and background-checked workforce</li>
-        <li><strong>Transparent breakdown</strong> of each cost item before work begins</li>
-      </ul>
-    </div>
-
-    <div class="column">
-      <ul>
-        <li>Clients need to <strong>visit the site physically</strong> to monitor progress</li>
-        <li><strong>No formal quality checks</strong>, mostly verbal feedback</li>
-        <li><strong>Frequent cost overruns</strong> and unexpected budget hikes</li>
-        <li><strong>No timelines or accountability</strong> for delays</li>
-        <li><strong>Full/advance payment</strong> even before work is verified</li>
-        <li><strong>No warranty</strong> or post-completion guarantees</li>
-        <li><strong>Unverified labor</strong> and unknown subcontractors</li>
-        <li><strong>Vague quotations</strong> with hidden or ambiguous charges</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-
-<style>
-    .differ-section {
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 40px 20px;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.differ-header h2 {
-  font-size: 32px;
-  color: #222;
-  margin-bottom: 10px;
-}
-
-.differ-header p {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 30px;
-}
-
-.comparison-table {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
-}
-
-.column {
-  padding: 25px 30px;
-}
-
-
-.column.header h3 {
-  margin: 0;
-}
-
-.column ul {
-  list-style: none;
-  padding: 0;
-}
-
-.column ul li {
-  margin-bottom: 15px;
-  padding-left: 20px;
-  position: relative;
-  font-size: 15px;
-  color: #333;
-}
-
-.column ul li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  color: #2ecc71;
-}
-
-</style>
-  <!--footer section-->
-
-    
+<!--End FAQ's-->
     <!--footer section -->
     <footer class="footer">
       <div class="footercontainer">
@@ -546,7 +314,6 @@
 
  <!--EndB2B-->
 
-
   <script>
     // Simple script for the mobile menu toggle
     document.querySelector('.menu-toggle').addEventListener('click', function() {
@@ -568,6 +335,5 @@
       }, 500);
     });
   </script>
-   <script src="auth.js"></script>
 </body>
 </html>
