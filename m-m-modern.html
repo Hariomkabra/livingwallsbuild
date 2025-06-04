@@ -91,187 +91,330 @@
 
 
 
-<!--main section -->
-<section class="blog-layout">
-  <div class="main-blog">
-    <div class="blog-card">
-      <img src="https://molathzsmarthome.com/wp-content/uploads/2022/08/Home-Tech-6-1024x547.jpg" alt="Blog 1" class="blog-image" />
-      <div class="blog-content">
-        <h3>Smart Home Materials in 2025</h3>
-        <p>Discover how building materials are evolving to support automation and sustainability.</p>
-        <a href="smart_home.html" class="read-more">Read More</a>
-      </div>
+<!-- Main Content -->
+    <style>
+  
+
+        .post-container {
+            max-width: 1200px;
+            margin: clamp(80px, 15vh, 100px) auto 2rem;
+            padding: 0 clamp(0.5rem, 2vw, 1rem);
+            display: flex;
+            gap: clamp(1rem, 3vw, 2rem);
+        }
+
+        .main-content {
+            flex: 3;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .post-header img {
+            width: 100%;
+            height: clamp(200px, 50vw, 400px);
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .post-content {
+            padding: clamp(1rem, 3vw, 2rem);
+        }
+
+        .post-content h1 {
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .post-content p {
+            font-size: clamp(1.265rem, 3vw, 1.4rem);
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 2.5rem;
+        }
+
+        .post-content h2 {
+            font-size: clamp(2.2rem, 4vw, 1.5rem);
+            color: #1a1a1a;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .post-content ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-content ul li {
+            font-size: clamp(1.165rem, 3vw, 1rem);
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 30vw, 200px), 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: clamp(100px, 25vw, 150px);
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            loading: lazy;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
+            background-color: #d4af37;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            touch-action: manipulation;
+        }
+
+        .cta-button:hover {
+            background-color: #b8972e;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            order: -1;
+            flex: 1;
+            position: sticky;
+            top: clamp(80px, 15vh, 100px);
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            font-size: clamp(1.8rem, 7vw, 2.2rem);
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .sidebar ul li a {
+            color: #d4af37;
+            text-decoration: none;
+            font-size: clamp(1.2rem, 3vw, 1.3rem);
+            transition: color 0.3s ease;
+            padding: 0.6rem;
+            display: block;
+            touch-action: manipulation;
+        }
+
+        .sidebar ul li a:hover {
+            color: #b8972e;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            touch-action: none;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+
+        .lightbox .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            cursor: pointer;
+            padding: 0.5rem;
+            touch-action: manipulation;
+        }
+
+     
+
+        /* Animations */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0.5rem 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .post-container {
+                flex-direction: column;
+            }
+
+            .main-content {
+                order: 1;
+            }
+
+            .sidebar {
+                order: 0;
+                position: static;
+                margin: 1rem 0;
+            }
+
+            .post-header img {
+                height: clamp(150px, 40vw, 250px);
+            }
+
+            .post-content h1 {
+                font-size: clamp(1.2rem, 4vw, 1.5rem);
+            }
+
+            .post-content h2 {
+                font-size: clamp(1rem, 3.5vw, 1.2rem);
+            }
+
+            .post-content p, .post-content ul li {
+                font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            }
+
+            .gallery img {
+                height: clamp(80px, 20vw, 120px);
+            }
+
+            .cta-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: clamp(1.2rem, 4vw, 1.5rem);
+            }
+
+            nav ul li a {
+                font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            }
+
+            .post-container {
+                margin: 60px auto 1rem;
+            }
+
+            .sidebar {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+
+    <!-- Replace with your header -->
+
+
+    <div class="post-container">
+        <div class="main-content">
+            <div class="post-header">
+                <img src="https://midcenturyhome.com/wp-content/uploads/2021/02/Flinders-08-1024x683.jpeg" alt="Raintree House Chennai" loading="lazy">
+            </div>
+            <div class="post-content">
+                <h1>The influence of minimalism on architecture</h1>
+                <p>Minimalism in architecture, which became popular in the middle of the 17th century, continues to actively influence the appearance of modern cities and buildings. Its basic idea is to focus on the essence, simplifying forms and getting rid of everything superfluous. This approach emphasizes functionality and harmony of space, which was a significant step forward in the development of architecture.</p>
+                
+                <h2 id="architecture">Blending Modernism and Timelessness: Creating Spaces that Endure and Innovate</h2>
+                <p>The true magic happens when modernism and timelessness meet. By blending the sleek, functional aspects of modern design with the enduring principles of classic architecture, architects can create spaces that are both innovative and perpetually relevant. This fusion often results in designs that incorporate modern materials like glass and steel, but still maintain the beauty and balance of older architectural traditions. For example, the design of Eclipse of Classic follows a modern design with a classical facade, showcasing a blend of designs. The juxtaposition of open, airy spaces with balanced proportions ensures that the design remains both contemporary and classic, resonating across generations.</p>
+                
+                <h2 id="climate">It is greedom from the passion to posssess.</h2>
+                <p>Modern culture has bought into the lie that the good life is found in accumulating things—in possessing as much as possible. They believe that more is better and have inadvertently subscribed to the idea that happiness can be purchased at a department store.
+                    <br>
+                    But they are wrong. Embracing minimalism brings freedom from the all-consuming passion to possess. It steps off the treadmill of consumerism and dares to seek happiness elsewhere. It values relationships, experiences, and soul-care. It lets us see all that we already have and reminds us to be grateful.</p>
+                
+                
+                
+                <h2 id="features">Key Features</h2>
+                <ul>
+                    <li>Simplicity and Functionalism</li>
+                    <li>Clean Lines and Geometric Shapes</li>
+                    <li>Natural Light and Open Floor Plans</li>
+                    <li>Streamlined and Uncluttered Aesthetic</li>
+                    <li>Limited and Monochromatic Palette</li>
+                    <li>Open Spaces and Natural Lighti</li>
+                </ul>
+                
+                <h2 id="gallery">Gallery</h2>
+                <div class="gallery">
+                    <img src="https://www.designqandy.com/blogs/wp-content/uploads/2025/05/05-768x768.png" alt="Living Room" data-full="https://via.placeholder.com/1000x600?text=Living+Room" loading="lazy">
+                    <img src="https://www.designqandy.com/blogs/wp-content/uploads/2025/05/09-768x768.png" alt="Koi Pond" data-full="https://via.placeholder.com/1000x600?text=Koi+Pond" loading="lazy">
+                    <img src="https://www.designqandy.com/blogs/wp-content/uploads/2025/05/10-768x768.png" alt="Master Bedroom" data-full="https://via.placeholder.com/1000x600?text=Master+Bedroom" loading="lazy">
+                    <img src="https://www.designqandy.com/blogs/wp-content/uploads/2025/05/12-768x768.png" alt="Entrance Court" data-full="https://via.placeholder.com/1000x600?text=Entrance+Court" loading="lazy">
+                    <img src="https://www.designqandy.com/blogs/wp-content/uploads/2022/07/Top-10-Accessories-for-Your-New-Kitchen-768x512.webp" alt="Entrance Court" data-full="https://via.placeholder.com/1000x600?text=Entrance+Court" loading="lazy">
+                    <img src="https://www.designqandy.com/blogs/wp-content/uploads/2022/01/Bedroom-tropical-768x432.jpg" alt="Entrance Court" data-full="https://via.placeholder.com/1000x600?text=Entrance+Court" loading="lazy">
+                   
+                </div>
+                
+                <h2 id="why">Why Minimalist Design?</h2>
+                <p>Minimalism in architecture is not just the rejection of excessive decoration, but an entire philosophy that fundamentally changed the perception of space and the structure of buildings. The rejection of overload and emphasis on the purity of forms became the basis of a new approach to design, where every detail matters. The influence of minimalism has deeply penetrated into modern architectural practices, becoming not only a style, but also a way of human interaction with the surrounding world. Let’s find out how this trend has shaped the image of modern megacities and what ideas it has brought to the architectural heritage of the 21st century.</p>
+                
+                <a href="contact.html" class="cta-button" aria-label="Inquire about Raintree House">Inquire Now</a>
+            </div>
+        </div>
+       <div class="sidebar">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#architecture" aria-label="Go to Architectural Vision section">Minimalism on architecture</a></li>
+                <li><a href="#climate" aria-label="Go to Climate-Responsive Design section">Modernism and Timelessness</a></li>
+                <li><a href="#climate" aria-label="Go to Passion to Possess section">Passion to Possess</a></li>
+                <li><a href="#features" aria-label="Go to Key Features section">Key Features</a></li>
+                <li><a href="#gallery" aria-label="Go to Gallery section">Gallery</a></li>
+                <li><a href="#why" aria-label="Go to Why Minimalist Design section">Why Minimalist Design?</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="blog-card">
-      <img src="https://bestbees.com/wp-content/uploads/2024/02/Biophilia-and-biophilic-design-header.jpeg" alt="Blog 2" class="blog-image" />
-      <div class="blog-content">
-        <h3>Biophilic Design in Cities</h3>
-        <p>Explore the rising influence of nature-inspired designs in urban architecture.</p>
-        <a href="bio-design.html" class="read-more">Read More</a>
-      </div>
+
+    <div class="lightbox" id="lightbox">
+        <span class="close" onclick="closeLightbox()" aria-label="Close lightbox">×</span>
+        <img src="https://luxury-houses.net/wp-content/uploads/2022/07/Raintree-House-a-climate-responsive-Chennai-home-by-Khosla-Associates-14.jpg" id="lightbox-img" alt="Full-size gallery image">
     </div>
-    <div class="blog-card">
-      <img src="https://realty-eg.net/wp-content/uploads/2025/03/main-960x549.jpg" alt="Blog 3" class="blog-image" />
-      <div class="blog-content">
-        <h3>Minimalism Meets Modernism</h3>
-        <p>Learn how the minimal aesthetic is blending with cutting-edge modernist trends.</p>
-        <a href="m-m-modern.html" class="read-more">Read More</a>
-      </div>
-    </div>
-    <div class="blog-card">
-      <img src="https://luxury-houses.net/wp-content/uploads/2022/07/Raintree-House-a-climate-responsive-Chennai-home-by-Khosla-Associates-7.jpg" alt="Blog 4" class="blog-image" />
-      <div class="blog-content">
-        <h3>Climate-Responsive Homes</h3>
-        <p>Designing homes that adapt to changing climates—strategies and materials that matter.</p>
-        <a href="climate-res.html" class="read-more">Read More</a>
-      </div>
-    </div>
-  </div>
 
-  <aside class="trending-sidebar">
-    <h2>Trending Architecture</h2>
-    <div class="trending-slider">
-
-  <div class="video-item">
-    <video autoplay muted loop playsinline width="100%">
-      <source src="https://videos.pexels.com/video-files/5823838/5823838-sd_640_360_24fps.mp4" type="video/mp4">
-
-    </video>
-  </div>
-
-  <div class="video-item">
-    <video autoplay muted loop playsinline width="100%">
-      <source src="https://videos.pexels.com/video-files/10605590/10605590-sd_640_360_30fps.mp4" type="video/mp4">
-
-    </video>
-  </div>
-
-  <div class="video-item">
-    <video autoplay muted loop playsinline width="100%">
-      <source src="https://videos.pexels.com/video-files/7724302/7724302-hd_1920_1080_25fps.mp4" type="video/mp4">
-   
-    </video>
-  </div>
-    <div class="video-item">
-    <video autoplay muted loop playsinline width="100%">
-      <source src="https://videos.pexels.com/video-files/29466047/12684302_640_360_30fps.mp4" type="video/mp4">
-   
-    </video>
-
-  </div>
-
-  <div class="video-item">
-    <video autoplay muted loop playsinline width="100%">
-      <source src="https://videos.pexels.com/video-files/4307514/4307514-hd_1920_1080_30fps.mp4" type="video/mp4">
-
-    </video>
-  </div>
-
-   <div class="video-item">
-    <video autoplay muted loop playsinline width="100%">
-      <source src="https://videos.pexels.com/video-files/11630727/11630727-sd_640_360_25fps.mp4" type="video/mp4">
-
-    </video>
-  </div>
-
-</div>
-
-  </aside>
-</section>
-
-<style>
-.blog-layout {
-  display: flex;
-  gap: 30px;
-  padding: 140px 60px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.main-blog {
-  flex: 2 1 66%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  overflow-y: auto;
-}
-
-.blog-card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-}
-
-.blog-image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.blog-content { padding: 15px; }
-.blog-content h3 { font-size: 18px; color: #333; }
-.blog-content p { font-size: 14px; color: #555; margin-bottom: 15px; }
-.read-more { text-decoration: none; font-weight: bold; color: #e32222; }
-
-.trending-sidebar {
-  flex: 1 1 30%;
-  position: sticky;
-  top: 100px;
-  max-height: 80vh;
-  overflow: hidden;
-  background: #f9f9f9;
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.trending-sidebar h2 {
-  font-size: 20px;
-  margin-bottom: 15px;
-  color: #333;
-  text-align: center;
-}
-
-.trending-slider {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  animation: scroll-vertical 30s linear infinite;
-}
-
-
-.video-item iframe,
-.video-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 6px;
-  display: block;
-}
-
-@keyframes scroll-vertical {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-50%); }
-}
-
-@media screen and (max-width: 768px) {
-  .blog-layout {
-    flex-direction: column;
-  }
-  .trending-sidebar {
-    position: relative;
-    max-height: none;
-    top: unset;
-  }
-  .trending-slider {
-    animation: none;
-  }
-}
-</style>
-
-
-
+     
+    
 <!--End FAQ's-->
     <!--footer section -->
     <footer class="footer">
