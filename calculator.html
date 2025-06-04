@@ -346,49 +346,53 @@
 <body>
  <!-- Header HTML (to be included in all pages, e.g., index.html, packages.html, etc.) -->
 
- 
-  <header class="header">
-    <div class="containerr">
-      <div class="logo">
-        <a href="index.html">
-          <img src="img/logo-removebg.png" alt="LivinWalls" class="logo-img">
-        </a>
-      </div>
-      <button class="hamburger" aria-label="Toggle Menu">☰</button>
-      <nav class="nav">
-        <ul class="nav__list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#how-it-works">How it Works</a></li>
-          <li><a href="packages.html">Construction Packages</a></li>
-          <li><a href="design_packages.html">Design Packages</a></li>
-          <li><a href="calculator.html">Cost Calculator</a></li>
-          <li><a href="work.html">Our Work</a></li>
-          <li class="dropdown">
-       <!--     <a href="#" class="dropdown-toggle">More ▾</a>
-            <ul class="dropdown-content">
-              <li><a href="about.html">About us</a></li>
-              <li><a href="contact.html">Contact us</a></li>
-              <li><a href="blog.html">Blogs</a></li>
-              <li><a href="#">Testimonials</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Floor plans</a></li>
-              <li><a href="#">Designs</a></li>
-            </ul> -->
-          </li>
-        </ul>
-      </nav>
-      <div class="right-buttons">
-        <a href="GetQuote.html" class="get-quote">Lets Talk</a>
-        <a href="login.html" class="login-link" id="login-link">
-          <span id="login-text">Login</span>
-        </a>
-      </div>
+<header class="header">
+  <div class="containerr">
+    <div class="logo">
+      <a href="index.html" aria-label="Go to LivinWalls homepage">
+        <img src="img/logo-removebg.png" alt="LivinWalls Logo" class="logo-img">
+      </a>
     </div>
-  </header>
+    <button class="hamburger" aria-label="Toggle Menu">☰</button>
+    <nav class="nav" aria-label="Main Navigation">
+      <ul class="nav__list">
+        <li><a href="index.html" title="Home Page">Home</a></li>
+        <li><a href="#how-it-works" title="How LivinWalls Works">How it Works</a></li>
+        <li><a href="packages.html" title="View Construction Packages">Construction Packages</a></li>
+        <li><a href="design_packages.html" title="View Design Packages">Design Packages</a></li>
+        <li><a href="calculator.html" title="Estimate Construction Cost">Cost Calculator</a></li>
+        <li><a href="work.html" title="See Our Work">Our Work</a></li>
 
-  <script>
-  window.addEventListener('scroll', function () {
+        <!-- If you want to reuse the dropdown later, uncomment this -->
+        <!--
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" title="More Options">More ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="about.html" title="About Us">About us</a></li>
+            <li><a href="contact.html" title="Contact Us">Contact us</a></li>
+            <li><a href="blog.html" title="Visit Our Blog">Blogs</a></li>
+            <li><a href="#" title="Customer Testimonials">Testimonials</a></li>
+            <li><a href="#" title="Careers">Careers</a></li>
+            <li><a href="#" title="Frequently Asked Questions">FAQ</a></li>
+            <li><a href="#" title="Explore Floor Plans">Floor plans</a></li>
+            <li><a href="#" title="Browse Designs">Designs</a></li>
+          </ul>
+        </li>
+        -->
+      </ul>
+    </nav>
+    <div class="right-buttons">
+      <a href="GetQuote.html" class="get-quote" title="Get a Quote from LivinWalls">Lets Talk</a>
+      <a href="login.html" class="login-link" id="login-link" title="Login to Your Account">
+        <span id="login-text">Login</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+
+<script>
+    window.addEventListener('scroll', function () {
     const header = document.querySelector('.header');
     if (window.scrollY > 50) {
       header.classList.add('scrolled');
@@ -396,7 +400,17 @@
       header.classList.remove('scrolled');
     }
   });
+
+  const hamburger = document.querySelector('.hamburger');
+  const navList = document.querySelector('.nav__list');
+  const rightButtons = document.querySelector('.right-buttons');
+
+  hamburger.addEventListener('click', () => {
+    navList.classList.toggle('active');
+    rightButtons.classList.toggle('active');
+  });
 </script>
+
   <!-- Floating WhatsApp Button -->
 
     <div class="whatsapp-button-container">
