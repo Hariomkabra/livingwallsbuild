@@ -34,17 +34,19 @@
 
         <!-- If you want to reuse the dropdown later, uncomment this -->
       
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" title="More Options">More ▾</a>
+      <li class="dropdown">
+          <a href="#" class="dropdown-toggle" title="More Options">More▾</a>
           <ul class="dropdown-content">
+              <li><a href="floorplans.html" title="Explore Floor Plans">Floor plans</a></li>
+            <li><a href="Designs.html" title="Browse Designs">Designs</a></li>
             <li><a href="about.html" title="About Us">About us</a></li>
             <li><a href="contact.html" title="Contact Us">Contact us</a></li>
             <li><a href="blog.html" title="Visit Our Blog">Blogs</a></li>
             <li><a href="#" title="Customer Testimonials">Testimonials</a></li>
             <li><a href="#" title="Careers">Careers</a></li>
-            <li><a href="#" title="Frequently Asked Questions">FAQ</a></li>
-             <li><a href="floorplans.html" title="Explore Floor Plans">Floor plans</a></li>
-           <li><a href="Designs.html" title="Browse Designs">Designs</a></li>
+            <li><a href="faq.html" title="Frequently Asked Questions">FAQ</a></li>
+            <li><a href="policies.html" title="Careers">Policies</a></li>
+
           </ul>
         </li>
  
@@ -92,491 +94,609 @@
 
 <!--main section -->
 
-<!--main section -->
 
-<section class="faq-section">
-    <h2>Frequently Asked Questions</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Page</title>
+    <style>
+          .sidebar {
+            width: 320px;
+            background-color: #fff;
+            border-right: 1px solid #ddd;
+            padding: 90px;
+            position: fixed;
+            height: 100%;
+            overflow-y: auto;
+        }
 
-    <div class="faq-category">
-        <h3 class="category-title">Planning and Budgeting</h3>
-        <div class="faq-container">
+        .sidebar h2 {
+            color: #d32f2f;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 15px 0;
+            font-size: 16px;
+        }
+
+        .sidebar a:hover {
+            color: #d32f2f;
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            width: calc(100% - 250px);
+            
+        }
+
+        .faq-section {
+            display: none;
+            
+        }
+
+        .faq-section.active {
+            display: block;
+            padding: 90px ;
+            
+        }
+
+        .faq-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+           gap: 20px;
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 10px 0;
+            font-size: 16px;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 10px 0;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        .arrow {
+            transition: transform 0.3s;
+            font: 16px "Font Awesome 5 Free";
+        }
+
+        .arrow.active {
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                position: static;
+                height: auto;
+            }
+
+            .content {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+    </style>
+
+    <div class="sidebar">
+        <h2>FAQ Categories</h2>
+        <a href="#modular-kitchen" class="sidebar-link">Modular Kitchen</a>
+        <a href="#wardrobe" class="sidebar-link">Wardrobe</a>
+        <a href="#space-saving" class="sidebar-link">Space Saving Furniture</a>
+        <a href="#tv-unit" class="sidebar-link">TV Unit</a>
+        <a href="#puja-unit" class="sidebar-link">Puja Unit</a>
+        <a href="#study-unit" class="sidebar-link">Study Unit</a>
+        <a href="#interior-design" class="sidebar-link">Interior Design</a>
+        <a href="#homelane-care" class="sidebar-link">HomeLane Care</a>
+    </div>
+
+    <div class="content">
+        <div id="modular-kitchen" class="faq-section active">
+            <h2>Modular Kitchen</h2>
+            <!-- Modular Kitchen FAQs -->
             <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1-1">
-                    How can I be sure my project won’t go over budget?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer" id="faq-answer-1-1">
-                    <p>We know the fear of unexpected costs can be stressful. That’s why we provide a detailed budget breakdown upfront, including a contingency plan for surprises. You’ll receive weekly financial updates, so you’re always in control and can plan with confidence.</p>
-                </div>
+                <div class="faq-question">How do I buy a modular kitchen? <span class="arrow">▼</span></div>
+                <div class="faq-answer">You can buy a modular kitchen by consulting with a designer, selecting a layout, choosing materials, and placing an order with a supplier.</div>
             </div>
             <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1-2">
-                    What if I’m unsure about the timeline for my apartment or house?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer" id="faq-answer-1-2">
-                    <p>Uncertainty about timelines can make anyone anxious. We provide a clear timeline during the planning phase—row houses typically take 6-12 months, while apartments may take 18-24 months. We also send regular progress updates, so you always know what to expect.</p>
-                </div>
+                <div class="faq-question">What is the best modular kitchen design? <span class="arrow">▼</span></div>
+                <div class="faq-answer">The best design depends on your space; L-shaped kitchens are great for small spaces, while U-shaped ones suit larger areas.</div>
             </div>
             <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1-3">
-                    How do I plan for unexpected delays like weather issues?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer" id="faq-answer-1-3">
-                    <p>We get it—delays can feel frustrating. We build buffer time into our schedules for weather or other unforeseen issues. If delays happen, we’ll communicate a revised timeline immediately and ensure resources are ready to resume work, keeping your project on track.</p>
-                </div>
+                <div class="faq-question">How can I accessorize my kitchen to increase storage? <span class="arrow">▼</span></div>
+                <div class="faq-answer">Use pull-out drawers, corner units, and overhead cabinets to maximize storage in your kitchen.</div>
             </div>
             <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1-4">
-                    What if I can’t afford the full project cost upfront?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer" id="faq-answer-1-4">
-                    <p>We understand financial constraints can be daunting. We offer flexible payment plans, breaking the cost into manageable milestones. During our initial consultation, we’ll work with you to create a payment schedule that fits your budget, ensuring you can move forward without stress.</p>
-                </div>
+                <div class="faq-question">What is the best material for a modular kitchen? <span class="arrow">▼</span></div>
+                <div class="faq-answer">Plywood with a laminate finish is often recommended for durability and aesthetics.</div>
             </div>
             <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1-5">
-                    How do you handle material cost fluctuations during the project?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer" id="faq-answer-1-5">
-                    <p>Material cost changes can be unsettling. We lock in prices for key materials at the start of your project whenever possible. If unexpected fluctuations occur, we’ll discuss alternatives with you and adjust the budget transparently, ensuring no surprises.</p>
+                <div class="faq-question">Is PVC good for a modular kitchen? <span class="arrow">▼</span></div>
+                <div class="faq-answer">PVC is affordable and water-resistant but less durable than plywood or MDF for long-term use.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What is the best material for kitchen cabinets? <span class="arrow">▼</span></div>
+                <div class="faq-answer">Plywood or MDF with a laminate or acrylic finish offers a good balance of durability and style.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What accessories should I include in a modular kitchen? <span class="arrow">▼</span></div>
+                <div class="faq-answer">Include pull-out organizers, cutlery trays, corner units, and built-in appliances for functionality.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What are the units of a modular kitchen? <span class="arrow">▼</span></div>
+                <div class="faq-answer">Units include base cabinets, wall cabinets, tall units, and accessories like drawers and shelves.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How do I design a modular kitchen on a budget? <span class="arrow">▼</span></div>
+                <div class="faq-answer">Opt for simple designs, use cost-effective materials like laminates, and prioritize essential units.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What does a modular kitchen cost? <span class="arrow">▼</span></div>
+                <div class="faq-answer">Costs vary widely based on size, materials, and accessories, typically ranging from $1,500 to $10,000 or more.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What appliances does a modular kitchen include/accommodate? <span class="arrow">▼</span></div>
+                <div class="faq-answer">It can accommodate ovens, microwaves, dishwashers, and refrigerators, with built-in slots for seamless integration.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What is the minimum cost of a modular kitchen? <span class="arrow">▼</span></div>
+                <div class="faq-answer">A basic modular kitchen can start at around $1,500, depending on size and materials.</div>
+            </div>
+        </div>
+<!-- Wardrobe FAQs -->
+        <div id="wardrobe" class="faq-section">
+            <h2>Wardrobe</h2>
+            <div class="faq-item">
+                <div class="faq-question">How do I choose a wardrobe? <span class="arrow">▼</span></div>
+                <div class="faq-answer">Consider your storage needs, available space, and style preferences when choosing a wardrobe.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What are the types of wardrobe? <span class="arrow">▼</span></div>
+                <div class="faq-answer">The types of wardrobe are hinged, sliding and armadio wardrobes.
+                  <li><a href="#">Hinged Wardrobe</a></li>
+                <li><a href="#">Sliding Wardrobe</a></li>
+                <li><a href="#">Armadio Wardrobe</a></li>
+                </div>
+                
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Which material is best for wardrobes? <span class="arrow">▼</span></div>
+                <div class="faq-answer">The best material for wardrobes is HDHMR (high-density-high-moisture resistant) due to its water resistance and termite-free nature.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I pick the right wardrobe material? <span class="arrow">▼</span></div>
+                <div class="faq-answer">In order to pick the right wardrobe material, you must keep the following tips in mind :
+                 
+                       <li><a href="#">PLPB - Eco-friendly & pocket-friendly</a></li>
+                       <li><a href="#">HDHMR - Eco-friendly & termite-free.</a></li>
+                       <li><a href="#">
+Plywood - Sturdy & long-lasting,  These are some of the best-selling materials for wardrobes in the modular industry.</a></li>
+                
                 </div>
             </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What is the best finish for a wardrobe? <span class="arrow">▼</span></div>
+                <div class="faq-answer">The best finish options for wardrobes are high-gloss laminate and acrylic as they are easy to clean and maintain.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What are the best design ideas for a wardrobe? <span class="arrow">▼</span></div>
+                <div class="faq-answer">The best wardrobe designs are hinged, sliding and armadio wardrobes.
+                  <li><a href="#">Hinged wardrobe - These are widely used, cost-effective and fit corners well</a></li>
+                  <li><a href="#">Sliding wardrobe - Modern, space-saving as the doors don't wing out</a></li>
+                  <li><a href="#">Floor to ceiling sliding wardrobe (Armadio) - This is a premium finish if you do not like separate loft shutters</a></li>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is MDF good for wardrobes?<span class="arrow">▼</span></div>
+                <div class="faq-answer">Yes, MDF is one of the best materials for wardrobes. It is cost-effective and eco-friendly as it involves a recycling process.</div>
+            </div>
+
+        </div>
+<!-- Space Saving Furniture FAQs -->
+        <div id="space-saving" class="faq-section">
+            <h2>Space Saving Furniture</h2>
+            <div class="faq-item">
+                <div class="faq-question">What is space-saving furniture? <span class="arrow">▼</span></div>
+                <div class="faq-answer">Space-saving furniture is designed to maximize small spaces, like foldable tables or wall-mounted desks.</div>
+            </div>
+
+            <div class="faq-item">
+    <div class="faq-question">How much room do you need for a Murphy bed? <span class="arrow">▼</span></div>
+    <div class="faq-answer">For a murphy bed, you require a minimum of 8x9 sq.ft for a queen size, while single murphy beds can fit in smaller spaces.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">What is the average cost of a Murphy bed? <span class="arrow">▼</span></div>
+        <div class="faq-answer">The average cost of a Murphy bed (single horizontal bed) is about Rs 54,000. It depends on the material and the type of bed.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">Are Murphy beds a good idea? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Yes, wall (murphy) beds are great for small spaces. In the bedroom, it doubles up as furniture that can be used for sleep and for study/work; it converts your bedroom to a multi-functional room.</div>
+    </div>
+        </div>
+<!-- TV Unit FAQs -->
+        <div id="tv-unit" class="faq-section">
+            <h2>TV Unit</h2>
+            <div class="faq-item">
+                <div class="faq-question">What are the best TV unit designs? <span class="arrow">▼</span></div>
+                <div class="faq-answer">Wall-mounted units with storage or minimalist designs work well for modern homes.</div>
+            </div>
+            <div class="faq-item">
+            <div class="faq-question">What are the best TV unit designs? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Wall-mounted units with storage or minimalist designs work well for modern homes.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How can I add storage to my TV unit? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Incorporate shelves, drawers, or cabinets below or beside the TV unit to maximize storage space.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What is the average price of an TV unit? <span class="arrow">▼</span></div>
+            <div class="faq-answer">The average price of a TV unit can range from Rs 10,000 to Rs 50,000, depending on material, design, and brand.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Which wood is best for TV unit? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Teak and walnut are popular choices for TV units due to their durability and aesthetic appeal.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What are the types of material used for TV units? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Common materials include wood (teak, oak, walnut), engineered wood, metal, glass, and MDF (medium-density fiberboard).</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What is the average size TV for living room? <span class="arrow">▼</span></div>
+            <div class="faq-answer">For a typical living room, a 43 to 55-inch TV is ideal, depending on the viewing distance.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Is it better to wall mount a TV or put it on a stand? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Wall mounting saves space and offers a sleek look, while a stand provides flexibility and easier access to ports.</div>
+        </div>
+        </div>
+<!-- Puja Unit FAQs -->
+        <div id="puja-unit" class="faq-section">
+            <h2>Puja Unit</h2>
+            <div class="faq-item">
+                <div class="faq-question">How do I design a puja unit? <span class="arrow">▼</span></div>
+                <div class="faq-answer">Use a small, dedicated space with shelves and a traditional design for a puja unit.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">What are the best puja unit designs? <span class="arrow">▼</span></div>
+              <div class="faq-answer">Compact wall-mounted or corner puja units with intricate carvings and shelves for idols are ideal for modern homes.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What is the cost of puja units based on size? <span class="arrow">▼</span></div>
+                    <div class="faq-answer">Small puja units may cost around Rs 5,000 to Rs 15,000, while larger ones can range from Rs 20,000 to Rs 50,000, depending on size and craftsmanship.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How can I choose the best material for puja units? <span class="arrow">▼</span></div>
+                    <div class="faq-answer">Opt for durable materials like teak or rosewood for a traditional look, or engineered wood for a budget-friendly, modern option.</div>
+                </div>
+        </div>
+
+    
+
+      <!-- Study Unit FAQs -->
+
+        <div id="study-unit" class="faq-section">
+            <h2>Study Unit</h2>
+            <div class="faq-item">
+                <div class="faq-question">What is a study unit? <span class="arrow">▼</span></div>
+                <div class="faq-answer">A study unit is a compact workspace with a desk, shelves, and storage for books and supplies.</div>
+            </div>
+            <div class="faq-item">
+    <div class="faq-question">What is the best furniture for a home office? <span class="arrow">▼</span></div>
+    <div class="faq-answer">A sturdy desk, ergonomic chair, and storage units like shelves or cabinets are ideal for a home office.</div>
+      </div>
+
+      <div class="faq-item">
+          <div class="faq-question">How to design an effective study unit? <span class="arrow">▼</span></div>
+          <div class="faq-answer">Prioritize a well-lit space, a comfortable desk and chair, and organize with shelves for books and supplies.</div>
+      </div>
+
+      <div class="faq-item">
+          <div class="faq-question">How much does it cost for a home office? <span class="arrow">▼</span></div>
+          <div class="faq-answer">A basic home office setup can cost between Rs 20,000 to Rs 50,000, depending on furniture quality and size.</div>
+      </div>
+
+      <div class="faq-item">
+          <div class="faq-question">How to design a study unit on a small budget? <span class="arrow">▼</span></div>
+          <div class="faq-answer">Use affordable materials like MDF, opt for a foldable desk, and add DIY shelves for storage.</div>
+      </div>
+
+      <div class="faq-item">
+          <div class="faq-question">What is the recommended material for a study unit? <span class="arrow">▼</span></div>
+          <div class="faq-answer">Engineered wood or MDF is recommended for durability and cost-effectiveness; solid wood like teak adds elegance.</div>
+      </div>
+
+      <div class="faq-item">
+          <div class="faq-question">What are the types of study unit finish? <span class="arrow">▼</span></div>
+          <div class="faq-answer">Common finishes include laminate, veneer, matte, glossy, and natural wood polish for a premium look.</div>
+      </div>
+
+      <div class="faq-item">
+          <div class="faq-question">How do I add storage to a study unit? <span class="arrow">▼</span></div>
+          <div class="faq-answer">Incorporate wall-mounted shelves, under-desk drawers, or a cabinet to keep books and supplies organized.</div>
+      </div>
+        </div>
+<!-- Interior Design FAQs -->
+      <div id="interior-design" class="faq-section">
+    <h2>Interior Design</h2>
+    <div class="faq-item">
+        <div class="faq-question">How do I start with interior design? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Start by defining your style, setting a budget, and consulting with a professional designer.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">What are the best interior design ideas for a living room? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Opt for a cohesive color scheme, use multifunctional furniture, add statement lighting, and incorporate textures like rugs and throw pillows to create a warm, inviting space.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">What are the best interior design ideas for a bedroom? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Focus on calming colors, invest in a comfortable bed with quality bedding, use layered lighting, and add personal touches like artwork or plants.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">What is the average size bedroom? <span class="arrow">▼</span></div>
+        <div class="faq-answer">The average bedroom size in the U.S. is about 11x12 feet (132 square feet), though this varies based on the home's age and location.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">What size bed can fit in a 10x10 room? <span class="arrow">▼</span></div>
+        <div class="faq-answer">A 10x10 room can comfortably fit a twin or full-size bed, leaving space for a small nightstand and dresser. A queen might fit but will feel cramped.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">What are the best interior design ideas for a kids bedroom? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Use bright, playful colors, incorporate storage solutions like shelves and bins, add a themed bed or mural, and ensure the space is safe with rounded furniture edges.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">How do I design my kid's bedroom? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Involve your child in choosing a theme, prioritize safety and functionality, create zones for sleep, play, and study, and use durable, easy-to-clean materials.</div>
+    </div>
+</div>
+
+<!-- homelane Unit FAQs -->
+        <div id="homelane-care" class="faq-section">
+            <h2>HomeLane Care</h2>
+            <div class="faq-item">
+                <div class="faq-question">What is HomeLane Care? <span class="arrow">▼</span></div>
+                <div class="faq-answer">HomeLane Care typically refers to after-sales services for maintenance and support of installed products.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Whom do I contact if I need a service visit from LivingWalls? <span class="arrow">▼</span></div>
+                <div class="faq-answer">You can contact LivingWalls customer support for scheduling a service visit.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Do I have to pay for this service?<span class="arrow">▼</span></div>
+                <div class="faq-answer">Once you contact our Care Cell with your issue, depending upon the nature of service and the applicable warranty, our care representative will advise you on whether it is covered under warranty or chargeable.</div>
+            </div>
+
+            <div class="faq-item">
+  <div class="faq-question">What does HomeLane’s 10-year warranty cover? <span class="arrow">▼</span></div>
+  <div class="faq-answer">
+    <p>HomeLane warrants that all Products will be free from manufacturing defects and faults in installation workmanship when used for normal domestic use.</p>
+    <div class="warranty-table-wrapper">
+      <table class="warranty-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Warranty Period</th>
+            <th>Remarks</th>
+            <th>Exceptions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cabinet, Carcass</td>
+            <td>10 Years</td>
+            <td>Covers BWP Plywood, BWR Plywood, HDHMR; Covers against de-lamination and edgeband peeling.</td>
+            <td>Damage from misuse, negligence, wear and tear. Bends > 3mm handled only by HomeLane.</td>
+          </tr>
+          <tr>
+            <td>Cabinet, Carcass</td>
+            <td>5 Years</td>
+            <td>Covers MDF, Particle Board; Covers against de-lamination and edgeband peeling.</td>
+            <td>Same exceptions as above.</td>
+          </tr>
+          <tr>
+            <td>Shutter</td>
+            <td>5 Years</td>
+            <td>All core materials incl. Aluminium Shutter Frame; de-lamination & edgeband peeling.</td>
+            <td>Same exceptions as above.</td>
+          </tr>
+          <tr>
+            <td>Hardware, Accessory</td>
+            <td>Manufacturer’s Warranty</td>
+            <td>N/A</td>
+            <td>Rusting not covered. Cleaning sprays, misuse, negligence not covered.</td>
+          </tr>
+          <tr>
+            <td>Appliances</td>
+            <td>Manufacturer’s Warranty</td>
+            <td>N/A</td>
+            <td>Labour, Cleaning Charges (for Chimney) charged extra.</td>
+          </tr>
+          <tr>
+            <td>Sink, Tap, Other Plumbing Installation</td>
+            <td>Manufacturer’s Warranty</td>
+            <td>No warranty for leakage post-handover.</td>
+            <td>Inspection by customer on handover; rectification if needed.</td>
+          </tr>
+          <tr>
+            <td>Switches, Lights, Electrical</td>
+            <td>Manufacturer’s Warranty</td>
+            <td>₹500 for replacement labour.</td>
+            <td>Customer handles wiring inspection.</td>
+          </tr>
+          <tr>
+            <td>Countertop</td>
+            <td>No Warranty</td>
+            <td>N/A</td>
+            <td>1-year sealant warranty. Natural materials like quartz susceptible to staining.</td>
+          </tr>
+          <tr>
+            <td>Gas Piping, Civil Work</td>
+            <td>No Warranty</td>
+            <td>N/A</td>
+            <td>Customer inspection on handover.</td>
+          </tr>
+          <tr>
+            <td>Mirror, Glass, Fragile Items</td>
+            <td>No Warranty</td>
+            <td>N/A</td>
+            <td>N/A</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="warranty-notes">
+      <p><strong>Warranty exclusions include:</strong></p>
+      <ol>
+        <li>Wear and tear (scratches, dents, cuts, etc.) or accidental damage.</li>
+        <li>Rusting from chemicals, sprays, or dampness.</li>
+        <li>Water leakage due to:
+          <ul>
+            <li>1.(seventy two) hours for BWP grade plywood (IS710);</li>
+            <li>2.(forty) hours for BWR grade plywood;</li>
+            <li>3.(twenty four) hours for PB and HDHMR continuous exposure.</li>
+          </ul>
+        </li>
+        <li>Discoloration/fading due to sunlight, heat, or moisture.</li>
+        <li>Use of inappropriate cleaning agents.</li>
+        <li>Negligence, misuse, insufficient care.</li>
+        <li>Unauthorized alterations or modifications.</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
         </div>
     </div>
 
-    <div class="faq-category">
-        <h3 class="category-title">Design and Customization</h3>
-        <div class="faq-container">
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2-1">
-                    What if I want to change the design mid-construction?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer" id="faq-answer-2-1">
-                    <p>It’s normal to evolve your vision as the project takes shape. We’ll assess the impact of changes on the timeline and budget, then provide a clear plan to integrate them seamlessly. Your dream home should reflect your latest ideas without stress.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2-2">
-                    Can I customize my row house to match my personal style?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer" id="faq-answer-2-2">
-                    <p>Absolutely! We offer full customization options, from layouts to finishes. Our design team will work with you to create a space that feels uniquely yours, ensuring every detail aligns with your personal style and needs.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2-3">
-                    What if my design ideas don’t match what’s possible?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer" id="faq-answer-2-3">
-                    <p>We understand the disappointment of unfeasible ideas. Our team will guide you through what’s possible, offering creative alternatives that align with your vision while meeting structural and regulatory requirements. You’ll feel heard and inspired.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2-4">
-                    Can I include sustainable design elements in my home?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer" id="faq-answer-2-4">
-                    <p>Yes, sustainability is a priority for many clients! We can incorporate eco-friendly features like solar panels, energy-efficient windows, and sustainable materials. We’ll collaborate with you to design a home that’s both stylish and environmentally responsible.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2-5">
-                    What if I’m not sure about my design preferences yet?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer" id="faq-answer-2-5">
-                    <p>It’s okay to feel unsure—we’re here to help you discover your style. Our design team will present you with mood boards, 3D renderings, and material samples to explore options. We’ll guide you through the process until you’re confident in your choices.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="faq-category">
-        <h3 class="category-title">Construction Process</h3>
-        <div class="faq-container">
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3-1">
-                    How will I know the construction is progressing as planned?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer" id="faq-answer-3-1">
-                    <p>We understand the need for peace of mind during construction. You’ll receive weekly progress reports with photos and updates, plus access to a dedicated project manager for any questions. We keep you in the loop every step of the way.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3-2">
-                    What if there’s a quality issue during construction?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer" id="faq-answer-3-2">
-                    <p>Quality concerns can be nerve-wracking. We conduct rigorous inspections at every stage to ensure top standards. If an issue arises, we address it immediately at no extra cost, ensuring your home meets the highest quality benchmarks.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3-3">
-                    What happens if there’s a miscommunication about my project?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer" id="faq-answer-3-3">
-                    <p>Miscommunication can cause unnecessary stress. We assign a dedicated project manager as your single point of contact, and we use 3D visualizations to ensure your vision is clear. Regular check-ins keep everything aligned with your expectations.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3-4">
-                    Can I visit the site during construction to see the progress?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer" id="faq-answer-3-4">
-                    <p>We encourage site visits so you can see your dream home come to life! We’ll schedule safe, guided visits at key milestones, ensuring you feel connected to the process while adhering to safety protocols.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3-5">
-                    What if there are disputes with subcontractors during the build?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer" id="faq-answer-3-5">
-                    <p>Disputes can be unsettling, but you won’t have to worry. We manage all subcontractors directly and have strict contracts in place to ensure accountability. If issues arise, we handle them promptly to keep your project on track.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="faq-category">
-        <h3 class="category-title">Trust and Decision-Making</h3>
-        <div class="faq-container">
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4-1">
-                    How do I know I can trust your team with my dream home?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer" id="faq-answer-4-1">
-                    <p>Trust is everything in a project this personal. Explore our portfolio of completed projects—societies, apartments, and row houses—and read client testimonials. We also offer a free consultation to answer your questions and build confidence in our partnership.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4-2">
-                    What if I feel overwhelmed by all the decisions I need to make?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer" id="faq-answer-4-2">
-                    <p>Decision fatigue is real, and we’re here to help. Our team guides you through each choice with expert advice, from layouts to materials, ensuring you feel supported. We break decisions into manageable steps, so you can focus on the excitement of building your home.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4-3">
-                    Why should I choose Living Walls over other builders?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer" id="faq-answer-4-3">
-                    <p>We know you have options, and we’re here to earn your trust. At Living Walls, we combine 20+ years of experience with a client-first approach. Our transparent pricing, regular updates, and commitment to quality set us apart. Let’s build your dream home together—schedule a free consultation today!</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4-4">
-                    What if I’m worried about the long-term durability of my home?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer" id="faq-answer-4-4">
-                    <p>It’s natural to want your home to stand the test of time. We use only high-quality materials and adhere to strict building codes. Plus, we offer a warranty on our work, so you can have peace of mind knowing your home is built to last.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4-5">
-                    How do I know I’m making the right investment with this project?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer" id="faq-answer-4-5">
-                    <p>Investing in a home is a big decision, and we’re here to ensure it’s the right one. We provide market insights on property value trends in your area and design homes that enhance resale value. Our goal is to make your investment both emotionally and financially rewarding.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<style>
-.faq-section {
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 40px 20px;
-    font-family: 'Arial', sans-serif;
-    background: #f8f8f8;
-    border-radius: 15px;
+    <style>.warranty-table-wrapper {
+  overflow-x: auto;
+  margin-top: 15px;
 }
 
-.faq-section h2 {
-    text-align: center;
-    font-size: 2.8rem;
-    color: #2c3e50;
-    margin-bottom: 50px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+.warranty-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  margin-bottom: 15px;
 }
 
-.faq-category {
-    margin-bottom: 40px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+.warranty-table th, .warranty-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+  vertical-align: top;
 }
 
-.faq-category.visible {
-    opacity: 1;
-    transform: translateY(0);
+.warranty-table th {
+  background-color: #f3f3f3;
+  font-weight: bold;
 }
 
-.category-title {
-    font-size: 2rem;
-    color: #2c3e50;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #2c3e50;
-    padding-bottom: 10px;
+.warranty-notes {
+  background: #f9f9f9;
+  padding: 15px;
+  border-left: 4px solid #ccc;
+  font-size: 14px;
+  color: #444;
 }
 
-.faq-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.warranty-notes ol {
+  padding-left: 18px;
+  margin-top: 10px;
 }
 
-.faq-item {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.faq-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-.faq-question {
-    width: 100%;
-    background: #2c3e50;
-    color: #fff;
-    padding: 20px;
-    font-size: 1.4rem;
-    font-weight: bold;
-    border: none;
-    text-align: left;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background 0.3s ease;
-}
-
-.faq-question:hover {
-    background: #34495e;
-}
-
-.faq-icon {
-    font-size: 1.5rem;
-    transition: transform 0.3s ease;
-}
-
-.faq-question[aria-expanded="true"] .faq-icon {
-    transform: rotate(45deg);
-}
-
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 20px;
-    background: #fff;
-    transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease;
-    opacity: 0;
-}
-
-.faq-answer.active {
-    padding: 20px;
-    opacity: 1;
-    max-height: 500px; /* Adjusted to a large value to accommodate dynamic content */
-}
-
-.faq-answer p {
-    font-size: 1.2rem;
-    color: #555;
-    line-height: 1.6;
+.warranty-notes ul {
+  padding-left: 18px;
+  margin: 6px 0;
 }
 
 @media (max-width: 768px) {
-    .faq-section {
-        padding: 20px 10px;
-        margin: 30px 10px;
-        border-radius: 10px;
-    }
+  .warranty-table th, .warranty-table td {
+    font-size: 13px;
+    padding: 8px;
+  }
 
-    .faq-section h2 {
-        font-size: 2rem;
-        margin-bottom: 30px;
-        letter-spacing: 1px;
-    }
-
-    .faq-category {
-        margin-bottom: 30px;
-    }
-
-    .category-title {
-        font-size: 1.6rem;
-        padding-bottom: 8px;
-        margin-bottom: 15px;
-    }
-
-    .faq-container {
-        gap: 15px;
-    }
-
-    .faq-item {
-        border-radius: 8px;
-        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .faq-question {
-        font-size: 1.1rem;
-        padding: 15px;
-        line-height: 1.4;
-    }
-
-    .faq-icon {
-        font-size: 1.3rem;
-    }
-
-    .faq-answer.active {
-        padding: 15px;
-        opacity: 1;
-        max-height: 600px; /* Adjusted for smaller screens */
-    }
-
-    .faq-answer p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-    }
-}
-
-@media (max-width: 480px) {
-    .faq-section {
-        padding: 15px 8px;
-        margin: 20px 8px;
-    }
-
-    .faq-section h2 {
-        font-size: 1.8rem;
-        margin-bottom: 25px;
-    }
-
-    .category-title {
-        font-size: 1.4rem;
-        padding-bottom: 6px;
-    }
-
-    .faq-question {
-        font-size: 1rem;
-        padding: 12px;
-    }
-
-    .faq-icon {
-        font-size: 1.2rem;
-    }
-
-    .faq-answer.active {
-        padding: 12px;
-        max-height: 800px; /* Adjusted for smaller screens with potentially longer content */
-    }
-
-    .faq-answer p {
-        font-size: 0.9rem;
-    }
+  .warranty-notes {
+    font-size: 13px;
+  }
 }
 </style>
+    <script>
+        // Toggle FAQ sections based on sidebar links
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const faqSections = document.querySelectorAll('.faq-section');
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('FAQ script loaded'); // Debug log to confirm script is running
-
-    // FAQ accordion functionality
-    const faqQuestions = document.querySelectorAll('.faq-question');
-
-    if (faqQuestions.length === 0) {
-        console.error('No FAQ questions found. Check if .faq-question elements exist in the DOM.');
-        return;
-    }
-
-    faqQuestions.forEach((question, index) => {
-        question.addEventListener('click', () => {
-            const answer = question.nextElementSibling;
-            if (!answer) {
-                console.error(`No answer element found for question ${index + 1}`);
-                return;
-            }
-
-            const isOpen = question.getAttribute('aria-expanded') === 'true';
-
-            // Close all other answers in the same category
-            const container = question.closest('.faq-container');
-            if (container) {
-                container.querySelectorAll('.faq-answer').forEach(item => {
-                    if (item !== answer) {
-                        item.classList.remove('active');
-                        item.previousElementSibling.setAttribute('aria-expanded', 'false');
-                    }
-                });
-            }
-
-            // Toggle the current answer
-            if (!isOpen) {
-                answer.classList.add('active');
-                question.setAttribute('aria-expanded', 'true');
-            } else {
-                answer.classList.remove('active');
-                question.setAttribute('aria-expanded', 'false');
-            }
-        });
-
-        // Keyboard accessibility
-        question.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
                 e.preventDefault();
-                question.click();
-            }
+                const targetId = link.getAttribute('href').substring(1);
+
+                faqSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                document.getElementById(targetId).classList.add('active');
+            });
         });
-    });
 
-    // Scroll-based fade-in animation for categories
-    const categories = document.querySelectorAll('.faq-category');
-    if (categories.length === 0) {
-        console.error('No FAQ categories found. Check if .faq-category elements exist in the DOM.');
-        return;
-    }
+        // Toggle FAQ answers
+        const faqQuestions = document.querySelectorAll('.faq-question');
 
-    const observerOptions = {
-        threshold: 0.2
-    };
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const arrow = question.querySelector('.arrow');
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
+                answer.classList.toggle('active');
+                arrow.classList.toggle('active');
+            });
         });
-    }, observerOptions);
+    </script>
+</body>
+</html>
 
-    categories.forEach(category => {
-        observer.observe(category);
-    });
-});
-</script>
     
   <!--footer section-->
 
