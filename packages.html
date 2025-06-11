@@ -92,116 +92,1241 @@
 
 <!--main content-->
 
-  <main>
-    <section class="packages">
-    <div class="container">
-      <div class="packages-header">
-        <h2>Packages</h2>
-        <div class="tabs">
-          <button class="tab active" data-type="residential">Residential</button>
-          <button class="tab" data-type="commercial">Commercial</button>
-        </div>
+  <!-- Our Projects Section -->
+  <section class="proj-section">
+    <h2 class="proj-heading">Our Packages</h2>
+
+    <!-- Filters -->
+    <div class="proj-filters">
+      <div class="proj-filter-group">
+        <label class="proj-filter-label">Location</label>
+        <select class="proj-filter-select" id="location-filter">
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Bangalore">Bangalore</option>
+          <option value="Hubli">Hubli</option>
+        </select>
       </div>
-      <div class="packages-content">
-        <div class="packages-grid residential">
-          <div class="package-card">
-            <h3>Basic Home Package</h3>
-            <p>INR 1,500/sq.ft <br>(inclusive of GST)</p>
-            <a href="contact.html" class="btn btn-secondary">More detailed</a>
-          </div>
-          <div class="package-card">
-            <h3>Family Plus Package</h3>
-            <p>INR 1,750/sq.ft <br>(inclusive of GST)</p>
-            <a href="contact.html" class="btn btn-secondary">More detailed</a>
-          </div>
-          <div class="package-card">
-            <h3>Luxury Living Package</h3>
-            <p>INR 2,000/sq.ft <br>(inclusive of GST)</p>
-            <a href="contact.html" class="btn btn-secondary">More detailed</a>
-          </div>
-          <div class="package-card">
-            <h3>Elite Residence Package</h3>
-            <p>INR 2,300/sq.ft <br>(inclusive of GST)</p>
-            <a href="contact.html" class="btn btn-secondary">More detailed</a>
-          </div>
+      <div class="proj-filter-group">
+        <label class="proj-filter-label">Types</label>
+        <select class="proj-filter-select" id="type-filter">
+          <option value="Homes">Homes</option>
+          <option value="Luxury House">Luxury House</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Project Cards -->
+    <div class="proj-cards" id="proj-cards">
+      <!-- Card 1: Basic -->
+      <div class="proj-card" data-category="Basic">
+        <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg" alt="Basic Project" class="proj-card-image">
+        <div class="proj-card-label">Basic</div>
+        <div class="proj-card-content">
+          <h3 class="proj-card-title">Hyderabad Standard Home</h3>
+          <ul class="proj-card-features">
+            <li>2 Bedrooms with Balconies</li>
+            <li>1 Living Area (300 sq.ft.)</li>
+            <li>Basic Amenities (Water, Power Backup)</li>
+            <li>Compact Design with Modular Kitchen</li>
+            <li>1 Bathroom with Modern Fittings</li>
+            <li>Parking Space for 1 Vehicle</li>
+          </ul>
+          <div class="proj-card-price">Price: <span>₹50 Lakhs</span></div>
+          <div class="proj-card-compatibility">Compatibility: <span>Small Families</span></div>
+          <a href="contact.html" class="proj-card-link">Learn More</a>
         </div>
-        <div class="packages-grid commercial hidden">
-          <div class="package-card">
-            <h3>Basic Office Package</h3>
-            <p>INR 1,800/sq.ft <br>(inclusive of GST)</p>
-            <a href="contact.html" class="btn btn-secondary">More detailed</a>
-          </div>
-          <div class="package-card">
-            <h3>Standard Retail Package</h3>
-            <p>INR 2,100/sq.ft <br>(inclusive of GST)</p>
-            <a href="contact.html" class="btn btn-secondary">More detailed</a>
-          </div>
-          <div class="package-card">
-            <h3>Premium Corporate Package</h3>
-            <p>INR 2,500/sq.ft <br>(inclusive of GST)</p>
-            <a href="contact.html" class="btn btn-secondary">More detailed</a>
-          </div>
-          <div class="package-card">
-            <h3>Elite Business Package</h3>
-            <p>INR 2,800/sq.ft <br>(inclusive of GST)</p>
-            <a href="contact.html" class="btn btn-secondary">More detailed</a>
+        <div class="proj-thumbnails">
+          <div class="proj-thumbnails-container">
+            <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg" alt="Thumbnail 1" class="proj-thumbnail">
+            <img src="https://images.pexels.com/photos/1632790/pexels-photo-1632790.jpeg" alt="Thumbnail 2" class="proj-thumbnail">
+            <img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg" alt="Thumbnail 3" class="proj-thumbnail">
           </div>
         </div>
       </div>
-      <div class="packages-footer">
-        <div class="footer-text">
-          <p><strong>Not happy with our packages?</strong><br>We can customize it for you! <br><em>*Rates may vary based on preference</em></p>
-          <p>We do believe in making unique customizations to any sort of building structure, that fits the bill for you. Materials, Interiors, Furnishing, we deal with all.</p>
+
+      <!-- Card 2: Popular -->
+      <div class="proj-card" data-category="Popular">
+        <img src="https://images.pexels.com/photos/1632790/pexels-photo-1632790.jpeg" alt="Popular Project" class="proj-card-image">
+        <div class="proj-card-label">Popular</div>
+        <div class="proj-card-content">
+          <h3 class="proj-card-title">Hyderabad Family Residence</h3>
+          <ul class="proj-card-features">
+            <li>3 Bedrooms with Wardrobes</li>
+            <li>Spacious Living Area (450 sq.ft.)</li>
+            <li>Modern Kitchen with Chimney</li>
+            <li>Small Garden (100 sq.ft.)</li>
+            <li>2 Bathrooms with Geysers</li>
+            <li>Parking Space for 2 Vehicles</li>
+            <li>Community Hall Access</li>
+          </ul>
+          <div class="proj-card-price">Price: <span>₹80 Lakhs</span></div>
+          <div class="proj-card-compatibility">Compatibility: <span>Growing Families</span></div>
+          <a href="contact.html" class="proj-card-link">Learn More</a>
         </div>
-        <a href="contact." class="btn btn-primary">Book a Free Consultation</a>
+        <div class="proj-thumbnails">
+          <div class="proj-thumbnails-container">
+            <img src="https://images.pexels.com/photos/1632790/pexels-photo-1632790.jpeg" alt="Thumbnail 1" class="proj-thumbnail">
+            <img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg" alt="Thumbnail 2" class="proj-thumbnail">
+            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg" alt="Thumbnail 3" class="proj-thumbnail">
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Luxury -->
+      <div class="proj-card" data-category="Luxury">
+        <img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg" alt="Luxury Project" class="proj-card-image">
+        <div class="proj-card-label">Luxury</div>
+        <div class="proj-card-content">
+          <h3 class="proj-card-title">Hyderabad Luxury Villa</h3>
+          <ul class="proj-card-features">
+            <li>4 Bedrooms with Walk-in Closets</li>
+            <li>Home Theater (200 sq.ft.)</li>
+            <li>Infinity Pool with Deck</li>
+            <li>Smart Home Features (Automation)</li>
+            <li>3 Bathrooms with Jacuzzi</li>
+            <li>Parking Space for 3 Vehicles</li>
+            <li>Rooftop Terrace (300 sq.ft.)</li>
+            <li>24/7 Security System</li>
+          </ul>
+          <div class="proj-card-price">Price: <span>₹1.5 Crores</span></div>
+          <div class="proj-card-compatibility">Compatibility: <span>Affluent Families</span></div>
+          <a href="contact.html" class="proj-card-link">Learn More</a>
+        </div>
+        <div class="proj-thumbnails">
+          <div class="proj-thumbnails-container">
+            <img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg" alt="Thumbnail 1" class="proj-thumbnail">
+            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg" alt="Thumbnail 2" class="proj-thumbnail">
+            <img src="https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg" alt="Thumbnail 3" class="proj-thumbnail">
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Royal -->
+      <div class="proj-card" data-category="Royal">
+        <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg" alt="Royal Project" class="proj-card-image">
+        <div class="proj-card-label">Royal</div>
+        <div class="proj-card-content">
+          <h3 class="proj-card-title">Hyderabad Royal Mansion</h3>
+          <ul class="proj-card-features">
+            <li>6 Bedrooms with En-suite Bathrooms</li>
+            <li>Private Gym (250 sq.ft.)</li>
+            <li>Large Terrace (500 sq.ft.)</li>
+            <li>Premium Finishes (Marble Flooring)</li>
+            <li>4 Bathrooms with Luxury Fittings</li>
+            <li>Parking Space for 4 Vehicles</li>
+            <li>Indoor Pool with Sauna</li>
+            <li>Landscaped Garden (600 sq.ft.)</li>
+            <li>Advanced Home Automation</li>
+          </ul>
+          <div class="proj-card-price">Price: <span>₹3 Crores</span></div>
+          <div class="proj-card-compatibility">Compatibility: <span>Elite Families</span></div>
+          <a href="contact.html" class="proj-card-link">Learn More</a>
+        </div>
+        <div class="proj-thumbnails">
+          <div class="proj-thumbnails-container">
+            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg" alt="Thumbnail 1" class="proj-thumbnail">
+            <img src="https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg" alt="Thumbnail 2" class="proj-thumbnail">
+            <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg" alt="Thumbnail 3" class="proj-thumbnail">
+          </div>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- Compare Plans Section -->
+  <section class="compare-section">
+    <h2 class="compare-heading">Compare Plans</h2>
+    <div class="compare-controls">
+      <div class="compare-control-group">
+        <input type="checkbox" id="select-all" checked>
+        <label for="select-all">Select All</label>
+      </div>
+      <div class="compare-control-group">
+        <input type="checkbox" id="compare-basic" data-plan="Basic" checked>
+        <label for="compare-basic">Basic</label>
+      </div>
+      <div class="compare-control-group">
+        <input type="checkbox" id="compare-popular" data-plan="Popular" checked>
+        <label for="compare-popular">Popular</label>
+      </div>
+      <div class="compare-control-group">
+        <input type="checkbox" id="compare-luxury" data-plan="Luxury" checked>
+        <label for="compare-luxury">Luxury</label>
+      </div>
+      <div class="compare-control-group">
+        <input type="checkbox" id="compare-royal" data-plan="Royal" checked>
+        <label for="compare-royal">Royal</label>
+      </div>
+    </div>
+    <table class="compare-table" id="compare-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th data-plan="Basic">Basic</th>
+          <th data-plan="Popular">Popular</th>
+          <th data-plan="Luxury">Luxury</th>
+          <th data-plan="Royal">Royal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tooltip" data-label="Price" data-tooltip="Cost of the plan in Indian Rupees">Price</td>
+          <td data-label="Basic Price" data-plan="Basic">₹50 Lakhs</td>
+          <td data-label="Popular Price" data-plan="Popular">₹80 Lakhs</td>
+          <td data-label="Luxury Price" data-plan="Luxury">₹1.5 Crores</td>
+          <td data-label="Royal Price" data-plan="Royal">₹3 Crores</td>
+        </tr>
+        <tr>
+          <td class="tooltip" data-label="Compatibility" data-tooltip="Ideal family type for this plan">Compatibility</td>
+          <td data-label="Basic Compatibility" data-plan="Basic">Small Families</td>
+          <td data-label="Popular Compatibility" data-plan="Popular">Growing Families</td>
+          <td data-label="Luxury Compatibility" data-plan="Luxury">Affluent Families</td>
+          <td data-label="Royal Compatibility" data-plan="Royal">Elite Families</td>
+        </tr>
+        <tr>
+          <td class="tooltip" data-label="Bedrooms" data-tooltip="Number and type of bedrooms included">Bedrooms</td>
+          <td data-label="Basic Bedrooms" data-plan="Basic">2 Bedrooms with Balconies</td>
+          <td data-label="Popular Bedrooms" data-plan="Popular">3 Bedrooms with Wardrobes</td>
+          <td data-label="Luxury Bedrooms" data-plan="Luxury">4 Bedrooms with Walk-in Closets</td>
+          <td data-label="Royal Bedrooms" data-plan="Royal">6 Bedrooms with En-suite Bathrooms</td>
+        </tr>
+        <tr>
+          <td class="tooltip" data-label="Living Area" data-tooltip="Size and type of the main living space">Living Area</td>
+          <td data-label="Basic Living Area" data-plan="Basic">1 Living Area (300 sq.ft.)</td>
+          <td data-label="Popular Living Area" data-plan="Popular">Spacious Living Area (450 sq.ft.)</td>
+          <td data-label="Luxury Living Area" data-plan="Luxury">Includes Home Theater (200 sq.ft.)</td>
+          <td data-label="Royal Living Area" data-plan="Royal">Includes Private Gym (250 sq.ft.)</td>
+        </tr>
+        <tr>
+          <td class="tooltip" data-label="Special Features" data-tooltip="Unique amenities included in the plan">Special Features</td>
+          <td data-label="Basic Special Features" data-plan="Basic">Compact Design with Modular Kitchen</td>
+          <td data-label="Popular Special Features" data-plan="Popular">Modern Kitchen with Chimney, Small Garden (100 sq.ft.)</td>
+          <td data-label="Luxury Special Features" data-plan="Luxury">Infinity Pool with Deck, Smart Home Features</td>
+          <td data-label="Royal Special Features" data-plan="Royal">Indoor Pool with Sauna, Advanced Home Automation</td>
+        </tr>
+        <tr>
+          <td class="tooltip" data-label="Parking" data-tooltip="Number of vehicles that can be parked">Parking</td>
+          <td data-label="Basic Parking" data-plan="Basic">Parking Space for 1 Vehicle</td>
+          <td data-label="Popular Parking" data-plan="Popular">Parking Space for 2 Vehicles</td>
+          <td data-label="Luxury Parking" data-plan="Luxury">Parking Space for 3 Vehicles</td>
+          <td data-label="Royal Parking" data-plan="Royal">Parking Space for 4 Vehicles</td>
+        </tr>
+        <tr>
+          <td class="tooltip" data-label="Security" data-tooltip="Type of security features provided">Security</td>
+          <td data-label="Basic Security" data-plan="Basic">Basic Security</td>
+          <td data-label="Popular Security" data-plan="Popular">Community Security</td>
+          <td data-label="Luxury Security" data-plan="Luxury">24/7 Security System</td>
+          <td data-label="Royal Security" data-plan="Royal">24/7 Security with Advanced Systems</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
   <script>
-    document.querySelectorAll('.tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        const type = tab.getAttribute('data-type');
-        document.querySelectorAll('.packages-grid').forEach(grid => {
-          grid.classList.add('hidden');
-          if (grid.classList.contains(type)) {
-            grid.classList.remove('hidden');
+    // Data for different locations and types
+    const projectData = {
+      Hyderabad: {
+        Homes: {
+          Basic: {
+            title: "Hyderabad Standard Home",
+            features: [
+              "2 Bedrooms with Balconies",
+              "1 Living Area (300 sq.ft.)",
+              "Basic Amenities (Water, Power Backup)",
+              "Compact Design with Modular Kitchen",
+              "1 Bathroom with Modern Fittings",
+              "Parking Space for 1 Vehicle"
+            ],
+            price: "₹50 Lakhs",
+            compatibility: "Small Families",
+            image: "https://assets.architecturaldigest.in/photos/60084032f93542952b6657c5/master/w_1600%2Cc_limit/Hyderabad-home-petnhouse-sustainable-2-1.jpg"
+          },
+          Popular: {
+            title: "Hyderabad Family Residence",
+            features: [
+              "3 Bedrooms with Wardrobes",
+              "Spacious Living Area (450 sq.ft.)",
+              "Modern Kitchen with Chimney",
+              "Small Garden (100 sq.ft.)",
+              "2 Bathrooms with Geysers",
+              "Parking Space for 2 Vehicles",
+              "Community Hall Access"
+            ],
+            price: "₹80 Lakhs",
+            compatibility: "Growing Families",
+            image: "https://media.architecturaldigest.in/wp-content/uploads/2020/08/Hyderabad-home-architecture-design-photos-1.jpg"
+          },
+          Luxury: {
+            title: "Hyderabad Luxury Villa",
+            features: [
+              "4 Bedrooms with Walk-in Closets",
+              "Home Theater (200 sq.ft.)",
+              "Infinity Pool with Deck",
+              "Smart Home Features (Automation)",
+              "3 Bathrooms with Jacuzzi",
+              "Parking Space for 3 Vehicles",
+              "Rooftop Terrace (300 sq.ft.)",
+              "24/7 Security System"
+            ],
+            price: "₹1.5 Crores",
+            compatibility: "Affluent Families",
+            image: "https://im.proptiger.com/1/3241050/6/zen-scape-villas-elevation-146745517.jpeg"
+          },
+          Royal: {
+            title: "Hyderabad Royal Mansion",
+            features: [
+              "6 Bedrooms with En-suite Bathrooms",
+              "Private Gym (250 sq.ft.)",
+              "Large Terrace (500 sq.ft.)",
+              "Premium Finishes (Marble Flooring)",
+              "4 Bathrooms with Luxury Fittings",
+              "Parking Space for 4 Vehicles",
+              "Indoor Pool with Sauna",
+              "Landscaped Garden (600 sq.ft.)",
+              "Advanced Home Automation"
+            ],
+            price: "₹3 Crores",
+            compatibility: "Elite Families",
+            image: "https://cdn.prod.website-files.com/65e2e78d061034866949e5e6/65e5c6c0355dbdde0cfd6e02_651c7944c175c9d06d530d6d_IMG_1547_Aurora2017_HDR-2.jpeg"
+          }
+        },
+        "Luxury House": {
+          Basic: {
+            title: "Hyderabad Deluxe Home",
+            features: [
+              "3 Bedrooms with Balconies",
+              "Living Area (350 sq.ft.)",
+              "Premium Amenities (Water, Power, Wi-Fi)",
+              "Modular Kitchen with Island",
+              "2 Bathrooms with Modern Fittings",
+              "Parking Space for 2 Vehicles",
+              "Small Terrace (50 sq.ft.)"
+            ],
+            price: "₹70 Lakhs",
+            compatibility: "Small Families",
+            image: "https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg"
+          },
+          Popular: {
+            title: "Hyderabad Elite Residence",
+            features: [
+              "4 Bedrooms with Wardrobes",
+              "Spacious Living Area (500 sq.ft.)",
+              "Designer Kitchen with Appliances",
+              "Private Garden (150 sq.ft.)",
+              "3 Bathrooms with Geysers",
+              "Parking Space for 3 Vehicles",
+              "Community Club Access",
+              "CCTV Surveillance"
+            ],
+            price: "₹1.2 Crores",
+            compatibility: "Growing Families",
+            image: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg"
+          },
+          Luxury: {
+            title: "Hyderabad Grand Villa",
+            features: [
+              "5 Bedrooms with Walk-in Closets",
+              "Home Theater (250 sq.ft.)",
+              "Swimming Pool with Deck",
+              "Smart Home Features (Voice Control)",
+              "4 Bathrooms with Jacuzzi",
+              "Parking Space for 4 Vehicles",
+              "Rooftop Lounge (400 sq.ft.)",
+              "24/7 Security with Guards"
+            ],
+            price: "₹2 Crores",
+            compatibility: "Affluent Families",
+            image: "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg"
+          },
+          Royal: {
+            title: "Hyderabad Majestic Mansion",
+            features: [
+              "7 Bedrooms with En-suite Bathrooms",
+              "Private Gym (300 sq.ft.)",
+              "Expansive Terrace (600 sq.ft.)",
+              "Luxury Finishes (Italian Marble)",
+              "5 Bathrooms with Spa Features",
+              "Parking Space for 5 Vehicles",
+              "Indoor Pool with Sauna",
+              "Manicured Garden (700 sq.ft.)",
+              "Smart Home System"
+            ],
+            price: "₹4 Crores",
+            compatibility: "Elite Families",
+            image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
+          }
+        }
+      },
+      Bangalore: {
+        Homes: {
+          Basic: {
+            title: "Bangalore Standard Home",
+            features: [
+              "2 Bedrooms with Balconies",
+              "Living Area (320 sq.ft.)",
+              "Essential Amenities (Water, Power)",
+              "Compact Kitchen with Storage",
+              "1 Bathroom with Modern Fittings",
+              "Parking Space for 1 Vehicle",
+              "Small Balcony (30 sq.ft.)"
+            ],
+            price: "₹55 Lakhs",
+            compatibility: "Small Families",
+            image: "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg"
+          },
+          Popular: {
+            title: "Bangalore Family Residence",
+            features: [
+              "3 Bedrooms with Built-in Storage",
+              "Living Area (470 sq.ft.)",
+              "Modern Kitchen with Chimney",
+              "Small Garden (120 sq.ft.)",
+              "2 Bathrooms with Geysers",
+              "Parking Space for 2 Vehicles",
+              "Community Hall Access",
+              "Rainwater Harvesting"
+            ],
+            price: "₹85 Lakhs",
+            compatibility: "Growing Families",
+            image: "https://images.pexels.com/photos/1632790/pexels-photo-1632790.jpeg"
+          },
+          Luxury: {
+            title: "Bangalore Luxury Villa",
+            features: [
+              "4 Bedrooms with Walk-in Closets",
+              "Home Theater (220 sq.ft.)",
+              "Infinity Pool with Deck",
+              "Smart Home Features (Automation)",
+              "3 Bathrooms with Jacuzzi",
+              "Parking Space for 3 Vehicles",
+              "Rooftop Terrace (350 sq.ft.)",
+              "24/7 Security System"
+            ],
+            price: "₹1.6 Crores",
+            compatibility: "Affluent Families",
+            image: "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg"
+          },
+          Royal: {
+            title: "Bangalore Royal Mansion",
+            features: [
+              "6 Bedrooms with En-suite Bathrooms",
+              "Private Gym (270 sq.ft.)",
+              "Large Terrace (550 sq.ft.)",
+              "Premium Finishes (Marble Flooring)",
+              "4 Bathrooms with Luxury Fittings",
+              "Parking Space for 4 Vehicles",
+              "Indoor Pool with Sauna",
+              "Landscaped Garden (650 sq.ft.)",
+              "Advanced Home Automation"
+            ],
+            price: "₹3.2 Crores",
+            compatibility: "Elite Families",
+            image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
+          }
+        },
+        "Luxury House": {
+          Basic: {
+            title: "Bangalore Deluxe Home",
+            features: [
+              "3 Bedrooms with Balconies",
+              "Living Area (360 sq.ft.)",
+              "Premium Amenities (Water, Power, Wi-Fi)",
+              "Modular Kitchen with Island",
+              "2 Bathrooms with Modern Fittings",
+              "Parking Space for 2 Vehicles",
+              "Small Terrace (60 sq.ft.)",
+              "Solar Panels"
+            ],
+            price: "₹75 Lakhs",
+            compatibility: "Small Families",
+            image: "https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg"
+          },
+          Popular: {
+            title: "Bangalore Elite Residence",
+            features: [
+              "4 Bedrooms with Wardrobes",
+              "Spacious Living Area (520 sq.ft.)",
+              "Designer Kitchen with Appliances",
+              "Private Garden (160 sq.ft.)",
+              "3 Bathrooms with Geysers",
+              "Parking Space for 3 Vehicles",
+              "Community Club Access",
+              "CCTV Surveillance"
+            ],
+            price: "₹1.3 Crores",
+            compatibility: "Growing Families",
+            image: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg"
+          },
+          Luxury: {
+            title: "Bangalore Grand Villa",
+            features: [
+              "5 Bedrooms with Walk-in Closets",
+              "Home Theater (260 sq.ft.)",
+              "Swimming Pool with Deck",
+              "Smart Home Features (Voice Control)",
+              "4 Bathrooms with Jacuzzi",
+              "Parking Space for 4 Vehicles",
+              "Rooftop Lounge (450 sq.ft.)",
+              "24/7 Security with Guards"
+            ],
+            price: "₹2.1 Crores",
+            compatibility: "Affluent Families",
+            image: "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg"
+          },
+          Royal: {
+            title: "Bangalore Majestic Mansion",
+            features: [
+              "7 Bedrooms with En-suite Bathrooms",
+              "Private Gym (320 sq.ft.)",
+              "Expansive Terrace (650 sq.ft.)",
+              "Luxury Finishes (Italian Marble)",
+              "5 Bathrooms with Spa Features",
+              "Parking Space for 5 Vehicles",
+              "Indoor Pool with Sauna",
+              "Manicured Garden (750 sq.ft.)",
+              "Smart Home System"
+            ],
+            price: "₹4.2 Crores",
+            compatibility: "Elite Families",
+            image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
+          }
+        }
+      },
+      Hubli: {
+        Homes: {
+          Basic: {
+            title: "Hubli Standard Home",
+            features: [
+              "2 Bedrooms with Balconies",
+              "Living Area (280 sq.ft.)",
+              "Essential Amenities (Water, Power)",
+              "Compact Kitchen with Storage",
+              "1 Bathroom with Modern Fittings",
+              "Parking Space for 1 Vehicle",
+              "Small Balcony (25 sq.ft.)"
+            ],
+            price: "₹60 Lakhs",
+            compatibility: "Small Families",
+            image: "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg"
+          },
+          Popular: {
+            title: "Hubli Family Residence",
+            features: [
+              "3 Bedrooms with Built-in Storage",
+              "Living Area (430 sq.ft.)",
+              "Modern Kitchen with Chimney",
+              "Small Garden (90 sq.ft.)",
+              "2 Bathrooms with Geysers",
+              "Parking Space for 2 Vehicles",
+              "Community Hall Access",
+              "Rainwater Harvesting"
+            ],
+            price: "₹90 Lakhs",
+            compatibility: "Growing Families",
+            image: "https://images.pexels.com/photos/1632790/pexels-photo-1632790.jpeg"
+          },
+          Luxury: {
+            title: "Hubli Luxury Villa",
+            features: [
+              "4 Bedrooms with Walk-in Closets",
+              "Home Theater (180 sq.ft.)",
+              "Infinity Pool with Deck",
+              "Smart Home Features (Automation)",
+              "3 Bathrooms with Jacuzzi",
+              "Parking Space for 3 Vehicles",
+              "Rooftop Terrace (280 sq.ft.)",
+              "24/7 Security System"
+            ],
+            price: "₹1.8 Crores",
+            compatibility: "Affluent Families",
+            image: "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg"
+          },
+          Royal: {
+            title: "Hubli Royal Mansion",
+            features: [
+              "6 Bedrooms with En-suite Bathrooms",
+              "Private Gym (230 sq.ft.)",
+              "Large Terrace (480 sq.ft.)",
+              "Premium Finishes (Marble Flooring)",
+              "4 Bathrooms with Luxury Fittings",
+              "Parking Space for 4 Vehicles",
+              "Indoor Pool with Sauna",
+              "Landscaped Garden (550 sq.ft.)",
+              "Advanced Home Automation"
+            ],
+            price: "₹3.5 Crores",
+            compatibility: "Elite Families",
+            image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
+          }
+        },
+        "Luxury House": {
+          Basic: {
+            title: "Hubli Deluxe Home",
+            features: [
+              "3 Bedrooms with Balconies",
+              "Living Area (340 sq.ft.)",
+              "Premium Amenities (Water, Power, Wi-Fi)",
+              "Modular Kitchen with Island",
+              "2 Bathrooms with Modern Fittings",
+              "Parking Space for 2 Vehicles",
+              "Small Terrace (55 sq.ft.)",
+              "Solar Panels"
+            ],
+            price: "₹80 Lakhs",
+            compatibility: "Small Families",
+            image: "https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg"
+          },
+          Popular: {
+            title: "Hubli Elite Residence",
+            features: [
+              "4 Bedrooms with Wardrobes",
+              "Spacious Living Area (480 sq.ft.)",
+              "Designer Kitchen with Appliances",
+              "Private Garden (140 sq.ft.)",
+              "3 Bathrooms with Geysers",
+              "Parking Space for 3 Vehicles",
+              "Community Club Access",
+              "CCTV Surveillance"
+            ],
+            price: "₹1.4 Crores",
+            compatibility: "Growing Families",
+            image: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg"
+          },
+          Luxury: {
+            title: "Hubli Grand Villa",
+            features: [
+              "5 Bedrooms with Walk-in Closets",
+              "Home Theater (240 sq.ft.)",
+              "Swimming Pool with Deck",
+              "Smart Home Features (Voice Control)",
+              "4 Bathrooms with Jacuzzi",
+              "Parking Space for 4 Vehicles",
+              "Rooftop Lounge (400 sq.ft.)",
+              "24/7 Security with Guards"
+            ],
+            price: "₹2.3 Crores",
+            compatibility: "Affluent Families",
+            image: "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg"
+          },
+          Royal: {
+            title: "Hubli Majestic Mansion",
+            features: [
+              "7 Bedrooms with En-suite Bathrooms",
+              "Private Gym (300 sq.ft.)",
+              "Expansive Terrace (600 sq.ft.)",
+              "Luxury Finishes (Italian Marble)",
+              "5 Bathrooms with Spa Features",
+              "Parking Space for 5 Vehicles",
+              "Indoor Pool with Sauna",
+              "Manicured Garden (700 sq.ft.)",
+              "Smart Home System"
+            ],
+            price: "₹4.5 Crores",
+            compatibility: "Elite Families",
+            image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
+          }
+        }
+      }
+    };
+
+    // Filter Logic for Cards
+    const locationFilter = document.getElementById('location-filter');
+    const typeFilter = document.getElementById('type-filter');
+    const cards = document.querySelectorAll('.proj-card');
+
+    function updateCards() {
+      const selectedLocation = locationFilter.value;
+      const selectedType = typeFilter.value;
+
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const data = projectData[selectedLocation][selectedType][category];
+
+        // Update card content
+        card.querySelector('.proj-card-title').textContent = data.title;
+        card.querySelector('.proj-card-image').src = data.image;
+        const featuresList = card.querySelector('.proj-card-features');
+        featuresList.innerHTML = '';
+        data.features.forEach(feature => {
+          const li = document.createElement('li');
+          li.textContent = feature;
+          featuresList.appendChild(li);
+        });
+        card.querySelector('.proj-card-price span').textContent = data.price;
+        card.querySelector('.proj-card-compatibility span').textContent = data.compatibility;
+      });
+
+      // Update comparison table
+      updateComparisonTable(selectedLocation, selectedType);
+    }
+
+    // Function to update the comparison table
+    function updateComparisonTable(location, type) {
+      const categories = ['Basic', 'Popular', 'Luxury', 'Royal'];
+      const tableData = {
+        Price: categories.map(category => projectData[location][type][category].price),
+        Compatibility: categories.map(category => projectData[location][type][category].compatibility),
+        Bedrooms: categories.map(category => {
+          return projectData[location][type][category].features.find(feature => feature.includes('Bedrooms')) || 'N/A';
+        }),
+        "Living Area": categories.map(category => {
+          const feature = projectData[location][type][category].features.find(feature => feature.includes('Living Area') || feature.includes('Home Theater') || feature.includes('Private Gym'));
+          return feature || 'N/A';
+        }),
+        "Special Features": categories.map(category => {
+          const features = projectData[location][type][category].features;
+          const specialFeatures = features.filter(feature => 
+            feature.includes('Kitchen') || 
+            feature.includes('Garden') || 
+            feature.includes('Pool') || 
+            feature.includes('Smart Home') || 
+            feature.includes('Terrace') || 
+            feature.includes('Automation')
+          );
+          return specialFeatures.length > 0 ? specialFeatures.join(', ') : 'None';
+        }),
+        Parking: categories.map(category => {
+          const feature = projectData[location][type][category].features.find(feature => feature.includes('Parking'));
+          return feature || 'N/A';
+        }),
+        Security: categories.map(category => {
+          const features = projectData[location][type][category].features;
+          const securityFeature = features.find(feature => feature.includes('Security') || feature.includes('CCTV') || feature.includes('Guards'));
+          return securityFeature ? securityFeature.replace('24/7 ', '') : (category === 'Basic' ? 'Basic Security' : category === 'Popular' ? 'Community Security' : 'None');
+        })
+      };
+
+      // Update table rows
+      const rows = document.querySelectorAll('.compare-table tbody tr');
+      rows.forEach((row, index) => {
+        const key = row.children[0].getAttribute('data-label');
+        const cells = row.children;
+        for (let i = 1; i < cells.length; i++) {
+          cells[i].textContent = tableData[key][i - 1];
+        }
+      });
+    }
+
+    // Compare Plans Selection Logic
+    const compareCheckboxes = document.querySelectorAll('.compare-control-group input[type="checkbox"]');
+    const selectAllCheckbox = document.getElementById('select-all');
+
+    compareCheckboxes.forEach(checkbox => {
+      if (checkbox.id !== 'select-all') {
+        checkbox.addEventListener('change', () => {
+          const plan = checkbox.getAttribute('data-plan');
+          const elements = document.querySelectorAll(`[data-plan="${plan}"]`);
+          elements.forEach(element => {
+            if (checkbox.checked) {
+              element.classList.remove('hidden');
+            } else {
+              element.classList.add('hidden');
+            }
+          });
+
+          // Update Select All checkbox state
+          const allCheckboxes = Array.from(compareCheckboxes).filter(cb => cb.id !== 'select-all');
+          selectAllCheckbox.checked = allCheckboxes.every(cb => cb.checked);
+        });
+      }
+    });
+
+    selectAllCheckbox.addEventListener('change', () => {
+      compareCheckboxes.forEach(checkbox => {
+        if (checkbox.id !== 'select-all') {
+          checkbox.checked = selectAllCheckbox.checked;
+          const plan = checkbox.getAttribute('data-plan');
+          const elements = document.querySelectorAll(`[data-plan="${plan}"]`);
+          elements.forEach(element => {
+            if (selectAllCheckbox.checked) {
+              element.classList.remove('hidden');
+            } else {
+              element.classList.add('hidden');
+            }
+          });
+        }
+      });
+    });
+
+    // Initial update
+    updateCards();
+
+    // Add event listeners for filter changes
+    locationFilter.addEventListener('change', updateCards);
+    typeFilter.addEventListener('change', updateCards);
+
+    // Thumbnails Animation for Each Card
+    const thumbnailContainers = document.querySelectorAll('.proj-thumbnails-container');
+    thumbnailContainers.forEach(container => {
+      const originalThumbnails = container.querySelectorAll('.proj-thumbnail');
+      const cardWidth = container.parentElement.parentElement.offsetWidth;
+
+      // Adjustable speed for thumbnails (in seconds for one full loop)
+      const thumbnailAnimationDuration = 10;
+
+      // Calculate thumbnail width (including margin) and how many fit in the card
+      let thumbnailWidth = 50 + 5;
+      if (window.innerWidth <= 600) {
+        thumbnailWidth = 40 + 5;
+      }
+      const thumbnailsInCard = Math.ceil(cardWidth / thumbnailWidth) + 1;
+
+      // Duplicate thumbnails to fill the card and ensure seamless looping
+      const totalThumbnailsNeeded = originalThumbnails.length * Math.ceil(thumbnailsInCard / originalThumbnails.length) + originalThumbnails.length;
+      for (let i = 0; i < totalThumbnailsNeeded; i++) {
+        const clone = originalThumbnails[i % originalThumbnails.length].cloneNode(true);
+        container.appendChild(clone);
+      }
+
+      // Update the thumbnails list after cloning
+      const allThumbnails = container.querySelectorAll('.proj-thumbnail');
+
+      // Calculate total width of the thumbnails container after cloning
+      const thumbnailsContainerWidth = allThumbnails.length * thumbnailWidth;
+
+      // GSAP animation for seamless scrolling of thumbnails
+      function startThumbnailAnimation() {
+        gsap.to(container, {
+          x: -(thumbnailsContainerWidth - cardWidth),
+          duration: thumbnailAnimationDuration,
+          ease: "linear",
+          onComplete: () => {
+            gsap.set(container, { x: 0 });
+            startThumbnailAnimation();
           }
         });
+      }
+
+      // Start the animation
+      startThumbnailAnimation();
+
+      // Pause/resume animation on hover
+      container.addEventListener('mouseenter', () => {
+        gsap.to(container, { timeScale: 0, overwrite: "auto" });
+      });
+
+      container.addEventListener('mouseleave', () => {
+        gsap.to(container, { timeScale: 1, overwrite: "auto" });
       });
     });
   </script>
 
-  </main>
 
-  <!-- packge worked detailed-->
+  
+    <style>
+ /* Our Projects Section Styles */
+    .proj-section {
+      padding: 140px 25px;
+      background-color: #e8ecef;
+      text-align: center;
+    }
 
-  <section class="stats-sectionn">
-    <div class="overlay">
-      <div class="stat-box">
-        <i class="fa-solid fa-compass-drafting" style="color: #e9382b; font-size: 60px;"></i>
-        <h2>475000</h2>
-        <p><strong>Total Sqft Area Constructed</strong></p>
+    .proj-heading {
+      font-size: 2.5rem;
+      color: #2c2e3e;
+      margin-bottom: 30px;
+      position: relative;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
 
-      </div>
-      <div class="stat-box">
-        <i class="fa-solid fa-building" style="color: #e9382b; font-size:60px;"></i>
-        <h2>112</h2>
-        <p> <strong>  Total Of Homes</strong> </p>
-      </div>
-      <div class="stat-box">
-        <i class="fa-solid fa-people-carry-box"  style="color: #e9382b; font-size:60px;"></i>
-        <h2>10</h2>
-        <p><strong>Years of Warranty</strong></p>
-      </div>
-      <div class="stat-box">
-        <i class="fa-solid fa-globe"  style="color: #e9382b; font-size:60px;"></i>
-        <h2>40</h2>
-        <p><strong>Years of Experience</strong></p>
-      </div>
-    </div>
-  </section>
+    .proj-heading::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background-color: #ff6f61;
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .proj-filters {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .proj-filter-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .proj-filter-label {
+      font-size: 1.9rem;
+      color: #2c2e3e;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .proj-filter-select {
+      padding: 6px 12px;
+      font-size: 1.65rem;
+      border: 1px solid #b0bec5;
+      border-radius: 4px;
+      background-color: white;
+      cursor: pointer;
+    }
+
+    .proj-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .proj-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .proj-card.hidden {
+      display: none;
+    }
+
+    .proj-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .proj-card-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .proj-card-label {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background-color: #d5193e;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 1.265rem;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      width: calc(100% - 32px);
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .proj-card:hover .proj-card-label {
+      opacity: 1;
+    }
+
+    .proj-card-content {
+      padding: 15px;
+      text-align: left;
+    }
+
+    .proj-card-title {
+      font-size: 1.7rem;
+      color: #2c2e3e;
+      margin: 0 0 8px;
+      font-weight: bold;
+    }
+
+    .proj-card-features {
+      list-style-type: none;
+      padding: 0;
+      margin: 0 0 12px;
+      font-size: 0.85rem;
+      color: #2c2e3e;
+    }
+
+    .proj-card-features li {
+      margin-bottom: 4px;
+      position: relative;
+      padding-left: 12px;
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+
+    .proj-card-features li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: #d5193e;
+    }
+
+    .proj-card-price,
+    .proj-card-compatibility {
+      font-size: 0.85rem;
+      color: #2c2e3e;
+      margin: 5px 0;
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+
+    .proj-card-price span,
+    .proj-card-compatibility span {
+      font-weight: bold;
+      color: #2c2e3e;
+    }
+
+    .proj-card-link {
+      display: inline-block;
+      color: #d5193e;
+      font-size: 0.85rem;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .proj-card-link:hover {
+      color: #d5193e;
+    }
+
+    .proj-thumbnails {
+      overflow: hidden;
+      background-color: #f1f4f5;
+      padding: 5px 0;
+    }
+
+    .proj-thumbnails-container {
+      display: flex;
+      width: max-content;
+    }
+
+    .proj-thumbnail {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      margin-right: 5px;
+      flex-shrink: 0;
+      border-radius: 3px;
+    }
+
+    /* Compare Plans Section Styles */
+    .compare-section {
+      padding: 40px 15px;
+      background-color: #e9f1fa;
+      text-align: center;
+    }
+
+    .compare-heading {
+      font-size: 2.7rem;
+      color: #2c2e3e;
+      margin-bottom: 20px;
+      position: relative;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .compare-heading::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background-color: #4a90e2;
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .compare-controls {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .compare-control-group {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .compare-control-group label {
+      font-size: 1.9rem;
+      color: #2c2e3e;
+      cursor: pointer;
+    }
+
+    .compare-control-group input[type="checkbox"] {
+      accent-color: #d5193e;
+      cursor: pointer;
+    }
+
+    .compare-table {
+      max-width: 1100px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .compare-table th,
+    .compare-table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #e0e0e0;
+      position: relative;
+    }
+
+    .compare-table th {
+      background-color: #d5193e;
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+    
+    }
+
+    .compare-table th.hidden,
+    .compare-table td.hidden {
+      display: none;
+    }
+
+    .compare-table td {
+      color: #2a4d69;
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+
+    .compare-table tr:nth-child(even) {
+      background-color: #f7fafd;
+    }
+
+    .tooltip {
+      position: relative;
+      cursor: help;
+    }
+
+    .tooltip::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #2a4d69;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 10;
+    }
+
+    .tooltip:hover::after {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+      .proj-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .proj-card-image {
+        height: 160px;
+      }
+
+      .compare-table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .proj-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .proj-heading,
+      .compare-heading {
+        font-size: 2rem;
+      }
+
+      .proj-card-image {
+        height: 180px;
+      }
+
+      .proj-card-title,
+      .proj-card-features,
+      .proj-card-price,
+      .proj-card-compatibility {
+        font-size: 0.8rem;
+      }
+
+      .proj-filter-group {
+        width: 100%;
+        margin-bottom: 12px;
+      }
+
+      .proj-filter-select {
+        width: 100%;
+        max-width: 180px;
+      }
+
+      .proj-thumbnails-container {
+        width: max-content;
+      }
+
+      .proj-thumbnail {
+        width: 40px;
+        height: 40px;
+      }
+
+      .compare-table {
+        display: block;
+      }
+
+      .compare-table thead {
+        display: none;
+      }
+
+      .compare-table tbody,
+      .compare-table tr {
+        display: block;
+      }
+
+      .compare-table td {
+        display: block;
+        text-align: left;
+        padding: 10px;
+        position: relative;
+        border-bottom: none;
+      }
+
+      .compare-table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        color: #d5193e;
+        margin-bottom: 5px;
+      }
+
+      .compare-table td.hidden {
+        display: none;
+      }
+
+      .compare-table tr {
+        margin-bottom: 20px;
+        border-bottom: 2px solid #e0e0e0;
+      }
+
+      .compare-control-group label {
+        font-size: 0.85rem;
+      }
+    }
+    </style>
+    
   
     <!-- End packge worked detailed-->
     
@@ -290,7 +1415,8 @@
       </div>
     </footer>
     <hr>
-    
+
+
 
     <!-- New Footer Section -->
 <footer class="footer">
