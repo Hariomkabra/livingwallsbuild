@@ -124,6 +124,45 @@
         width: 200px; /* Original size for desktop */
       }
     }
+/* Phone Icon */
+     .phone-icon {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      background-color: #28a745;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      transition: transform 0.3s, background-color 0.3s;
+      text-decoration: none;
+    }
+
+    .phone-icon:hover {
+      background-color: #218838;
+      transform: scale(1.1);
+    }
+
+    .phone-icon i {
+      font-size: 24px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .phone-icon {
+        width: 40px;
+        height: 40px;
+      }
+
+      .phone-icon i {
+        font-size: 20px;
+      }
+    }
     /* Accessibility & Compatibility Fix */
 html {
   -webkit-text-size-adjust: 100%;
