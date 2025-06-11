@@ -93,13 +93,12 @@
 
 
 <!--Hero Section -->
-<div class="hero">
+  <div class="hero">
     <div class="hero-slide active">
       <video autoplay muted loop playsinline class="hero-video">
-        <source src=" https://videos.pexels.com/video-files/1197802/1197802-hd_1920_1080_25fps.mp4" type="video/mp4">
+        <source src="https://videos.pexels.com/video-files/1197802/1197802-hd_1920_1080_25fps.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-     
       <div class="hero-content">
         <h1>Modern Infrastructure</h1>
         <p>Designing structures that stand the test of time.</p>
@@ -127,22 +126,31 @@
         <p>Your Residential Construction Solution.</p>
       </div>
     </div>
+
+    <div class="slider-nav">
+      <span class="slider-line active" data-index="0"></span>
+      <span class="slider-line" data-index="1"></span>
+      <span class="slider-line" data-index="2"></span>
+    </div>
   </div>
 
   <script>
     let currentIndex = 0;
     const slides = document.querySelectorAll('.hero-slide');
     const videos = document.querySelectorAll('.hero-video');
+    const lines = document.querySelectorAll('.slider-line');
 
-    // Play only the active slide's video
+    // Play only the active slide's video and update lines
     function updateSlide() {
       slides.forEach((slide, index) => {
         if (index === currentIndex) {
           slide.classList.add('active');
           videos[index].play();
+          lines[index].classList.add('active');
         } else {
           slide.classList.remove('active');
-          videos[index].pause(); // Pause non-active videos to save resources
+          videos[index].pause();
+          lines[index].classList.remove('active');
         }
       });
     }
@@ -150,13 +158,26 @@
     // Initial setup
     updateSlide();
 
-    // Change slide every 4 seconds
-    setInterval(() => {
+    // Change slide every 5 seconds
+    let slideInterval = setInterval(() => {
       currentIndex = (currentIndex + 1) % slides.length;
       updateSlide();
     }, 5000);
-  </script>
 
+    // Line navigation
+    lines.forEach(line => {
+      line.addEventListener('click', () => {
+        clearInterval(slideInterval); // Stop auto-slide
+        currentIndex = parseInt(line.getAttribute('data-index'));
+        updateSlide();
+        // Restart auto-slide
+        slideInterval = setInterval(() => {
+          currentIndex = (currentIndex + 1) % slides.length;
+          updateSlide();
+        }, 5000);
+      });
+    });
+  </script>
     <!-- floating whats app -->
     <div class="whatsapp-button-container">
     <a href="https://wa.me/919146478677" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
@@ -1205,9 +1226,7 @@
       <img src="https://5.imimg.com/data5/SELLER/Default/2024/10/455302584/EQ/GP/ZV/40717323/indusind-bank-small-ticket-business-loan-250x250.png" alt="INDUSIND" data-url="https://www.indusind.com">
       <img src="https://5.imimg.com/data5/SELLER/Default/2022/12/XI/IK/TK/18660198/pnb-housing-finance.jpg" alt="PNB" data-url="https://www.pnbhousing.com">
       <img src="https://5.imimg.com/data5/SELLER/Default/2024/4/410922806/LQ/HR/GT/129849655/union-bank-of-india-home-loan-service.jpg" alt="UNION BANK OF INDIA" data-url="https://www.unionbankofindia.co.in">
-    </div>
-    <button class="scroll-right" id="scrollRightBanking">→</button>
-  </div>
+   
 </section>
 
 <!-- Trusted Partners -->
@@ -1233,9 +1252,7 @@
       <img src="https://www.zuaricements.com/images/websitelogo12.jpg" alt="Zuari Cement" data-url="https://www.zuaricements.com">
       <img src="https://yt3.googleusercontent.com/ytc/AIdro_nW1vyJ2ssw7WRCHeX6qYWi2i8gPurMvevRfkkuKnJWI-0=s900-c-k-c0x00ffffff-no-rj" alt="Fixit" data-url="https://www.pidilite.com/brands/dr-fixit">
       <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/2aa58e24-fe0f-417b-b91d-807f97c1d529.__CR0,0,600,180_PT0_SX600_V1___.png" alt="MYK Laticrete" data-url="https://www.myklaticrete.com">
-    </div>
-    <button class="scroll-right" id="scrollRightTrusted">→</button>
-  </div>
+   
 </section>
 
 <!-- JavaScript -->
