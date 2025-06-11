@@ -310,6 +310,159 @@
 
  <!--End Book Free Consulatation -->
 
+
+ <!--Our Services -->
+
+  <section class="svc-section">
+    <h2 class="svc-title">Our Services</h2>
+    <div class="svc-container" id="svc-container">
+      <!-- Service 1 -->
+      <a href="contact.html" class="svc-card-link">
+        <div class="svc-card">
+          <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg" alt="Residential Construction" class="svc-card-image">
+          <div class="svc-card-content">
+            <h3 class="svc-card-title">Residential Construction</h3>
+            <p class="svc-card-desc">We bring your personalized dream home to life.</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Service 2 -->
+      <a href="contact.html" class="svc-card-link">
+        <div class="svc-card">
+          <img src="https://images.pexels.com/photos/1632790/pexels-photo-1632790.jpeg" alt="Rental Residential Construction" class="svc-card-image">
+          <div class="svc-card-content">
+            <h3 class="svc-card-title">Rental + Residential House Construction</h3>
+            <p class="svc-card-desc">We create beautiful spaces for your tenants that feel like home.</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Service 3 -->
+      <a href="contact.html" class="svc-card-link">
+        <div class="svc-card">
+          <img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg" alt="Rental House Construction" class="svc-card-image">
+          <div class="svc-card-content">
+            <h3 class="svc-card-title">Rental House Construction</h3>
+            <p class="svc-card-desc">We build beautiful spaces that feel like home.</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Service 4 -->
+      <a href="contact.html" class="svc-card-link">
+        <div class="svc-card">
+          <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg" alt="Commercial Construction" class="svc-card-image">
+          <div class="svc-card-content">
+            <h3 class="svc-card-title">Commercial Construction</h3>
+            <p class="svc-card-desc">We create inspiring workspaces for your professional dreams.</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Service 5 -->
+      <a href="contact.html" class="svc-card-link">
+        <div class="svc-card">
+          <img src="https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg" alt="Renovation Services" class="svc-card-image">
+          <div class="svc-card-content">
+            <h3 class="svc-card-title">Renovation Services</h3>
+            <p class="svc-card-desc">Transform your existing spaces with our expert renovation services.</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Service 6 -->
+      <a href="interior-design.html" class="svc-card-link">
+        <div class="svc-card">
+          <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg" alt="Interior Design" class="svc-card-image">
+          <div class="svc-card-content">
+            <h3 class="svc-card-title">Interior Design</h3>
+            <p class="svc-card-desc">Elevate your spaces with our bespoke interior design solutions.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <script>
+    const container = document.querySelector('#svc-container');
+    const originalCards = container.querySelectorAll('.svc-card');
+    const viewportWidth = window.innerWidth;
+
+    // Adjustable speed (in seconds for one full loop)
+    const animationDuration = 80; // Change this value to adjust speed (lower = faster, higher = slower)
+
+    // Calculate card width (including margin) and how many cards fit in the viewport
+    let cardWidth = 300 + 20; // Card width (300px) + margin-right (20px)
+    const cardsInViewport = Math.ceil(viewportWidth / cardWidth) + 1; // Extra card to ensure no gap
+
+    // Duplicate cards to fill the viewport and ensure seamless looping
+    const totalCardsNeeded = originalCards.length * Math.ceil(cardsInViewport / originalCards.length) + originalCards.length;
+    for (let i = 0; i < totalCardsNeeded; i++) {
+      const clone = originalCards[i % originalCards.length].cloneNode(true);
+      const linkClone = document.createElement('a');
+      linkClone.href = originalCards[i % originalCards.length].parentElement.href;
+      linkClone.className = 'svc-card-link';
+      linkClone.appendChild(clone);
+      container.appendChild(linkClone);
+    }
+
+    // Update the cards list after cloning
+    const allCards = container.querySelectorAll('.svc-card');
+
+    // Calculate total width of the container after cloning
+    const containerWidth = allCards.length * cardWidth;
+
+    // GSAP animation for seamless scrolling
+    function startScrollAnimation() {
+      gsap.to(container, {
+        x: -(containerWidth - viewportWidth), // Scroll to the end
+        duration: animationDuration,
+        ease: "linear",
+        onComplete: () => {
+          gsap.set(container, { x: 0 }); // Reset to start
+          startScrollAnimation(); // Loop
+        }
+      });
+    }
+
+    // Fade-in effect as cards enter viewport
+    allCards.forEach((card, index) => {
+      gsap.to(card, {
+        opacity: 1,
+        duration: 1,
+        delay: index * 0.2,
+        scrollTrigger: {
+          trigger: card,
+          start: "left 80%",
+          end: "left 20%",
+          toggleActions: "play none none none"
+        }
+      });
+    });
+
+    // Start the animation
+    startScrollAnimation();
+
+    // Pause/resume animation on hover
+    container.addEventListener('mouseenter', () => {
+      gsap.to(container, { timeScale: 0, overwrite: "auto" });
+    });
+
+    container.addEventListener('mouseleave', () => {
+      gsap.to(container, { timeScale: 1, overwrite: "auto" });
+    });
+
+    // Adjust card width for responsive design
+    if (window.innerWidth <= 1024 && window.innerWidth > 600) {
+      cardWidth = 250 + 20;
+    } else if (window.innerWidth <= 600) {
+      cardWidth = 200 + 20;
+    }
+  </script>
+
+
+ <!--End Our Services -->
    <!--how it work-->
    <section id="how-it-works" class="how-it-works">
   <p style="color: #8c8a8a; letter-spacing: 1.1px;">HOW IT WORKS?</p>
