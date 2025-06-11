@@ -882,56 +882,18 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const cards = document.querySelectorAll('.card');
-
-      cards.forEach(card => {
-        // Mouse enter (hover) event
-        card.addEventListener('mouseenter', () => {
-          // Generate a random pastel color for background
-          const r = Math.floor(Math.random() * 100 + 155);
-          const g = Math.floor(Math.random() * 100 + 155);
-          const b = Math.floor(Math.random() * 100 + 155);
-          card.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-
           // Create a ripple effect
           const ripple = document.createElement('span');
        
           const rect = card.getBoundingClientRect();
           const size = Math.max(rect.width, rect.height);
           ripple.style.width = ripple.style.height = `${size}px`;
-          ripple.style.left = '50%';
-          ripple.style.top = '50%';
+          ripple.style.left = '30%';
+          ripple.style.top = '30%';
           ripple.style.transform = 'translate(-50%, -50%)';
           card.appendChild(ripple);
         });
-
-        // Mouse leave event
-        card.addEventListener('mouseleave', () => {
-          card.style.backgroundColor = '#fff';
-          const ripples = card.querySelectorAll('.ripple');
-          ripples.forEach(ripple => ripple.remove());
-        });
-      });
-    });
-
-    // CSS for ripple effect
-    const style = document.createElement('style');
-    style.textContent = `
-      .ripple {
-        position: absolute;
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        animation: ripple 0.6s linear;
-        pointer-events: none;
-      }
-
-      @keyframes ripple {
-        to {
-          transform: translate(-50%, -50%) scale(4);
-          opacity: 0;
-        }
-      }
-    `;
-    document.head.appendChild(style);
+    
   </script>
 </section>
 <!-- End Why change to living walls -->
@@ -1162,7 +1124,7 @@
           to ensure definitive quality norms are adhered to at all stages of
           construction with maximum efficiency and minimum wastage.
         </p>
-        <button class="know-more-btn">Know more </button>
+        <button href="contact.html" class="know-more-btn">Know more </button>
       </div>
     </div>
   </div>
@@ -1227,11 +1189,12 @@
       <img src="https://5.imimg.com/data5/TV/KD/WI/SELLER-51577860/maxresdefault.jpg" alt="AXIS" data-url="https://www.axisbank.com">
       <img src="https://netbanking.in/wp-content/uploads/2017/07/YES-BANK-Loans.png" alt="YESBANK" data-url="https://www.yesbank.in">
       <img src="https://d28wu8o6itv89t.cloudfront.net/images/HomeLoanpng-1597141133637.png" alt="KOTAK" data-url="https://www.kotak.com">
-      <img src="https://bfsi.eletsonline.com/wp-content/uploads/2024/03/Bank-of-India.jpgg" alt="BANK OF INDIA" data-url="https://www.bankofindia.co.in">
-      <img src="https://5.imimg.com/data5/SELLER/Default/2024/10/455302584/EQ/GP/ZV/40717323/indusind-bank-small-ticket-business-loan-250x250.png" alt="INDUSIND" data-url="https://www.indusind.com">
+      <img src="https://bfsi.eletsonline.com/wp-content/uploads/2024/03/Bank-of-India.jpg" alt="BANK OF INDIA" data-url="https://www.bankofindia.co.in">
+      <img src="https://i.pinimg.com/736x/24/f9/b6/24f9b6f308523cd57d723ee717e1ef88.jpg" alt="INDUSIND" data-url="https://www.indusind.com">
       <img src="https://5.imimg.com/data5/SELLER/Default/2022/12/XI/IK/TK/18660198/pnb-housing-finance.jpg" alt="PNB" data-url="https://www.pnbhousing.com">
       <img src="https://5.imimg.com/data5/SELLER/Default/2024/4/410922806/LQ/HR/GT/129849655/union-bank-of-india-home-loan-service.jpg" alt="UNION BANK OF INDIA" data-url="https://www.unionbankofindia.co.in">
-   
+    </div>
+  </div>
 </section>
 
 <!-- Trusted Partners -->
@@ -1257,125 +1220,189 @@
       <img src="https://www.zuaricements.com/images/websitelogo12.jpg" alt="Zuari Cement" data-url="https://www.zuaricements.com">
       <img src="https://yt3.googleusercontent.com/ytc/AIdro_nW1vyJ2ssw7WRCHeX6qYWi2i8gPurMvevRfkkuKnJWI-0=s900-c-k-c0x00ffffff-no-rj" alt="Fixit" data-url="https://www.pidilite.com/brands/dr-fixit">
       <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/2aa58e24-fe0f-417b-b91d-807f97c1d529.__CR0,0,600,180_PT0_SX600_V1___.png" alt="MYK Laticrete" data-url="https://www.myklaticrete.com">
-   
+    </div>
+  </div>
 </section>
 
 <!-- JavaScript -->
 <script>
-  function initializePartnerSection(logosContainerId, scrollRightBtnId) {
-    const logosContainer = document.getElementById(logosContainerId);
-    const scrollRightBtn = document.getElementById(scrollRightBtnId);
-    let scrollInterval;
+function initializePartnerSection(logosContainerId) {
+  const logosContainer = document.getElementById(logosContainerId);
+  let scrollInterval;
 
-    // Duplicate logos for seamless looping
-    const logos = logosContainer.innerHTML;
-    logosContainer.innerHTML += logos;
+  // Duplicate logos for seamless looping
+  const logos = logosContainer.innerHTML;
+  logosContainer.innerHTML += logos;
 
-    // Auto-scroll functionality
-    function startAutoScroll() {
-      scrollInterval = setInterval(() => {
-        logosContainer.scrollLeft += 1;
-        if (logosContainer.scrollLeft >= logosContainer.scrollWidth / 2) {
-          logosContainer.scrollLeft = 0;
-        }
-      }, 16); // ~60fps
-    }
-
-    function stopAutoScroll() {
-      clearInterval(scrollInterval);
-    }
-
-    // Start auto-scroll on load
-    startAutoScroll();
-
-    // Pause on hover
-    logosContainer.addEventListener('mouseenter', stopAutoScroll);
-    logosContainer.addEventListener('mouseleave', startAutoScroll);
-
-    // Manual scroll button
-    scrollRightBtn.addEventListener('click', () => {
-      logosContainer.scrollLeft += 220;
+  // Auto-scroll functionality
+  function startAutoScroll() {
+    scrollInterval = setInterval(() => {
+      logosContainer.scrollLeft += 1;
       if (logosContainer.scrollLeft >= logosContainer.scrollWidth / 2) {
         logosContainer.scrollLeft = 0;
       }
-    });
-
-    // Open URL on image click
-    logosContainer.querySelectorAll('img').forEach(img => {
-      img.addEventListener('click', () => {
-        const url = img.getAttribute('data-url');
-        if (url) window.open(url, '_blank');
-      });
-    });
+    }, 16); // ~60fps
   }
 
-  // Initialize both sections
-  initializePartnerSection('partnerLogosBanking', 'scrollRightBanking');
-  initializePartnerSection('partnerLogosTrusted', 'scrollRightTrusted');
+  function stopAutoScroll() {
+    clearInterval(scrollInterval);
+  }
+
+  // Start auto-scroll on load
+  startAutoScroll();
+
+  // Pause on hover
+  logosContainer.addEventListener('mouseenter', stopAutoScroll);
+  logosContainer.addEventListener('mouseleave', startAutoScroll);
+
+  // Open URL on image click
+  logosContainer.querySelectorAll('img').forEach(img => {
+    img.addEventListener('click', () => {
+      const url = img.getAttribute('data-url');
+      if (url) window.open(url, '_blank');
+    });
+  });
+}
+
+// Initialize both sections
+initializePartnerSection('partnerLogosBanking');
+initializePartnerSection('partnerLogosTrusted');
 </script>
 
 
   <!--FAQ's-->
 
-  <section class="faq-section">
-    <h1>FAQ's</h1>
-    <div class="faq-container">
+  <section class="faq-sectionn">
+    <h2 class="faq-title">FREQUENTLY ASKED QUESTIONS</h2>
+    <div class="faq-containeer">
+      <!-- Left Column -->
+      <div class="faq-column">
         <div class="faq-item">
-            <div class="faq-question">
-                <h3>How do you ensure the quality of materials used in construction?</h3>
-                <span class="faq-toggle">+</span>
-            </div>
-            <div class="faq-answer">
-                <p>We use high-quality raw materials throughout our services in every field. As a renowned quality-centric organization, we procure materials from trusted, quality-driven suppliers. Each material is thoroughly checked at our quality inspection unit to ensure it meets our high standards, providing unique and reliable service to our esteemed clients.</p>
-            </div>
+          <div class="faq-questionn">
+            <i class="fas fa-cogs"></i>
+            <h3>What are services BUILDHOOD provides?</h3>
+          </div>
+          <div class="faq-answerr">
+            BUILDHOOD offers a range of construction services, including residential and commercial building, renovations, and interior design.
+          </div>
         </div>
+
         <div class="faq-item">
-            <div class="faq-question">
-                <h3>What steps do you take before starting a construction project?</h3>
-                <span class="faq-toggle">+</span>
-            </div>
-            <div class="faq-answer">
-                <p>We offer our services only after complete planning and designing of the project. This includes a detailed assessment of the site, understanding client requirements, and creating a comprehensive blueprint to ensure the project is executed smoothly and meets all expectations.</p>
-            </div>
+          <div class="faq-questionn">
+            <i class="fas fa-user"></i>
+            <h3>Why should you choose BUILDHOOD?</h3>
+          </div>
+          <div class="faq-answerr">
+            BUILDHOOD stands out for its commitment to quality, on-time delivery, and customer satisfaction, backed by years of industry experience.
+          </div>
         </div>
+
         <div class="faq-item">
-            <div class="faq-question">
-                <h3>Can you handle both residential and commercial projects?</h3>
-                <span class="faq-toggle">+</span>
-            </div>
-            <div class="faq-answer">
-                <p>Yes, we cater to both residential and commercial projects. Whether it's a home or a business space, we apply the same level of quality and attention to detail, ensuring the structure meets your specific needs and preferences.</p>
-            </div>
+          <div class="faq-questionn">
+            <i class="fas fa-tag"></i>
+            <h3>Do you charge separately for Designs?</h3>
+          </div>
+          <div class="faq-answerr">
+            No, design services are typically included in our project packages, but it depends on the scope of work.
+          </div>
         </div>
+
         <div class="faq-item">
-            <div class="faq-question">
-                <h3>How do you manage project timelines and budgets?</h3>
-                <span class="faq-toggle">+</span>
-            </div>
-            <div class="faq-answer">
-                <p>We prioritize meticulous planning to manage timelines and budgets effectively. After the initial design phase, we provide a clear timeline and cost estimate. Our team works diligently to adhere to these, keeping you informed at every step to avoid delays or unexpected costs.</p>
-            </div>
+          <div class="faq-questionn">
+            <i class="fas fa-building"></i>
+            <h3>Do you help with government approvals?</h3>
+          </div>
+          <div class="faq-answerr">
+            Yes, we assist clients with obtaining necessary government approvals and permits for their projects.
+          </div>
         </div>
+
+        <div class="faq-item">
+          <div class="faq-questionn">
+            <i class="fas fa-hourglass-half"></i>
+            <h3>How do you assure on-time completion of the project?</h3>
+          </div>
+          <div class="faq-answerr">
+            We follow a strict timeline, use project management tools, and maintain clear communication to ensure timely completion.
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="faq-column">
+        <div class="faq-item">
+          <div class="faq-questionn">
+            <i class="fas fa-check-circle"></i>
+            <h3>How do you monitor the work quality?</h3>
+          </div>
+          <div class="faq-answerr">
+            We conduct regular inspections, use quality materials, and follow industry standards to ensure high-quality work.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-questionn">
+            <i class="fas fa-credit-card"></i>
+            <h3>How is BUILDHOOD payment process?</h3>
+          </div>
+          <div class="faq-answerr">
+            We follow a milestone-based payment process, with payments due at key stages of the project, ensuring transparency.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-questionn">
+            <i class="fas fa-address-book"></i>
+            <h3>Whom to contact during work?</h3>
+          </div>
+          <div class="faq-answerr">
+            You’ll have a dedicated project manager as your point of contact throughout the project.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-questionn">
+            <i class="fas fa-users"></i>
+            <h3>Does the Client need to follow up the work regularly?</h3>
+          </div>
+          <div class="faq-answerr">
+            Not necessarily. We provide regular updates, but clients are welcome to check in as needed.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-questionn">
+            <i class="fas fa-chart-line"></i>
+            <h3>How does the Client monitor the progress of the project?</h3>
+          </div>
+          <div class="faq-answerr">
+            Clients can monitor progress through regular updates, site visits, and a project management portal if applicable.
+          </div>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<script>
-    document.querySelectorAll('.faq-question').forEach(item => {
-        item.addEventListener('click', () => {
-            const answer = item.nextElementSibling;
-            const toggle = item.querySelector('.faq-toggle');
-            const isOpen = answer.style.display === 'block';
+  <script>
+    const faqQuestions = document.querySelectorAll('.faq-questionn');
 
-            document.querySelectorAll('.faq-answer').forEach(ans => ans.style.display = 'none');
-            document.querySelectorAll('.faq-toggle').forEach(tog => tog.textContent = '+');
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const isActive = answer.classList.contains('active');
 
-            if (!isOpen) {
-                answer.style.display = 'block';
-                toggle.textContent = '−';
-            }
+        // Close all answers
+        document.querySelectorAll('.faq-answerr').forEach(ans => {
+          ans.classList.remove('active');
         });
+
+        // Toggle the clicked answer
+        if (!isActive) {
+          answer.classList.add('active');
+        }
+      });
     });
-</script>
+  </script>
 
 
 <!--End FAQ's-->

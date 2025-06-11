@@ -258,7 +258,7 @@ html {
   font-size: 14px;
 }
 .get-quote {
-  background-color: #e32222db;
+  background-color: #d5193e ;
   color: white;
   padding: 6px 12px;
   border-radius: 10px;
@@ -268,7 +268,7 @@ html {
   transition: background-color 0.3s;
 }
 .get-quote:hover {
-  background-color: #f53535db;
+  background-color: #d5193e ;
 }
 
 /* Dropdown (if used later) */
@@ -641,12 +641,13 @@ html {
     }
 
     .hero-content h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+      font-size: 4.4rem;
+      margin-bottom: 3rem;
+      font-weight: bolder;
     }
 
     .hero-content p {
-      font-size: 1.5rem;
+      font-size: 1.9rem;
     }
 
     .slider-nav {
@@ -1544,39 +1545,41 @@ html {
         gap: 10px;
       }
     }
+
  /* Why Us */
 .why-us {
   padding: 50px 0;
-  background-color: var(--color-gray-100);
-  text-align: center; /* Ensure all content is centered by default */
+
+  text-align: center;
 }
 
 .why-us .container {
-  max-width: 1200px; /* Added for consistent container width */
-  margin: 0 auto; /* Center the container */
+  max-width: 1200px;
+  margin: 0 auto;
   font-size: 2.2rem;
   font-weight: bold;
+  color: #1b1a1a; /* Accent color for text */
 }
 
 .why-us h2 {
   font-size: 3.5rem;
-  margin: 0 auto 20px; /* Adjusted margin for better spacing */
-  color: #333;
-  line-height: 1.2; /* Added for better readability */
+  margin: 0 auto 20px;
+  color: #1b1a1a; /* Accent color for heading */
+  line-height: 1.2;
 }
 
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-  padding: 0 20px; /* Added padding for better spacing on smaller screens */
+  padding: 0 20px;
 }
 
 .card {
-  background-color: #fff;
+  background-color: #ffffff; /* Primary color for card background */
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(47, 51, 66, 0.3); /* Shadow using primary color */
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -1585,8 +1588,8 @@ html {
 }
 
 .card:hover {
-  transform: scale(1.05); /* Reduced scale for smoother effect */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(213, 25, 62, 0.4); /* Shadow using accent color */
 }
 
 .card-img {
@@ -1597,88 +1600,97 @@ html {
 }
 
 .card:hover .card-img {
-  width: 48px; /* Slightly reduced for subtlety */
+  width: 48px;
   height: 48px;
-  filter: brightness(1.2);
+  filter: brightness(1.2) hue-rotate(15deg); /* Hue shift toward accent color */
 }
 
 .card h3 {
   font-size: 1.8rem;
-  color: #333;
+  color: #1b1a1a; /* Accent color for heading */
   font-weight: bold;
-  margin: 0; /* Added for consistency */
+  margin: 0;
   transition: font-size var(--transition-fast);
 }
 
 .card:hover h3 {
-  font-size: 1.7rem; /* Adjusted for less drastic change */
+  font-size: 1.7rem;
 }
 
 .card p {
   font-size: 1.4rem;
-  color: #666;
+  color: #1b1a1a; /* Accent color for text */
   line-height: 1.5;
   font-weight: normal;
-  margin: 0; /* Added for consistency */
+  margin: 0;
   transition: font-size var(--transition-fast);
 }
 
 .card:hover p {
-  font-size: 1.3rem; /* Adjusted for subtle change */
+  font-size: 1.3rem;
 }
 
 /* Mobile-friendly adjustments */
 @media (max-width: 600px) {
   .why-us {
-    padding: 20px 0; /* Reduced padding for mobile */
+    padding: 20px 0;
   }
 
   .why-us .container {
-    max-width: 95%; /* Fluid width for smaller screens */
-    font-size: 1.6rem; /* Smaller font size */
+    max-width: 95%;
+    font-size: 1.6rem;
+    color: #d5193e; /* Accent color for text */
   }
 
   .why-us h2 {
-    font-size: 2rem; /* Reduced heading size */
+    font-size: 2rem;
     margin-bottom: 15px;
+    color: #d5193e; /* Accent color for heading */
   }
 
   .cards-container {
-    grid-template-columns: 1fr; /* Single column layout */
-    gap: 15px; /* Tighter gap */
-    padding: 0 10px; /* Reduced padding */
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 0 10px;
   }
 
   .card {
-    padding: 15px; /* Reduced padding */
-    height: auto; /* Allow height to adapt */
-    min-height: 150px; /* Minimum height for content */
+    padding: 15px;
+    height: auto;
+    min-height: 150px;
+    box-shadow: 0 4px 8px rgba(47, 51, 66, 0.3); /* Shadow using primary color */
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 16px rgba(213, 25, 62, 0.4); /* Shadow using accent color */
   }
 
   .card-img {
-    width: 32px; /* Smaller image */
+    width: 32px;
     height: 32px;
   }
 
   .card:hover .card-img {
-    width: 36px; /* Subtler hover effect */
+    width: 36px;
     height: 36px;
   }
 
   .card h3 {
-    font-size: 1.4rem; /* Smaller heading */
+    font-size: 1.4rem;
+    color: #d5193e; /* Accent color for heading */
   }
 
   .card:hover h3 {
-    font-size: 1.3rem; /* Subtler hover effect */
+    font-size: 1.3rem;
   }
 
   .card p {
-    font-size: 1.1rem; /* Smaller text */
+    font-size: 1.1rem;
+    color: #d5193e; /* Accent color for text */
   }
 
   .card:hover p {
-    font-size: 1rem; /* Subtler hover effect */
+    font-size: 1rem;
   }
 }
 /* Tracker Section */
@@ -2138,26 +2150,26 @@ html {
 
 .refer-earn-right h2 {
   font-size: 3.8rem;
-  color: #1a3c5e;
+  color: #2f3342 ;
   margin: 0;
   line-height: 1.4;
 }
 
 .refer-earn-right h2 span {
-  color: #d81b60;
+  color: #d5193e ;
   font-weight: bold;
 }
 
 .refer-earn-right p {
   font-size: 2rem;
-  color: #555;
+  color: #2f3342 ;
   margin: 0;
   line-height: 1.6;
 }
 
 .refer-earn-right button {
   padding: 28px 45px;
-  background: linear-gradient(90deg, #ff6f61, #d81b60);
+  background: linear-gradient(90deg, #d5193e, #d5193e);
   color: #fff;
   border: none;
   border-radius: 35px;
@@ -2170,7 +2182,7 @@ html {
 
 .refer-earn-right button:hover {
   transform: translateY(-3px);
-  background: linear-gradient(90deg, #d81b60, #ff6f61);
+  background: linear-gradient(90deg, #d5193e, #d5193e);
   box-shadow: 0 5px 15px rgba(216, 27, 96, 0.4);
 }
 
@@ -2180,11 +2192,12 @@ html {
 .section-heading {
   text-align: center;
   margin: 2rem 0 1rem;
-  font-size: 2.5rem; /* Reduced for smaller screens */
+  font-size: 3.5rem; /* Reduced for smaller screens */
+  font-weight: bolder;
 }
 
 .section-heading h1 {
-  font-size: 2.9rem; /* Adjusted for mobile */
+  font-size: 3.6rem; /* Adjusted for mobile */
   font-weight: bolder;
   color: #333;
   margin-bottom: 0.5rem;
@@ -2216,7 +2229,7 @@ html {
 }
 
 .text-content h2 {
-  font-size: 1.9rem; /* Adjusted for mobile */
+  font-size: 2.6rem; /* Adjusted for mobile */
   margin-bottom: 1rem;
   color: #333;
   font-weight: bold;
@@ -2225,16 +2238,17 @@ html {
 .text-content p {
   color: #666;
   font-size: 0.9375rem; /* Adjusted for mobile */
-  line-height: 1.9;
+  line-height: 2.8;
+  font-weight: 600;
   margin-bottom: 1rem;
 }
 
 .know-more-btn {
-  background-color: #f2654a;
+  background-color: #d5193e ;
   color: #fff;
   border: none;
   padding: 0.75rem 1.125rem; /* Adjusted padding */
-  font-size: 0.875rem; /* Adjusted for mobile */
+  font-size: 1.475rem; /* Adjusted for mobile */
   border-radius: 6px;
   cursor: pointer;
 }
@@ -2257,10 +2271,10 @@ html {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: #f2654a;
+  background: #d5193e ;
   color: #fff;
   padding: 0.5rem 0.875rem; /* Adjusted padding */
-  font-size: 0.875rem; /* Adjusted for mobile */
+  font-size: 1.875rem; /* Adjusted for mobile */
   font-weight: bold;
   border-radius: 6px;
 }
@@ -2269,7 +2283,7 @@ html {
   position: absolute;
   bottom: 1rem;
   left: 1rem;
-  background-color: #f2654a;
+  background-color: #d5193e ;
   color: #fff;
   border: none;
   padding: 0.75rem 1.125rem; /* Adjusted padding */
@@ -2368,7 +2382,7 @@ html {
 }
 
 .why-modern-title:hover {
-  color: #C9183C; /* Vibrant red on hover for title */
+  color: #d5193e; /* Vibrant red on hover for title */
 }
 
 .why-modern-title span {
@@ -2380,7 +2394,7 @@ html {
 }
 
 .why-modern-title span:hover {
-  background: #C9183C; /* Red on hover for span */
+  background: #d5193e; /* Red on hover for span */
 }
 
 .why-modern-stats {
@@ -2403,7 +2417,7 @@ html {
 .why-modern-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 12px 30px rgba(45, 48, 65, 0.15); /* Enhanced shadow on hover */
-  border-color: #C9183C; /* Red border on hover */
+  border-color: #d5193e; /* Red border on hover */
 }
 
 .why-modern-card h3 {
@@ -2415,7 +2429,7 @@ html {
 }
 
 .why-modern-card:hover h3 {
-  color: #C9183C; /* Red on card hover */
+  color: #d5193e; /* Red on card hover */
 }
 
 .why-modern-card p {
@@ -2444,13 +2458,13 @@ html {
   transition: all var(--transition-fast);
   min-width: 240px;
   font-weight: 500;
-  color: #2D3041; /* Dark navy text */
+  color: #2f3342 ; /* Dark navy text */
 }
 
 .why-modern-feature:hover {
   background: #E6E9F0; /* Light blue-gray on hover */
-  color: #2D3041; /* Maintain navy text for readability */
-  border-color: #C9183C; /* Red border on hover */
+  color: #2f3342 ; /* Maintain navy text for readability */
+  border-color: #d5193e; /* Red border on hover */
   transform: scale(1.05);
   box-shadow: 0 4px 15px rgba(201, 24, 60, 0.2); /* Subtle red shadow */
 }
@@ -2463,34 +2477,48 @@ html {
 }
 
 .why-modern-feature:hover small {
-  color: #C9183C; /* Red for small text on hover */
+  color: #d5193e; /* Red for small text on hover */
 }
+
 /* Our Partners */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Partners Section */
 .partners {
-  padding: 80px 0; /* Increased padding for more vertical space */
+  padding: 80px 0;
   background-color: #fff;
   text-align: center;
 }
 
 .partners h2 {
-  font-size: 4rem; /* Increased heading size from 2.2rem to 3rem for prominence */
+  font-size: 4rem;
   font-weight: 700;
-  color: #2D3041; /* Using dark blue-gray for heading */
+  color: #2D3041;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 3rem; /* Added gap between heading and partner logos */
+  margin-bottom: 1rem;
+}
+
+.partners .subtitle {
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 2rem;
 }
 
 .partner-logos {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  gap: 48px; /* Increased gap from 40px to 48px for better spacing */
+  gap: 48px;
   padding: 20px 0;
-  justify-content: center;
-  align-items: center; /* Added to ensure vertical alignment of logos */
-  max-width: 1200px; /* Added to constrain width and improve alignment */
-  margin: 0 auto; /* Center the container */
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .partner-logos img {
@@ -2498,8 +2526,11 @@ html {
   height: 100px;
   object-fit: contain;
   flex-shrink: 0;
-  transition: transform 0.3s ease; /* Replaced var(--transition-fast) with explicit value for consistency */
+  transition: transform 0.3s ease;
   cursor: pointer;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .partner-logos img:hover {
@@ -2514,85 +2545,6 @@ html {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
-  .scroll-right {
-      position: absolute;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: #C9183C;
-      color: #fff;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 20px;
-      transition: background-color 0.3s ease;
-    }
-
- 
-.scroll-right:hover {
-  background-color: #a1122f; /* Darkened shade of #C9183C for hover effect */
-}
-
-/* Construction Hero */
-.construction-hero {
-  position: relative;
-  background-image: url('https://customer.bricknbolt.com/img/about/about.jpg');
-  background-size: cover;
-  background-position: center;
-  color: white;
-  padding: 80px 60px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.hero-content h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-
-.hero-content p {
-  font-size: 18px;
-  margin-bottom: 30px;
-  line-height: 1.6;
-  font-weight: 700;
-}
-
-.feature i {
-  font-size: 28px;
-  color: white;
-  margin-bottom: 10px;
-}
-
-.feature-text strong {
-  font-size: 18px;
-  display: block;
-  font-weight: bold;
-}
-
-.feature-text div {
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-.btn-build {
-  background-color: #f6531e;
-  color: white;
-  padding: 12px 24px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background var(--transition-fast);
-}
-
-.btn-build:hover {
-  background-color: #d9440c;
-}
-
 /* Construction Services */
 .luxury-section {
   background: linear-gradient(135deg, #fffeff 0%, #dadada 100%); /* Replaced pinkish gradient with vibrant red gradient */
@@ -2621,7 +2573,7 @@ html {
   content: '';
   width: 80px;
   height: 2px;
-  background: #f95c7b; /* Replaced soft pink with vibrant red */
+  background: #d5193e; /* Replaced soft pink with vibrant red */
   position: absolute;
   bottom: -8px;
   left: 50%;
@@ -2636,7 +2588,7 @@ html {
 }
 
 .luxury-card {
-  background: #3a4161; /* Replaced #595454 with dark blue-gray */
+  background: #2f3342 ; /* Replaced #595454 with dark blue-gray */
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -2675,7 +2627,7 @@ html {
   bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
-  background: #cb2848; /* Replaced soft pink with vibrant red */
+  background: #d5193e; /* Replaced soft pink with vibrant red */
   color: #f7f7fa; /* Replaced #333 with dark blue-gray */
   padding: 0.5rem 1.2rem;
   border-radius: 20px;
@@ -2720,7 +2672,7 @@ html {
 }
 
 .luxury-modal-content {
-  background: #2D3041; /* Replaced #2a2a2a with dark blue-gray */
+  background: #2f3342 ; /* Replaced #2a2a2a with dark blue-gray */
   border-radius: 12px;
   max-width: 600px;
   width: 90%;
@@ -2751,7 +2703,7 @@ html {
 }
 
 .luxury-modal-btn {
-  background: #C9183C; /* Replaced soft pink with vibrant red */
+  background: #d5193e; /* Replaced soft pink with vibrant red */
   color: #f2f3fb; /* Replaced #2a2a2a with dark blue-gray */
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
@@ -2771,8 +2723,8 @@ html {
 }
 
 .luxury-close-details {
-  background: #4a4e64; /* Slightly lighter shade of #2D3041 for contrast */
-  color: #C9183C; /* Replaced soft pink with vibrant red */
+  background: #2f3342 ; /* Slightly lighter shade of #2D3041 for contrast */
+  color: #d5193e; /* Replaced soft pink with vibrant red */
   padding: 0.5rem 1rem;
   border-radius: 25px;
   font-weight: 600;
@@ -2821,7 +2773,7 @@ html {
 }
 
 .input-block label span {
-  color: #e63946;
+  color: #d5193e;
 }
 
 .input-block input,
@@ -2865,81 +2817,116 @@ html {
 }
 
 .quote {
-  background-color: #e63946;
+  background-color: #d5193e;
   color: #fff;
 }
 
 .quote:hover {
-  background-color: #d62828;
+  background-color: #d5193e;
 }
 
 /* FAQ Section */
-.faq-section {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 40px 0;
-}
+  .faq-sectionn {
+      padding: 50px 20px;
+      background-color: #ffff; /* Updated background color */
+      color: white;
+      border-radius: 10px;
+      max-width: 1200px;
+      margin: 20px auto;
+    }
 
-.faq-section h1 {
-  font-size: 3.5rem;
-  color: #333;
-  font-weight: 700;
-  margin-bottom: 30px;
-  text-align: center;
-}
+    .faq-title {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: bold;
+      color: #2f3342; /* Updated title color */
+      margin-bottom: 30px;
+      position: relative;
+    }
 
-.faq-container {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
+    .faq-title::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 4px;
+      background-color: #d5193e; /* Updated line color */
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
-.faq-item {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
+    .faq-containeer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
 
-.faq-question {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px;
-  cursor: pointer;
-  transition: background-color var(--transition-fast);
-}
+    .faq-item {
+      margin-bottom: 15px;
+    }
 
-.faq-question:hover {
-  background-color: #fff5f5;
-}
+    .faq-questionn {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      background-color: #3a3f50; /* Slightly lighter shade for contrast */
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
 
-.faq-question h3 {
-  font-size: 1.5rem;
-  color: #333;
-  font-weight: 500;
-}
+    .faq-questionn:hover {
+      background-color: #454a5c; /* Slightly lighter on hover */
+    }
 
-.faq-toggle {
-  font-size: 1.5rem;
-  color: #ff4040;
-  font-weight: 700;
-}
+    .faq-questionn i {
+      margin-right: 10px;
+      font-size: 2.7rem;
+      color: #ccc;
+    }
 
-.faq-answer {
-  display: none;
-  padding: 20px;
-  background-color: #fffafa;
-  border-top: 1px solid #ffe6e6;
-}
+    .faq-questionn h3 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: normal;
+      color: white; /* Ensure text is white */
+    }
 
-.faq-answer p {
-  font-size: 1.5rem;
-  color: #161616;
-  line-height: 1.6;
-}
+    .faq-answerr {
+      display: none;
+      padding: 25px;
+      background-color: #454a5c; /* Slightly lighter shade for answers */
+      border-radius: 0 0 5px 5px;
+      font-size: 0.165rem;
+      line-height: 1.7;
+      color: white; /* Ensure text is white */
+    }
 
+    .faq-answerr.active {
+      display: block;
+      font-size: 1.2rem;
+    }
+
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .faq-containeer {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-title {
+        font-size: 1.5rem;
+      }
+
+      .faq-questionn h3 {
+        font-size: 1rem;
+      }
+
+      .faq-answerr {
+        font-size: 0.85rem;
+      }
+    }
 /* Footer */
 .footer,
 .extended-footer,
@@ -3068,15 +3055,15 @@ html {
 }
 
 .user-name:hover {
-  background-color: #f22121;
+  background-color: #d5193e;
   color: white;
-  border-color: #be2020;
+  border-color: #d5193e;
 }
 
 .logout-btn {
   background: none;
   border: none;
-  color: #e81e1e;
+  color: #d5193e;
   font-weight: 500;
   cursor: pointer;
   margin-left: 0.5rem;
@@ -3196,8 +3183,6 @@ html {
     height: auto;
   }
 }
-
-
 
 
 @media (max-width: 768px) {
