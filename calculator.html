@@ -11,437 +11,493 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    /* Luxurious Styling with Enhanced Animations */
-    /* Luxurious Styling with Enhanced Animations */
-.hccc_container {
-  width: 90%;
-  max-width: 1000px;
-  background: linear-gradient(135deg, rgba(45, 48, 65, 0.1), rgba(45, 48, 65, 0.05));
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(45, 48, 65, 0.3);
-  border-radius: 20px;
-  padding: 100px;
-  margin: 100px auto;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
-  position: relative;
-  overflow: hidden;
-  animation: containerReveal 1.2s ease-out;
-}
+    .hccc_container {
+      width: 90%;
+      max-width: 1000px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      padding: 120px;
+      margin: 60px auto;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+      animation: containerReveal 1.2s ease-out;
+    }
 
-.hccc_container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at 30% 30%, rgba(201, 24, 60, 0.2), transparent 70%);
-  
-  z-index: -1;
-}
+    .hccc_container:hover {
+      transform: translateY(-8px);
+      transition: transform 0.4s ease;
+    }
 
-.hccc_container:hover {
-  transform: translateY(-8px);
-  transition: transform 0.4s ease;
-}
+    .hccc_header {
+      background: linear-gradient(90deg, #333, #666);
+      color: #fff;
+      padding: 20px;
+      margin: -40px -40px 30px -40px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      animation: headerSlide 0.8s ease-out;
+    }
 
-.hccc_header {
-  background: linear-gradient(90deg, #2D3041, #C9183C);
-  color: #fff;
-  padding: 30px;
-  margin: -60px -60px 40px -60px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  animation: headerSlide 0.8s ease-out;
-}
+    .hccc_header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      animation: shine 4s infinite;
+    }
 
-.hccc_header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  animation: shine 4s infinite;
-}
+    .hccc_title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #000;
+      margin: 15px 0;
+      text-align: center;
+      animation: titleReveal 1s ease-out 0.2s both;
+    }
 
-.hccc_title {
-  font-size: 30px;
-  font-weight: 700;
-  color: #2D3041;
-  margin: 20px 0;
-  text-align: center;
-  animation: titleReveal 1s ease-out 0.2s both;
-}
+    .hccc_subtitle {
+      font-size: 16px;
+      color: #000;
+      margin-bottom: 20px;
+      text-align: center;
+      animation: titleReveal 1s ease-out 0.3s both;
+    }
 
-.hccc_subtitle {
-  font-size: 16px;
-  color: #6b7280;
-  margin-bottom: 30px;
-  text-align: center;
-  animation: titleReveal 1s ease-out 0.3s both;
-}
+    .hccc_options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 30px;
+    }
 
-.hccc_options {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 40px;
-}
+    .hccc_options select, .hccc_options button {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: #f5f5f5;
+      color: #000;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23000'%3E%3Cpath d='M10 12l-5-5h10l-5 5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 8px center;
+      background-size: 14px;
+      animation: fadeInUp 1s ease-out 0.4s both;
+    }
 
-.hccc_options select {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid rgba(45, 48, 65, 0.3);
-  border-radius: 8px;
-  background: rgba(45, 48, 65, 0.1);
-  color: #2D3041;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%232D3041'%3E%3Cpath d='M10 12l-5-5h10l-5 5z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  background-size: 16px;
-  animation: fadeInUp 1s ease-out 0.4s both;
-}
+    .hccc_options select:focus, .hccc_options button:focus {
+      outline: none;
+      border-color: #666;
+      box-shadow: 0 0 0 2px rgba(102, 102, 102, 0.3);
+      animation: pulseGlow 1.5s infinite;
+    }
 
-.hccc_options select:focus {
-  outline: none;
-  border-color: #C9183C;
-  box-shadow: 0 0 0 3px rgba(201, 24, 60, 0.3);
-  animation: pulseGlow 1.5s infinite;
-}
+    .hccc_table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-bottom: 30px;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #ccc;
+    }
 
-.hccc_table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  margin-bottom: 40px;
-  background: rgba(45, 48, 65, 0.05);
-  border-radius: 12px;
-  overflow: hidden;
-}
+    .hccc_table th, .hccc_table td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+      transition: transform 0.3s ease;
+    }
 
-.hccc_table th, .hccc_table td {
-  padding: 16px;
-  text-align: left;
-  border-bottom: 1px solid rgba(45, 48, 65, 0.1);
-  transition: transform 0.3s ease;
-}
+    .hccc_table th {
+      background: #333;
+      color: #fff;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 14px;
+    }
 
-.hccc_table th {
-  background: #2D3041;
-  color: #fff;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
+    .hccc_table td {
+      background: #fff;
+      color: #000;
+      font-size: 14px;
+    }
 
-.hccc_table td {
-  background: rgba(45, 48, 65, 0.05);
-  color: #ffff;
-}
+    .hccc_table tr {
+      animation: rowReveal 0.8s ease-out var(--delay) both;
+    }
 
-.hccc_table tr {
-  animation: rowReveal 0.8s ease-out var(--delay) both;
-}
+    .hccc_table td:hover {
+      transform: scale(1.02);
+    }
 
-.hccc_table td:hover {
-  transform: scale(1.02);
-}
+    .hccc_table td input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: #f5f5f5;
+      color: #000;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
 
-.hccc_table td input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid rgba(45, 48, 65, 0.3);
-  border-radius: 8px;
-  background: rgba(45, 48, 65, 0.1);
-  color: #2D3041;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  position: relative;
-}
+    .hccc_table td input:focus {
+      outline: none;
+      border-color: #666;
+      box-shadow: 0 0 0 2px rgba(102, 102, 102, 0.3);
+      animation: pulseGlow 1.5s infinite;
+    }
 
-.hccc_table td input:focus {
-  outline: none;
-  border-color: #C9183C;
-  box-shadow: 0 0 0 3px rgba(201, 24, 60, 0.3);
-  animation: pulseGlow 1.5s infinite;
-}
+    .hccc_table td input::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(102, 102, 102, 0.2);
+      border-radius: 50%;
+      transition: all 0.5s ease;
+      pointer-events: none;
+    }
 
-.hccc_table td input::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(201, 24, 60, 0.2);
-  border-radius: 50%;
-  transition: all 0.5s ease;
-  pointer-events: none;
-}
+    .hccc_table td input:focus::after {
+      width: 150px;
+      height: 150px;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
 
-.hccc_table td input:focus::after {
-  width: 200px;
-  height: 200px;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-}
+    .hccc_total_row {
+      font-weight: 700;
+      background: linear-gradient(90deg, #333, #666);
+      color: #fff;
+      animation: totalReveal 1.2s ease-out 0.8s both;
+    }
 
-.hccc_total_row {
-  font-weight: 700;
-  background: linear-gradient(90deg, #2D3041, #C9183C);
-  color: #fff;
-  animation: totalReveal 1.2s ease-out 0.8s both;
-}
+    .hccc_button, .hccc_reset_button {
+      display: inline-block;
+      background: linear-gradient(90deg, #666, #333);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      margin: 8px;
+      transition: all 0.3s ease;
+    }
 
-.hccc_button {
-  display: inline-block;
-  background: linear-gradient(90deg, #C9183C, #2D3041);
-  color: #fff;
-  padding: 16px 32px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  margin-top: 20px;
-  transition: all 0.3s ease;
-}
+    .hccc_button:hover, .hccc_reset_button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(102, 102, 102, 0.5);
+    }
 
-.hccc_button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(201, 24, 60, 0.5);
-}
+    .hccc_button::before, .hccc_reset_button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transition: all 0.6s ease;
+    }
 
-.hccc_button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  transition: all 0.6s ease;
-}
+    .hccc_button:hover::before, .hccc_reset_button:hover::before {
+      left: 100%;
+    }
 
-.hccc_button:hover::before {
-  left: 100%;
-}
+    .hccc_button::after, .hccc_reset_button::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.5s ease;
+      pointer-events: none;
+    }
 
-.hccc_button::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: all 0.5s ease;
-  pointer-events: none;
-}
+    .hccc_button:active::after, .hccc_reset_button:active::after {
+      width: 150px;
+      height: 150px;
+      opacity: 0;
+    }
 
-.hccc_button:active::after {
-  width: 200px;
-  height: 200px;
-  opacity: 0;
-}
+    .hccc_reset_button {
+      background: linear-gradient(90deg, #333, #666);
+    }
 
-/* Advanced Animations */
-@keyframes containerReveal {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
 
-@keyframes headerSlide {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 180px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -90px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 13px;
+    }
 
-@keyframes titleReveal {
-  from { opacity: 0; transform: translateX(-30px); }
-  to { opacity: 1; transform: translateX(0); }
-}
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    .chart-container {
+      margin-top: 30px;
+      max-width: 350px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 1s ease-out 0.6s both;
+    }
 
-@keyframes rowReveal {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    @keyframes containerReveal {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
 
-@keyframes totalReveal {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    @keyframes headerSlide {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-@keyframes pulseGlow {
-  0% { box-shadow: 0 0 0 3px rgba(201, 24, 60, 0.3); }
-  50% { box-shadow: 0 0 0 6px rgba(201, 24, 60, 0.5); }
-  100% { box-shadow: 0 0 0 3px rgba(201, 24, 60, 0.3); }
-}
+    @keyframes titleReveal {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
 
-@keyframes parallaxBg {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(-50%, -50%); }
-}
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-@keyframes shine {
-  0% { left: -100%; }
-  50% { left: 100%; }
-  100% { left: 100%; }
-}
+    @keyframes rowReveal {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hccc_container {
-    padding: 30px;
-    margin: 50px auto;
-  }
+    @keyframes totalReveal {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-  .hccc_header {
-    margin: -30px -30px 20px -30px;
-    padding: 20px;
-  }
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 0 2px rgba(102, 102, 102, 0.3); }
+      50% { box-shadow: 0 0 0 5px rgba(102, 102, 102, 0.5); }
+      100% { box-shadow: 0 0 0 2px rgba(102, 102, 102, 0.3); }
+    }
 
-  .hccc_options {
-    flex-direction: column;
-    gap: 10px;
-  }
+    @keyframes shine {
+      0% { left: -100%; }
+      50% { left: 100%; }
+      100% { left: 100%; }
+    }
 
-  .hccc_options select {
-    width: 100%;
-  }
+    @media (max-width: 768px) {
+      .hccc_container {
+        padding: 20px;
+        margin: 30px auto;
+      }
 
-  .hccc_table th, .hccc_table td {
-    padding: 12px;
-    font-size: 14px;
-  }
+      .hccc_header {
+        margin: -20px -20px 15px -20px;
+        padding: 15px;
+      }
 
-  .hccc_table td input {
-    font-size: 14px;
-  }
-}
-  
+      .hccc_options {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .hccc_table th, .hccc_table td {
+        padding: 8px;
+        font-size: 12px;
+      }
+
+      .hccc_table td input {
+        font-size: 12px;
+        padding: 6px;
+      }
+
+      .hccc_table td input:not(:last-child) {
+        margin-right: 4px;
+      }
+
+      .chart-container {
+        max-width: 100%;
+      }
+
+      .hccc_button, .hccc_reset_button {
+        padding: 10px 20px;
+        font-size: 13px;
+      }
+
+      .hccc_title {
+        font-size: 24px;
+      }
+
+      .hccc_subtitle {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
- <!-- Header HTML (to be included in all pages, e.g., index.html, packages.html, etc.) -->
-
-<header class="header">
-  <div class="containerr">
-    <div class="logo">
-      <a href="index.html" aria-label="Go to LivinWalls homepage">
-        <img src="img/logo-removebg.png" alt="LivinWalls Logo" class="logo-img">
-      </a>
-    </div>
-    <button class="hamburger" aria-label="Toggle Menu">☰</button>
-    <nav class="nav" aria-label="Main Navigation">
-      <ul class="nav__list">
-        <li><a href="index.html" title="Home Page">Home</a></li>
-        <li><a href="packages.html" title="View Construction Packages">Construction Packages</a></li>
-        <li><a href="design_packages.html" title="View Design Packages">Design Packages</a></li>
-        <li><a href="calculator.html" title="Estimate Construction Cost">Cost Calculator</a></li>
-        <li><a href="work.html" title="See Our Work">Our Work</a></li>
-
-        <!-- If you want to reuse the dropdown later, uncomment this -->
-
-       <li class="dropdown">
-          <a href="#" class="dropdown-toggle" title="More Options">More▾</a>
-          <ul class="dropdown-content">
+  <!-- Header (Unchanged) -->
+  <header class="header">
+    <div class="containerr">
+      <div class="logo">
+        <a href="index.html" aria-label="Go to LivinWalls homepage">
+          <img src="img/logo-removebg.png" alt="LivinWalls Logo" class="logo-img">
+        </a>
+      </div>
+      <button class="hamburger" aria-label="Toggle Menu">☰</button>
+      <nav class="nav" aria-label="Main Navigation">
+        <ul class="nav__list">
+          <li><a href="index.html" title="Home Page">Home</a></li>
+          <li><a href="packages.html" title="View Construction Packages">Construction Packages</a></li>
+          <li><a href="design_packages.html" title="View Design Packages">Design Packages</a></li>
+          <li><a href="calculator.html" title="Estimate Construction Cost">Cost Calculator</a></li>
+          <li><a href="work.html" title="See Our Work">Our Work</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" title="More Options">More▾</a>
+            <ul class="dropdown-content">
               <li><a href="floorplans.html" title="Explore Floor Plans">Floor plans</a></li>
-            <li><a href="Designs.html" title="Browse Designs">Designs</a></li>
-            <li><a href="about.html" title="About Us">About us</a></li>
-            <li><a href="contact.html" title="Contact Us">Contact us</a></li>
-             <li><a href="blog.html" title="Visit Our Blog">Blogs</a></li>
-             <li><a href="Testimonials.html" title="Customer Testimonials">Testimonials</a></li>
-            <li><a href="carrer.html" title="Careers">Careers</a></li>
-            <li><a href="faq.html" title="Frequently Asked Questions">FAQ</a></li>
-            <li><a href="policies.html" title="Careers">Policies</a></li>
-
-          </ul>
-        </li>
-        
-      </ul>
-    </nav>
-    <div class="right-buttons">
-      <a href="GetQuote.html" class="get-quote" title="Get a Quote from LivinWalls">Lets Talk</a>
-      <a href="login.html" class="login-link" id="login-link" title="Login to Your Account">
-        <span id="login-text">Login</span>
-      </a>
+              <li><a href="Designs.html" title="Browse Designs">Designs</a></li>
+              <li><a href="about.html" title="About Us">About us</a></li>
+              <li><a href="contact.html" title="Contact Us">Contact us</a></li>
+              <li><a href="blog.html" title="Visit Our Blog">Blogs</a></li>
+              <li><a href="Testimonials.html" title="Customer Testimonials">Testimonials</a></li>
+              <li><a href="carrer.html" title="Careers">Careers</a></li>
+              <li><a href="faq.html" title="Frequently Asked Questions">FAQ</a></li>
+              <li><a href="policies.html" title="Careers">Policies</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="right-buttons">
+        <a href="GetQuote.html" class="get-quote" title="Get a Quote from LivinWalls">Lets Talk</a>
+        <a href="login.html" class="login-link" id="login-link" title="Login to Your Account">
+          <span id="login-text">Login</span>
+        </a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-
-<script>
+  <script>
     window.addEventListener('scroll', function () {
-    const header = document.querySelector('.header');
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
+      const header = document.querySelector('.header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
 
-  const hamburger = document.querySelector('.hamburger');
-  const navList = document.querySelector('.nav__list');
-  const rightButtons = document.querySelector('.right-buttons');
+    const hamburger = document.querySelector('.hamburger');
+    const navList = document.querySelector('.nav__list');
+    const rightButtons = document.querySelector('.right-buttons');
 
-  hamburger.addEventListener('click', () => {
-    navList.classList.toggle('active');
-    rightButtons.classList.toggle('active');
-  });
-</script>
+    hamburger.addEventListener('click', () => {
+      navList.classList.toggle('active');
+      rightButtons.classList.toggle('active');
+    });
+  </script>
 
-  <!-- Floating WhatsApp Button -->
-
-    <div class="whatsapp-button-container">
+  <!-- WhatsApp Button (Unchanged) -->
+  <div class="whatsapp-button-container">
     <a href="https://wa.me/919146478677" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
       <img src="https://techfocus24.com/wp-content/uploads/2021/01/whatsapp-button.png" alt="WhatsApp Button" class="whatsapp-button-image" />
     </a>
   </div>
 
-  <!-- Main Content with Enhanced Animations -->
+  <!-- Main Content -->
   <div class="hccc_container">
     <div class="hccc_header">GET FREE ESTIMATE WITH MATERIAL & BRAND SPECIFICATION</div>
-    <h1 class="hccc_title">Home Construction Cost Calculator </h1>
+    <h1 class="hccc_title">Home Construction Cost Calculator</h1>
     <p class="hccc_subtitle">You can arrive at your Construction estimate here</p>
     
     <div class="hccc_options">
-      <select id="floors">
+      <select id="houseType" onchange="debounceCalculate()">
+        <option value="1bhk">1BHK</option>
+        <option value="2bhk">2BHK</option>
+        <option value="3bhk">3BHK</option>
+        <option value="luxury">Luxury House</option>
+        <option value="royal">Royal House</option>
+      </select>
+      <select id="floors" onchange="debounceCalculate()">
         <option value="Ground">Ground</option>
         <option value="G+1">G+1</option>
         <option value="G+2">G+2</option>
       </select>
-      <select id="package">
-        <option value="basic">Basic Package @ 1849/sqft</option>
+      <select id="package" onchange="debounceCalculate()">
+        <option value="basic">Basic Package</option>
+        <option value="standard">Standard Package</option>
+        <option value="premium">Premium Package</option>
       </select>
+      <select id="constructionType" onchange="debounceCalculate()">
+        <option value="standard">Standard Construction</option>
+        <option value="eco">Eco-Friendly</option>
+        <option value="luxury">Luxury Construction</option>
+      </select>
+      <select id="plotSize" onchange="debounceCalculate()">
+        <option value="small">Small Plot</option>
+        <option value="medium">Medium Plot</option>
+        <option value="large">Large Plot</option>
+      </select>
+      <select id="energyEfficiency" onchange="debounceCalculate()">
+        <option value="standard">Standard Efficiency</option>
+        <option value="energySaving">Energy-Saving</option>
+        <option value="netZero">Net-Zero</option>
+      </select>
+      <button id="currencyToggle">Switch to USD</button>
     </div>
 
     <table class="hccc_table">
       <thead>
         <tr>
           <th>Work</th>
-          <th>Area</th>
+          <th>Area/Quantity</th>
           <th>Unit</th>
           <th>Rate</th>
           <th>Cost</th>
@@ -449,53 +505,141 @@
       </thead>
       <tbody>
         <tr style="--delay: 0.1s">
-          <td>Enter required Built up Area for GROUND FLOOR</td>
-          <td><input type="number" id="builtUpArea" placeholder="Area in sqft" min="0" oninput="debounceCalculate()"></td>
+          <td>
+            <div class="tooltip">
+              Foundation Work
+              <span class="tooltiptext">Enter the area for foundation work in square feet.</span>
+            </div>
+          </td>
+          <td><input type="number" id="foundationArea" placeholder="Area in sqft" min="0" oninput="debounceCalculate()"></td>
           <td>sqft</td>
-          <td>Rs.1849</td>
-          <td id="builtUpCost">Rs. 0</td>
+          <td id="foundationRate">Rs.500</td>
+          <td id="foundationCost">Rs. 0</td>
         </tr>
         <tr style="--delay: 0.2s">
-          <td>Size of RCC Water Sump (A 4 member family will require 9000 ltr capacity)</td>
-          <td><input type="number" id="waterSump" placeholder="No. of Liters" min="0" oninput="debounceCalculate()"></td>
-          <td>ltr</td>
-          <td>Rs.24</td>
-          <td id="waterSumpCost">Rs. 0</td>
+          <td>
+            <div class="tooltip">
+              Built-Up Area Construction
+              <span class="tooltiptext">Enter the total built-up area in square feet for your house.</span>
+            </div>
+          </td>
+          <td><input type="number" id="builtUpArea" placeholder="Area in sqft" min="0" oninput="debounceCalculate()"></td>
+          <td>sqft</td>
+          <td id="builtUpRate">Rs.1849</td>
+          <td id="builtUpCost">Rs. 0</td>
         </tr>
         <tr style="--delay: 0.3s">
-          <td>Size of Septic Tank</td>
-          <td><input type="number" id="septicTank" placeholder="No. of Liters" min="0" oninput="debounceCalculate()"></td>
-          <td>ltr</td>
-          <td>Rs.24</td>
-          <td id="septicTankCost">Rs. 0</td>
+          <td>
+            <div class="tooltip">
+              Electrical Work
+              <span class="tooltiptext">Enter the area for electrical installations in square feet.</span>
+            </div>
+          </td>
+          <td><input type="number" id="electricalArea" placeholder="Area in sqft" min="0" oninput="debounceCalculate()"></td>
+          <td>sqft</td>
+          <td id="electricalRate">Rs.300</td>
+          <td id="electricalCost">Rs. 0</td>
         </tr>
         <tr style="--delay: 0.4s">
-          <td>Plain Compound Wall</td>
+          <td>
+            <div class="tooltip">
+              Plumbing Work
+              <span class="tooltiptext">Enter the area for plumbing installations in square feet.</span>
+            </div>
+          </td>
+          <td><input type="number" id="plumbingArea" placeholder="Area in sqft" min="0" oninput="debounceCalculate()"></td>
+          <td>sqft</td>
+          <td id="plumbingRate">Rs.250</td>
+          <td id="plumbingCost">Rs. 0</td>
+        </tr>
+        <tr style="--delay: 0.5s">
+          <td>
+            <div class="tooltip">
+              Interior Finishing
+              <span class="tooltiptext">Enter the area for interior finishing in square feet.</span>
+            </div>
+          </td>
+          <td><input type="number" id="interiorArea" placeholder="Area in sqft" min="0" oninput="debounceCalculate()"></td>
+          <td>sqft</td>
+          <td id="interiorRate">Rs.400</td>
+          <td id="interiorCost">Rs. 0</td>
+        </tr>
+        <tr style="--delay: 0.6s">
+          <td>
+            <div class="tooltip">
+              Exterior Finishing
+              <span class="tooltiptext">Enter the area for exterior finishing in square feet.</span>
+            </div>
+          </td>
+          <td><input type="number" id="exteriorArea" placeholder="Area in sqft" min="0" oninput="debounceCalculate()"></td>
+          <td>sqft</td>
+          <td id="exteriorRate">Rs.350</td>
+          <td id="exteriorCost">Rs. 0</td>
+        </tr>
+        <tr style="--delay: 0.7s">
+          <td>
+            <div class="tooltip">
+              RCC Water Sump
+              <span class="tooltiptext">A 4-member family typically requires 9000 liters capacity.</span>
+            </div>
+          </td>
+          <td><input type="number" id="waterSump" placeholder="No. of Liters" min="0" oninput="debounceCalculate()"></td>
+          <td>ltr</td>
+          <td id="waterSumpRate">Rs.24</td>
+          <td id="waterSumpCost">Rs. 0</td>
+        </tr>
+        <tr style="--delay: 0.8s">
+          <td>
+            <div class="tooltip">
+              Septic Tank
+              <span class="tooltiptext">Enter the capacity of the septic tank in liters.</span>
+            </div>
+          </td>
+          <td><input type="number" id="septicTank" placeholder="No. of Liters" min="0" oninput="debounceCalculate()"></td>
+          <td>ltr</td>
+          <td id="septicTankRate">Rs.24</td>
+          <td id="septicTankCost">Rs. 0</td>
+        </tr>
+        <tr style="--delay: 0.9s">
+          <td>
+            <div class="tooltip">
+              Plain Compound Wall
+              <span class="tooltiptext">Enter the length and height of the compound wall in feet.</span>
+            </div>
+          </td>
           <td>
             <input type="number" id="wallLength" placeholder="Length" min="0" oninput="debounceCalculate()" style="width: 48%;">
             <input type="number" id="wallHeight" placeholder="Height" min="0" oninput="debounceCalculate()" style="width: 48%;">
           </td>
           <td>sqft</td>
-          <td>Rs.425</td>
+          <td id="wallRate">Rs.425</td>
           <td id="wallCost">Rs. 0</td>
         </tr>
-        <tr class="hccc_total_row" style="--delay: 0.5s">
-          <td colspan="4">TOTAL Construction COST</td>
+        <tr class="hccc_total_row" style="--delay: 1.0s">
+          <td colspan="4">TOTAL CONSTRUCTION COST</td>
           <td id="totalCost">Rs. 0</td>
         </tr>
       </tbody>
     </table>
 
-    <div class="hccc_button">GET FREE ESTIMATE NOW</div>
+    <div class="chart-container">
+      <canvas id="costBreakdownChart"></canvas>
+    </div>
+
+    <div style="text-align: center;">
+      <div class="hccc_button" onclick="getEstimate()">GET FREE ESTIMATE NOW</div>
+      <div class="hccc_reset_button" onclick="resetForm()">RESET</div>
+    </div>
   </div>
 
   <script>
-    // Function to format numbers with commas
+    let isINR = true;
+    let chart = null;
+
     function formatNumber(num) {
       return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
-    // Debounce function to limit the rate of calculateCost calls
     let debounceTimeout;
     function debounceCalculate() {
       clearTimeout(debounceTimeout);
@@ -503,44 +647,267 @@
     }
 
     function calculateCost() {
-      // Get input values, default to 0 if invalid or empty
+      const foundationArea = Math.max(0, parseFloat(document.getElementById('foundationArea').value) || 0);
       const builtUpArea = Math.max(0, parseFloat(document.getElementById('builtUpArea').value) || 0);
+      const electricalArea = Math.max(0, parseFloat(document.getElementById('electricalArea').value) || 0);
+      const plumbingArea = Math.max(0, parseFloat(document.getElementById('plumbingArea').value) || 0);
+      const interiorArea = Math.max(0, parseFloat(document.getElementById('interiorArea').value) || 0);
+      const exteriorArea = Math.max(0, parseFloat(document.getElementById('exteriorArea').value) || 0);
       const waterSump = Math.max(0, parseFloat(document.getElementById('waterSump').value) || 0);
       const septicTank = Math.max(0, parseFloat(document.getElementById('septicTank').value) || 0);
       const wallLength = Math.max(0, parseFloat(document.getElementById('wallLength').value) || 0);
       const wallHeight = Math.max(0, parseFloat(document.getElementById('wallHeight').value) || 0);
 
-      // Rates
-      const builtUpRate = 1849;
-      const waterSumpRate = 24;
-      const septicTankRate = 24;
-      const wallRate = 425;
+      const houseType = document.getElementById('houseType').value;
+      const floors = document.getElementById('floors').value;
+      const packageType = document.getElementById('package').value;
+      const constructionType = document.getElementById('constructionType').value;
+      const plotSize = document.getElementById('plotSize').value;
+      const energyEfficiency = document.getElementById('energyEfficiency').value;
 
-      // Calculate individual costs
+      let foundationRate = 500;
+      let builtUpRate = packageType === 'basic' ? 1849 : packageType === 'standard' ? 2100 : 2500;
+      let electricalRate = 300;
+      let plumbingRate = 250;
+      let interiorRate = 400;
+      let exteriorRate = 350;
+      let waterSumpRate = 24;
+      let septicTankRate = 24;
+      let wallRate = 425;
+
+      let houseTypeMultiplier = 1;
+      if (houseType === '1bhk') {
+        houseTypeMultiplier = 0.9;
+        waterSumpRate = 20;
+        septicTankRate = 20;
+        interiorRate = 350;
+        exteriorRate = 300;
+      } else if (houseType === '2bhk') {
+        houseTypeMultiplier = 1.0;
+      } else if (houseType === '3bhk') {
+        houseTypeMultiplier = 1.15;
+        waterSumpRate = 26;
+        septicTankRate = 26;
+        interiorRate = 450;
+        exteriorRate = 400;
+      } else if (houseType === 'luxury') {
+        houseTypeMultiplier = 1.5;
+        waterSumpRate = 30;
+        septicTankRate = 30;
+        interiorRate = 600;
+        exteriorRate = 500;
+      } else if (houseType === 'royal') {
+        houseTypeMultiplier = 2.0;
+        waterSumpRate = 35;
+        septicTankRate = 35;
+        interiorRate = 800;
+        exteriorRate = 700;
+      }
+      foundationRate *= houseTypeMultiplier;
+      builtUpRate *= houseTypeMultiplier;
+      electricalRate *= houseTypeMultiplier;
+      plumbingRate *= houseTypeMultiplier;
+      interiorRate *= houseTypeMultiplier;
+      exteriorRate *= houseTypeMultiplier;
+
+      if (floors === 'G+1') {
+        builtUpRate *= 1.1;
+        foundationRate *= 1.1;
+      } else if (floors === 'G+2') {
+        builtUpRate *= 1.2;
+        foundationRate *= 1.15;
+      }
+
+      if (constructionType === 'eco') {
+        builtUpRate *= 1.05;
+        foundationRate *= 1.05;
+        electricalRate *= 1.1;
+        plumbingRate *= 1.1;
+        interiorRate *= 1.05;
+        exteriorRate *= 1.05;
+        waterSumpRate *= 1.1;
+        septicTankRate *= 1.1;
+        wallRate *= 1.05;
+      } else if (constructionType === 'luxury') {
+        builtUpRate *= 1.3;
+        foundationRate *= 1.2;
+        electricalRate *= 1.2;
+        plumbingRate *= 1.2;
+        interiorRate *= 1.3;
+        exteriorRate *= 1.3;
+        waterSumpRate *= 1.2;
+        septicTankRate *= 1.2;
+        wallRate *= 1.15;
+      }
+
+      if (plotSize === 'small') {
+        wallRate *= 0.9;
+        foundationRate *= 0.95;
+      } else if (plotSize === 'large') {
+        wallRate *= 1.2;
+        foundationRate *= 1.1;
+      }
+
+      let energyMultiplier = 1;
+      if (energyEfficiency === 'energySaving') {
+        energyMultiplier = 1.1;
+      } else if (energyEfficiency === 'netZero') {
+        energyMultiplier = 1.25;
+      }
+      foundationRate *= energyMultiplier;
+      builtUpRate *= energyMultiplier;
+      electricalRate *= energyMultiplier;
+      plumbingRate *= energyMultiplier;
+      interiorRate *= energyMultiplier;
+      exteriorRate *= energyMultiplier;
+      waterSumpRate *= energyMultiplier;
+      septicTankRate *= energyMultiplier;
+      wallRate *= energyMultiplier;
+
+      const exchangeRate = 83.5;
+      const currencySymbol = isINR ? 'Rs.' : '$';
+      const rateFactor = isINR ? 1 : 1 / exchangeRate;
+
+      foundationRate *= rateFactor;
+      builtUpRate *= rateFactor;
+      electricalRate *= rateFactor;
+      plumbingRate *= rateFactor;
+      interiorRate *= rateFactor;
+      exteriorRate *= rateFactor;
+      waterSumpRate *= rateFactor;
+      septicTankRate *= rateFactor;
+      wallRate *= rateFactor;
+
+      document.getElementById('foundationRate').textContent = `${currencySymbol}${Math.round(foundationRate)}`;
+      document.getElementById('builtUpRate').textContent = `${currencySymbol}${Math.round(builtUpRate)}`;
+      document.getElementById('electricalRate').textContent = `${currencySymbol}${Math.round(electricalRate)}`;
+      document.getElementById('plumbingRate').textContent = `${currencySymbol}${Math.round(plumbingRate)}`;
+      document.getElementById('interiorRate').textContent = `${currencySymbol}${Math.round(interiorRate)}`;
+      document.getElementById('exteriorRate').textContent = `${currencySymbol}${Math.round(exteriorRate)}`;
+      document.getElementById('waterSumpRate').textContent = `${currencySymbol}${Math.round(waterSumpRate)}`;
+      document.getElementById('septicTankRate').textContent = `${currencySymbol}${Math.round(septicTankRate)}`;
+      document.getElementById('wallRate').textContent = `${currencySymbol}${Math.round(wallRate)}`;
+
+      const foundationCost = foundationArea * foundationRate;
       const builtUpCost = builtUpArea * builtUpRate;
+      const electricalCost = electricalArea * electricalRate;
+      const plumbingCost = plumbingArea * plumbingRate;
+      const interiorCost = interiorArea * interiorRate;
+      const exteriorCost = exteriorArea * exteriorRate;
       const waterSumpCost = waterSump * waterSumpRate;
       const septicTankCost = septicTank * septicTankRate;
       const wallCost = (wallLength * wallHeight) * wallRate;
 
-      // Update individual cost fields with formatted numbers
-      document.getElementById('builtUpCost').textContent = `Rs. ${formatNumber(Math.round(builtUpCost))}`;
-      document.getElementById('waterSumpCost').textContent = `Rs. ${formatNumber(Math.round(waterSumpCost))}`;
-      document.getElementById('septicTankCost').textContent = `Rs. ${formatNumber(Math.round(septicTankCost))}`;
-      document.getElementById('wallCost').textContent = `Rs. ${formatNumber(Math.round(wallCost))}`;
+      document.getElementById('foundationCost').textContent = `${currencySymbol} ${formatNumber(Math.round(foundationCost))}`;
+      document.getElementById('builtUpCost').textContent = `${currencySymbol} ${formatNumber(Math.round(builtUpCost))}`;
+      document.getElementById('electricalCost').textContent = `${currencySymbol} ${formatNumber(Math.round(electricalCost))}`;
+      document.getElementById('plumbingCost').textContent = `${currencySymbol} ${formatNumber(Math.round(plumbingCost))}`;
+      document.getElementById('interiorCost').textContent = `${currencySymbol} ${formatNumber(Math.round(interiorCost))}`;
+      document.getElementById('exteriorCost').textContent = `${currencySymbol} ${formatNumber(Math.round(exteriorCost))}`;
+      document.getElementById('waterSumpCost').textContent = `${currencySymbol} ${formatNumber(Math.round(waterSumpCost))}`;
+      document.getElementById('septicTankCost').textContent = `${currencySymbol} ${formatNumber(Math.round(septicTankCost))}`;
+      document.getElementById('wallCost').textContent = `${currencySymbol} ${formatNumber(Math.round(wallCost))}`;
 
-      // Calculate total cost
-      const totalCost = builtUpCost + waterSumpCost + septicTankCost + wallCost;
-      document.getElementById('totalCost').textContent = `Rs. ${formatNumber(Math.round(totalCost))}`;
+      const totalCost = foundationCost + builtUpCost + electricalCost + plumbingCost + interiorCost + exteriorCost + waterSumpCost + septicTankCost + wallCost;
+      document.getElementById('totalCost').textContent = `${currencySymbol} ${formatNumber(Math.round(totalCost))}`;
 
-      // Trigger total row animation
+      updateChart(foundationCost, builtUpCost, electricalCost, plumbingCost, interiorCost, exteriorCost, waterSumpCost, septicTankCost, wallCost);
+
       const totalRow = document.querySelector('.hccc_total_row');
       totalRow.style.animation = 'none';
-      totalRow.offsetHeight; // Trigger reflow
+      totalRow.offsetHeight;
       totalRow.style.animation = 'totalReveal 1.2s ease-out';
     }
+
+    function updateChart(foundationCost, builtUpCost, electricalCost, plumbingCost, interiorCost, exteriorCost, waterSumpCost, septicTankCost, wallCost) {
+      const ctx = document.getElementById('costBreakdownChart').getContext('2d');
+      
+      if (chart) {
+        chart.destroy();
+      }
+
+      chart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: ['Foundation', 'Built-Up Area', 'Electrical', 'Plumbing', 'Interior', 'Exterior', 'Water Sump', 'Septic Tank', 'Compound Wall'],
+          datasets: [{
+            data: [foundationCost, builtUpCost, electricalCost, plumbingCost, interiorCost, exteriorCost, waterSumpCost, septicTankCost, wallCost],
+            backgroundColor: [
+              '#1E90FF', // Blue (Foundation)
+              '#FF4500', // Red (Built-Up Area)
+              '#32CD32', // Green (Electrical)
+              '#8A2BE2', // Purple (Plumbing)
+              '#FFA500', // Orange (Interior)
+              '#00CED1', // Cyan (Exterior)
+              '#FF00FF', // Magenta (Water Sump)
+              '#008080', // Teal (Septic Tank)
+              '#FF7F50'  // Coral (Compound Wall)
+            ],
+            borderColor: '#fff',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: {
+                color: '#000',
+                font: {
+                  size: 13
+                }
+              }
+            },
+            title: {
+              display: true,
+              text: 'Cost Breakdown',
+              color: '#000',
+              font: {
+                size: 14
+              }
+            }
+          }
+        }
+      });
+    }
+
+    function getEstimate() {
+      alert('Estimate submitted! Our team will contact you shortly.');
+    }
+
+    function resetForm() {
+      document.getElementById('foundationArea').value = '';
+      document.getElementById('builtUpArea').value = '';
+      document.getElementById('electricalArea').value = '';
+      document.getElementById('plumbingArea').value = '';
+      document.getElementById('interiorArea').value = '';
+      document.getElementById('exteriorArea').value = '';
+      document.getElementById('waterSump').value = '';
+      document.getElementById('septicTank').value = '';
+      document.getElementById('wallLength').value = '';
+      document.getElementById('wallHeight').value = '';
+      document.getElementById('houseType').value = '1bhk';
+      document.getElementById('floors').value = 'Ground';
+      document.getElementById('package').value = 'basic';
+      document.getElementById('constructionType').value = 'standard';
+      document.getElementById('plotSize').value = 'small';
+      document.getElementById('energyEfficiency').value = 'standard';
+      isINR = true;
+      document.getElementById('currencyToggle').textContent = 'Switch to USD';
+      calculateCost();
+    }
+
+    document.getElementById('currencyToggle').addEventListener('click', () => {
+      isINR = !isINR;
+      document.getElementById('currencyToggle').textContent = isINR ? 'Switch to USD' : 'Switch to INR';
+      calculateCost();
+    });
+
+    calculateCost();
   </script>
 
-  <!-- Footer Sections (Unchanged) -->
+  <!-- Footer (Unchanged) -->
   <footer class="footer">
     <div class="footercontainer">
       <div class="footer-sections">
@@ -722,31 +1089,30 @@
         We design memorable hospitality spaces that prioritize guest experience, ambiance, and operational flow.
       </p>
       <h3>School Construction</h3>
-    <p>
-      Building schools that foster creativity, learning, and growth — aligned with modern education needs and safety standards.
-    </p>
-    <br>
-    <hr> <br>
-    <h3>Locations</h3>
-    <p class="location-text">
-      House Construction in Bengaluru, Chennai, Mysuru, NCR Faridabad, NCR Ghaziabad, NCR Noida, NCR Delhi, NCR Gurgaon, Hyderabad, Pune, Hubli
-    </p>
-    <div class="footer-bottom">
       <p>
-        Copyright ©
-        <script>document.write(new Date().getFullYear());</script> All Rights Reserved | Powered by <a href="https://meghplat.com/" target="_blank" class="text-primary">Meghplat Analytics</a>
+        Building schools that foster creativity, learning, and growth — aligned with modern education needs and safety standards.
       </p>
+      <br>
+      <hr> <br>
+      <h3>Locations</h3>
+      <p class="location-text">
+        House Construction in Bengaluru, Chennai, Mysuru, NCR Faridabad, NCR Ghaziabad, NCR Noida, NCR Delhi, NCR Gurgaon, Hyderabad, Pune, Hubli
+      </p>
+      <div class="footer-bottom">
+        <p>
+          Copyright ©
+          <script>document.write(new Date().getFullYear());</script> All Rights Reserved | Powered by <a href="https://meghplat.com/" target="_blank" class="text-primary">Meghplat Analytics</a>
+        </p>
+      </div>
     </div>
   </section>
 
   <script>
-    // Simple script for the mobile menu toggle
     document.querySelector('.menu-toggle')?.addEventListener('click', function() {
       document.querySelector('.nav').classList.toggle('nav--active');
       this.classList.toggle('menu-toggle--active');
     });
 
-    // Custom cursor
     const cursor = document.querySelector('.cursor');
     if (cursor) {
       document.addEventListener('mousemove', e => {
