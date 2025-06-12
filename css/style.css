@@ -540,13 +540,13 @@ html {
             top: 10px;
             right: 15px;
             font-size: 20px;
-            color: #C9183C;
+            color: #d5193e;
             cursor: pointer;
             transition: color 0.3s ease;
         }
 
         .popup .close-btn:hover {
-            color: #a61432;
+            color: #d5193e;
         }
 
         /* Responsive design */
@@ -1452,151 +1452,154 @@ html {
       }
     }
 
- /* Why Us */
+    /* Why Choose Living Walls Section Styles */
 .why-us {
-  padding: 50px 0;
-
-  text-align: center;
+  padding: 100px 0;
+  background: #ffffff; /* White background */
+  position: relative;
+  overflow: hidden;
 }
 
-.why-us .container {
-  max-width: 1200px;
+.container {
+  max-width: 1300px;
   margin: 0 auto;
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #1b1a1a; /* Accent color for text */
+  padding: 0 20px;
 }
 
-.why-us h2 {
-  font-size: 3.5rem;
-  margin: 0 auto 20px;
-  color: #1b1a1a; /* Accent color for heading */
+.section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #000000; /* Black text */
+  margin-bottom: 40px;
   line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #36454F, 	#36454F); /* Subtle blue-to-purple gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
 }
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for a 3x2 grid */
+  gap: 40px;
   padding: 0 20px;
 }
 
 .card {
-  background-color: #ffffff; /* Primary color for card background */
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(47, 51, 66, 0.3); /* Shadow using primary color */
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  height: 200px;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  background: rgba(0, 0, 0, 0.05); /* Slightly tinted glassmorphism background */
+  border-radius: 20px;
+  padding: 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Softer shadow for white background */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(213, 25, 62, 0.4); /* Shadow using accent color */
+.card-inner {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 300px;
 }
 
 .card-img {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 10px;
-  transition: width var(--transition-fast), height var(--transition-fast), filter var(--transition-fast);
-}
-
-.card:hover .card-img {
-  width: 48px;
-  height: 48px;
-  filter: brightness(1.2) hue-rotate(15deg); /* Hue shift toward accent color */
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(66, 117, 176, 0.3)); /* Blue shadow to match gradient */
+  transition: transform 0.3s ease;
 }
 
 .card h3 {
-  font-size: 1.8rem;
-  color: #1b1a1a; /* Accent color for heading */
-  font-weight: bold;
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: #000000; /* Black text */
   margin: 0;
-  transition: font-size var(--transition-fast);
-}
-
-.card:hover h3 {
-  font-size: 1.7rem;
+  line-height: 1.3;
 }
 
 .card p {
-  font-size: 1.4rem;
-  color: #1b1a1a; /* Accent color for text */
-  line-height: 1.5;
-  font-weight: normal;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 300;
+  color: #000000; /* Black text */
+  line-height: 1.6;
   margin: 0;
-  transition: font-size var(--transition-fast);
 }
 
-.card:hover p {
-  font-size: 1.3rem;
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+  }
 }
 
-/* Mobile-friendly adjustments */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .why-us {
-    padding: 20px 0;
+    padding: 80px 0;
   }
 
-  .why-us .container {
-    max-width: 95%;
-    font-size: 1.6rem;
-    color: #d5193e; /* Accent color for text */
-  }
-
-  .why-us h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: #d5193e; /* Accent color for heading */
+  .section-title {
+    font-size: 3rem;
   }
 
   .cards-container {
-    grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 0 10px;
+    grid-template-columns: 1fr; /* 1 column for smaller screens */
+    gap: 30px;
   }
 
-  .card {
-    padding: 15px;
-    height: auto;
-    min-height: 150px;
-    box-shadow: 0 4px 8px rgba(47, 51, 66, 0.3); /* Shadow using primary color */
-  }
-
-  .card:hover {
-    box-shadow: 0 8px 16px rgba(213, 25, 62, 0.4); /* Shadow using accent color */
+  .card-inner {
+    padding: 30px;
+    height: 260px;
   }
 
   .card-img {
-    width: 32px;
-    height: 32px;
-  }
-
-  .card:hover .card-img {
-    width: 36px;
-    height: 36px;
+    width: 50px;
+    height: 50px;
   }
 
   .card h3 {
-    font-size: 1.4rem;
-    color: #d5193e; /* Accent color for heading */
-  }
-
-  .card:hover h3 {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
   }
 
   .card p {
-    font-size: 1.1rem;
-    color: #d5193e; /* Accent color for text */
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-us {
+    padding: 60px 0;
   }
 
-  .card:hover p {
-    font-size: 1rem;
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .card-inner {
+    padding: 25px;
+    height: 240px;
+  }
+
+  .card-img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .card h3 {
+    font-size: 1.6rem;
+  }
+
+  .card p {
+    font-size: 1.3rem;
   }
 }
 /* Tracker Section */
