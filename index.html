@@ -394,11 +394,10 @@
       </a>
     </div>
   </section>
-
-  <script>
+<script>
   const container = document.querySelector('#svc-container');
   const originalCards = container.querySelectorAll('.svc-card');
-  let cardWidth = 300 + 20; // default
+  let cardWidth = 300 + 20; // Card width + margin
   const viewportWidth = window.innerWidth;
 
   // Adjust card width for responsive design
@@ -409,13 +408,13 @@
   }
 
   // Adjustable speed (seconds for full scroll cycle)
-  const animationDuration = 120; // slower animation
+  const animationDuration = 120;
 
-  // Calculate how many cards are needed for seamless scrolling
+  // Calculate cards needed to fill viewport plus extra for seamless looping
   const cardsInViewport = Math.ceil(viewportWidth / cardWidth) + 1;
-  const totalCardsNeeded = originalCards.length * Math.ceil(cardsInViewport / originalCards.length) + originalCards.length;
+  const totalCardsNeeded = originalCards.length * Math.ceil((cardsInViewport + 1) / originalCards.length);
 
-  // Duplicate cards
+  // Duplicate cards for seamless scrolling
   for (let i = 0; i < totalCardsNeeded; i++) {
     const clone = originalCards[i % originalCards.length].cloneNode(true);
     const linkClone = document.createElement('a');
@@ -428,35 +427,43 @@
   const allCards = container.querySelectorAll('.svc-card');
   const containerWidth = allCards.length * cardWidth;
 
-  // Create scrolling timeline
-  const scrollTimeline = gsap.timeline({ repeat: -1, ease: "linear" });
-  scrollTimeline.to(container, {
-    x: -(containerWidth - viewportWidth),
+  // Set container width explicitly for smooth animation
+  container.style.width = `${containerWidth}px`;
+
+  // GSAP animation for seamless infinite scrolling
+  gsap.to(container, {
+    x: -containerWidth,
     duration: animationDuration,
+    ease: 'none',
+    repeat: -1,
+    modifiers: {
+      x: gsap.utils.unitize((x) => parseFloat(x) % containerWidth) // Seamless loop
+    }
   });
 
   // Pause/resume on hover
-  container.addEventListener('mouseenter', () => scrollTimeline.pause());
-  container.addEventListener('mouseleave', () => scrollTimeline.resume());
+  container.addEventListener('mouseenter', () => gsap.to(container, { timeScale: 0, overwrite: 'auto' }));
+  container.addEventListener('mouseleave', () => gsap.to(container, { timeScale: 1, overwrite: 'auto' }));
 
-  // Fade-in effect as cards scroll into view
-  allCards.forEach((card, index) => {
-    gsap.fromTo(card, 
+  // Optional: Simplified fade-in effect for cards entering the viewport
+  allCards.forEach((card) => {
+    gsap.fromTo(
+      card,
       { opacity: 0 },
       {
         opacity: 1,
         duration: 1,
-        delay: index * 0.2,
         scrollTrigger: {
           trigger: card,
-          start: "left 80%",
-          end: "left 20%",
-          toggleActions: "play none none none"
+          start: 'left 90%',
+          end: 'left 10%',
+          toggleActions: 'play none none none',
+          scrub: false
         }
-      });
+      }
+    );
   });
 </script>
-
 
 
  <!--End Our Services -->
@@ -988,7 +995,7 @@
       <!-- Card 1: Custom Floor Plans -->
       <div class="card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
         <div class="card-inner">
-          <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRiWbp4kumleoJGzx0Tg4oPNFCNHL7U4YvMdAgM__c4bNWirmRo" alt="Custom Floor Plans Icon" class="card-img">
+          <i class="fas fa-home card-img" aria-label="Custom Floor Plans Icon"></i>
           <h3>Custom Floor Plans</h3>
           <p>Personalized designs tailored to your unique style and functional needs for the perfect home.</p>
         </div>
@@ -997,7 +1004,8 @@
       <!-- Card 2: Expert Inspired 3D Designs -->
       <div class="card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
         <div class="card-inner">
-          <img src="https://static.vecteezy.com/system/resources/thumbnails/015/279/259/small_2x/professional-man-expert-icon-business-advice-decision-support-employment-services-icon-suggestion-illustration-vector.jpg" alt="Expert Inspired 3D Designs Icon" class="card-img">
+          <i class="fa-solid fa-users card-img" aria-label="Export 3D design"></i> 
+        
           <h3>Expert 3D Designs</h3>
           <p>Stunning 3D visualizations to bring your dream project to life with clarity and precision.</p>
         </div>
@@ -1006,7 +1014,7 @@
       <!-- Card 3: Quality Assurance -->
       <div class="card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
         <div class="card-inner">
-          <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSkuNaGBPOdXt7ed8ztbL760cQI-95_ddjsWvFotdod6pIpCRYj" alt="Quality Assurance Icon" class="card-img">
+         <i class="fa-solid fa-ranking-star card-img" aria-label="Ranking Star Icon"></i>
           <h3>Quality Assurance</h3>
           <p>Meticulous management ensuring superior craftsmanship and a solid foundation for your vision.</p>
         </div>
@@ -1015,7 +1023,7 @@
       <!-- Card 4: Engaging Blog Insights -->
       <div class="card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
         <div class="card-inner">
-          <img src="https://img.freepik.com/free-vector/illustration-share-icon_53876-5841.jpg?semt=ais_hybrid&w=740" alt="Engaging Blog Insights Icon" class="card-img">
+          <i class="fa-solid fa-blog card-img" aria-label="Blog Insight"></i>
           <h3>Blog Insights</h3>
           <p>Stay updated with trends and insights in construction and design through our engaging blog.</p>
         </div>
@@ -1023,8 +1031,8 @@
 
       <!-- Card 5: Refer and Earn Program -->
       <div class="card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
-        <div class="card-inner">
-          <img src="https://cdn.imgbin.com/8/1/13/imgbin-computer-icons-users-group-group-icon-PhvMEM4Uen4kHMiGd5XhBR5Zy.jpg" alt="Refer and Earn Program Icon" class="card-img">
+        <div class="card-inner"> 
+           <i class="fas fa-user-friends card-img" aria-label="Refer & earn"></i>
           <h3>Refer & Earn</h3>
           <p>Join our referral program, share your experience, and earn rewards as we grow together.</p>
         </div>
@@ -1033,7 +1041,7 @@
       <!-- Card 6: Commitment to Sustainability -->
       <div class="card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
         <div class="card-inner">
-          <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR3U9a1wNVnlkxeINt2K3fXy3yzziWV8luInCj-yvlRL8SjKqDd" alt="Commitment to Sustainability Icon" class="card-img">
+          <i class="fa-solid fa-leaf card-img" aria-label="Sustainability"></i>
           <h3>Sustainability</h3>
           <p>Eco-friendly methods to reduce environmental impact while creating beautiful, lasting spaces.</p>
         </div>
