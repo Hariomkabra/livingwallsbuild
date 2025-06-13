@@ -1,0 +1,817 @@
+/* Responsive: Tablets & Below */
+@media screen and (max-width: 768px) {
+  .containerr {
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  .nav__list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 20px;
+    gap: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav__list.active {
+    display: flex;
+  }
+
+  .right-buttons {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 220px;
+    left: 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 10px;
+  }
+
+  .right-buttons.active {
+    display: flex;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    border: none;
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+  }
+
+  .logo-img {
+    height: 60px;
+    width: 100px;
+  }
+
+  .popup {
+    padding: 15px;
+    max-width: 300px;
+  }
+
+  .popup h2 {
+    font-size: 18px;
+  }
+
+  .popup label,
+  .popup input,
+  .popup select {
+    font-size: 12px;
+  }
+
+  .popup .submit-btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .thank-you-message {
+    padding: 15px;
+  }
+
+  .thank-you-message h3 {
+    font-size: 16px;
+  }
+
+  .thank-you-message p {
+    font-size: 12px;
+  }
+
+  .checkmark {
+    width: 30px;
+    height: 30px;
+  }
+
+  .checkmark::before {
+    top: 9px;
+    left: 12px;
+    width: 6px;
+    height: 12px;
+    border-width: 0 2px 2px 0;
+  }
+
+  .svc-title {
+    font-size: 2.2rem;
+  }
+
+  .work__grid,
+  .services__grid,
+  .about__grid,
+  .contact__grid,
+  .footer__content,
+  .cards-container,
+  .testimonial-wrapper,
+  .refer-earn-card {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .about__image {
+    order: -1;
+  }
+
+  .logo-img {
+    height: 90px;
+    width: 85px;
+  }
+
+  .testimonial-card {
+    width: 100%;
+  }
+
+  .refer-earn-left,
+  .refer-earn-right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .refer-earn-right button {
+    margin: 0 auto;
+  }
+
+  .card {
+    width: 100%;
+    height: auto;
+  }
+
+  .why-us {
+    padding: 80px 0;
+  }
+
+  .section-title {
+    font-size: 3rem;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .card-inner {
+    padding: 30px;
+    height: 260px;
+  }
+
+  .card-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card h3 {
+    font-size: 1.8rem;
+  }
+
+  .card p {
+    font-size: 1.4rem;
+  }
+
+  .step {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .carousel {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .quality-banner {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .left-section {
+    padding-right: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .logo-and-text {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text-content h2 {
+    font-size: 1.25rem;
+  }
+
+  .text-content p {
+    font-size: 0.875rem;
+  }
+
+  .know-more-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .right-section {
+    justify-content: center;
+  }
+
+  .checklist-img {
+    max-width: 100%;
+  }
+
+  .quality-checks {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.7rem;
+  }
+
+  .consultation-btn {
+    font-size: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    width: auto;
+  }
+
+  .faq-containeer {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-title {
+    font-size: 1.5rem;
+  }
+
+  .faq-questionn h3 {
+    font-size: 1rem;
+  }
+
+  .faq-answerr {
+    font-size: 0.85rem;
+  }
+
+  .why-us h2 {
+    font-size: 2.2rem;
+  }
+
+  .card h3 {
+    font-size: 1.5rem;
+  }
+
+  .card p {
+    font-size: 1.2rem;
+  }
+
+  .card {
+    height: auto;
+    padding: 15px;
+  }
+
+  .cards-container {
+    padding: 0 10px;
+    gap: 15px;
+  }
+
+  .phone-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .phone-icon i {
+    font-size: 20px;
+  }
+
+  :root {
+    --header-height: 7rem;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--color-white);
+    overflow: hidden;
+    transition: height var(--transition-medium);
+  }
+
+  .nav.active {
+    height: auto;
+    max-height: 100vh;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-content p {
+    font-size: 1.5rem;
+  }
+
+  .svc-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .svc-card-link {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .recent-works h2 {
+    font-size: 2rem;
+  }
+
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .flip-card-inner {
+    height: 150px;
+  }
+
+  .flip-card-front img {
+    height: 150px;
+  }
+
+  .project-details {
+    padding: 80px 0;
+  }
+
+  .details-content {
+    padding: 30px;
+  }
+
+  .threeD-gallery h2 {
+    font-size: 1.8rem;
+  }
+
+  .threeD-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about {
+    padding: 80px 0;
+  }
+
+  .about__stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .future-homes h2 {
+    font-size: 2rem;
+  }
+
+  .features {
+    gap: 30px;
+  }
+
+  .team__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-sectionn {
+    padding: 60px 10px;
+  }
+
+  .stat-box {
+    max-width: 150px;
+  }
+
+  .stat-box h2 {
+    font-size: 2rem;
+  }
+
+  .how-it-works h2 {
+    font-size: 2rem;
+  }
+
+  .step img {
+    width: 100%;
+  }
+
+  .step-content h3 {
+    font-size: 2rem;
+  }
+
+  .step-content p {
+    font-size: 1.2rem;
+  }
+
+  .why-modern-title {
+    font-size: 2rem;
+  }
+
+  .why-modern-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .partners h2 {
+    font-size: 2.5rem;
+  }
+
+  .partner-logos {
+    gap: 20px;
+  }
+
+  .luxury-heading {
+    font-size: 2rem;
+  }
+
+  .luxury-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reach-out {
+    padding: 80px 0;
+  }
+
+  .estimate-box {
+    padding: 20px;
+  }
+
+  .form-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Responsive: Very Small Screens */
+@media screen and (max-width: 480px) {
+  .containerr {
+    padding: 8px 0;
+  }
+
+  .logo-img {
+    height: 50px;
+    width: 90px;
+  }
+
+  .hamburger {
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  .nav__list {
+    top: 60px;
+    padding: 15px;
+  }
+
+  .right-buttons {
+    top: 200px;
+  }
+
+  .get-quote {
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+
+  .why-us {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .card-inner {
+    padding: 25px;
+    height: 240px;
+  }
+
+  .card-img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .card h3 {
+    font-size: 1.6rem;
+  }
+
+  .card p {
+    font-size: 1.3rem;
+  }
+
+  .section-heading {
+    font-size: 2rem;
+  }
+
+  .section-heading h1 {
+    font-size: 1.25rem;
+  }
+
+  .quality-banner {
+    padding: 1rem;
+  }
+
+  .text-content h2 {
+    font-size: 1.125rem;
+  }
+
+  .text-content p {
+    font-size: 0.8125rem;
+  }
+
+  .why-us h2 {
+    font-size: 1.8rem;
+  }
+
+  .card h3 {
+    font-size: 1.3rem;
+  }
+
+  .card p {
+    font-size: 1rem;
+  }
+
+  .card-img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .card:hover .card-img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .svc-title {
+    font-size: 1.8rem;
+  }
+
+  .recent-works h2 {
+    font-size: 1.8rem;
+  }
+
+  .project-details {
+    padding: 60px 0;
+  }
+
+  .details-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .details-content p {
+    font-size: 0.9rem;
+  }
+
+  .threeD-gallery h2 {
+    font-size: 1.5rem;
+  }
+
+  .about {
+    padding: 60px 0;
+  }
+
+  .about-text,
+  .about__content p {
+    font-size: 0.9rem;
+  }
+
+  .future-homes h2 {
+    font-size: 1.5rem;
+  }
+
+  .feature img {
+    width: 80px;
+    height: 70px;
+  }
+
+  .team__name {
+    font-size: 1.2rem;
+  }
+
+  .team__role {
+    font-size: 0.8rem;
+  }
+
+  .stats-sectionn {
+    padding: 40px 10px;
+  }
+
+  .stat-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .stat-box p {
+    font-size: 0.9rem;
+  }
+
+  .how-it-works h2 {
+    font-size: 1.8rem;
+  }
+
+  .step-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .step-content p {
+    font-size: 1rem;
+  }
+
+  .why-modern-title {
+    font-size: 1.8rem;
+  }
+
+  .why-modern-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .why-modern-card p {
+    font-size: 0.9rem;
+  }
+
+  .partners h2 {
+    font-size: 2rem;
+  }
+
+  .partner-logos img {
+    width: 150px;
+    height: 75px;
+  }
+
+  .luxury-heading {
+    font-size: 1.8rem;
+  }
+
+  .luxury-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .luxury-card p {
+    font-size: 0.9rem;
+  }
+
+  .reach-out {
+    padding: 60px 0;
+  }
+
+  .estimate-box h3 {
+    font-size: 1.5rem;
+  }
+
+  .input-block label {
+    font-size: 0.9rem;
+  }
+
+  .input-block input,
+  .input-block select,
+  .input-block textarea {
+    font-size: 0.8rem;
+  }
+}
+
+/* Responsive adjustments for WhatsApp Button */
+@media (max-width: 768px) {
+  .whatsapp-button-image {
+    width: 150px;
+  }
+}
+
+/* Responsive adjustments for Our Services */
+@media (max-width: 1024px) {
+  .svc-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .svc-title {
+    font-size: 2rem;
+  }
+
+  .svc-card-title {
+    font-size: 1.1rem;
+  }
+
+  .svc-card-desc {
+    font-size: 0.8rem;
+  }
+
+  .testimoniall-section {
+    padding: 20px 10px;
+  }
+
+  .testimonial-title {
+    font-size: 2rem;
+  }
+
+  .testimonial-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .testimonial-wrapper {
+    max-width: 90%;
+    padding: 0 40px;
+  }
+
+  .testimonial-card {
+    min-width: 100%;
+  }
+
+  .testimonial-play-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .testimonial-info {
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .testimonial-profile {
+    width: 40px;
+    height: 40px;
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+  .testimonial-name {
+    font-size: 1.2rem;
+  }
+
+  .testimonial-text {
+    font-size: 1rem;
+    margin-top: 5px;
+  }
+
+  .video-content {
+    width: 90vw;
+    height: 50.625vw;
+    max-width: 90%;
+    max-height: 80vh;
+  }
+
+  .video-close {
+    font-size: 30px;
+    top: 5px;
+    right: 10px;
+  }
+
+  .nav-arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .nav-arrow.left {
+    left: 5px;
+  }
+
+  .nav-arrow.right {
+    right: 5px;
+  }
+}
+
+/* Responsive adjustments for Why Choose Living Walls */
+@media (max-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive adjustments for hover effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .card:hover h3,
+  .card:hover p,
+  .card:hover .card-img {
+    font-size: inherit !important;
+    width: inherit !important;
+    height: inherit !important;
+    filter: none !important;
+  }
+}
+
+/* Responsive adjustments for larger screens */
+@media (max-width: 1024px) {
+  .hero__title {
+    font-size: var(--font-size-4xl);
+  }
+}
