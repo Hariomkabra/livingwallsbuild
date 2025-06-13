@@ -394,76 +394,91 @@
       </a>
     </div>
   </section>
-<script>
-  const container = document.querySelector('#svc-container');
-  const originalCards = container.querySelectorAll('.svc-card');
-  let cardWidth = 300 + 20; // Card width + margin
-  const viewportWidth = window.innerWidth;
+  <script>
+    const container = document.querySelector('#svc-container');
+const originalCards = container.querySelectorAll('.svc-card');
+let cardWidth = 300 + 20; // Card width + margin
+const viewportWidth = window.innerWidth;
 
-  // Adjust card width for responsive design
-  if (viewportWidth <= 1024 && viewportWidth > 600) {
-    cardWidth = 250 + 20;
-  } else if (viewportWidth <= 600) {
-    cardWidth = 200 + 20;
+// Adjust card width for responsive design
+if (viewportWidth <= 1024 && viewportWidth > 600) {
+  cardWidth = 270 + 20;
+} else if (viewportWidth <= 600) {
+  cardWidth = 220 + 20;
+}
+
+// Adjustable speed (seconds for full scroll cycle)
+const animationDuration = 120;
+
+// Calculate cards needed to fill viewport plus extra for seamless looping
+const cardsInViewport = Math.ceil(viewportWidth / cardWidth) + 1;
+const totalCardsNeeded = originalCards.length * Math.ceil((cardsInViewport + 1) / originalCards.length);
+
+// Duplicate cards for seamless scrolling
+for (let i = 0; i < totalCardsNeeded; i++) {
+  const clone = originalCards[i % originalCards.length].cloneNode(true);
+  const linkClone = document.createElement('a');
+  linkClone.href = originalCards[i % originalCards.length].parentElement.href;
+  linkClone.className = 'svc-card-link';
+  linkClone.appendChild(clone);
+  container.appendChild(linkClone);
+}
+
+const allCards = container.querySelectorAll('.svc-card');
+const containerWidth = allCards.length * cardWidth;
+
+// Set container width explicitly for smooth animation
+container.style.width = `${containerWidth}px`;
+
+// GSAP animation for seamless infinite scrolling
+const scrollAnimation = gsap.to(container, {
+  x: -containerWidth,
+  duration: animationDuration,
+  ease: 'none',
+  repeat: -1,
+  modifiers: {
+    x: gsap.utils.unitize((x) => parseFloat(x) % containerWidth) // Seamless loop
   }
+});
 
-  // Adjustable speed (seconds for full scroll cycle)
-  const animationDuration = 120;
-
-  // Calculate cards needed to fill viewport plus extra for seamless looping
-  const cardsInViewport = Math.ceil(viewportWidth / cardWidth) + 1;
-  const totalCardsNeeded = originalCards.length * Math.ceil((cardsInViewport + 1) / originalCards.length);
-
-  // Duplicate cards for seamless scrolling
-  for (let i = 0; i < totalCardsNeeded; i++) {
-    const clone = originalCards[i % originalCards.length].cloneNode(true);
-    const linkClone = document.createElement('a');
-    linkClone.href = originalCards[i % originalCards.length].parentElement.href;
-    linkClone.className = 'svc-card-link';
-    linkClone.appendChild(clone);
-    container.appendChild(linkClone);
-  }
-
-  const allCards = container.querySelectorAll('.svc-card');
-  const containerWidth = allCards.length * cardWidth;
-
-  // Set container width explicitly for smooth animation
-  container.style.width = `${containerWidth}px`;
-
-  // GSAP animation for seamless infinite scrolling
-  gsap.to(container, {
-    x: -containerWidth,
-    duration: animationDuration,
-    ease: 'none',
-    repeat: -1,
-    modifiers: {
-      x: gsap.utils.unitize((x) => parseFloat(x) % containerWidth) // Seamless loop
-    }
+// Smooth pause/resume on hover
+container.addEventListener('mouseenter', () => {
+  gsap.to(scrollAnimation, {
+    timeScale: 0,
+    duration: 0.3, // Smooth transition for pause
+    ease: 'power2.out',
+    overwrite: 'auto'
   });
+});
 
-  // Pause/resume on hover
-  container.addEventListener('mouseenter', () => gsap.to(container, { timeScale: 0, overwrite: 'auto' }));
-  container.addEventListener('mouseleave', () => gsap.to(container, { timeScale: 1, overwrite: 'auto' }));
+container.addEventListener('mouseleave', () => {
+  gsap.to(scrollAnimation, {
+    timeScale: 1,
+    duration: 0.3, // Smooth transition for resume
+    ease: 'power2.out',
+    overwrite: 'auto'
+  });
+});
 
-  // Optional: Simplified fade-in effect for cards entering the viewport
-  allCards.forEach((card) => {
-    gsap.fromTo(
-      card,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        duration: 1,
-        scrollTrigger: {
-          trigger: card,
-          start: 'left 90%',
-          end: 'left 10%',
-          toggleActions: 'play none none none',
-          scrub: false
-        }
+// Optional: Simplified fade-in effect for cards entering the viewport
+allCards.forEach((card) => {
+  gsap.fromTo(
+    card,
+    { opacity: 0 },
+    {
+      opacity: 1,
+      duration: 1,
+      scrollTrigger: {
+        trigger: card,
+        start: 'left 90%',
+        end: 'left 10%',
+        toggleActions: 'play none none none',
+        scrub: false
       }
-    );
-  });
-</script>
+    }
+  );
+});
+  </script>
 
 
  <!--End Our Services -->
