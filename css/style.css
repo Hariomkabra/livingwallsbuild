@@ -1066,54 +1066,97 @@ html {
 }
 
 /* Services Section */
-.services {
-  padding: var(--space-xl) 0;
-  background-color: var(--color-light);
-}
+  .svc-section {
+    padding: 2rem 1rem;
+    text-align: center;
+    background-color: #f5f5f5;
+  }
 
-.services__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-md);
-}
+  .svc-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+  }
 
-.service__item {
-  padding: var(--space-lg);
-  background-color: #fff;
-  border-radius: var(--border-radius-md);
-  transition: all var(--transition-fast);
-}
+  .svc-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+  }
 
-.service__item:hover {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  transform: translateY(-8px);
-}
+  .svc-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
 
-.service__icon {
-  font-size: var(--font-size-3xl);
-  font-weight: 700;
-  margin-bottom: var(--space-md);
-  color: var(--color-accent);
-}
+  .svc-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 
-.service__item:hover .service__icon {
-  color: var(--color-white);
-}
+  .svc-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
 
-.service__title {
-  font-size: var(--font-size-xl);
-  margin-bottom: var(--space-sm);
-}
+  .svc-card-image-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+  }
 
-.service__description {
-  font-size: var(--font-size-md);
-  color: var(--color-gray-700);
-}
+  .svc-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 
-.service__item:hover .service__description {
-  color: var(--color-gray-300);
-}
+  .svc-card-image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3));
+    transform: skewX(-25deg);
+    transition: left 0.5s ease;
+  }
+
+  .svc-card:hover .svc-card-image-wrapper::after {
+    left: 125%;
+  }
+
+  .svc-card-content {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .svc-card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #222;
+  }
+
+  .svc-card-desc {
+    font-size: 0.95rem;
+    color: #666;
+  }
+
+
 
 /* Stats Section */
 .stats-sectionn {

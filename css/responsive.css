@@ -447,6 +447,32 @@
   }
 }
 
+  /* Responsive tweaks  services section */
+  @media (max-width: 768px) {
+    .svc-title {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .svc-title {
+      font-size: 1.5rem;
+    }
+
+    .svc-card-content {
+      padding: 0.75rem;
+    }
+
+    .svc-card-title {
+      font-size: 1rem;
+    }
+
+    .svc-card-desc {
+      font-size: 0.85rem;
+    }
+  }
+
+
 /* Responsive: Very Small Screens */
 @media screen and (max-width: 480px) {
   .containerr {
@@ -852,6 +878,19 @@
   }
 }
 
+
+
+
+@media (hover: none) {
+  .svc-card:active .svc-card-image-wrapper::after {
+    left: 125%;
+  }
+
+  .svc-card:active {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+}
 /* Responsive adjustments for larger screens */
 @media (max-width: 1024px) {
   .hero__title {
