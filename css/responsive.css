@@ -446,7 +446,6 @@
     gap: 10px;
   }
 }
-
   /* Responsive tweaks  services section */
   @media (max-width: 768px) {
     .svc-title {
@@ -472,7 +471,7 @@
     }
   }
 
-
+  
 /* Responsive: Very Small Screens */
 @media screen and (max-width: 480px) {
   .containerr {

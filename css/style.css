@@ -1156,6 +1156,30 @@ html {
     color: #666;
   }
 
+  /* Responsive tweaks */
+  @media (max-width: 768px) {
+    .svc-title {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .svc-title {
+      font-size: 1.5rem;
+    }
+
+    .svc-card-content {
+      padding: 0.75rem;
+    }
+
+    .svc-card-title {
+      font-size: 1rem;
+    }
+
+    .svc-card-desc {
+      font-size: 0.85rem;
+    }
+  }
 
 
 /* Stats Section */
