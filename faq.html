@@ -6,87 +6,77 @@
   <title>FAQ Page - Living Walls</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="css/responsive.css"> <!--responsive-->
+  <link rel="stylesheet" href="css/responsive.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Sidebar Styles */
-    .sidebar {
-      width: 280px;
+    /* Menu Bar Styles */
+    .faq-menu {
       background-color: #fff;
-      border-right: 1px solid #e0e0e0;
-      padding: 60px 20px;
-      position: fixed;
-      top: 0;
-      left: -280px; /* Hidden by default */
-      height: 100vh;
-      overflow-y: auto;
-      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
-      transition: left 0.3s ease-in-out;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 120px;
+      width: 100%;
+      padding-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
       z-index: 1000;
     }
 
-    .sidebar.active {
-      left: 0; /* Show sidebar when active */
-    }
-
-    .sidebar h2 {
+    .faq-menu h2 {
       color: #d32f2f;
       font-size: 18px;
       font-weight: 600;
-      margin-bottom: 20px;
-      padding-left: 10px;
+      margin-bottom: 15px;
+      text-align: center;
     }
 
-    .sidebar-nav {
+    .faq-nav {
       list-style: none;
       padding: 0;
       margin: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    .sidebar-nav li {
-      margin-bottom: 10px;
+    .faq-nav li {
+      margin: 0;
     }
 
-    .sidebar-link {
-      display: block;
+    .faq-link {
+      display: inline-block;
       color: #333;
       text-decoration: none;
       font-size: 15px;
-      padding: 12px 10px;
+      padding: 12px 15px;
       border-radius: 4px;
       transition: background-color 0.3s, color 0.3s;
     }
 
-    .sidebar-link:hover {
+    .faq-link:hover {
       background-color: #f5f5f5;
       color: #d32f2f;
     }
 
-    .sidebar-link.active {
+    .faq-link.active {
       background-color: #d32f2f;
       color: #fff;
       font-weight: 500;
     }
 
-    /* Content Styles */
+    /* Content Styles (Reduced Width) */
     .content {
-      margin-left: 0; /* No margin since sidebar is hidden */
-      padding: 120px;
-      width: 100%;
-      transition: margin-left 0.3s ease-in-out;
-    }
-
-    .content.sidebar-open {
-      margin-left: 280px; /* Shift content when sidebar is open */
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
 
     .faq-section {
       display: none;
-      padding: 40px;
+      padding: 20px 0;
     }
 
     .faq-section.active {
@@ -95,7 +85,7 @@
 
     .faq-item {
       border-bottom: 1px solid #ddd;
-      padding: 10px;
+      padding: 10px 0;
       margin-bottom: 10px;
     }
 
@@ -134,73 +124,70 @@
       font-weight: 600;
       color: #d32f2f;
       margin-bottom: 20px;
-      padding-left: 40px;
+      text-align: center;
     }
 
-    /* Hamburger Adjustments */
+    /* Hide Hamburger */
     .hamburger {
+      display: none;
+    }
+
+    /* Toggle All Button */
+    .toggle-all {
       display: block;
-      background: none;
+      margin: 10px auto;
+      padding: 8px 15px;
+      background-color: #333;
+      color: #fff;
       border: none;
-      font-size: 24px;
+      border-radius: 4px;
       cursor: pointer;
-      position: absolute;
-      top: 100px; /* Position below header */
-      left: 20px;
-      z-index: 1100;
-      color: #333;
+      font-size: 14px;
+    }
+
+    .toggle-all:hover {
+      background-color: #555;
+    }
+
+    /* Back-to-Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #d32f2f;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+      font-size: 18px;
+    }
+
+    .back-to-top:hover {
+      background-color: #b71c1c;
     }
 
     /* Responsive Design */
     @media (max-width: 768px) {
-      .sidebar {
-        width: 100%;
-        left: -100%;
-        height: auto;
-        position: fixed;
-        top: 0;
-        padding: 20px;
-        border-right: none;
-        border-bottom: 1px solid #e0e0e0;
-        box-shadow: none;
+      .faq-nav {
+        flex-direction: column;
+        align-items: center;
       }
 
-      .sidebar.active {
-        left: 0;
-      }
-
-      .content.sidebar-open {
-        margin-left: 0;
-      }
-
-      .sidebar-nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
-      .sidebar-nav li {
-        flex: 1 1 calc(50% - 10px);
-        margin-bottom: 0;
-      }
-
-      .sidebar-link {
+      .faq-link {
         font-size: 14px;
         padding: 10px;
         text-align: center;
+        width: 100%;
       }
 
-      .faq-section {
-        padding: 20px;
+      .content {
+        padding: 20px 10px;
       }
 
       .category-header {
-        padding-left: 20px;
         font-size: 24px;
-      }
-
-      .hamburger {
-        top: 80px; /* Adjust for smaller screens */
       }
     }
 
@@ -260,7 +247,7 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
+  <!-- Header (Unchanged) -->
   <header class="header">
     <div class="containerr">
       <div class="logo">
@@ -301,81 +288,78 @@
     </div>
   </header>
 
-  <!-- Sidebar -->
-  <div class="sidebar">
+  <!-- FAQ Menu Bar -->
+  <div class="faq-menu">
     <h2>FAQ Categories</h2>
-    <ul class="sidebar-nav">
-      <li><a href="#modular-kitchen" class="sidebar-link active">Modular Kitchen</a></li>
-      <li><a href="#wardrobe" class="sidebar-link">Wardrobe</a></li>
-      <li><a href="#space-saving" class="sidebar-link">Space Saving Furniture</a></li>
-      <li><a href="#tv-unit" class="sidebar-link">TV Unit</a></li>
-      <li><a href="#puja-unit" class="sidebar-link">Puja Unit</a></li>
-      <li><a href="#study-unit" class="sidebar-link">Study Unit</a></li>
-      <li><a href="#interior-design" class="sidebar-link">Interior Design</a></li>
-      <li><a href="#homelane-care" class="sidebar-link">HomeLane Care</a></li>
+    <ul class="faq-nav">
+      <li><a href="#modular-kitchen" class="faq-link active">Modular Kitchen</a></li>
+      <!--<li><a href="#wardrobe" class="faq-link">Wardrobe</a></li>-->
+      <li><a href="#interior-design" class="faq-link">Interior Design</a></li>
+      <li><a href="#exterior-design" class="faq-link">Exterior Design</a></li>
+      <li><a href="#landscaping" class="faq-link">Landscaping</a></li>
+      <li><a href="#outdoor-lighting" class="faq-link">Outdoor Lighting</a></li>
+      <li><a href="#exterior-maintenance" class="faq-link">Exterior Maintenance</a></li>
+      <li><a href="#homelane-care" class="faq-link">HomeLane Care</a></li>
     </ul>
   </div>
 
   <!-- Content -->
   <div class="content">
-    <h2 class="category-header">Modular Kitchen</h2> <!-- Single dynamic category header -->
+    <h2 class="category-header">Modular Kitchen</h2>
+    <!-- Toggle All Button -->
+    <button class="toggle-all" id="toggle-all">Expand All FAQs</button>
+
     <div id="modular-kitchen" class="faq-section active">
       <div class="faq-item">
-        <div class="faq-question">How do I buy a modular kitchen? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">How do I buy a modular kitchen? <span class="arrow">▼</span></div>
         <div class="faq-answer">You can buy a modular kitchen by consulting with a designer, selecting a layout, choosing materials, and placing an order with a supplier.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">What is the best modular kitchen design? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">What is the best modular kitchen design? <span class="arrow">▼</span></div>
         <div class="faq-answer">The best design depends on your space; L-shaped kitchens are great for small spaces, while U-shaped ones suit larger areas.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">How can I accessorize my kitchen to increase storage? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">How can I accessorize my kitchen to increase storage? <span class="arrow">▼</span></div>
         <div class="faq-answer">Use pull-out drawers, corner units, and overhead cabinets to maximize storage in your kitchen.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">What is the best material for a modular kitchen? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">What is the best material for a modular kitchen? <span class="arrow">▼</span></div>
         <div class="faq-answer">Plywood with a laminate finish is often recommended for durability and aesthetics.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">Is PVC good for a modular kitchen? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">Is PVC good for a modular kitchen? <span class="arrow">▼</span></div>
         <div class="faq-answer">PVC is affordable and water-resistant but less durable than plywood or MDF for long-term use.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">What is the best material for kitchen cabinets? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">What is the best material for kitchen cabinets? <span class="arrow">▼</span></div>
         <div class="faq-answer">Plywood or MDF with a laminate or acrylic finish offers a good balance of durability and style.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">What accessories should I include in a modular kitchen? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">What accessories should I include in a modular kitchen? <span class="arrow">▼</span></div>
         <div class="faq-answer">Include pull-out organizers, cutlery trays, corner units, and built-in appliances for functionality.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">What are the units of a modular kitchen? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">What are the units of a modular kitchen? <span class="arrow">▼</span></div>
         <div class="faq-answer">Units include base cabinets, wall cabinets, tall units, and accessories like drawers and shelves.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">How do I design a modular kitchen on a budget? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">How do I design a modular kitchen on a budget? <span class="arrow">▼</span></div>
         <div class="faq-answer">Opt for simple designs, use cost-effective materials like laminates, and prioritize essential units.</div>
       </div>
+     
       <div class="faq-item">
-        <div class="faq-question">What does a modular kitchen cost? <span class="arrow">▼</span></div>
-        <div class="faq-answer">Costs vary widely based on size, materials, and accessories, typically ranging from $1,500 to $10,000 or more.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">What appliances does a modular kitchen include/accommodate? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">What appliances does a modular kitchen include/accommodate? <span class="arrow">▼</span></div>
         <div class="faq-answer">It can accommodate ovens, microwaves, dishwashers, and refrigerators, with built-in slots for seamless integration.</div>
       </div>
-      <div class="faq-item">
-        <div class="faq-question">What is the minimum cost of a modular kitchen? <span class="arrow">▼</span></div>
-        <div class="faq-answer">A basic modular kitchen can start at around $1,500, depending on size and materials.</div>
-      </div>
+      
     </div>
     <div id="wardrobe" class="faq-section">
       <div class="faq-item">
-        <div class="faq-question">How do I choose a wardrobe? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">How do I choose a wardrobe? <span class="arrow">▼</span></div>
         <div class="faq-answer">Consider your storage needs, available space, and style preferences when choosing a wardrobe.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">What are the types of wardrobe? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">What are the types of wardrobe? <span class="arrow">▼</span></div>
         <div class="faq-answer">The types of wardrobe are hinged, sliding and armadio wardrobes.
           <ul>
             <li><a href="#">Hinged Wardrobe</a></li>
@@ -385,11 +369,11 @@
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">Which material is best for wardrobes? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">Which material is best for wardrobes? <span class="arrow">▼</span></div>
         <div class="faq-answer">The best material for wardrobes is HDHMR (high-density-high-moisture resistant) due to its water resistance and termite-free nature.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">How do I pick the right wardrobe material? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">How do I pick the right wardrobe material? <span class="arrow">▼</span></div>
         <div class="faq-answer">In order to pick the right wardrobe material, you must keep the following tips in mind:
           <ul>
             <li><a href="#">PLPB - Eco-friendly & pocket-friendly</a></li>
@@ -400,11 +384,11 @@
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">What is the best finish for a wardrobe? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">What is the best finish for a wardrobe? <span class="arrow">▼</span></div>
         <div class="faq-answer">The best finish options for wardrobes are high-gloss laminate and acrylic as they are easy to clean and maintain.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">What are the best design ideas for a wardrobe? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">What are the best design ideas for a wardrobe? <span class="arrow">▼</span></div>
         <div class="faq-answer">The best wardrobe designs are hinged, sliding and armadio wardrobes.
           <ul>
             <li><a href="#">Hinged wardrobe - These are widely used, cost-effective and fit corners well</a></li>
@@ -414,155 +398,129 @@
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">Is MDF good for wardrobes? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">Is MDF good for wardrobes? <span class="arrow">▼</span></div>
         <div class="faq-answer">Yes, MDF is one of the best materials for wardrobes. It is cost-effective and eco-friendly as it involves a recycling process.</div>
-      </div>
-    </div>
-    <div id="space-saving" class="faq-section">
-      <div class="faq-item">
-        <div class="faq-question">What is space-saving furniture? <span class="arrow">▼</span></div>
-        <div class="faq-answer">Space-saving furniture is designed to maximize small spaces, like foldable tables or wall-mounted desks.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">How much room do you need for a Murphy bed? <span class="arrow">▼</span></div>
-        <div class="faq-answer">For a murphy bed, you require a minimum of 8x9 sq.ft for a queen size, while single murphy beds can fit in smaller spaces.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">What is the average cost of a Murphy bed? <span class="arrow">▼</span></div>
-        <div class="faq-answer">The average cost of a Murphy bed (single horizontal bed) is about Rs 54,000. It depends on the material and the type of bed.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Are Murphy beds a good idea? <span class="arrow">▼</span></div>
-        <div class="faq-answer">Yes, wall (murphy) beds are great for small spaces. In the bedroom, it doubles up as furniture that can be used for sleep and for study/work; it converts your bedroom to a multi-functional room.</div>
-      </div>
-    </div>
-    <div id="tv-unit" class="faq-section">
-      <div class="faq-item">
-        <div class="faq-question">What are the best TV unit designs? <span class="arrow">▼</span></div>
-        <div class="faq-answer">Wall-mounted units with storage or minimalist designs work well for modern homes.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">How can I add storage to my TV unit? <span class="arrow">▼</span></div>
-        <div class="faq-answer">Incorporate shelves, drawers, or cabinets below or beside the TV unit to maximize storage space.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">What is the average price of an TV unit? <span class="arrow">▼</span></div>
-        <div class="faq-answer">The average price of a TV unit can range from Rs 10,000 to Rs 50,000, depending on material, design, and brand.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Which wood is best for TV unit? <span class="arrow">▼</span></div>
-        <div class="faq-answer">Teak and walnut are popular choices for TV units due to their durability and aesthetic appeal.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">What are the types of material used for TV units? <span class="arrow">▼</span></div>
-        <div class="faq-answer">Common materials include wood (teak, oak, walnut), engineered wood, metal, glass, and MDF (medium-density fiberboard).</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">What is the average size TV for living room? <span class="arrow">▼</span></div>
-        <div class="faq-answer">For a typical living room, a 43 to 55-inch TV is ideal, depending on the viewing distance.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Is it better to wall mount a TV or put it on a stand? <span class="arrow">▼</span></div>
-        <div class="faq-answer">Wall mounting saves space and offers a sleek look, while a stand provides flexibility and easier access to ports.</div>
-      </div>
-    </div>
-    <div id="puja-unit" class="faq-section">
-      <div class="faq-item">
-        <div class="faq-question">How do I design a puja unit? <span class="arrow">▼</span></div>
-        <div class="faq-answer">Use a small, dedicated space with shelves and a traditional design for a puja unit.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">What are the best puja unit designs? <span class="arrow">▼</span></div>
-        <div class="faq-answer">Compact wall-mounted or corner puja units with intricate carvings and shelves for idols are ideal for modern homes.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">What is the cost of puja units based on size? <span class="arrow">▼</span></div>
-        <div class="faq-answer">Small puja units may cost around Rs 5,000 to Rs 15,000, while larger ones can range from Rs 20,000 to Rs 50,000, depending on size and craftsmanship.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">How can I choose the best material for puja units? <span class="arrow">▼</span></div>
-        <div class="faq-answer">Opt for durable materials like teak or rosewood for a traditional look, or engineered wood for a budget-friendly, modern option.</div>
-      </div>
-    </div>
-    <div id="study-unit" class="faq-section">
-      <div class="faq-item">
-        <div class="faq-question">What is a study unit? <span class="arrow">▼</span></div>
-        <div class="faq-answer">A study unit is a compact workspace with a desk, shelves, and storage for books and supplies.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">What is the best furniture for a home office? <span class="arrow">▼</span></div>
-        <div class="faq-answer">A sturdy desk, ergonomic chair, and storage units like shelves or cabinets are ideal for a home office.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">How to design an effective study unit? <span class="arrow">▼</span></div>
-        <div class="faq-answer">Prioritize a well-lit space, a comfortable desk and chair, and organize with shelves for books and supplies.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">How much does it cost for a home office? <span class="arrow">▼</span></div>
-        <div class="faq-answer">A basic home office setup can cost between Rs 20,000 to Rs 50,000, depending on furniture quality and size.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">How to design a study unit on a small budget? <span class="arrow">▼</span></div>
-        <div class="faq-answer">Use affordable materials like MDF, opt for a foldable desk, and add DIY shelves for storage.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">What is the recommended material for a study unit? <span class="arrow">▼</span></div>
-        <div class="faq-answer">Engineered wood or MDF is recommended for durability and cost-effectiveness; solid wood like teak adds elegance.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">What are the types of study unit finish? <span class="arrow">▼</span></div>
-        <div class="faq-answer">Common finishes include laminate, veneer, matte, glossy, and natural wood polish for a premium look.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">How do I add storage to a study unit? <span class="arrow">▼</span></div>
-        <div class="faq-answer">Incorporate wall-mounted shelves, under-desk drawers, or a cabinet to keep books and supplies organized.</div>
       </div>
     </div>
     <div id="interior-design" class="faq-section">
       <div class="faq-item">
-        <div class="faq-question">How do I start with interior design? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">How do I start with interior design? <span class="arrow">▼</span></div>
         <div class="faq-answer">Start by defining your style, setting a budget, and consulting with a professional designer.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">What are the best interior design ideas for a living room? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">What are the best interior design ideas for a living room? <span class="arrow">▼</span></div>
         <div class="faq-answer">Opt for a cohesive color scheme, use multifunctional furniture, add statement lighting, and incorporate textures like rugs and throw pillows to create a warm, inviting space.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">What are the best interior design ideas for a bedroom? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">What are the best interior design ideas for a bedroom? <span class="arrow">▼</span></div>
         <div class="faq-answer">Focus on calming colors, invest in a comfortable bed with quality bedding, use layered lighting, and add personal touches like artwork or plants.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">What is the average size bedroom? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">What is the average size bedroom? <span class="arrow">▼</span></div>
         <div class="faq-answer">The average bedroom size in the U.S. is about 11x12 feet (132 square feet), though this varies based on the home's age and location.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">What size bed can fit in a 10x10 room? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">What size bed can fit in a 10x10 room? <span class="arrow">▼</span></div>
         <div class="faq-answer">A 10x10 room can comfortably fit a twin or full-size bed, leaving space for a small nightstand and dresser. A queen might fit but will feel cramped.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">What are the best interior design ideas for a kids bedroom? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">What are the best interior design ideas for a kids bedroom? <span class="arrow">▼</span></div>
         <div class="faq-answer">Use bright, playful colors, incorporate storage solutions like shelves and bins, add a themed bed or mural, and ensure the space is safe with rounded furniture edges.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">How do I design my kid's bedroom? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">How do I design my kid's bedroom? <span class="arrow">▼</span></div>
         <div class="faq-answer">Involve your child in choosing a theme, prioritize safety and functionality, create zones for sleep, play, and study, and use durable, easy-to-clean materials.</div>
+      </div>
+    </div>
+    <div id="exterior-design" class="faq-section">
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0">What is exterior design? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Exterior design involves planning and enhancing the outer appearance and functionality of a building, including facades, materials, and landscaping.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0">What are the best materials for exterior walls? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Brick, stone, and fiber cement siding are durable and low-maintenance options for exterior walls.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0">How do I choose an exterior color scheme? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Consider your home’s architectural style, neighborhood aesthetics, and climate; neutral tones with bold accents work well for versatility.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0">How can I make my home exterior low-maintenance? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Use durable materials like vinyl siding, metal roofing, and drought-resistant landscaping to reduce upkeep.</div>
+      </div>
+    </div>
+    <div id="landscaping" class="faq-section">
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0">What is landscaping? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Landscaping involves designing and maintaining outdoor spaces with plants, hardscapes, and features like patios or water elements.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0">How do I design a low-maintenance landscape? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Use native plants, mulch, and hardscaping like stone paths to minimize watering and upkeep.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0">What is the average cost of landscaping? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Landscaping costs range from $1,000 to $20,000, depending on size, materials, and complexity.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0">What plants are best for my climate? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Choose native or climate-adapted plants; consult a local nursery or landscaper for region-specific recommendations.</div>
+      </div>
+    </div>
+    <div id="outdoor-lighting" class="faq-section">
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0">What types of outdoor lighting are available? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Options include pathway lights, wall sconces, spotlights, string lights, and solar-powered fixtures for various aesthetics and functions.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0">How do I choose energy-efficient outdoor lighting? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Opt for LED or solar-powered lights to reduce energy consumption and maintenance costs.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0">What is the cost of installing outdoor lighting? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Installation costs range from $500 to $5,000, depending on the number of fixtures and complexity of the system.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0">How can outdoor lighting enhance security? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Use motion-sensor lights, pathway lighting, and well-placed spotlights to illuminate dark areas and deter intruders.</div>
+      </div>
+    </div>
+    <div id="exterior-maintenance" class="faq-section">
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0">How often should I repaint my home’s exterior? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Repaint every 5-10 years, depending on the paint type and weather exposure, to maintain appearance and protection.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0">What is the best way to clean exterior walls? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Use a pressure washer with mild detergent for most surfaces; avoid high pressure on delicate materials like wood.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0">How do I prevent mold and mildew on my exterior? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Ensure proper drainage, use mold-resistant paint, and regularly clean shaded or damp areas.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0">What is the cost of exterior maintenance? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Annual maintenance cost, depending on the home size and required services like painting or cleaning.</div>
       </div>
     </div>
     <div id="homelane-care" class="faq-section">
       <div class="faq-item">
-        <div class="faq-question">What is HomeLane Care? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">What is HomeLane Care? <span class="arrow">▼</span></div>
         <div class="faq-answer">HomeLane Care typically refers to after-sales services for maintenance and support of installed products.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">Whom do I contact if I need a service visit from LivingWalls? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">Whom do I contact if I need a service visit from LivingWalls? <span class="arrow">▼</span></div>
         <div class="faq-answer">You can contact LivingWalls customer support for scheduling a service visit.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">Do I have to pay for this service? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">Do I have to pay for this service? <span class="arrow">▼</span></div>
         <div class="faq-answer">Once you contact our Care Cell with your issue, depending upon the nature of service and the applicable warranty, our care representative will advise you on whether it is covered under warranty or chargeable.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">What does HomeLane’s 10-year warranty cover? <span class="arrow">▼</span></div>
+        <div class="faq-question" tabindex="0">What does HomeLane’s 10-year warranty cover? <span class="arrow">
+</span></div>
         <div class="faq-answer">
           <p>HomeLane warrants that all Products will be free from manufacturing defects and faults in installation workmanship when used for normal domestic use.</p>
           <div class="warranty-table-wrapper">
@@ -662,14 +620,17 @@
     </div>
   </div>
 
-  <!-- WhatsApp Button -->
+  <!-- Back-to-Top Button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to Top"><i class="fas fa-chevron-up"></i></button>
+
+  <!-- WhatsApp Button (Unchanged) -->
   <div class="whatsapp-button-container">
     <a href="https://wa.me/919146478677" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
       <img src="https://techfocus24.com/wp-content/uploads/2021/01/whatsapp-button.png" alt="WhatsApp Button" class="whatsapp-button-image" />
     </a>
   </div>
 
-  <!-- Footer -->
+  <!-- Footer (Unchanged) -->
   <footer class="footer">
     <div class="footercontainer">
       <div class="footer-sections">
@@ -837,7 +798,7 @@
       </p>
       <h3>Retail Construction</h3>
       <p>
-        Our designers create dynamic retail environments that enhance customer engagement and streamline shopping experiences.
+        Our designers create dynamic retail environments physiotherapistthat enhance customer engagement and streamline shopping experiences.
       </p>
       <h3>Hospital Construction</h3>
       <p>
@@ -868,7 +829,7 @@
 
   <!-- JavaScript -->
   <script>
-    // Header Scroll Effect
+    // Header Scroll Effect (Unchanged)
     window.addEventListener('scroll', function () {
       const header = document.querySelector('.header');
       if (window.scrollY > 50) {
@@ -878,55 +839,34 @@
       }
     });
 
-    // Sidebar Toggle and FAQ Functionality
-    const hamburger = document.querySelector('.hamburger');
-    const sidebar = document.querySelector('.sidebar');
-    const content = document.querySelector('.content');
-    const sidebarLinks = document.querySelectorAll('.sidebar-link');
+    // FAQ Menu Functionality (Updated to Remove Search Dependency)
+    const faqLinks = document.querySelectorAll('.faq-link');
     const faqSections = document.querySelectorAll('.faq-section');
     const categoryHeader = document.querySelector('.category-header');
     const navList = document.querySelector('.nav__list');
     const rightButtons = document.querySelector('.right-buttons');
 
-    // Toggle sidebar visibility
-    hamburger.addEventListener('click', () => {
-      sidebar.classList.toggle('active');
-      content.classList.toggle('sidebar-open');
-      // Ensure main nav and right buttons are hidden when sidebar is open
-      navList.classList.remove('active');
-      rightButtons.classList.remove('active');
-    });
-
-    // Toggle FAQ sections and update category header
-    sidebarLinks.forEach(link => {
+    faqLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         const targetId = link.getAttribute('href').substring(1);
         const categoryName = link.textContent;
 
-        // Remove active class from all links and sections
-        sidebarLinks.forEach(l => l.classList.remove('active'));
+        faqLinks.forEach(l => l.classList.remove('active'));
         faqSections.forEach(section => section.classList.remove('active'));
 
-        // Add active class to clicked link and corresponding section
         link.classList.add('active');
         document.getElementById(targetId).classList.add('active');
 
-        // Update category header
         categoryHeader.textContent = categoryName;
 
-        // Close sidebar
-        sidebar.classList.remove('active');
-        content.classList.remove('sidebar-open');
-
-        // Smooth scroll to section on mobile
         if (window.innerWidth <= 768) {
           document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
         }
       });
     });
 
-    // Toggle FAQ answers
+    // Toggle FAQ Answers (Unchanged)
     const faqQuestions = document.querySelectorAll('.faq-question');
     faqQuestions.forEach(question => {
       question.addEventListener('click', () => {
@@ -937,13 +877,14 @@
       });
     });
 
-    // Header Navigation Toggle
+    // Header Navigation Toggle (Unchanged)
+    const hamburger = document.querySelector('.hamburger');
     hamburger.addEventListener('click', () => {
       navList.classList.toggle('active');
       rightButtons.classList.toggle('active');
     });
 
-    // Custom Cursor
+    // Custom Cursor (Unchanged)
     const cursor = document.querySelector('.cursor');
     if (cursor) {
       document.addEventListener('mousemove', e => {
@@ -956,6 +897,47 @@
         }, 500);
       });
     }
+
+    // Toggle All FAQs (Unchanged)
+    const toggleAllButton = document.getElementById('toggle-all');
+    let isExpanded = false;
+
+    toggleAllButton.addEventListener('click', () => {
+      const activeSection = document.querySelector('.faq-section.active');
+      const answers = activeSection.querySelectorAll('.faq-answer');
+      const arrows = activeSection.querySelectorAll('.arrow');
+
+      isExpanded = !isExpanded;
+      toggleAllButton.textContent = isExpanded ? 'Collapse All FAQs' : 'Expand All FAQs';
+
+      answers.forEach(answer => {
+        answer.classList.toggle('active', isExpanded);
+      });
+
+      arrows.forEach(arrow => {
+        arrow.classList.toggle('active', isExpanded);
+      });
+    });
+
+    // Back-to-Top Button (Unchanged)
+    const backToTopButton = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      backToTopButton.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Keyboard Navigation for FAQs (Unchanged)
+    faqQuestions.forEach(question => {
+      question.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === 'Space') {
+          e.preventDefault();
+          question.click();
+        }
+      });
+    });
   </script>
   <script src="auth.js"></script>
 </body>
