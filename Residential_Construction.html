@@ -137,10 +137,10 @@
       <img src="https://homr.in/wp-content/themes/homr/images/villa/banner_png.png" alt="Construction Site" class="rc-hero-image">
     </div>
     <svg id="rc-beam-svg" viewBox="0 0 200 100" class="rc-beam-svg">
-      <path id="rc-beam1" d="M40,80 L40,40" stroke="#d5193e" stroke-width="3" fill="none"/>
-      <path id="rc-beam2" d="M160,80 L160,40" stroke="#d5193e" stroke-width="3" fill="none"/>
-      <path id="rc-beam3" d="M40,40 L160,40" stroke="#d5193e" stroke-width="3" fill="none"/>
-      <path id="rc-roof" d="M40,40 L100,20 L160,40" stroke="#2f3342" stroke-width="2" fill="none"/>
+      <path id="rc-beam1" d="M20,80 L20,40" stroke="#d5193e" stroke-width="2" fill="none"/>
+      <path id="rc-beam2" d="M180,80 L180,40" stroke="#d5193e" stroke-width="2" fill="none"/>
+      <path id="rc-beam3" d="M20,40 L180,40" stroke="#d5193e" stroke-width="2" fill="none"/>
+      <path id="rc-roof" d="M20,40 L100,20 L180,40" stroke="#2f3342" stroke-width="2" fill="none"/>
     </svg>
     <div class="rc-hero-content">
       <h1>Constructing Your Dream Home</h1>
@@ -310,6 +310,7 @@
     .rc-main-content h1, .rc-main-content h2, .rc-main-content h3 {
       font-weight: bold;
       color: #2f3342;
+      padding-top: 10px;
     }
 
     .rc-main-content h1 {
@@ -330,9 +331,13 @@
     }
 
     .rc-main-content p {
-      font-size: clamp(1rem, 1.7vw, 1.4rem);
-      color: #5d6675;
-      line-height: 1.7;
+      font-size: clamp(2rem, 1.9vw, 1.4rem);
+      color: #090909;
+      line-height: 1.9;
+      text-align: center;
+      padding-bottom: 5px;
+      
+    
     }
 
     /* Hero Section */
@@ -371,22 +376,21 @@
       width: 100%;
       height: 100%;
       z-index: 2;
-      opacity: 0.9;
       padding-top: 40px;
     }
 
     .rc-hero-content {
-      z-index: 3;
+      z-index: 8;
       padding-top: 100px;
       border-radius: 10px;
     }
 
     .rc-cta-button {
-      padding: 12px 24px;
+      padding: 12px 20px;
       background: #d5193e;
       color: #fff;
       border: none;
-      font-size: 1rem;
+      font-size: 1.5rem;
       border-radius: 50px;
       cursor: pointer;
       transition: background 0.3s;
@@ -429,9 +433,8 @@
       flex: 0 0 25%;
       padding: 20px;
       text-align: center;
-      opacity: 0.7;
       transform: scale(0.9);
-      transition: opacity 0.3s, transform 0.3s;
+      transition: , transform 0.3s;
     }
 
     .rc-journey-slide.active {
