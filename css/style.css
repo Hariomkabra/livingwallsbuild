@@ -61,7 +61,7 @@
 }
 
 .section-title {
-  font-family: 'Outfit', sans-serif;
+   font-family: 'Playfair Display', serif;
   font-size: 4rem;
   font-weight: 700;
   color: #000000;
@@ -144,12 +144,16 @@
   font-size: 24px;
 }
 
-  body {
-      font-family: 'Playfair Display', serif;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      font-weight: 600;
-    }
+body {
+    font-family: 'Playfair Display', serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+  }
+
+.content{
+  font-family: 'Playfair Display', serif;
+}
 
     
 /* Accessibility & Compatibility Fix */
@@ -175,8 +179,6 @@ html {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   max-height: 70px;
 }
-
-
 
 
 
@@ -514,6 +516,7 @@ html {
   font-size: 4.4rem;
   margin-bottom: 3rem;
   font-weight: 900; /* Use numeric value for consistency */
+  font-family: 'Playfair Display', serif;
 }
 
 .hero-content p {
@@ -803,7 +806,7 @@ html {
 .threeD-gallery {
   padding: 60px 20px;
   text-align: center;
-  font-family: 'Segoe UI', sans-serif;
+   font-family: 'Playfair Display', serif;
   background: #fff;
 }
 
@@ -874,7 +877,7 @@ html {
   line-height: 1.8;
   text-align: justify;
   margin-bottom: 16px;
-  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+   font-family: 'Playfair Display', serif;
 }
 
 .about__stats {
@@ -1385,7 +1388,7 @@ html {
 }
 
 .card h3 {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 2.4rem;
   font-weight: 500;
   color: #000000;
@@ -1394,7 +1397,7 @@ html {
 }
 
 .card p {
-  font-family: 'Outfit', sans-serif;
+   font-family: 'Playfair Display', serif;
   font-size: 1.7rem;
   font-weight: 300;
   color: #000000;
@@ -1794,7 +1797,7 @@ html {
 .why-modern-container {
   background: linear-gradient(to right, #F5F5F5, #FFFFFF);
   padding: 60px 25px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Playfair Display', serif;
   text-align: center;
 }
 
@@ -2203,6 +2206,7 @@ html {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+   font-family: 'Playfair Display', serif;
 }
 
 .faq-questionn i {
@@ -2239,7 +2243,7 @@ html {
   background-color: #1A1A2E;
   color: #ccc;
   padding: 50px 20px;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Playfair Display', serif;
 }
 
 .footer-container,
