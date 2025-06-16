@@ -4,27 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Living Walls - Creative Design Agency</title>
-  <link rel="stylesheet" href="/css/reset.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="css/responsive.css"> <!--responsive-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- External Libraries -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.11.4/dist/framer-motion.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="auth.js"></script>
 
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+    }
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="auth.js"></script>
-
-
-  <link rel="stylesheet" href="styles.css">
-
-
+    @media (max-width: 768px) {
+      .nav__list,
+      .right-buttons {
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 70px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 999;
+      }
+      .nav__list.active,
+      .right-buttons.active {
+        display: flex;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- Header HTML (to be included in all pages, e.g., index.html, packages.html, etc.) -->
+<!-- Header HTML (to be included in all pages) -->
 <header class="header">
   <div class="containerr">
     <div class="logo">
@@ -33,33 +62,32 @@
       </a>
     </div>
     <button class="hamburger" aria-label="Toggle Menu">☰</button>
+
     <nav class="nav" aria-label="Main Navigation">
       <ul class="nav__list">
         <li><a href="index.html" title="Home Page">Home</a></li>
+        <li><a href="#how-it-works" title="How LivinWalls Works">How it Works</a></li>
         <li><a href="packages.html" title="View Construction Packages">Construction Packages</a></li>
         <li><a href="design_packages.html" title="View Design Packages">Design Packages</a></li>
         <li><a href="calculator.html" title="Estimate Construction Cost">Cost Calculator</a></li>
         <li><a href="work.html" title="See Our Work">Our Work</a></li>
-
-        <!-- If you want to reuse the dropdown later, uncomment this -->
-       
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" title="More Options">More▾</a>
           <ul class="dropdown-content">
-              <li><a href="floorplans.html" title="Explore Floor Plans">Floor plans</a></li>
+            <li><a href="floorplans.html" title="Explore Floor Plans">Floor plans</a></li>
             <li><a href="Designs.html" title="Browse Designs">Designs</a></li>
             <li><a href="about.html" title="About Us">About us</a></li>
             <li><a href="contact.html" title="Contact Us">Contact us</a></li>
             <li><a href="blog.html" title="Visit Our Blog">Blogs</a></li>
-             <li><a href="Testimonials.html" title="Customer Testimonials">Testimonials</a></li>
+            <li><a href="Testimonials.html" title="Customer Testimonials">Testimonials</a></li>
             <li><a href="carrer.html" title="Careers">Careers</a></li>
             <li><a href="faq.html" title="Frequently Asked Questions">FAQ</a></li>
-            <li><a href="policies.html" title="Careers">Policies</a></li>
-
+            <li><a href="policies.html" title="Policies">Policies</a></li>
           </ul>
         </li>
       </ul>
     </nav>
+
     <div class="right-buttons">
       <a href="GetQuote.html" class="get-quote" title="Get a Quote from LivinWalls">Lets Talk</a>
       <a href="login.html" class="login-link" id="login-link" title="Login to Your Account">
@@ -69,9 +97,8 @@
   </div>
 </header>
 
-
 <script>
-    window.addEventListener('scroll', function () {
+  window.addEventListener('scroll', function () {
     const header = document.querySelector('.header');
     if (window.scrollY > 50) {
       header.classList.add('scrolled');
@@ -91,415 +118,390 @@
 </script>
 
 
-
 <!-- Main Content -->
-    <style>
-  
+<style>
+  body {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+  }
 
-        .post-container {
-            max-width: 1200px;
-            margin: clamp(80px, 15vh, 100px) auto 2rem;
-            padding: 0 clamp(0.5rem, 2vw, 1rem);
-            display: flex;
-            gap: clamp(1rem, 3vw, 2rem);
-        }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+  }
 
-        .main-content {
-            flex: 3;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            opacity: 0;
-            animation: fadeIn 1s ease forwards;
-        }
+  .post-container {
+    max-width: 1200px;
+    margin: clamp(80px, 15vh, 100px) auto 2rem;
+    padding: 0 clamp(0.5rem, 2vw, 1rem);
+    display: flex;
+    gap: clamp(1rem, 3vw, 2rem);
+  }
 
-        .post-header img {
-            width: 100%;
-            height: clamp(200px, 50vw, 400px);
-            object-fit: cover;
-            border-radius: 8px 8px 0 0;
-        }
+  .main-content {
+    flex: 3;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+  }
 
-        .post-content {
-            padding: clamp(1rem, 3vw, 2rem);
-        }
+  .post-header img {
+    width: 100%;
+    height: clamp(200px, 50vw, 400px);
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+  }
 
-        .post-content h1 {
-            font-size: clamp(1.5rem, 5vw, 2rem);
-            color: #1a1a1a;
-            margin-bottom: 1rem;
-        }
+  .post-content {
+    padding: clamp(1rem, 3vw, 2rem);
+  }
 
-        .post-content p {
-            font-size: clamp(1.265rem, 3vw, 1.4rem);
-            line-height: 1.6;
-            color: #555;
-            margin-bottom: 2.5rem;
-        }
+  .post-content h1 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+  }
 
-        .post-content h2 {
-            font-size: clamp(2.2rem, 4vw, 1.5rem);
-            color: #1a1a1a;
-            margin: 1.5rem 0 1rem;
-        }
+  .post-content p {
+    font-size: clamp(1.265rem, 3vw, 1.4rem);
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 2.5rem;
+  }
 
-        .post-content ul {
-            list-style: disc;
-            padding-left: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
+  .post-content h2 {
+    font-size: clamp(2.2rem, 4vw, 1.5rem);
+    color: #1a1a1a;
+    margin: 1.5rem 0 1rem;
+  }
 
-        .post-content ul li {
-            font-size: clamp(1.165rem, 3vw, 1rem);
-            color: #555;
-            margin-bottom: 0.5rem;
-        }
+  .post-content ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 30vw, 200px), 1fr));
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
+  .post-content ul li {
+    font-size: clamp(1.165rem, 3vw, 1rem);
+    color: #555;
+    margin-bottom: 0.5rem;
+  }
 
-        .gallery img {
-            width: 100%;
-            height: clamp(100px, 25vw, 150px);
-            object-fit: cover;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            loading: lazy;
-        }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 30vw, 200px), 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
 
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
+  .gallery img {
+    width: 100%;
+    height: clamp(100px, 25vw, 150px);
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    loading: lazy;
+  }
 
-        .cta-button {
-            display: inline-block;
-            padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
-            background-color: #d4af37;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-            font-size: clamp(0.9rem, 3vw, 1rem);
-            touch-action: manipulation;
-        }
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
 
-        .cta-button:hover {
-            background-color: #b8972e;
-        }
+  .cta-button {
+    display: inline-block;
+    padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
+    background-color: #d4af37;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    touch-action: manipulation;
+  }
 
-        /* Sidebar */
-        .sidebar {
-            order: -1;
-            flex: 1;
-            position: sticky;
-            top: clamp(80px, 15vh, 100px);
-            padding: 1rem;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            height: fit-content;
-        }
+  .cta-button:hover {
+    background-color: #b8972e;
+  }
 
-        .sidebar h3 {
-            font-size: clamp(1.8rem, 7vw, 2.2rem);
-            color: #1a1a1a;
-            margin-bottom: 1rem;
-        }
+  .sidebar {
+    order: -1;
+    flex: 1;
+    position: sticky;
+    top: clamp(80px, 15vh, 100px);
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    height: fit-content;
+  }
 
-        .sidebar ul {
-            list-style: none;
-        }
+  .sidebar h3 {
+    font-size: clamp(1.8rem, 7vw, 2.2rem);
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+  }
 
-        .sidebar ul li {
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
+  .sidebar ul {
+    list-style: none;
+  }
 
-        .sidebar ul li a {
-            color: #d4af37;
-            text-decoration: none;
-            font-size: clamp(1.2rem, 3vw, 1.3rem);
-            transition: color 0.3s ease;
-            padding: 0.6rem;
-            display: block;
-            touch-action: manipulation;
-        }
+  .sidebar ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
 
-        .sidebar ul li a:hover {
-            color: #b8972e;
-        }
+  .sidebar ul li a {
+    color: #d4af37;
+    text-decoration: none;
+    font-size: clamp(1.2rem, 3vw, 1.3rem);
+    transition: color 0.3s ease;
+    padding: 0.6rem;
+    display: block;
+    touch-action: manipulation;
+  }
 
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            touch-action: none;
-        }
+  .sidebar ul li a:hover {
+    color: #b8972e;
+  }
 
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 8px;
-        }
+  .lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    touch-action: none;
+  }
 
-        .lightbox .close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            color: #fff;
-            font-size: clamp(1.5rem, 5vw, 2rem);
-            cursor: pointer;
-            padding: 0.5rem;
-            touch-action: manipulation;
-        }
+  .lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+  }
 
-     
+  .lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    cursor: pointer;
+    padding: 0.5rem;
+    touch-action: manipulation;
+  }
 
-        /* Animations */
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 0.5rem 1rem;
-            }
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 0.5rem 1rem;
+    }
 
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
 
-            .post-container {
-                flex-direction: column;
-            }
+    .post-container {
+      flex-direction: column;
+    }
 
-            .main-content {
-                order: 1;
-            }
+    .main-content {
+      order: 1;
+    }
 
-            .sidebar {
-                order: 0;
-                position: static;
-                margin: 1rem 0;
-            }
+    .sidebar {
+      order: 0;
+      position: static;
+      margin: 1rem 0;
+    }
 
-            .post-header img {
-                height: clamp(150px, 40vw, 250px);
-            }
+    .post-header img {
+      height: clamp(150px, 40vw, 250px);
+    }
 
-            .post-content h1 {
-                font-size: clamp(1.2rem, 4vw, 1.5rem);
-            }
+    .post-content h1 {
+      font-size: clamp(1.2rem, 4vw, 1.5rem);
+    }
 
-            .post-content h2 {
-                font-size: clamp(1rem, 3.5vw, 1.2rem);
-            }
+    .post-content h2 {
+      font-size: clamp(1rem, 3.5vw, 1.2rem);
+    }
 
-            .post-content p, .post-content ul li {
-                font-size: clamp(0.8rem, 2.5vw, 0.9rem);
-            }
+    .post-content p, .post-content ul li {
+      font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    }
 
-            .gallery img {
-                height: clamp(80px, 20vw, 120px);
-            }
+    .gallery img {
+      height: clamp(80px, 20vw, 120px);
+    }
 
-            .cta-button {
-                width: 100%;
-                text-align: center;
-            }
-        }
+    .cta-button {
+      width: 100%;
+      text-align: center;
+    }
+  }
 
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: clamp(1.2rem, 4vw, 1.5rem);
-            }
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: clamp(1.2rem, 4vw, 1.5rem);
+    }
 
-            nav ul li a {
-                font-size: clamp(0.8rem, 2.5vw, 0.9rem);
-            }
+    nav ul li a {
+      font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    }
 
-            .post-container {
-                margin: 60px auto 1rem;
-            }
+    .post-container {
+      margin: 60px auto 1rem;
+    }
 
-            .sidebar {
-                margin: 0.5rem 0;
-            }
-        }
-    </style>
+    .sidebar {
+      margin: 0.5rem 0;
+    }
+  }
+</style>
 
-    <!-- Replace with your header -->
-
-
-    <div class="post-container">
-        <div class="main-content">
-            <div class="post-header">
-                <img src="https://urbandesignlab.in/wp-content/uploads/2024/10/Biophilic-Urbanism.webp" alt="Raintree House Chennai" loading="lazy">
-            </div>
-            <div class="post-content">
-                <h1>Integrating Nature at Different Scales </h1>
-                <p>Biophilic urbanism manifests across multiple scales—from individual buildings to entire regions. At the micro level, biophilic design principles are employed in architecture to create spaces that incorporate direct or symbolic natural elements. Examples include the use of green walls, natural materials, biomorphic forms, and abundant natural light—all of which evoke a sense of connection to the natural world. <br>
-                    Such approaches have proven to yield considerable psychological and physiological benefits, ranging from reduced stress to enhanced productivity and creativity. A 2019 study by the University of Exeter found that employees working in environments with natural elements reported a 15% increase in well-being and a 6% increase in productivity..</p>
-                
-                <h2 id="architecture"> Health and Well-Being Benefits</h2>
-                <p>Biophilic urbanism contributes to the resilience of urban communities. By buffering cities against environmental stressors, such as air pollution, urban heat islands, and noise, biophilic interventions help mitigate some of the most pressing public health challenges faced by densely populated urban areas. <br>The inclusion of urban greenery—such as green roofs, vertical gardens, and permeable green surfaces—serves not only to beautify the cityscape but also to provide critical ecosystem services that enhance air and water quality. For example, a study by the Environmental Protection Agency (EPA) found that urban trees in the United States remove approximately 711,000 metric tons of air pollution annually, valued at $3.8 billion in public health benefits.
-
-                </p>
-
-                
-                <h2 id="features">Key Features</h2>
-                <ul>
-                    <li>Direct Experience of Nature</li>
-                    <li>Thermal and Airflow Variability</li>
-                    <li>Natural Patterns and Processes</li>
-                    <li>Evolved Human-Nature Relationships</li>
-                    <li>Dynamic Lighting and Shading</li>
-                    <li>Increased Property Values</li>
-                    
-                </ul>
-                
-                <h2 id="gallery">Gallery</h2>
-                <div class="gallery">
-                    <img src="https://blog.nature.org/wp-content/uploads/2020/10/Screen-Shot-2020-10-26-at-09.42.09.png" alt="Living Room" data-full="https://via.placeholder.com/1000x600?text=Living+Room" loading="lazy">
-                    <img src="https://www.homesindiamagazine.com/uploaded_images/newstransfer/s81l7biophillicAr.jpg" alt="Koi Pond" data-full="https://via.placeholder.com/1000x600?text=Koi+Pond" loading="lazy">
-                    <img src="https://cdn.shopify.com/s/files/1/1799/9277/files/Biohilic_Hospital_Design_-_Forest_Homes1_1024x1024.jpg?v=1621548991" alt="Master Bedroom" data-full="https://via.placeholder.com/1000x600?text=Master+Bedroom" loading="lazy">
-                    <img src="https://trellis.net/wp-content/uploads/2024/07/interfacebiophilia.jpg?w=950" alt="Entrance Court" data-full="https://via.placeholder.com/1000x600?text=Entrance+Court" loading="lazy">
-                    <img src="https://constrofacilitator.com/wp-content/uploads/2022/12/biophilia.jpg" alt="Entrance Court" data-full="https://via.placeholder.com/1000x600?text=Entrance+Court" loading="lazy">
-                    <img src="https://thursd.com/storage/media/63457/Cala-Saona-residence-in-Canggu,-Bali.jpg" alt="Entrance Court" data-full="https://via.placeholder.com/1000x600?text=Entrance+Court" loading="lazy">
-                   
-                </div>
-                
-                <h2 id="why">Why Biophilic Urbanism ?</h2>
-                <p>In the evolving discourse of urban planning and architecture, one concept is gradually reshaping our understanding of sustainable urban living—biophilic urbanism. But what is biophilic urbanism? Biophilic urbanism is an approach to city planning that integrates natural elements into urban areas, creating environments where humans can reconnect with nature. As cities worldwide grapple with the environmental, social, and economic challenges associated with rapid urbanization, the integration of nature within the urban fabric offers an essential pathway to healthier, more resilient urban environments.
-            .</p>
-                
-                <a href="contact.html" class="cta-button" aria-label="Inquire about Raintree House">Inquire Now</a>
-            </div>
-        </div>
-        <div class="sidebar">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="#architecture" aria-label="Go to Architectural Vision section">Architectural Vision</a></li>
-               
-                <li><a href="#features" aria-label="Go to Key Features section">Key Features</a></li>
-                <li><a href="#gallery" aria-label="Go to Gallery section">Gallery</a></li>
-                <li><a href="#why" aria-label="Go to Why Raintree House section">Why Biophilic Urbanism ?</a></li>
-            </ul>
-        </div>
+<div class="post-container">
+  <div class="main-content">
+    <div class="post-header">
+      <img src="https://urbandesignlab.in/wp-content/uploads/2024/10/Biophilic-Urbanism.webp" alt="Raintree House Chennai" loading="lazy">
     </div>
+    <div class="post-content">
+      <h1>Integrating Nature at Different Scales</h1>
+      <p>Biophilic urbanism manifests across multiple scales—from individual buildings to entire regions. At the micro level, biophilic design principles are employed in architecture to create spaces that incorporate direct or symbolic natural elements. Examples include the use of green walls, natural materials, biomorphic forms, and abundant natural light—all of which evoke a sense of connection to the natural world. <br>
+        Such approaches have proven to yield considerable psychological and physiological benefits, ranging from reduced stress to enhanced productivity and creativity. A 2019 study by the University of Exeter found that employees working in environments with natural elements reported a 15% increase in well-being and a 6% increase in productivity.</p>
+      
+      <h2 id="architecture">Health and Well-Being Benefits</h2>
+      <p>Biophilic urbanism contributes to the resilience of urban communities. By buffering cities against environmental stressors, such as air pollution, urban heat islands, and noise, biophilic interventions help mitigate some of the most pressing public health challenges faced by densely populated urban areas. <br>The inclusion of urban greenery—such as green roofs, vertical gardens, and permeable green surfaces—serves not only to beautify the cityscape but also to provide critical ecosystem services that enhance air and water quality. For example, a study by the Environmental Protection Agency (EPA) found that urban trees in the United States remove approximately 711,000 metric tons of air pollution annually, valued at $3.8 billion in public health benefits.</p>
 
-    <div class="lightbox" id="lightbox">
-        <span class="close" onclick="closeLightbox()" aria-label="Close lightbox">×</span>
-        <img src="https://luxury-houses.net/wp-content/uploads/2022/07/Raintree-House-a-climate-responsive-Chennai-home-by-Khosla-Associates-14.jpg" id="lightbox-img" alt="Full-size gallery image">
+      <h2 id="features">Key Features</h2>
+      <ul>
+        <li>Direct Experience of Nature</li>
+        <li>Thermal and Airflow Variability</li>
+        <li>Natural Patterns and Processes</li>
+        <li>Evolved Human-Nature Relationships</li>
+        <li>Dynamic Lighting and Shading</li>
+        <li>Increased Property Values</li>
+      </ul>
+      
+      <h2 id="gallery">Gallery</h2>
+      <div class="gallery">
+        <img src="https://blog.nature.org/wp-content/uploads/2020/10/Screen-Shot-2020-10-26-at-09.42.09.png" alt="Living Room" data-full="https://via.placeholder.com/1000x600?text=Living+Room" loading="lazy">
+        <img src="https://www.homesindiamagazine.com/uploaded_images/newstransfer/s81l7biophillicAr.jpg" alt="Koi Pond" data-full="https://via.placeholder.com/1000x600?text=Koi+Pond" loading="lazy">
+        <img src="https://cdn.shopify.com/s/files/1/1799/9277/files/Biohilic_Hospital_Design_-_Forest_Homes1_1024x1024.jpg?v=1621548991" alt="Master Bedroom" data-full="https://via.placeholder.com/1000x600?text=Master+Bedroom" loading="lazy">
+        <img src="https://trellis.net/wp-content/uploads/2024/07/interfacebiophilia.jpg?w=950" alt="Entrance Court" data-full="https://via.placeholder.com/1000x600?text=Entrance+Court" loading="lazy">
+        <img src="https://constrofacilitator.com/wp-content/uploads/2022/12/biophilia.jpg" alt="Entrance Court" data-full="https://via.placeholder.com/1000x600?text=Entrance+Court" loading="lazy">
+        <img src="https://thursd.com/storage/media/63457/Cala-Saona-residence-in-Canggu,-Bali.jpg" alt="Entrance Court" data-full="https://via.placeholder.com/1000x600?text=Entrance+Court" loading="lazy">
+      </div>
+      
+      <h2 id="why">Why Biophilic Urbanism?</h2>
+      <p>In the evolving discourse of urban planning and architecture, one concept is gradually reshaping our understanding of sustainable urban living—biophilic urbanism. But what is biophilic urbanism? Biophilic urbanism is an approach to city planning that integrates natural elements into urban areas, creating environments where humans can reconnect with nature. As cities worldwide grapple with the environmental, social, and economic challenges associated with rapid urbanization, the integration of nature within the urban fabric offers an essential pathway to healthier, more resilient urban environments.</p>
+      
+      <a href="contact.html" class="cta-button" aria-label="Inquire about Raintree House">Inquire Now</a>
     </div>
+  </div>
+  <div class="sidebar">
+    <h3>Quick Links</h3>
+    <ul>
+      <li><a href="#architecture" aria-label="Go to Architectural Vision section">Architectural Vision</a></li>
+      <li><a href="#features" aria-label="Go to Key Features section">Key Features</a></li>
+      <li><a href="#gallery" aria-label="Go to Gallery section">Gallery</a></li>
+      <li><a href="#why" aria-label="Go to Why Raintree House section">Why Biophilic Urbanism?</a></li>
+    </ul>
+  </div>
+</div>
 
-     
-    
-<!--End FAQ's-->
-    <!--footer section -->
-    <footer class="footer">
-      <div class="footercontainer">
-        <div class="footer-sections">
-          <!-- Column 1: Constructions -->
-          <div class="footer-column">
-            <h3>Constructions</h3>
-            <ul>
-              <li><a href="#residential">Residential Construction</a></li>
-              <li><a href="#commercial">Commercial Construction</a></li>
-              <li><a href="#home">Home Construction</a></li>
-              <li><a href="#farmhouse">Farm House Construction</a></li>
-              <li><a href="#addfloor">Add New Floor</a></li>
-              <li><a href="#duplex">Duplex Home Construction</a></li>
-              <li><a href="#independent">Independent House Construction</a></li>
-              <li><a href="#villa">Villa Construction</a></li>
-              <li><a href="#luxury">Luxury Home Construction</a></li>
-              <li><a href="#cost">Cost of New Home Construction</a></li>
-            </ul>
-          </div>
-    
-          <!-- Column 2: Interiors -->
-          <div class="footer-column">
-            <h3>Interiors</h3>
-            <ul>
-              <li><a href="#res-interior">Residential Interior Design</a></li>
-              <li><a href="#living">Living Room Interior Design</a></li>
-              <li><a href="#kitchen">Kitchen Interior Design</a></li>
-              <li><a href="#bedroom">Bedroom Interior Design</a></li>
-              <li><a href="#bathroom">Bathroom Interior Design</a></li>
-              <li><a href="#office">Office Interior Design</a></li>
-              <li><a href="#commercial-interior">Commercial Interior Design</a></li>
-              <li><a href="#apartment">Apartment Interior Design</a></li>
-            </ul>
-          </div>
-    
-          <!-- Column 3: Calculator -->
-          <div class="footer-column">
-            <h3>Calculator</h3>
-            <ul>
-              <li><a href="#res-cost">Residential Cost Estimator</a></li>
-              <li><a href="#comm-cost">Commercial Cost Estimator</a></li>
-              <li><a href="#interior-cost">Interior Cost Estimator</a></li>
-            </ul>
-            <h3>Packages</h3>
-            <ul>
-              <li><a href="#luxury">Luxury</a></li>
-              <li><a href="#commercial">Commercial</a></li>
-              <li><a href="#interior">Interior</a></li>
-            </ul>
-          </div>
-    
-          <!-- Column 4: Info -->
-          <div class="footer-column">
-            <h3>Your Floor Plan Solution</h3>
-            <p>Find the perfect floor plan for your dream home. We offer a wide selection of customizable designs from top architects and designers.</p>
-    
-            <h4>Get in Touch</h4>
-            <p><a href="tel:+919739011656">+91 9739011656</a><br>
-               <a href="mailto:rajashekarreddy@livinwalls.com">rajashekarreddy@livinwalls.com</a>
-            </p>
-    
-            <h4>Social</h4>
-            <div class="social-icons">
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Optional links -->
-        <div class="footer-links">
-          <a href="#support">Support</a>
-          <a href="#terms">Terms & Services</a>
-          <a href="#privacy">Privacy & Policy</a>
+<div class="lightbox" id="lightbox">
+  <span class="close" onclick="closeLightbox()" aria-label="Close lightbox">×</span>
+  <img src="https://luxury-houses.net/wp-content/uploads/2022/07/Raintree-House-a-climate-responsive-Chennai-home-by-Khosla-Associates-14.jpg" id="lightbox-img" alt="Full-size gallery image">
+</div>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footercontainer">
+    <div class="footer-sections">
+      <div class="footer-column">
+        <h3>Constructions</h3>
+        <ul>
+          <li><a href="#residential">Residential Construction</a></li>
+          <li><a href="#commercial">Commercial Construction</a></li>
+          <li><a href="#home">Home Construction</a></li>
+          <li><a href="#farmhouse">Farm House Construction</a></li>
+          <li><a href="#addfloor">Add New Floor</a></li>
+          <li><a href="#duplex">Duplex Home Construction</a></li>
+          <li><a href="#independent">Independent House Construction</a></li>
+          <li><a href="#villa">Villa Construction</a></li>
+          <li><a href="#luxury">Luxury Home Construction</a></li>
+          <li><a href="#cost">Cost of New Home Construction</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Interiors</h3>
+        <ul>
+          <li><a href="#res-interior">Residential Interior Design</a></li>
+          <li><a href="#living">Living Room Interior Design</a></li>
+          <li><a href="#kitchen">Kitchen Interior Design</a></li>
+          <li><a href="#bedroom">Bedroom Interior Design</a></li>
+          <li><a href="#bathroom">Bathroom Interior Design</a></li>
+          <li><a href="#office">Office Interior Design</a></li>
+          <li><a href="#commercial-interior">Commercial Interior Design</a></li>
+          <li><a href="#apartment">Apartment Interior Design</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Calculator</h3>
+        <ul>
+          <li><a href="#res-cost">Residential Cost Estimator</a></li>
+          <li><a href="#comm-cost">Commercial Cost Estimator</a></li>
+          <li><a href="#interior-cost">Interior Cost Estimator</a></li>
+        </ul>
+        <h3>Packages</h3>
+        <ul>
+          <li><a href="#luxury">Luxury</a></li>
+          <li><a href="#commercial">Commercial</a></li>
+          <li><a href="#interior">Interior</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Your Floor Plan Solution</h3>
+        <p>Find the perfect floor plan for your dream home. We offer a wide selection of customizable designs from top architects and designers.</p>
+        <h4>Get in Touch</h4>
+        <p><a href="tel:+919739011656">+91 9739011656</a><br>
+           <a href="mailto:rajashekarreddy@livinwalls.com">rajashekarreddy@livinwalls.com</a>
+        </p>
+        <h4>Social</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
-      </div>
-    </footer>
-    <hr>
-    
+    </div>
+    <div class="footer-links">
+      <a href="#support">Support</a>
+      <a href="#terms">Terms & Services</a>
+      <a href="#privacy">Privacy & Policy</a>
+    </div>
+  </div>
+</footer>
+<hr>
 
-    <!-- New Footer Section -->
+<!-- New Footer Section -->
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-row">
@@ -544,13 +546,11 @@
         </ul>
       </div>
     </div>
-    
   </div>
 </footer>
 <hr>
 
-
-<!-- Living WallsConstruction - Extended Footer Section -->
+<!-- Extended Footer Section -->
 <section class="extended-footer">
   <div class="ext-container">
     <div class="ext-section">
@@ -561,7 +561,6 @@
         designed layouts that balance style, strength, and functionality.
       </p>
     </div>
-
     <div class="ext-section">
       <h2>Why Choose Our Plans?</h2>
       <p>
@@ -570,9 +569,7 @@
         structurally sound and compliant with modern construction standards.
       </p>
     </div>
-    
     <div class="ext-section">
-
       <h3>Our Services</h3>
       <ul class="ext-services">
         <li>Residential Floor Plan Design</li>
@@ -586,10 +583,10 @@
       </ul>
     </div>
   </div>
-  <hr>
+</section>
+<hr>
 
-
-<!-- Living Walls Construction - Services Footer Section B2B -->
+<!-- B2B Construction Services -->
 <section class="construction-footer">
   <div class="footer-content">
     <h2>B2B Construction Services</h2>
@@ -597,76 +594,62 @@
       Partner with Living Walls Construction for commercial building solutions. With over 800 contractors and 470+ quality checks,
       we deliver robust, scalable commercial spaces that empower businesses to grow with confidence.
     </p>
-
     <h3>Commercial Construction</h3>
     <p>
       Our team crafts commercial spaces designed for optimal productivity, ensuring every square foot serves your business goals.
     </p>
-
     <h3>Warehouse Construction</h3>
     <p>
       We build secure, accessible warehouses engineered to preserve and manage inventory efficiently.
     </p>
-
     <h3>Retail Construction</h3>
     <p>
       Our designers create dynamic retail environments that enhance customer engagement and streamline shopping experiences.
     </p>
-
     <h3>Hospital Construction</h3>
     <p>
       Constructing hospitals that combine medical functionality with safety and comfort, customized for both patients and staff.
     </p>
-
     <h3>Hospitality Construction</h3>
     <p>
       We design memorable hospitality spaces that prioritize guest experience, ambiance, and operational flow.
     </p>
-
     <h3>School Construction</h3>
     <p>
       Building schools that foster creativity, learning, and growth — aligned with modern education needs and safety standards.
     </p>
     <br>
-    <hr> <br>
+    <hr>
+    <br>
     <h3>Locations</h3>
     <p class="location-text">
       House Construction in Bengaluru, Chennai, Mysuru, NCR Faridabad, NCR Ghaziabad, NCR Noida, NCR Delhi, NCR Gurgaon, Hyderabad, Pune, Hubli
     </p>
-
-
   </div>
-
   <div class="footer-bottom">
     <p>
-      Copyright &copy;
+      Copyright ©
       <script>document.write(new Date().getFullYear());</script> All Rights Reserved | Powered by <a href="https://meghplat.com/" target="_blank" class="text-primary">Meghplat Analytics</a>
-  </p>
+    </p>
   </div>
 </section>
 
- <!--EndB2B-->
+<script>
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.nav').classList.toggle('nav--active');
+    this.classList.toggle('menu-toggle--active');
+  });
 
-  <script>
-    // Simple script for the mobile menu toggle
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-      document.querySelector('.nav').classList.toggle('nav--active');
-      this.classList.toggle('menu-toggle--active');
-    });
-
-    // Custom cursor
-    const cursor = document.querySelector('.cursor');
-    
-    document.addEventListener('mousemove', e => {
-      cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
-    });
-    
-    document.addEventListener('click', () => {
-      cursor.classList.add("cursor--expand");
-      setTimeout(() => {
-        cursor.classList.remove("cursor--expand");
-      }, 500);
-    });
-  </script>
+  const cursor = document.querySelector('.cursor');
+  document.addEventListener('mousemove', e => {
+    cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
+  });
+  document.addEventListener('click', () => {
+    cursor.classList.add("cursor--expand");
+    setTimeout(() => {
+      cursor.classList.remove("cursor--expand");
+    }, 500);
+  });
+</script>
 </body>
 </html>

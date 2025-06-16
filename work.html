@@ -4,24 +4,122 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Living Walls - Creative Design Agency</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="stylesheet" href="css/responsive.css"> <!--responsive-->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/responsive.css">
 
-  <link rel="stylesheet" href="styles.css">
-  <style>
+  <!-- External Libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.11.4/dist/framer-motion.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="auth.js"></script>
+
+
+</head>
+
+<body>
+
+<!-- Header HTML (to be included in all pages) -->
+<header class="header">
+  <div class="containerr">
+    <div class="logo">
+      <a href="index.html" aria-label="Go to LivinWalls homepage">
+        <img src="img/logo-removebg.png" alt="LivinWalls Logo" class="logo-img">
+      </a>
+    </div>
+    <button class="hamburger" aria-label="Toggle Menu">☰</button>
+
+    <nav class="nav" aria-label="Main Navigation">
+      <ul class="nav__list">
+        <li><a href="index.html" title="Home Page">Home</a></li>
+        <li><a href="#how-it-works" title="How LivinWalls Works">How it Works</a></li>
+        <li><a href="packages.html" title="View Construction Packages">Construction Packages</a></li>
+        <li><a href="design_packages.html" title="View Design Packages">Design Packages</a></li>
+        <li><a href="calculator.html" title="Estimate Construction Cost">Cost Calculator</a></li>
+        <li><a href="work.html" title="See Our Work">Our Work</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" title="More Options">More▾</a>
+          <ul class="dropdown-content">
+            <li><a href="floorplans.html" title="Explore Floor Plans">Floor plans</a></li>
+            <li><a href="Designs.html" title="Browse Designs">Designs</a></li>
+            <li><a href="about.html" title="About Us">About us</a></li>
+            <li><a href="contact.html" title="Contact Us">Contact us</a></li>
+            <li><a href="blog.html" title="Visit Our Blog">Blogs</a></li>
+            <li><a href="Testimonials.html" title="Customer Testimonials">Testimonials</a></li>
+            <li><a href="carrer.html" title="Careers">Careers</a></li>
+            <li><a href="faq.html" title="Frequently Asked Questions">FAQ</a></li>
+            <li><a href="policies.html" title="Policies">Policies</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="right-buttons">
+      <a href="GetQuote.html" class="get-quote" title="Get a Quote from LivinWalls">Lets Talk</a>
+      <a href="login.html" class="login-link" id="login-link" title="Login to Your Account">
+        <span id="login-text">Login</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  window.addEventListener('scroll', function () {
+    const header = document.querySelector('.header');
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  const hamburger = document.querySelector('.hamburger');
+  const navList = document.querySelector('.nav__list');
+  const rightButtons = document.querySelector('.right-buttons');
+
+  hamburger.addEventListener('click', () => {
+    navList.classList.toggle('active');
+    rightButtons.classList.toggle('active');
+  });
+</script>
+
+
+<!-- Floating WhatsApp Button -->
+<div class="whatsapp-button-container">
+  <a href="https://wa.me/919146478677" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <img src="https://techfocus24.com/wp-content/uploads/2021/01/whatsapp-button.png" alt="WhatsApp Button" class="whatsapp-button-image" />
+  </a>
+</div>
+
+<style>
     /* Luxurious Theme Styles */
     :root {
-      --primary-color:  #2f3342  ; /* Dark blue-gray */
+      --primary-color: #2f3342; /* Dark blue-gray */
       --accent-color: #d5193e; /* Vibrant red */
       --secondary-color: #E6E8ED; /* Light gray for contrast */
-      --text-color:  #2f3342  ;
-    
-      --shadow:  #2f3342  ;
+      --text-color: #2f3342;
+      --shadow: #2f3342;
+    }
+
+    /* Apply Playfair Display font globally */
+    body {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400; /* Regular weight for body text */
+      margin: 0;
+      color: var(--text-color);
+    }
+
+    /* Bold headers */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600; /* Slightly bold for headers */
     }
 
     .container {
@@ -41,6 +139,8 @@
       text-align: center;
       margin-bottom: 20px;
       color: var(--text-color);
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
       animation: fadeInDown 1s ease-out;
     }
 
@@ -49,6 +149,8 @@
       text-align: center;
       margin-bottom: 40px;
       color: var(--text-color);
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
       opacity: 0;
       animation: fadeInUp 1s ease-out 0.3s forwards;
     }
@@ -69,6 +171,8 @@
       cursor: pointer;
       transition: all 0.4s ease;
       transform: scale(1);
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
     }
 
     .filter-btn:hover, .filter-btn.active {
@@ -115,12 +219,16 @@
       font-size: 1.7rem;
       margin-bottom: 10px;
       color: var(--text-color);
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
     }
 
     .work__category {
       font-size: 2rem;
       color: var(--text-color);
       margin-bottom: 15px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
     }
 
     .view-details-btn {
@@ -131,6 +239,8 @@
       border-radius: 25px;
       cursor: pointer;
       transition: all 0.3s ease;
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
     }
 
     .view-details-btn:hover {
@@ -161,7 +271,7 @@
       position: relative;
       animation: zoomIn 0.5s ease-out;
       color: #FFFFFF;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Playfair Display', serif;
     }
 
     .close-btn {
@@ -172,6 +282,7 @@
       color: var(--text-color);
       cursor: pointer;
       transition: color 0.3s ease;
+      font-family: 'Playfair Display', serif;
     }
 
     .close-btn:hover {
@@ -266,6 +377,7 @@
       text-align: center;
       text-transform: uppercase;
       letter-spacing: 1px;
+      font-family: 'Playfair Display', serif;
     }
 
     .modal-category {
@@ -274,6 +386,7 @@
       color: var(--secondary-color);
       text-align: center;
       margin-bottom: 15px;
+      font-family: 'Playfair Display', serif;
     }
 
     .modal-description {
@@ -283,6 +396,8 @@
       text-align: justify;
       margin-bottom: 20px;
       padding: 0 20px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
     }
 
     .modal-features {
@@ -297,6 +412,8 @@
       margin-bottom: 10px;
       position: relative;
       padding-left: 20px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
     }
 
     .modal-features li::before {
@@ -319,6 +436,8 @@
       font-size: 3.9rem;
       color: var(--text-color);
       margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
       animation: fadeInDown 1s ease-out;
     }
 
@@ -327,6 +446,8 @@
       color: var(--text-color);
       max-width: 800px;
       margin: 0 auto 40px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
       opacity: 0;
       animation: fadeInUp 1s ease-out 0.3s forwards;
     }
@@ -360,6 +481,8 @@
     .feature p {
       font-size: 1.7rem;
       color: var(--text-color);
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
     }
 
     /* Menu Toggle */
@@ -368,6 +491,7 @@
       font-size: 1.5rem;
       color: var(--text-color);
       cursor: pointer;
+      font-family: 'Playfair Display', serif;
     }
 
     @media (max-width: 768px) {
@@ -433,156 +557,80 @@
       to { opacity: 1; transform: scale(1); }
     }
   </style>
-</head>
-<body>
- 
- <!-- Header HTML (to be included in all pages, e.g., index.html, packages.html, etc.) -->
-<header class="header">
-  <div class="containerr">
-    <div class="logo">
-      <a href="index.html" aria-label="Go to LivinWalls homepage">
-        <img src="img/logo-removebg.png" alt="LivinWalls Logo" class="logo-img">
-      </a>
-    </div>
-    <button class="hamburger" aria-label="Toggle Menu">☰</button>
-    <nav class="nav" aria-label="Main Navigation">
-      <ul class="nav__list">
-        <li><a href="index.html" title="Home Page">Home</a></li>
-        <li><a href="packages.html" title="View Construction Packages">Construction Packages</a></li>
-        <li><a href="design_packages.html" title="View Design Packages">Design Packages</a></li>
-        <li><a href="calculator.html" title="Estimate Construction Cost">Cost Calculator</a></li>
-        <li><a href="work.html" title="See Our Work">Our Work</a></li>
 
-        <!-- If you want to reuse the dropdown later, uncomment this -->
-        
-         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" title="More Options">More▾</a>
-          <ul class="dropdown-content">
-              <li><a href="floorplans.html" title="Explore Floor Plans">Floor plans</a></li>
-            <li><a href="Designs.html" title="Browse Designs">Designs</a></li>
-            <li><a href="about.html" title="About Us">About us</a></li>
-            <li><a href="contact.html" title="Contact Us">Contact us</a></li>
-            <li><a href="blog.html" title="Visit Our Blog">Blogs</a></li>
-             <li><a href="Testimonials.html" title="Customer Testimonials">Testimonials</a></li>
-            <li><a href="carrer.html" title="Careers">Careers</a></li>
-            <li><a href="faq.html" title="Frequently Asked Questions">FAQ</a></li>
-            <li><a href="policies.html" title="Careers">Policies</a></li>
+<!--main content-->
 
-          </ul>
-        </li>
-        
-      </ul>
-    </nav>
-    <div class="right-buttons">
-      <a href="GetQuote.html" class="get-quote" title="Get a Quote from LivinWalls">Lets Talk</a>
-      <a href="login.html" class="login-link" id="login-link" title="Login to Your Account">
-        <span id="login-text">Login</span>
-      </a>
-    </div>
-  </div>
-</header>
-
-
-<script>
-    window.addEventListener('scroll', function () {
-    const header = document.querySelector('.header');
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
-
-  const hamburger = document.querySelector('.hamburger');
-  const navList = document.querySelector('.nav__list');
-  const rightButtons = document.querySelector('.right-buttons');
-
-  hamburger.addEventListener('click', () => {
-    navList.classList.toggle('active');
-    rightButtons.classList.toggle('active');
-  });
-</script>
-
-
-
-    <div class="whatsapp-button-container">
-    <a href="https://wa.me/919146478677" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
-      <img src="https://techfocus24.com/wp-content/uploads/2021/01/whatsapp-button.png" alt="WhatsApp Button" class="whatsapp-button-image" />
-    </a>
-  </div>
-
-  <main>
-    <section class="work">
-      <div class="container">
-        <h2 class="section-title">Our Work</h2>
-        <p class="section-subtitle">Explore our portfolio of innovative construction projects that redefine living spaces with quality and precision.</p>
-        <div class="work__filters">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="2bhk">2BHK</button>
-          <button class="filter-btn" data-filter="3bhk">3BHK</button>
-          <button class="filter-btn" data-filter="residential">Residential</button>
-          <button class="filter-btn" data-filter="industrial">Industrial</button>
+<main>
+  <section class="work">
+    <div class="container">
+      <h2 class="section-title">Our Work</h2>
+      <p class="section-subtitle">Explore our portfolio of innovative construction projects that redefine living spaces with quality and precision.</p>
+      <div class="work__filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="2bhk">2BHK</button>
+        <button class="filter-btn" data-filter="3bhk">3BHK</button>
+        <button class="filter-btn" data-filter="residential">Residential</button>
+        <button class="filter-btn" data-filter="industrial">Industrial</button>
+      </div>
+      <div class="work__grid">
+        <div class="work__item" data-category="3bhk residential" style="--index: 1;">
+          <div class="work__image">
+            <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Shiv Residency">
+          </div>
+          <div class="work__info">
+            <h3 class="work__title">Shiv Residency</h3>
+            <p class="work__category">3BHK, Residential</p>
+            <button class="view-details-btn" onclick="openModal(1)">View Details</button>
+          </div>
         </div>
-        <div class="work__grid">
-          <div class="work__item" data-category="3bhk residential" style="--index: 1;">
-            <div class="work__image">
-              <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Shiv Residency">
-            </div>
-            <div class="work__info">
-              <h3 class="work__title">Shiv Residency</h3>
-              <p class="work__category">3BHK, Residential</p>
-              <button class="view-details-btn" onclick="openModal(1)">View Details</button>
-            </div>
+        <div class="work__item" data-category="2bhk residential" style="--index: 2;">
+          <div class="work__image">
+            <img src="https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Palm Grove">
           </div>
-          <div class="work__item" data-category="2bhk residential" style="--index: 2;">
-            <div class="work__image">
-              <img src="https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Palm Grove">
-            </div>
-            <div class="work__info">
-              <h3 class="work__title">Palm Grove</h3>
-              <p class="work__category">2BHK, Residential</p>
-              <button class="view-details-btn" onclick="openModal(2)">View Details</button>
-            </div>
+          <div class="work__info">
+            <h3 class="work__title">Palm Grove</h3>
+            <p class="work__category">2BHK, Residential</p>
+            <button class="view-details-btn" onclick="openModal(2)">View Details</button>
           </div>
-          <div class="work__item" data-category="3bhk residential" style="--index: 3;">
-            <div class="work__image">
-              <img src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Redwood Estates">
-            </div>
-            <div class="work__info">
-              <h3 class="work__title">Redwood Estates</h3>
-              <p class="work__category">3BHK, Residential</p>
-              <button class="view-details-btn" onclick="openModal(3)">View Details</button>
-            </div>
+        </div>
+        <div class="work__item" data-category="3bhk residential" style="--index: 3;">
+          <div class="work__image">
+            <img src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Redwood Estates">
           </div>
-          <div class="work__item" data-category="industrial" style="--index: 4;">
-            <div class="work__image">
-              <img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Tech Industrial Park">
-            </div>
-            <div class="work__info">
-              <h3 class="work__title">Tech Industrial Park</h3>
-              <p class="work__category">Industrial</p>
-              <button class="view-details-btn" onclick="openModal(4)">View Details</button>
-            </div>
+          <div class="work__info">
+            <h3 class="work__title">Redwood Estates</h3>
+            <p class="work__category">3BHK, Residential</p>
+            <button class="view-details-btn" onclick="openModal(3)">View Details</button>
           </div>
-          <div class="work__item" data-category="2bhk residential" style="--index: 5;">
-            <div class="work__image">
-              <img src="https://images.pexels.com/photos/1571470/pexels-photo-1571470.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Pruthvi Residency">
-            </div>
-            <div class="work__info">
-              <h3 class="work__title">Pruthvi Residency</h3>
-              <p class="work__category">2BHK, Residential</p>
-              <button class="view-details-btn" onclick="openModal(5)">View Details</button>
-            </div>
+        </div>
+        <div class="work__item" data-category="industrial" style="--index: 4;">
+          <div class="work__image">
+            <img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Tech Industrial Park">
           </div>
-          <div class="work__item" data-category="3bhk residential" style="--index: 6;">
-            <div class="work__image">
-              <img src="https://images.pexels.com/photos/164558/pexels-photo-164558.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Skyline Towers">
-            </div>
-            <div class="work__info">
-              <h3 class="work__title">Skyline Towers</h3>
-              <p class="work__category">3BHK, Residential</p>
-              <button class="view-details-btn" onclick="openModal(6)">View Details</button>
-            </div>
+          <div class="work__info">
+            <h3 class="work__title">Tech Industrial Park</h3>
+            <p class="work__category">Industrial</p>
+            <button class="view-details-btn" onclick="openModal(4)">View Details</button>
+          </div>
+        </div>
+        <div class="work__item" data-category="2bhk residential" style="--index: 5;">
+          <div class="work__image">
+            <img src="https://images.pexels.com/photos/1571470/pexels-photo-1571470.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Pruthvi Residency">
+          </div>
+          <div class="work__info">
+            <h3 class="work__title">Pruthvi Residency</h3>
+            <p class="work__category">2BHK, Residential</p>
+            <button class="view-details-btn" onclick="openModal(5)">View Details</button>
+          </div>
+        </div>
+        <div class="work__item" data-category="3bhk residential" style="--index: 6;">
+          <div class="work__image">
+            <img src="https://images.pexels.com/photos/164558/pexels-photo-164558.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Skyline Towers">
+          </div>
+          <div class="work__info">
+            <h3 class="work__title">Skyline Towers</h3>
+            <p class="work__category">3BHK, Residential</p>
+            <button class="view-details-btn" onclick="openModal(6)">View Details</button>
           </div>
         </div>
       </div>
@@ -618,202 +666,6 @@
         </div>
       </div>
     </section>
-    <script>
-      let currentSlide = 0;
-      let slideInterval;
-      let totalSlides = 0;
-
-      document.querySelectorAll('.filter-btn').forEach(button => {
-        button.addEventListener('click', () => {
-          document.querySelector('.filter-btn.active').classList.remove('active');
-          button.classList.add('active');
-          const filter = button.getAttribute('data-filter');
-          document.querySelectorAll('.work__item').forEach(item => {
-            const categories = item.getAttribute('data-category').split(' ');
-            if (filter === 'all' || categories.includes(filter)) {
-              item.style.display = 'block';
-            } else {
-              item.style.display = 'none';
-            }
-          });
-        });
-      });
-
-      const projects = {
-        1: {
-          title: "Shiv Residency",
-          category: "3BHK, Residential",
-          description: "A luxurious 3BHK residential project in Bangalore, designed for modern living with spacious interiors and premium amenities.",
-          features: ["3 Bedrooms", "Swimming Pool", "Landscaped Gardens"],
-          images: [
-            "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201902131653114271-78615e82856f11ea92bc0242ac110002.jpg",
-            "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201902131653114271-e16d4f6c856f11ea84160242ac110002.jpg",
-            "https://cf.bstatic.com/xdata/images/hotel/max1024x768/529281367.jpg?k=0e7b65d0db4cb22f440574da310fd1425017b6cfb510e69b0c8476eb7f557c07&o=&hp=1",
-            "https://cf.bstatic.com/xdata/images/hotel/max1024x768/529257498.jpg?k=c539f31beeebe50792fbcb378cb394ea7faa1b7d9dd6623c239d9d48a1bcee4f&o=&hp=1"
-          ]
-        },
-        2: {
-          title: "Palm Grove",
-          category: "2BHK, Residential",
-          description: "A serene 2BHK residential project surrounded by greenery, offering a peaceful living experience in Bangalore.",
-          features: ["2 Bedrooms", "Clubhouse", "Jogging Track"],
-          images: [
-            "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "https://images.pexels.com/photos/259751/pexels-photo-259751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "https://cf.bstatic.com/xdata/images/hotel/max1024x768/87303511.jpg?k=401c2feaf1a1b1798d163cc16ee4e0cf4ae54dce271a43c7d4b2a9970a2482b1&o=&hp=1",
-            "https://encrypted-tbn0.gstatic.com/images?q=IT7ZMxfp29w5FbulMjTIXlqhmnGpEqxXvoGIfktu1Bp8A1Kf1HBW6Ut9t1mF7fHI&usqp=CAU",
-            "https://cf.bstatic.com/xdata/images/hotel/max200/87303537.jpg?k=190f506dd7492168c9ba853edebeba67f49963ad596e2951e2a11a8e49365b54&o=&hp=1",
-            "https://palm-grove-resort-pattaya.nochi.com/data/Photos/OriginalPhoto/4149/414968/414968844/Palm-Grove-Resort-Pattaya-Na-Chom-Thian-Facilities.JPEG"
-          ]
-        },
-        3: {
-          title: "Redwood Estates",
-          category: "3BHK, Residential",
-          description: "A premium 3BHK residential estate with modern architecture and eco-friendly design, located in Bangalore.",
-          features: ["3 Bedrooms", "Gymnasium", "Solar Panels"],
-          images: [
-            "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "https://images.pexels.com/photos/1571457/pexels-photo-1571457.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "https://encrypted-tbn0.gstatic.com/images?q=NO6A7NqpO7-6SIFNz7hwSDzK0up2armQ&s",
-            "https://encrypted-tbn0.gstatic.com/images?q=TY3msZcSDbI2hUdrtwnSF6F5rRNTNy5shhM_TZ69KKm6UHvpFQ6UtQqJ8txWsqS03mWNM&usqp=CAU",
-            "https://encrypted-tbn0.gstatic.com/images?q=T30Bbmeynmg9RALcpQYNR6aTZI75vMM4Cnen2gYhWCBECjDsTn9z05fYNNyuCSkcGLndI&usqp=CAU",
-            "https://encrypted-tbn0.gstatic.com/images?q=Te7rZjnczrXRB489AnvLpAJjigJW4biEXbbQwXsfq5cFA9cVUi7aFsjgsKD4g_oT4D3Xg&usqp=CAU"
-          ]
-        },
-        4: {
-          title: "Tech Industrial Park",
-          category: "Industrial",
-          description: "A state-of-the-art industrial park designed for tech companies, featuring robust infrastructure and sustainable design.",
-          features: ["Large Warehouses", "Energy-Efficient Systems", "24/7 Security"],
-          images: [
-            "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "https://www.home-designing.com/wp-content/uploads/2021/07/industrial-living-room.jpg",
-            "https://images.adsttc.com/media/images/632f/17ae/e423/5301/6ed2/d554/newsletter/not-ready-techstorm-headquarter-industrial-park-duts-design_11.jpg?1664030718",
-            "https://images.adsttc.com/media/images/632f/17af/e423/5301/6ed2/d556/large_jpg/not-ready-techstorm-headquarter-industrial-park-duts-design_9.jpg?1664030683",
-            "https://images.adsttc.com/media/images/632f/17ac/422f/0753/3de2/3fef/medium_jpg/not-ready-techstorm-headquarter-industrial-park-duts-design_17.jpg?1664030664",
-            "https://static.designboom.com/wp-content/uploads/2021/03/duts-design-floating-office-renovation-project-shanghai-designboom-700-250x200-22b08q85r448.jpg"
-          ]
-        },
-        5: {
-          title: "Pruthvi Residency",
-          category: "2BHK, Residential",
-          description: "A cozy 2BHK residential project in Bangalore, focusing on community living with modern amenities.",
-          features: ["2 Bedrooms", "Community Hall", "Play Area"],
-          images: [
-            "https://images.pexels.com/photos/1571470/pexels-photo-1571470.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "https://images.nobroker.in/images/ff8081816d6e0056016d6e8542283249/ff8081816d6e0056016d6e8542283249_44720_698530_large.jpg",
-            "https://www.prathviresidency.com/images/m1.jpg",
-            "https://www.prathviresidency.com/images/m3.jpg",
-            "https://www.prathviresidency.com/images/b4.jpg",
-            "https://www.prathviresidency.com/images/b3.jpg"
-          ]
-        },
-        6: {
-          title: "Skyline Towers",
-          category: "3BHK, Residential",
-          description: "A high-rise 3BHK residential project offering panoramic views and luxury living in Bangalore.",
-          features: ["3 Bedrooms", "Infinity Pool", "Concierge Services"],
-          images: [
-            "https://images.pexels.com/photos/164558/pexels-photo-164558.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1200/s3/2/94336/eb6751e4-cb3f-4f97-94ad-ccad31b75002.jpg",
-            "https://encrypted-tbn0.gstatic.com/images?q=RYFCN2RTWM-uPSQF_mUyMLDZPme08cj8UcCkXrliy94GDRvYZ42xb6c11LQ-AMM&usqp=CAU",
-            "https://photos.zillowstatic.com/fp/db530549226b5e7ae4f6f0bd95509922-p_i.jpg",
-            "https://photos.zillowstatic.com/fp/077df24c0fea5299aad22550e5a91d87-p_i.jpg"
-          ]
-        }
-      };
-
-      function openModal(projectId) {
-        const project = projects[projectId];
-        const modalImages = document.getElementById('modal-images');
-        const dots = document.querySelectorAll('.slider-dot');
-        document.getElementById('modal-title').textContent = project.title;
-        document.getElementById('modal-category').textContent = project.category;
-        document.getElementById('modal-description').textContent = project.description;
-        document.getElementById('modal-image-1').src = project.images[0] || '';
-        document.getElementById('modal-image-2').src = project.images[1] || '';
-        document.getElementById('modal-image-3').src = project.images[2] || '';
-        document.getElementById('modal-image-4').src = project.images[3] || '';
-        document.getElementById('modal-image-5').src = project.images[4] || '';
-        document.getElementById('modal-image-6').src = project.images[5] || '';
-        const featuresList = document.getElementById('modal-features');
-        featuresList.innerHTML = '';
-        project.features.forEach(feature => {
-          const li = document.createElement('li');
-          li.textContent = feature;
-          featuresList.appendChild(li);
-        });
-
-        // Initialize slider
-        totalSlides = project.images.length;
-        currentSlide = 0;
-        modalImages.style.transform = `translateX(0)`;
-        dots.forEach(dot => {
-          dot.style.display = project.images[dot.getAttribute('data-index')] ? 'block' : 'none';
-          dot.classList.remove('active');
-        });
-        if (dots[0]) dots[0].classList.add('active');
-
-        // Start auto-slide
-        clearInterval(slideInterval);
-        slideInterval = setInterval(() => {
-          currentSlide = (currentSlide + 1) % totalSlides;
-          modalImages.style.transform = `translateX(-${currentSlide * 100}%)`;
-          dots.forEach(dot => dot.classList.remove('active'));
-          if (dots[currentSlide]) dots[currentSlide].classList.add('active');
-        }, 3000);
-
-        // Add dot click functionality
-        dots.forEach(dot => {
-          dot.addEventListener('click', () => {
-            currentSlide = parseInt(dot.getAttribute('data-index'));
-            modalImages.style.transform = `translateX(-${currentSlide * 100}%)`;
-            dots.forEach(d => d.classList.remove('active'));
-            dot.classList.add('active');
-            clearInterval(slideInterval);
-            slideInterval = setInterval(() => {
-              currentSlide = (currentSlide + 1) % totalSlides;
-              modalImages.style.transform = `translateX(-${currentSlide * 100}%)`;
-              dots.forEach(d => d.classList.remove('active'));
-              if (dots[currentSlide]) dots[currentSlide].classList.add('active');
-            }, 3000);
-          });
-        });
-
-        document.getElementById('project-modal').style.display = 'block';
-      }
-
-      function changeSlide(direction) {
-        const modalImages = document.getElementById('modal-images');
-        const dots = document.querySelectorAll('.slider-dot');
-        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-        modalImages.style.transform = `translateX(-${currentSlide * 100}%)`;
-        dots.forEach(dot => dot.classList.remove('active'));
-        if (dots[currentSlide]) dots[currentSlide].classList.add('active');
-        clearInterval(slideInterval);
-        slideInterval = setInterval(() => {
-          currentSlide = (currentSlide + 1) % totalSlides;
-          modalImages.style.transform = `translateX(-${currentSlide * 100}%)`;
-          dots.forEach(d => d.classList.remove('active'));
-          if (dots[currentSlide]) dots[currentSlide].classList.add('active');
-        }, 3000);
-      }
-
-      function closeModal() {
-        clearInterval(slideInterval);
-        document.getElementById('project-modal').style.display = 'none';
-      }
-
-      window.onclick = function(event) {
-        const modal = document.getElementById('project-modal');
-        if (event.target === modal) {
-          closeModal();
-        }
-      };
-    </script>
   </main>
 
   <section class="future-homes">
@@ -874,7 +726,7 @@
           <ul>
             <li><a href="#res-cost">Residential Cost Estimator</a></li>
             <li><a href="#comm-cost">Commercial Cost Estimator</a></li>
-            <li><a href="#interior-cost">Interior Cost Estimator</a></li>
+            <li><a href="#einterior-cost">Interior Cost Estimator</a></li>
           </ul>
           <h3>Packages</h3>
           <ul>
@@ -1016,16 +868,16 @@
         We design memorable hospitality spaces that prioritize guest experience, ambiance, and operational flow.
       </p>
       <h3>School Construction</h3>
-    <p>
-      Building schools that foster creativity, learning, and growth — aligned with modern education needs and safety standards.
-    </p>
-    <br>
-    <hr> <br>
-    <h3>Locations</h3>
-    <p class="location-text">
-      House Construction in Bengaluru, Chennai, Mysuru, NCR Faridabad, NCR Ghaziabad, NCR Noida, NCR Delhi, NCR Gurgaon, Hyderabad, Pune, Hubli
-    </p>
-    
+      <p>
+        Building schools that foster creativity, learning, and growth — aligned with modern education needs and safety standards.
+      </p>
+      <br>
+      <hr> <br>
+      <h3>Locations</h3>
+      <p class="location-text">
+        House Construction in Bengaluru, Chennai, Mysuru, NCR Faridabad, NCR Ghaziabad, NCR Noida, NCR Delhi, NCR Gurgaon, Hyderabad, Pune, Hubli
+      </p>
+    </div>
     <div class="footer-bottom">
       <p>
         Copyright ©
@@ -1033,23 +885,223 @@
       </p>
     </div>
   </section>
+
   <script>
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-      document.querySelector('.nav').classList.toggle('nav--active');
+    // Menu toggle script with null check
+    document.querySelector('.menu-toggle')?.addEventListener('click', function() {
+      document.querySelector('.nav')?.classList.toggle('nav--active');
       this.classList.toggle('menu-toggle--active');
     });
 
+    // Custom cursor script with null check
     const cursor = document.querySelector('.cursor');
-    document.addEventListener('mousemove', e => {
-      cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
+    if (cursor) {
+      document.addEventListener('mousemove', e => {
+        cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
+      });
+      document.addEventListener('click', () => {
+        cursor.classList.add("cursor--expand");
+        setTimeout(() => {
+          cursor.classList.remove("cursor--expand");
+        }, 500);
+      });
+    }
+
+    // Work section modal script
+    let currentSlide = 0;
+    let slideInterval;
+    let totalSlides = 0;
+
+    document.querySelectorAll('.filter-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelector('.filter-btn.active').classList.remove('active');
+        button.classList.add('active');
+        const filter = button.getAttribute('data-filter');
+        document.querySelectorAll('.work__item').forEach(item => {
+          const categories = item.getAttribute('data-category').split(' ');
+          if (filter === 'all' || categories.includes(filter)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
     });
 
-    document.addEventListener('click', () => {
-      cursor.classList.add("cursor--expand");
-      setTimeout(() => {
-        cursor.classList.remove("cursor--expand");
-      }, 500);
-    });
+    const projects = {
+      1: {
+        title: "Shiv Residency",
+        category: "3BHK, Residential",
+        description: "A luxurious 3BHK residential project in Bangalore, designed for modern living with spacious interiors and premium amenities.",
+        features: ["3 Bedrooms", "Swimming Pool", "Landscaped Gardens"],
+        images: [
+          "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201902131653114271-78615e82856f11ea92bc0242ac110002.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201902131653114271-e16d4f6c856f11ea84160242ac110002.jpg",
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/529281367.jpg?k=0e7b65d0db4cb22f440574da310fd1425017b6cfb510e69b0c8476eb7f557c07&o=&hp=1",
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/529257498.jpg?k=c539f31beeebe50792fbcb378cb394ea7faa1b7d9dd6623c239d9d48a1bcee4f&o=&hp=1"
+        ]
+      },
+      2: {
+        title: "Palm Grove",
+        category: "2BHK, Residential",
+        description: "A serene 2BHK residential project surrounded by greenery, offering a peaceful living experience in Bangalore.",
+        features: ["2 Bedrooms", "Clubhouse", "Jogging Track"],
+        images: [
+          "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://images.pexels.com/photos/259751/pexels-photo-259751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/87303511.jpg?k=401c2feaf1a1b1798d163cc16ee4e0cf4ae54dce271a43c7d4b2a9970a2482b1&o=&hp=1",
+          "https://encrypted-tbn0.gstatic.com/images?q=IT7ZMxfp29w5FbulMjTIXlqhmnGpEqxXvoGIfktu1Bp8A1Kf1HBW6Ut9t1mF7fHI&usqp=CAU",
+          "https://cf.bstatic.com/xdata/images/hotel/max200/87303537.jpg?k=190f506dd7492168c9ba853edebeba67f49963ad596e2951e2a11a8e49365b54&o=&hp=1",
+          "https://palm-grove-resort-pattaya.nochi.com/data/Photos/OriginalPhoto/4149/414968/414968844/Palm-Grove-Resort-Pattaya-Na-Chom-Thian-Facilities.JPEG"
+        ]
+      },
+      3: {
+        title: "Redwood Estates",
+        category: "3BHK, Residential",
+        description: "A premium 3BHK residential estate with modern architecture and eco-friendly design, located in Bangalore.",
+        features: ["3 Bedrooms", "Gymnasium", "Solar Panels"],
+        images: [
+          "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://images.pexels.com/photos/1571457/pexels-photo-1571457.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://encrypted-tbn0.gstatic.com/images?q=NO6A7NqpO7-6SIFNz7hwSDzK0up2armQ&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=TY3msZcSDbI2hUdrtwnSF6F5rRNTNy5shhM_TZ69KKm6UHvpFQ6UtQqJ8txWsqS03mWNM&usqp=CAU",
+          "https://encrypted-tbn0.gstatic.com/images?q=T30Bbmeynmg9RALcpQYNR6aTZI75vMM4Cnen2gYhWCBECjDsTn9z05fYNNyuCSkcGLndI&usqp=CAU",
+          "https://encrypted-tbn0.gstatic.com/images?q=Te7rZjnczrXRB489AnvLpAJjigJW4biEXbbQwXsfq5cFA9cVUi7aFsjgsKD4g_oT4D3Xg&usqp=CAU"
+        ]
+      },
+      4: {
+        title: "Tech Industrial Park",
+        category: "Industrial",
+        description: "A state-of-the-art industrial park designed for tech companies, featuring robust infrastructure and sustainable design.",
+        features: ["Large Warehouses", "Energy-Efficient Systems", "24/7 Security"],
+        images: [
+          "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://www.home-designing.com/wp-content/uploads/2021/07/industrial-living-room.jpg",
+          "https://images.adsttc.com/media/images/632f/17ae/e423/5301/6ed2/d554/newsletter/not-ready-techstorm-headquarter-industrial-park-duts-design_11.jpg?1664030718",
+          "https://images.adsttc.com/media/images/632f/17af/e423/5301/6ed2/d556/large_jpg/not-ready-techstorm-headquarter-industrial-park-duts-design_9.jpg?1664030683",
+          "https://images.adsttc.com/media/images/632f/17ac/422f/0753/3de2/3fef/medium_jpg/not-ready-techstorm-headquarter-industrial-park-duts-design_17.jpg?1664030664",
+          "https://static.designboom.com/wp-content/uploads/2021/03/duts-design-floating-office-renovation-project-shanghai-designboom-700-250x200-22b08q85r448.jpg"
+        ]
+      },
+      5: {
+        title: "Pruthvi Residency",
+        category: "2BHK, Residential",
+        description: "A cozy 2BHK residential project in Bangalore, focusing on community living with modern amenities.",
+        features: ["2 Bedrooms", "Community Hall", "Play Area"],
+        images: [
+          "https://images.pexels.com/photos/1571470/pexels-photo-1571470.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://images.nobroker.in/images/ff8081816d6e0056016d6e8542283249/ff8081816d6e0056016d6e8542283249_44720_698530_large.jpg",
+          "https://www.prathviresidency.com/images/m1.jpg",
+          "https://www.prathviresidency.com/images/m3.jpg",
+          "https://www.prathviresidency.com/images/b4.jpg",
+          "https://www.prathviresidency.com/images/b3.jpg"
+        ]
+      },
+      6: {
+        title: "Skyline Towers",
+        category: "3BHK, Residential",
+        description: "A high-rise 3BHK residential project offering panoramic views and luxury living in Bangalore.",
+        features: ["3 Bedrooms", "Infinity Pool", "Concierge Services"],
+        images: [
+          "https://images.pexels.com/photos/164558/pexels-photo-164558.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1200/s3/2/94336/eb6751e4-cb3f-4f97-94ad-ccad31b75002.jpg",
+          "https://encrypted-tbn0.gstatic.com/images?q=RYFCN2RTWM-uPSQF_mUyMLDZPme08cj8UcCkXrliy94GDRvYZ42xb6c11LQ-AMM&usqp=CAU",
+          "https://photos.zillowstatic.com/fp/db530549226b5e7ae4f6f0bd95509922-p_i.jpg",
+          "https://photos.zillowstatic.com/fp/077df24c0fea5299aad22550e5a91d87-p_i.jpg"
+        ]
+      }
+    };
+
+    function openModal(projectId) {
+      const project = projects[projectId];
+      const modalImages = document.getElementById('modal-images');
+      const dots = document.querySelectorAll('.slider-dot');
+      document.getElementById('modal-title').textContent = project.title;
+      document.getElementById('modal-category').textContent = project.category;
+      document.getElementById('modal-description').textContent = project.description;
+      document.getElementById('modal-image-1').src = project.images[0] || '';
+      document.getElementById('modal-image-2').src = project.images[1] || '';
+      document.getElementById('modal-image-3').src = project.images[2] || '';
+      document.getElementById('modal-image-4').src = project.images[3] || '';
+      document.getElementById('modal-image-5').src = project.images[4] || '';
+      document.getElementById('modal-image-6').src = project.images[5] || '';
+      const featuresList = document.getElementById('modal-features');
+      featuresList.innerHTML = '';
+      project.features.forEach(feature => {
+        const li = document.createElement('li');
+        li.textContent = feature;
+        featuresList.appendChild(li);
+      });
+
+      // Initialize slider
+      totalSlides = project.images.length;
+      currentSlide = 0;
+      modalImages.style.transform = `translateX(0)`;
+      dots.forEach(dot => {
+        dot.style.display = project.images[dot.getAttribute('data-index')] ? 'block' : 'none';
+        dot.classList.remove('active');
+      });
+      if (dots[0]) dots[0].classList.add('active');
+
+      // Start auto-slide
+      clearInterval(slideInterval);
+      slideInterval = setInterval(() => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        modalImages.style.transform = `translateX(-${currentSlide * 100}%)`;
+        dots.forEach(dot => dot.classList.remove('active'));
+        if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+      }, 3000);
+
+      // Add dot click functionality
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          currentSlide = parseInt(dot.getAttribute('data-index'));
+          modalImages.style.transform = `translateX(-${currentSlide * 100}%)`;
+          dots.forEach(d => d.classList.remove('active'));
+          dot.classList.add('active');
+          clearInterval(slideInterval);
+          slideInterval = setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            modalImages.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach(d => d.classList.remove('active'));
+            if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+          }, 3000);
+        });
+      });
+
+      document.getElementById('project-modal').style.display = 'block';
+    }
+
+    function changeSlide(direction) {
+      const modalImages = document.getElementById('modal-images');
+      const dots = document.querySelectorAll('.slider-dot');
+      currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+      modalImages.style.transform = `translateX(-${currentSlide * 100}%)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+      clearInterval(slideInterval);
+      slideInterval = setInterval(() => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        modalImages.style.transform = `translateX(-${currentSlide * 100}%)`;
+        dots.forEach(d => d.classList.remove('active'));
+        if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+      }, 3000);
+    }
+
+    function closeModal() {
+      clearInterval(slideInterval);
+      document.getElementById('project-modal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('project-modal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
   </script>
   <script src="auth.js"></script>
 </body>

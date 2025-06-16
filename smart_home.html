@@ -6,25 +6,20 @@
   <title>Living Walls - Creative Design Agency</title>
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="css/responsive.css"> <!--responsive-->
+  <link rel="stylesheet" href="css/responsive.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="auth.js"></script>
-
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="auth.js"></script>
   <link rel="stylesheet" href="styles.css">
-
 
 </head>
 <body>
+<!-- Cursor element for custom cursor effect -->
 
-<!-- Header HTML (to be included in all pages, e.g., index.html, packages.html, etc.) -->
 <header class="header">
   <div class="containerr">
     <div class="logo">
@@ -40,25 +35,20 @@
         <li><a href="design_packages.html" title="View Design Packages">Design Packages</a></li>
         <li><a href="calculator.html" title="Estimate Construction Cost">Cost Calculator</a></li>
         <li><a href="work.html" title="See Our Work">Our Work</a></li>
-
-        <!-- If you want to reuse the dropdown later, uncomment this -->
-         
-       <li class="dropdown">
+        <li class="dropdown">
           <a href="#" class="dropdown-toggle" title="More Options">More▾</a>
           <ul class="dropdown-content">
-              <li><a href="floorplans.html" title="Explore Floor Plans">Floor plans</a></li>
+            <li><a href="floorplans.html" title="Explore Floor Plans">Floor plans</a></li>
             <li><a href="Designs.html" title="Browse Designs">Designs</a></li>
             <li><a href="about.html" title="About Us">About us</a></li>
             <li><a href="contact.html" title="Contact Us">Contact us</a></li>
             <li><a href="blog.html" title="Visit Our Blog">Blogs</a></li>
-             <li><a href="Testimonials.html" title="Customer Testimonials">Testimonials</a></li>
+            <li><a href="Testimonials.html" title="Customer Testimonials">Testimonials</a></li>
             <li><a href="carrer.html" title="Careers">Careers</a></li>
             <li><a href="faq.html" title="Frequently Asked Questions">FAQ</a></li>
             <li><a href="policies.html" title="Careers">Policies</a></li>
-
           </ul>
         </li>
-      
       </ul>
     </nav>
     <div class="right-buttons">
@@ -70,9 +60,8 @@
   </div>
 </header>
 
-
 <script>
-    window.addEventListener('scroll', function () {
+  window.addEventListener('scroll', function () {
     const header = document.querySelector('.header');
     if (window.scrollY > 50) {
       header.classList.add('scrolled');
@@ -93,421 +82,367 @@
 
 
 
-<!-- Main Content -->
-    <style>
-  
 
-        .post-container {
-            max-width: 1200px;
-            margin: clamp(80px, 15vh, 100px) auto 2rem;
-            padding: 0 clamp(0.5rem, 2vw, 1rem);
-            display: flex;
-            gap: clamp(1rem, 3vw, 2rem);
-        }
+  <style>
+    /* Apply Playfair Display font */
+    body {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      line-height: 1.6;
+      color: #333;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display';
+      font-weight: bold;
+    }
+    
+    
 
-        .main-content {
-            flex: 3;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            opacity: 0;
-            animation: fadeIn 1s ease forwards;
-        }
-
-        .post-header img {
-            width: 100%;
-            height: clamp(200px, 50vw, 400px);
-            object-fit: cover;
-            border-radius: 8px 8px 0 0;
-        }
-
-        .post-content {
-            padding: clamp(1rem, 3vw, 2rem);
-        }
-
-        .post-content h1 {
-            font-size: clamp(1.5rem, 5vw, 2rem);
-            color: #1a1a1a;
-            margin-bottom: 1rem;
-        }
-
-        .post-content p {
-            font-size: clamp(1.265rem, 3vw, 1.4rem);
-            line-height: 1.6;
-            color: #555;
-            margin-bottom: 2.5rem;
-        }
-
-        .post-content h2 {
-            font-size: clamp(2.2rem, 4vw, 1.5rem);
-            color: #1a1a1a;
-            margin: 1.5rem 0 1rem;
-        }
-
-        .post-content ul {
-            list-style: disc;
-            padding-left: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .post-content ul li {
-            font-size: clamp(1.165rem, 3vw, 1rem);
-            color: #555;
-            margin-bottom: 0.5rem;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 30vw, 200px), 1fr));
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .gallery img {
-            width: 100%;
-            height: clamp(100px, 25vw, 150px);
-            object-fit: cover;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            loading: lazy;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
-            background-color: #d4af37;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-            font-size: clamp(0.9rem, 3vw, 1rem);
-            touch-action: manipulation;
-        }
-
-        .cta-button:hover {
-            background-color: #b8972e;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            order: -1;
-            flex: 1;
-            position: sticky;
-            top: clamp(80px, 15vh, 100px);
-            padding: 1rem;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            height: fit-content;
-        }
-
-        .sidebar h3 {
-            font-size: clamp(1.8rem, 7vw, 2.2rem);
-            color: #1a1a1a;
-            margin-bottom: 1rem;
-        }
-
-        .sidebar ul {
-            list-style: none;
-        }
-
-        .sidebar ul li {
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .sidebar ul li a {
-            color: #d4af37;
-            text-decoration: none;
-            font-size: clamp(1.2rem, 3vw, 1.3rem);
-            transition: color 0.3s ease;
-            padding: 0.6rem;
-            display: block;
-            touch-action: manipulation;
-        }
-
-        .sidebar ul li a:hover {
-            color: #b8972e;
-        }
-
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            touch-action: none;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 8px;
-        }
-
-        .lightbox .close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            color: #fff;
-            font-size: clamp(1.5rem, 5vw, 2rem);
-            cursor: pointer;
-            padding: 0.5rem;
-            touch-action: manipulation;
-        }
-
+    /* Existing inline styles (unchanged) */
+    .post-container {
+      max-width: 1200px;
+      margin: clamp(80px, 15vh, 100px) auto 2rem;
+      padding: 0 clamp(0.5rem, 2vw, 1rem);
+      display: flex;
+      gap: clamp(1rem, 3vw, 2rem);
+    }
+    .main-content {
+      flex: 3;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+    .post-header img {
+      width: 100%;
+      height: clamp(200px, 50vw, 400px);
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+    }
+    .post-content {
+      padding: clamp(1rem, 3vw, 2rem);
+    }
+    .post-content h1 {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      color: #1a1a1a;
+      margin-bottom: 1rem;
+    }
+    .post-content p {
+      font-size: clamp(1.265rem, 3vw, 1.4rem);
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 2.5rem;
+    }
+    .post-content h2 {
+      font-size: clamp(2.2rem, 4vw, 1.5rem);
+      color: #1a1a1a;
+      margin: 1.5rem 0 1rem;
+    }
+    .post-content ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .post-content ul li {
+      font-size: clamp(1.165rem, 3vw, 1rem);
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 30vw, 200px), 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .gallery img {
+      width: 100%;
+      height: clamp(100px, 25vw, 150px);
+      object-fit: cover;
+      border-radius: 4px;
      
-
-        /* Animations */
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 0.5rem 1rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .post-container {
-                flex-direction: column;
-            }
-
-            .main-content {
-                order: 1;
-            }
-
-            .sidebar {
-                order: 0;
-                position: static;
-                margin: 1rem 0;
-            }
-
-            .post-header img {
-                height: clamp(150px, 40vw, 250px);
-            }
-
-            .post-content h1 {
-                font-size: clamp(1.2rem, 4vw, 1.5rem);
-            }
-
-            .post-content h2 {
-                font-size: clamp(1rem, 3.5vw, 1.2rem);
-            }
-
-            .post-content p, .post-content ul li {
-                font-size: clamp(0.8rem, 2.5vw, 0.9rem);
-            }
-
-            .gallery img {
-                height: clamp(80px, 20vw, 120px);
-            }
-
-            .cta-button {
-                width: 100%;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: clamp(1.2rem, 4vw, 1.5rem);
-            }
-
-            nav ul li a {
-                font-size: clamp(0.8rem, 2.5vw, 0.9rem);
-            }
-
-            .post-container {
-                margin: 60px auto 1rem;
-            }
-
-            .sidebar {
-                margin: 0.5rem 0;
-            }
-        }
-    </style>
-
-    <!-- Replace with your header -->
-
-
-    <div class="post-container">
-        <div class="main-content">
-            <div class="post-header">
-                <img src="https://www.hindustantimes.com/ht-img/img/2025/01/02/550x309/smart_home_1735808373046_1735808373237.jpg" alt="Raintree House Chennai" loading="lazy">
-            </div>
-            <div class="post-content">
-                <h1>Transform your home and make it smart, accessible and convenient at the tap of your fingertips. </h1>
-                <p>It is undeniable that the year 2025 is a big milestone. It feels futuristic and may even induce an existential crisis. But the good news, we are already caught up with the tech game. Devices and gadgets boast cutting-edge technology and innovation with the omnipresent AI as one of the core catalysts.</p>
-                
-                <h2 id="architecture"> AI to simplifying activities with smart tech</h2>
-                <p>From seeking personalised recommendations daily from AI to simplifying activities with smart tech, people are already tech-savvy. It’s time to see if your home is future-ready. In an interview with HT, Sonali Ashar, Founder of Sonali Ashar Designs explained how one can make their home smart and integrate smart technology into their interiors.</p>
-                
-                <h2 id="climate">Eco-friendly climate control</h2>
-                <p>No need to fuss over the thermostats anymore by manually fixing the home temperature. Sonali recommended smart thermostats that learn user preferences and adjust heating or cooling accordingly. These systems not only help reduce energy costs but also contribute to sustainability efforts. Studies have revealed that homeowners can save up to 10-15% on heating and cooling bills just by switching to a smart thermostat.<br>
-
-                She further advised, “Integrate climate control with automated window shades to optimise natural ventilation and light while minimising energy consumption.”</p>
-                
-                <h2 id="interiors">Smart security and access control</h2>
-                <p>The convenience and efficiency of smart tech can be used to amp up the security at home. Sonali recommended installing biometric locks, facial recognition systems, and smart cameras to enhance home security. These advanced systems allow one to monitor their home from anywhere, at any time and include alarms that alert the homeowners in case of an emergency. For the aesthetic function, she advised designing these elements to blend seamlessly with the overall style, using finishes and colours that complement the interiors.</p>
-                
-                <h2 id="features">Key Features</h2>
-                <ul>
-                    <li>Home automation hubs</li>
-                    <li>Smart security systems</li>
-                    <li>Smart energy monitoring</li>
-                    <li>Intelligent detection and water management</li>
-                    <li>Increased convenience</li>
-                    <li>Proactive maintenance</li>
-                   
-                </ul>
-                
-                <h2 id="gallery">Gallery</h2>
-                <div class="gallery">
-                    <img src="https://www.hindustantimes.com/ht-img/img/2025/01/02/original/smart_thermostat_1735808513896.jpg" alt="Living Room" data-full="https://via.placeholder.com/1000x600?text=Living+Room" loading="lazy">
-                    <img src="https://www.hindustantimes.com/ht-img/img/2025/01/02/original/smart_security_1735808573140.jpg" alt="Koi Pond" data-full="https://via.placeholder.com/1000x600?text=Koi+Pond" loading="lazy">
-                    <img src="https://remax.eu/wp-content/uploads/2025/03/AdobeStock_399692901-1024x683.jpeg" alt="Master Bedroom" data-full="https://via.placeholder.com/1000x600?text=Master+Bedroom" loading="lazy">
-                    <img src="https://cdn.shopify.com/s/files/1/0504/7094/4954/files/philips-hue-smart-lighting-system_480x480.jpg?v=1696745996" alt="Entrance Court" data-full="https://via.placeholder.com/1000x600?text=Entrance+Court" loading="lazy">
-                    <img src="https://nswlive.com.au/wp-content/uploads/2024/07/1694419912441.jpeg" alt="Entrance Court" data-full="https://via.placeholder.com/1000x600?text=Entrance+Court" loading="lazy">
-                    <img src="https://cdn.mos.cms.futurecdn.net/im8Skb4bL2GiMQkuyaeRig.png" alt="Entrance Court" data-full="https://via.placeholder.com/1000x600?text=Entrance+Court" loading="lazy">
-                   
-                </div>
-                
-                <h2 id="why">Why Smart Homes is the future ? </h2>
-                <p>One of the main reasons smart homes are gaining popularity in India is the rise of the Internet of Things (IoT) and the increasing availability of affordable and reliable technology. The IoT refers to the network of devices connected to the internet that can communicate with each other, creating a seamless and automated experience. Smart homes rely on IoT devices to automate household tasks and provide homeowners with remote access to their homes.
-
-                            <br>
-                As technology advances, our lives are becoming more connected and automated, and nowhere is this more evident than in the home. Smart homes, equipped with internet-connected devices, allow for the automation of various household tasks, making life easier and more convenient.</p>
-                
-                <a href="contact.html" class="cta-button" aria-label="Inquire about Raintree House">Inquire Now</a>
-            </div>
-        </div>
-        <div class="sidebar">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="#architecture" aria-label="Go to Architectural Vision section">Transform your home</a></li>
-                <li><a href="#climate" aria-label="Go to Climate-Responsive Design section">Simplifying Activities</a></li>
-                <li><a href="#interiors" aria-label="Go to Luxurious Interiors section">Eco-friendly climate </a></li>
-                <li><a href="#features" aria-label="Go to Key Features section">Smart security and access s</a></li>
-                <li><a href="#gallery" aria-label="Go to Gallery section">Gallery</a></li>
-                <li><a href="#why" aria-label="Go to Why Raintree House section">Why Smart Homes is the future?</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="lightbox" id="lightbox">
-        <span class="close" onclick="closeLightbox()" aria-label="Close lightbox">×</span>
-        <img src="https://luxury-houses.net/wp-content/uploads/2022/07/Raintree-House-a-climate-responsive-Chennai-home-by-Khosla-Associates-14.jpg" id="lightbox-img" alt="Full-size gallery image">
-    </div>
-
+      transition: transform 0.3s ease;
+      loading: lazy;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .cta-button {
+      display: inline-block;
+      padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
+      background-color: #d4af37;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      font-size: clamp(0.9rem, 3vw, 1rem);
+      touch-action: manipulation;
+    }
+    .cta-button:hover {
+      background-color: #b8972e;
+    }
+    .sidebar {
+      order: -1;
+      flex: 1;
+      position: sticky;
+      top: clamp(80px, 15vh, 100px);
+      padding: 1rem;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      height: fit-content;
+    }
+    .sidebar h3 {
+      font-size: clamp(1.8rem, 7vw, 2.2rem);
+      color: #1a1a1a;
+      margin-bottom: 1rem;
+    }
+    .sidebar ul {
+      list-style: none;
+    }
+    .sidebar ul li {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+    .sidebar ul li a {
+      color: #d4af37;
+      text-decoration: none;
+      font-size: clamp(1.2rem, 3vw, 1.3rem);
+      transition: color 0.3s ease;
+      padding: 0.6rem;
+      display: block;
+      touch-action: manipulation;
+    }
+    .sidebar ul li a:hover {
+      color: #b8972e;
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      touch-action: none;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+    }
+    .lightbox .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #fff;
+      font-size: clamp(1.5rem, 5vw, 2rem);
      
-    
-<!--End FAQ's-->
-    <!--footer section -->
-    <footer class="footer">
-      <div class="footercontainer">
-        <div class="footer-sections">
-          <!-- Column 1: Constructions -->
-          <div class="footer-column">
-            <h3>Constructions</h3>
-            <ul>
-              <li><a href="#residential">Residential Construction</a></li>
-              <li><a href="#commercial">Commercial Construction</a></li>
-              <li><a href="#home">Home Construction</a></li>
-              <li><a href="#farmhouse">Farm House Construction</a></li>
-              <li><a href="#addfloor">Add New Floor</a></li>
-              <li><a href="#duplex">Duplex Home Construction</a></li>
-              <li><a href="#independent">Independent House Construction</a></li>
-              <li><a href="#villa">Villa Construction</a></li>
-              <li><a href="#luxury">Luxury Home Construction</a></li>
-              <li><a href="#cost">Cost of New Home Construction</a></li>
-            </ul>
-          </div>
-    
-          <!-- Column 2: Interiors -->
-          <div class="footer-column">
-            <h3>Interiors</h3>
-            <ul>
-              <li><a href="#res-interior">Residential Interior Design</a></li>
-              <li><a href="#living">Living Room Interior Design</a></li>
-              <li><a href="#kitchen">Kitchen Interior Design</a></li>
-              <li><a href="#bedroom">Bedroom Interior Design</a></li>
-              <li><a href="#bathroom">Bathroom Interior Design</a></li>
-              <li><a href="#office">Office Interior Design</a></li>
-              <li><a href="#commercial-interior">Commercial Interior Design</a></li>
-              <li><a href="#apartment">Apartment Interior Design</a></li>
-            </ul>
-          </div>
-    
-          <!-- Column 3: Calculator -->
-          <div class="footer-column">
-            <h3>Calculator</h3>
-            <ul>
-              <li><a href="#res-cost">Residential Cost Estimator</a></li>
-              <li><a href="#comm-cost">Commercial Cost Estimator</a></li>
-              <li><a href="#interior-cost">Interior Cost Estimator</a></li>
-            </ul>
-            <h3>Packages</h3>
-            <ul>
-              <li><a href="#luxury">Luxury</a></li>
-              <li><a href="#commercial">Commercial</a></li>
-              <li><a href="#interior">Interior</a></li>
-            </ul>
-          </div>
-    
-          <!-- Column 4: Info -->
-          <div class="footer-column">
-            <h3>Your Floor Plan Solution</h3>
-            <p>Find the perfect floor plan for your dream home. We offer a wide selection of customizable designs from top architects and designers.</p>
-    
-            <h4>Get in Touch</h4>
-            <p><a href="tel:+919739011656">+91 9739011656</a><br>
-               <a href="mailto:rajashekarreddy@livinwalls.com">rajashekarreddy@livinwalls.com</a>
-            </p>
-    
-            <h4>Social</h4>
-            <div class="social-icons">
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Optional links -->
-        <div class="footer-links">
-          <a href="#support">Support</a>
-          <a href="#terms">Terms & Services</a>
-          <a href="#privacy">Privacy & Policy</a>
+      padding: 0.5rem;
+      touch-action: manipulation;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0.5rem 1rem;
+      }
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      .post-container {
+        flex-direction: column;
+      }
+      .main-content {
+        order: 1;
+      }
+      .sidebar {
+        order: 0;
+        position: static;
+        margin: 1rem 0;
+      }
+      .post-header img {
+        height: clamp(150px, 40vw, 250px);
+      }
+      .post-content h1 {
+        font-size: clamp(1.2rem, 4vw, 1.5rem);
+      }
+      .post-content h2 {
+        font-size: clamp(1rem, 3.5vw, 1.2rem);
+      }
+      .post-content p, .post-content ul li {
+        font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+      }
+      .gallery img {
+        height: clamp(80px, 20vw, 120px);
+      }
+      .cta-button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: clamp(1.2rem, 4vw, 1.5rem);
+      }
+      nav ul li a {
+        font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+      }
+      .post-container {
+        margin: 60px auto 1rem;
+      }
+      .sidebar {
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
+
+<!-- main content-->
+
+<div class="post-container">
+  <div class="main-content">
+    <div class="post-header">
+      <img src="https://www.hindustantimes.com/ht-img/img/2025/01/02/550x309/smart_home_1735808373046_1735808373237.jpg" alt="Raintree House Chennai" loading="lazy">
+    </div>
+    <div class="post-content">
+      <h1>Transform your home and make it smart, accessible and convenient at the tap of your fingertips. </h1>
+      <p>It is undeniable that the year 2025 is a big milestone. It feels futuristic and may even induce an existential crisis. But the good news, we are already caught up with the tech game. Devices and gadgets boast cutting-edge technology and innovation with the omnipresent AI as one of the core catalysts.</p>
+      
+      <h2 id="architecture"> AI to simplifying activities with smart tech</h2>
+      <p>From seeking personalised recommendations daily from AI to simplifying activities with smart tech, people are already tech-savvy. It’s time to see if your home is future-ready. In an interview with HT, Sonali Ashar, Founder of Sonali Ashar Designs explained how one can make their home smart and integrate smart technology into their interiors.</p>
+      
+      <h2 id="climate">Eco-friendly climate control</h2>
+      <p>No need to fuss over the thermostats anymore by manually fixing the home temperature. Sonali recommended smart thermostats that learn user preferences and adjust heating or cooling accordingly. These systems not only help reduce energy costs but also contribute to sustainability efforts. Studies have revealed that homeowners can save up to 10-15% on heating and cooling bills just by switching to a smart thermostat.<br>
+      She further advised, “Integrate climate control with automated window shades to optimise natural ventilation and light while minimising energy consumption.”</p>
+      
+      <h2 id="interiors">Smart security and access control</h2>
+      <p>The convenience and efficiency of smart tech can be used to amp up the security at home. Sonali recommended installing biometric locks, facial recognition systems, and smart cameras to enhance home security. These advanced systems allow one to monitor their home from anywhere, at any time and include alarms that alert the homeowners in case of an emergency. For the aesthetic function, she advised designing these elements to blend seamlessly with the overall style, using finishes and colours that complement the interiors.</p>
+      
+      <h2 id="features">Key Features</h2>
+      <ul>
+        <li>Home automation hubs</li>
+        <li>Smart security systems</li>
+        <li>Smart energy monitoring</li>
+        <li>Intelligent detection and water management</li>
+        <li>Increased convenience</li>
+        <li>Proactive maintenance</li>
+      </ul>
+      
+      <h2 id="gallery">Gallery</h2>
+      <div class="gallery">
+        <img src="https://www.hindustantimes.com/ht-img/img/2025/01/02/original/smart_thermostat_1735808513896.jpg" alt="Living Room" data-full="https://via.placeholder.com/1000x600?text=Living+Room" loading="lazy">
+        <img src="https://www.hindustantimes.com/ht-img/img/2025/01/02/original/smart_security_1735808573140.jpg" alt="Koi Pond" data-full="https://via.placeholder.com/1000x600?text=Koi+Pond" loading="lazy">
+        <img src="https://remax.eu/wp-content/uploads/2025/03/AdobeStock_399692901-1024x683.jpeg" alt="Master Bedroom" data-full="https://via.placeholder.com/1000x600?text=Master+Bedroom" loading="lazy">
+        <img src="https://cdn.shopify.com/s/files/1/0504/7094/4954/files/philips-hue-smart-lighting-system_480x480.jpg?v=1696745996" alt="Entrance Court" data-full="https://via.placeholder.com/1000x600?text=Entrance+Court" loading="lazy">
+        <img src="https://nswlive.com.au/wp-content/uploads/2024/07/1694419912441.jpeg" alt="Entrance Court" data-full="https://via.placeholder.com/1000x600?text=Entrance+Court" loading="lazy">
+        <img src="https://cdn.mos.cms.futurecdn.net/im8Skb4bL2GiMQkuyaeRig.png" alt="Entrance Court" data-full="https://via.placeholder.com/1000x600?text=Entrance+Court" loading="lazy">
+      </div>
+      
+      <h2 id="why">Why Smart Homes is the future ? </h2>
+      <p>One of the main reasons smart homes are gaining popularity in India is the rise of the Internet of Things (IoT) and the increasing availability of affordable and reliable technology. The IoT refers to the network of devices connected to the internet that can communicate with each other, creating a seamless and automated experience. Smart homes rely on IoT devices to automate household tasks and provide homeowners with remote access to their homes.
+      <br>
+      As technology advances, our lives are becoming more connected and automated, and nowhere is this more evident than in the home. Smart homes, equipped with internet-connected devices, allow for the automation of various household tasks, making life easier and more convenient.</p>
+      
+      <a href="contact.html" class="cta-button" aria-label="Inquire about Raintree House">Inquire Now</a>
+    </div>
+  </div>
+  <div class="sidebar">
+    <h3>Quick Links</h3>
+    <ul>
+      <li><a href="#architecture" aria-label="Go to Architectural Vision section">Transform your home</a></li>
+      <li><a href="#climate" aria-label="Go to Climate-Responsive Design section">Simplifying Activities</a></li>
+      <li><a href="#interiors" aria-label="Go to Luxurious Interiors section">Eco-friendly climate </a></li>
+      <li><a href="#features" aria-label="Go to Key Features section">Smart security and access s</a></li>
+      <li><a href="#gallery" aria-label="Go to Gallery section">Gallery</a></li>
+      <li><a href="#why" aria-label="Go to Why Raintree House section">Why Smart Homes is the future?</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <span class="close" onclick="closeLightbox()" aria-label="Close lightbox">×</span>
+  <img src="https://luxury-houses.net/wp-content/uploads/2022/07/Raintree-House-a-climate-responsive-Chennai-home-by-Khosla-Associates-14.jpg" id="lightbox-img" alt="Full-size gallery image">
+</div>
+
+<footer class="footer">
+  <div class="footercontainer">
+    <div class="footer-sections">
+      <div class="footer-column">
+        <h3>Constructions</h3>
+        <ul>
+          <li><a href="#residential">Residential Construction</a></li>
+          <li><a href="#commercial">Commercial Construction</a></li>
+          <li><a href="#home">Home Construction</a></li>
+          <li><a href="#farmhouse">Farm House Construction</a></li>
+          <li><a href="#addfloor">Add New Floor</a></li>
+          <li><a href="#duplex">Duplex Home Construction</a></li>
+          <li><a href="#independent">Independent House Construction</a></li>
+          <li><a href="#villa">Villa Construction</a></li>
+          <li><a href="#luxury">Luxury Home Construction</a></li>
+          <li><a href="#cost">Cost of New Home Construction</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Interiors</h3>
+        <ul>
+          <li><a href="#res-interior">Residential Interior Design</a></li>
+          <li><a href="#living">Living Room Interior Design</a></li>
+          <li><a href="#kitchen">Kitchen Interior Design</a></li>
+          <li><a href="#bedroom">Bedroom Interior Design</a></li>
+          <li><a href="#bathroom">Bathroom Interior Design</a></li>
+          <li><a href="#office">Office Interior Design</a></li>
+          <li><a href="#commercial-interior">Commercial Interior Design</a></li>
+          <li><a href="#apartment">Apartment Interior Design</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Calculator</h3>
+        <ul>
+          <li><a href="#res-cost">Residential Cost Estimator</a></li>
+          <li><a href="#comm-cost">Commercial Cost Estimator</a></li>
+          <li><a href="#interior-cost">Interior Cost Estimator</a></li>
+        </ul>
+        <h3>Packages</h3>
+        <ul>
+          <li><a href="#luxury">Luxury</a></li>
+          <li><a href="#commercial">Commercial</a></li>
+          <li><a href="#interior">Interior</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Your Floor Plan Solution</h3>
+        <p>Find the perfect floor plan for your dream home. We offer a wide selection of customizable designs from top architects and designers.</p>
+        <h4>Get in Touch</h4>
+        <p><a href="tel:+919739011656">+91 9739011656</a><br>
+           <a href="mailto:rajashekarreddy@livinwalls.com">rajashekarreddy@livinwalls.com</a>
+        </p>
+        <h4>Social</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
-      </div>
-    </footer>
-    <hr>
-    
+    </div>
+    <div class="footer-links">
+      <a href="#support">Support</a>
+      <a href="#terms">Terms & Services</a>
+      <a href="#privacy">Privacy & Policy</a>
+    </div>
+  </div>
+</footer>
+<hr>
 
-    <!-- New Footer Section -->
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-row">
@@ -552,13 +487,10 @@
         </ul>
       </div>
     </div>
-    
   </div>
 </footer>
 <hr>
 
-
-<!-- Living WallsConstruction - Extended Footer Section -->
 <section class="extended-footer">
   <div class="ext-container">
     <div class="ext-section">
@@ -569,7 +501,6 @@
         designed layouts that balance style, strength, and functionality.
       </p>
     </div>
-
     <div class="ext-section">
       <h2>Why Choose Our Plans?</h2>
       <p>
@@ -578,9 +509,7 @@
         structurally sound and compliant with modern construction standards.
       </p>
     </div>
-    
     <div class="ext-section">
-
       <h3>Our Services</h3>
       <ul class="ext-services">
         <li>Residential Floor Plan Design</li>
@@ -594,10 +523,9 @@
       </ul>
     </div>
   </div>
-  <hr>
+</section>
+<hr>
 
-
-<!-- Living Walls Construction - Services Footer Section B2B -->
 <section class="construction-footer">
   <div class="footer-content">
     <h2>B2B Construction Services</h2>
@@ -605,76 +533,69 @@
       Partner with Living Walls Construction for commercial building solutions. With over 800 contractors and 470+ quality checks,
       we deliver robust, scalable commercial spaces that empower businesses to grow with confidence.
     </p>
-
     <h3>Commercial Construction</h3>
     <p>
       Our team crafts commercial spaces designed for optimal productivity, ensuring every square foot serves your business goals.
     </p>
-
     <h3>Warehouse Construction</h3>
     <p>
       We build secure, accessible warehouses engineered to preserve and manage inventory efficiently.
     </p>
-
     <h3>Retail Construction</h3>
     <p>
       Our designers create dynamic retail environments that enhance customer engagement and streamline shopping experiences.
     </p>
-
     <h3>Hospital Construction</h3>
     <p>
       Constructing hospitals that combine medical functionality with safety and comfort, customized for both patients and staff.
     </p>
-
     <h3>Hospitality Construction</h3>
     <p>
       We design memorable hospitality spaces that prioritize guest experience, ambiance, and operational flow.
     </p>
-
     <h3>School Construction</h3>
     <p>
       Building schools that foster creativity, learning, and growth — aligned with modern education needs and safety standards.
     </p>
     <br>
-    <hr> <br>
+    <hr>
+    <br>
     <h3>Locations</h3>
     <p class="location-text">
       House Construction in Bengaluru, Chennai, Mysuru, NCR Faridabad, NCR Ghaziabad, NCR Noida, NCR Delhi, NCR Gurgaon, Hyderabad, Pune, Hubli
     </p>
-
-
   </div>
-
   <div class="footer-bottom">
     <p>
-      Copyright &copy;
+      Copyright ©
       <script>document.write(new Date().getFullYear());</script> All Rights Reserved | Powered by <a href="https://meghplat.com/" target="_blank" class="text-primary">Meghplat Analytics</a>
-  </p>
+    </p>
   </div>
 </section>
 
- <!--EndB2B-->
+<script>
+  // Fix: Update .menu-toggle to .hamburger
+  document.querySelector('.hamburger').addEventListener('click', function() {
+    document.querySelector('.nav').classList.toggle('nav--active');
+    this.classList.toggle('menu-toggle--active');
+  });
 
-  <script>
-    // Simple script for the mobile menu toggle
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-      document.querySelector('.nav').classList.toggle('nav--active');
-      this.classList.toggle('menu-toggle--active');
-    });
 
-    // Custom cursor
-    const cursor = document.querySelector('.cursor');
-    
-    document.addEventListener('mousemove', e => {
-      cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
+
+  // Lightbox functionality
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+
+  document.querySelectorAll('.gallery img').forEach(img => {
+    img.addEventListener('click', () => {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = img.dataset.full;
+      lightboxImg.alt = img.alt;
+      lightbox.style.display = 'flex';
     });
-    
-    document.addEventListener('click', () => {
-      cursor.classList.add("cursor--expand");
-      setTimeout(() => {
-        cursor.classList.remove("cursor--expand");
-      }, 500);
-    });
-  </script>
+  });
+</script>
 </body>
 </html>

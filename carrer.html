@@ -4,20 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Living Walls - Creative Design Agency</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="css/responsive.css"> <!--responsive-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
- <!-- Header HTML (to be included in all pages, e.g., index.html, packages.html, etc.) -->
+  <link rel="stylesheet" href="css/responsive.css">
 
- <header class="header">
+  <!-- External Libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.11.4/dist/framer-motion.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="auth.js"></script>
+
+  <style>
+    
+  </style>
+</head>
+
+<body>
+
+<!-- Header HTML (to be included in all pages) -->
+<header class="header">
   <div class="containerr">
     <div class="logo">
       <a href="index.html" aria-label="Go to LivinWalls homepage">
@@ -25,34 +37,32 @@
       </a>
     </div>
     <button class="hamburger" aria-label="Toggle Menu">☰</button>
+
     <nav class="nav" aria-label="Main Navigation">
       <ul class="nav__list">
         <li><a href="index.html" title="Home Page">Home</a></li>
+        <li><a href="#how-it-works" title="How LivinWalls Works">How it Works</a></li>
         <li><a href="packages.html" title="View Construction Packages">Construction Packages</a></li>
         <li><a href="design_packages.html" title="View Design Packages">Design Packages</a></li>
         <li><a href="calculator.html" title="Estimate Construction Cost">Cost Calculator</a></li>
         <li><a href="work.html" title="See Our Work">Our Work</a></li>
-
-        <!-- If you want to reuse the dropdown later, uncomment this -->
-     
-      <li class="dropdown">
+        <li class="dropdown">
           <a href="#" class="dropdown-toggle" title="More Options">More▾</a>
           <ul class="dropdown-content">
-              <li><a href="floorplans.html" title="Explore Floor Plans">Floor plans</a></li>
+            <li><a href="floorplans.html" title="Explore Floor Plans">Floor plans</a></li>
             <li><a href="Designs.html" title="Browse Designs">Designs</a></li>
             <li><a href="about.html" title="About Us">About us</a></li>
             <li><a href="contact.html" title="Contact Us">Contact us</a></li>
-             <li><a href="blog.html" title="Visit Our Blog">Blogs</a></li>
-             <li><a href="Testimonials.html" title="Customer Testimonials">Testimonials</a></li>
+            <li><a href="blog.html" title="Visit Our Blog">Blogs</a></li>
+            <li><a href="Testimonials.html" title="Customer Testimonials">Testimonials</a></li>
             <li><a href="carrer.html" title="Careers">Careers</a></li>
             <li><a href="faq.html" title="Frequently Asked Questions">FAQ</a></li>
-            <li><a href="policies.html" title="Careers">Policies</a></li>
-
+            <li><a href="policies.html" title="Policies">Policies</a></li>
           </ul>
         </li>
-     
       </ul>
     </nav>
+
     <div class="right-buttons">
       <a href="GetQuote.html" class="get-quote" title="Get a Quote from LivinWalls">Lets Talk</a>
       <a href="login.html" class="login-link" id="login-link" title="Login to Your Account">
@@ -62,9 +72,8 @@
   </div>
 </header>
 
-
 <script>
-    window.addEventListener('scroll', function () {
+  window.addEventListener('scroll', function () {
     const header = document.querySelector('.header');
     if (window.scrollY > 50) {
       header.classList.add('scrolled');
@@ -83,384 +92,350 @@
   });
 </script>
 
+<!-- Floating WhatsApp Button -->
+<div class="whatsapp-button-container">
+  <a href="https://wa.me/919146478677" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <img src="https://techfocus24.com/wp-content/uploads/2021/01/whatsapp-button.png" alt="WhatsApp Button" class="whatsapp-button-image" />
+  </a>
+</div>
 
-
- <!-- Floating WhatsApp Button -->
-  <div class="whatsapp-button-container">
-    <a href="https://wa.me/919146478677" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
-      <img src="https://techfocus24.com/wp-content/uploads/2021/01/whatsapp-button.png" alt="WhatsApp Button" class="whatsapp-button-image" />
-    </a>
-  </div>
-
-  <!-- floating whats app -->
-   
-<!--hero section-->
-
-
+<!-- Hero Section -->
 <style>
-    /* General Reset */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+  body {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #333;
+  }
 
-    body {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        line-height: 1.6;
-        color: #333;
-    }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+  }
 
-    /* Container */
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-    }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
 
-    /* Hero Section */
-    .heroo {
-        background: linear-gradient(to bottom, #f7fafc, #edf2f7);
-        padding: 120px ;
-        text-align: center;
-        opacity: 0;
-        animation: fadeIn 1s ease-out forwards;
-    }
+  .heroo {
+    background: linear-gradient(to bottom, #f7fafc, #edf2f7);
+    padding: 120px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+  }
 
-    .heroo h1 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #1a202c;
-        margin-bottom: 1rem;
-    }
+  .heroo h1 {
+    font-size: 2.5rem;
+    color: #1a202c;
+    margin-bottom: 1rem;
+  }
 
-    .heroo p {
-        font-size: 1.125rem;
-        color: #4a5568;
-        margin-bottom: 2rem;
-    }
+  .heroo p {
+    font-size: 1.125rem;
+    color: #4a5568;
+    margin-bottom: 2rem;
+  }
 
-    .heroo a {
-        display: inline-block;
-        background: #ce3131;
-        color: white;
-        font-weight: 600;
-        padding: 0.75rem 1.5rem;
-        border-radius: 0.375rem;
-        text-decoration: none;
-        transition: background 0.3s ease, transform 0.2s ease;
-    }
+  .heroo a {
+    display: inline-block;
+    background: #ce3131;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
 
-    .heroo a:hover {
-        background: #f53a3a;
-        transform: translateY(-2px);
-    }
+  .heroo a:hover {
+    background: #f53a3a;
+    transform: translateY(-2px);
+  }
 
-    /* Culture Section */
-    .culture {
-        padding: 4rem 1rem;
-    }
+  .culture {
+    padding: 4rem 1rem;
+  }
 
-    .culture h2 {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #1a202c;
-        text-align: center;
-        margin-bottom: 2rem;
-        opacity: 0;
-        animation: slideUp 0.8s ease-out 0.3s forwards;
-    }
+  .culture h2 {
+    font-size: 2rem;
+    color: #1a202c;
+    text-align: center;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: slideUp 0.8s ease-out 0.3s forwards;
+  }
 
-    .culture p {
-    
-        color: #4a5568;
-        text-align: center;
-        margin-bottom: 3rem;
-    }
+  .culture p {
+    color: #4a5568;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
 
-    .culture .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-    }
+  .culture .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
 
-    .culture .grid div {
-        text-align: center;
-        opacity: 0;
-        animation: fadeInUp 0.8s ease-out forwards;
-    }
+  .culture .grid div {
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
 
-    .culture .grid div:nth-child(1) { animation-delay: 0.5s; }
-    .culture .grid div:nth-child(2) { animation-delay: 0.7s; }
-    .culture .grid div:nth-child(3) { animation-delay: 0.9s; }
+  .culture .grid div:nth-child(1) { animation-delay: 0.5s; }
+  .culture .grid div:nth-child(2) { animation-delay: 0.7s; }
+  .culture .grid div:nth-child(3) { animation-delay: 0.9s; }
 
-    .culture img {
-        width: 240px;
-        height: 120px;
-        margin-bottom: 1rem;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .culture img {
+    width: 240px;
+    height: 120px;
+    margin-bottom: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
+  .culture h3 {
+    font-size: 1.25rem;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+  }
 
-    .culture h3 {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: #1a202c;
-        margin-bottom: 0.5rem;
-    }
+  .culture p {
+    color: #718096;
+  }
 
-    .culture p {
-        color: #718096;
-    }
+  .jobs {
+    background: #f7fafc;
+    padding: 4rem 1rem;
+  }
 
-    /* Jobs Section */
-    .jobs {
-        background: #f7fafc;
-        padding: 4rem 1rem;
-    }
+  .jobs h2 {
+    font-size: 2.7rem;
+    color: #1a202c;
+    text-align: center;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: slideUp 0.8s ease-out 0.3s forwards;
+  }
 
-    .jobs h2 {
-        font-size: 2.7rem;
-        font-weight: 700;
-        color: #1a202c;
-        text-align: center;
-        margin-bottom: 2rem;
-        opacity: 0;
-        animation: slideUp 0.8s ease-out 0.3s forwards;
-    }
+  .jobs p {
+    font-size: 1.185rem;
+    color: #4a5568;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
 
-    .jobs p {
-        font-size: 1.185rem;
-        color: #4a5568;
-        text-align: center;
-        margin-bottom: 3rem;
-    }
+  .job-listings {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 
-    .job-listings {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
+  .job-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
 
-    .job-card {
-        background: white;
-        padding: 1.5rem;
-        border-radius: 0.5rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        opacity: 0;
-        animation: fadeInUp 0.8s ease-out forwards;
-    }
+  .job-card:nth-child(1) { animation-delay: 0.5s; }
+  .job-card:nth-child(2) { animation-delay: 0.7s; }
+  .job-card:nth-child(3) { animation-delay: 0.9s; }
 
-    .job-card:nth-child(1) { animation-delay: 0.5s; }
-    .job-card:nth-child(2) { animation-delay: 0.7s; }
-    .job-card:nth-child(3) { animation-delay: 0.9s; }
+  .job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
 
-    .job-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
+  .job-card h3 {
+    font-size: 1.25rem;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+  }
 
-    .job-card h3 {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: #1a202c;
-        margin-bottom: 0.5rem;
-    }
+  .job-card p {
+    color: #718096;
+    margin-bottom: 1rem;
+  }
 
-    .job-card p {
-        color: #718096;
-        margin-bottom: 1rem;
-    }
+  .job-card a {
+    color: #f54c4c;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
 
-    .job-card a {
-        color: #f54c4c;
-        font-weight: 600;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
+  .job-card a:hover {
+    color: #ef3b3b;
+    text-decoration: underline;
+  }
 
-    .job-card a:hover {
-        color: #ef3b3b;
-        text-decoration: underline;
-    }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
 
-    /* Animations */
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-    @keyframes slideUp {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-    @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Responsive Design */
-    @media (min-width: 768px) {
-        .heroo h1 { font-size: 3rem; }
-        .heroo p { font-size: 1.25rem; }
-        .culture h2, .jobs h2 { font-size: 2.5rem; }
-    }
+  @media (min-width: 768px) {
+    .heroo h1 { font-size: 3rem; }
+    .heroo p { font-size: 1.25rem; }
+    .culture h2, .jobs h2 { font-size: 2.5rem; }
+  }
 </style>
 
 <main>
-    <!-- Hero Section -->
-    <section class="heroo">
-        <div class="container">
-            <h1>Join Our Mission to Reimagine Second Home Ownership</h1>
-            <p>At Livingwalls, we’re transforming the way people buy, own, and enjoy vacation homes. Be part of a team that’s passionate about creating joyful homeownership experiences.</p>
-            <a href="#jobs">Explore Open Roles</a>
-        </div>
-    </section>
+  <!-- Hero Section -->
+  <section class="heroo">
+    <div class="container">
+      <h1>Join Our Mission to Reimagine Second Home Ownership</h1>
+      <p>At Livingwalls, we’re transforming the way people buy, own, and enjoy vacation homes. Be part of a team that’s passionate about creating joyful homeownership experiences.</p>
+      <a href="#jobs">Explore Open Roles</a>
+    </div>
+  </section>
 
-    <!-- Culture Section -->
-    <section class="culture">
-        <div class="container">
-            <h2>Why Work at Livingwalls?</h2>
-            <p>We’re a team of innovators, dreamers, and doers working to make second home ownership more accessible and sustainable. Join us to make an impact in a fast-growing, mission-driven company.</p>
-            <div class="grid">
-                <div>
-                    <img src="https://www.pbctoday.co.uk/news/wp-content/uploads/2022/05/c-denisismagilov-Adobestock.jpeg" alt="Innovate Icon">
-                    <h3>Innovate with Purpose</h3>
-                    <p>Work on cutting-edge solutions that redefine real estate and homeownership.</p>
-                </div>
-                <div>
-                    <img src="https://alignops.com/hubfs/HERO%20-%20Construction%20Project%20Management%20Software%20vs%20Construction%20Operations.jpg" alt="Collaborate Icon">
-                    <h3>Collaborate & Grow</h3>
-                    <p>Join a supportive team that values diverse perspectives and fosters growth.</p>
-                </div>
-                <div>
-                    <img src="https://visilean.com/wp-content/uploads/2022/10/Blog-image--1024x576.jpg" alt="Impact Icon">
-                    <h3>Make an Impact</h3>
-                    <p>Contribute to a mission that brings joy and connection to families worldwide.</p>
-                </div>
-            </div>
+  <!-- Culture Section -->
+  <section class="culture">
+    <div class="container">
+      <h2>Why Work at Livingwalls?</h2>
+      <p>We’re a team of innovators, dreamers, and doers working to make second home ownership more accessible and sustainable. Join us to make an impact in a fast-growing, mission-driven company.</p>
+      <div class="grid">
+        <div>
+          <img src="https://www.pbctoday.co.uk/news/wp-content/uploads/2022/05/c-denisismagilov-Adobestock.jpeg" alt="Innovate Icon">
+          <h3>Innovate with Purpose</h3>
+          <p>Work on cutting-edge solutions that redefine real estate and homeownership.</p>
         </div>
-    </section>
+        <div>
+          <img src="https://alignops.com/hubfs/HERO%20-%20Construction%20Project%20Management%20Software%20vs%20Construction%20Operations.jpg" alt="Collaborate Icon">
+          <h3>Collaborate & Grow</h3>
+          <p>Join a supportive team that values diverse perspectives and fosters growth.</p>
+        </div>
+        <div>
+          <img src="https://visilean.com/wp-content/uploads/2022/10/Blog-image--1024x576.jpg" alt="Impact Icon">
+          <h3>Make an Impact</h3>
+          <p>Contribute to a mission that brings joy and connection to families worldwide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Job Listings Section -->
-    <section id="jobs" class="jobs">
-        <div class="container">
-            <h2>Open Positions</h2>
-            <p>Explore opportunities to join our team and help shape the future of homeownership.</p>
-            <div class="job-listings">
-                <div class="job-card">
-                    <h3>Claims & Contracts Manager</h3>
-                    <p>San Francisco, CA / Remote</p>
-                    <p> able to identify, notify, substantiate and resolve claims that arise within a warranty, service, maintenance and repair contracts.</p>
-                    <a href="#">Apply Now</a>
-                </div>
-                <div class="job-card">
-                    <h3>Employer's Agent</h3>
-                    <p>Austin, TX / Remote</p>
-                    <p>Need to have experience of administering the contract in particular for Design & Build contracts.</p>
-                    <a href="#">Apply Now</a>
-                </div>
-                <div class="job-card">
-                    <h3>Building Surveyor</h3>
-                    <p>New York, NY / Remote</p>
-                    <p>Conduct building inspections and assessments to ensure compliance with regulations.</p>
-                    <a href="#">Apply Now</a>
-                </div>
-            </div>
+  <!-- Job Listings Section -->
+  <section id="jobs" class="jobs">
+    <div class="container">
+      <h2>Open Positions</h2>
+      <p>Explore opportunities to join our team and help shape the future of homeownership.</p>
+      <div class="job-listings">
+        <div class="job-card">
+          <h3>Claims & Contracts Manager</h3>
+          <p>San Francisco, CA / Remote</p>
+          <p>Able to identify, notify, substantiate and resolve claims that arise within a warranty, service, maintenance and repair contracts.</p>
+          <a href="#">Apply Now</a>
         </div>
-    </section>
+        <div class="job-card">
+          <h3>Employer's Agent</h3>
+          <p>Austin, TX / Remote</p>
+          <p>Need to have experience of administering the contract in particular for Design & Build contracts.</p>
+          <a href="#">Apply Now</a>
+        </div>
+        <div class="job-card">
+          <h3>Building Surveyor</h3>
+          <p>New York, NY / Remote</p>
+          <p>Conduct building inspections and assessments to ensure compliance with regulations.</p>
+          <a href="#">Apply Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
-  
-    <!--footer section -->
-    <footer class="footer">
-      <div class="footercontainer">
-        <div class="footer-sections">
-          <!-- Column 1: Constructions -->
-          <div class="footer-column">
-            <h3>Constructions</h3>
-            <ul>
-              <li><a href="#residential">Residential Construction</a></li>
-              <li><a href="#commercial">Commercial Construction</a></li>
-              <li><a href="#home">Home Construction</a></li>
-              <li><a href="#farmhouse">Farm House Construction</a></li>
-              <li><a href="#addfloor">Add New Floor</a></li>
-              <li><a href="#duplex">Duplex Home Construction</a></li>
-              <li><a href="#independent">Independent House Construction</a></li>
-              <li><a href="#villa">Villa Construction</a></li>
-              <li><a hef="#luxury">Luxury Home Construction</a></li>
-              <li><a href="#cost">Cost of New Home Construction</a></li>
-            </ul>
-          </div>
-    
-          <!-- Column 2: Interiors -->
-          <div class="footer-column">
-            <h3>Interiors</h3>
-            <ul>
-              <li><a href="#res-interior">Residential Interior Design</a></li>
-              <li><a href="#living">Living Room Interior Design</a></li>
-              <li><a href="#kitchen">Kitchen Interior Design</a></li>
-              <li><a href="#bedroom">Bedroom Interior Design</a></li>
-              <li><a href="#bathroom">Bathroom Interior Design</a></li>
-              <li><a href="#office">Office Interior Design</a></li>
-              <li><a href="#commercial-interior">Commercial Interior Design</a></li>
-              <li><a href="#apartment">Apartment Interior Design</a></li>
-            </ul>
-          </div>
-    
-          <!-- Column 3: Calculator -->
-          <div class="footer-column">
-            <h3>Calculator</h3>
-            <ul>
-              <li><a href="#res-cost">Residential Cost Estimator</a></li>
-              <li><a href="#comm-cost">Commercial Cost Estimator</a></li>
-              <li><a href="#interior-cost">Interior Cost Estimator</a></li>
-            </ul>
-            <h3>Packages</h3>
-            <ul>
-              <li><a href="#luxury">Luxury</a></li>
-              <li><a href="#commercial">Commercial</a></li>
-              <li><a href="#interior">Interior</a></li>
-            </ul>
-          </div>
-    
-          <!-- Column 4: Info -->
-          <div class="footer-column">
-            <h3>Your Floor Plan Solution</h3>
-            <p>Find the perfect floor plan for your dream home. We offer a wide selection of customizable designs from top architects and designers.</p>
-    
-            <h4>Get in Touch</h4>
-            <p><a href="tel:+919739011656">+91 9739011656</a><br>
-               <a href="mailto:rajashekarreddy@livinwalls.com">rajashekarreddy@livinwalls.com</a>
-            </p>
-    
-            <h4>Social</h4>
-            <div class="social-icons">
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Optional links -->
-        <div class="footer-links">
-          <a href="#support">Support</a>
-          <a href="#terms">Terms & Services</a>
-          <a href="#privacy">Privacy & Policy</a>
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footercontainer">
+    <div class="footer-sections">
+      <div class="footer-column">
+        <h3>Constructions</h3>
+        <ul>
+          <li><a href="#residential">Residential Construction</a></li>
+          <li><a href="#commercial">Commercial Construction</a></li>
+          <li><a href="#home">Home Construction</a></li>
+          <li><a href="#farmhouse">Farm House Construction</a></li>
+          <li><a href="#addfloor">Add New Floor</a></li>
+          <li><a href="#duplex">Duplex Home Construction</a></li>
+          <li><a href="#independent">Independent House Construction</a></li>
+          <li><a href="#villa">Villa Construction</a></li>
+          <li><a href="#luxury">Luxury Home Construction</a></li>
+          <li><a href="#cost">Cost of New Home Construction</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Interiors</h3>
+        <ul>
+          <li><a href="#res-interior">Residential Interior Design</a></li>
+          <li><a href="#living">Living Room Interior Design</a></li>
+          <li><a href="#kitchen">Kitchen Interior Design</a></li>
+          <li><a href="#bedroom">Bedroom Interior Design</a></li>
+          <li><a href="#bathroom">Bathroom Interior Design</a></li>
+          <li><a href="#office">Office Interior Design</a></li>
+          <li><a href="#commercial-interior">Commercial Interior Design</a></li>
+          <li><a href="#apartment">Apartment Interior Design</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Calculator</h3>
+        <ul>
+          <li><a href="#res-cost">Residential Cost Estimator</a></li>
+          <li><a href="#comm-cost">Commercial Cost Estimator</a></li>
+          <li><a href="#interior-cost">Interior Cost Estimator</a></li>
+        </ul>
+        <h3>Packages</h3>
+        <ul>
+          <li><a href="#luxury">Luxury</a></li>
+          <li><a href="#commercial">Commercial</a></li>
+          <li><a href="#interior">Interior</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Your Floor Plan Solution</h3>
+        <p>Find the perfect floor plan for your dream home. We offer a wide selection of customizable designs from top architects and designers.</p>
+        <h4>Get in Touch</h4>
+        <p><a href="tel:+919739011656">+91 9739011656</a><br>
+           <a href="mailto:rajashekarreddy@livinwalls.com">rajashekarreddy@livinwalls.com</a>
+        </p>
+        <h4>Social</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
-      </div>
-    </footer>
-    <hr>
-    
+    </div>
+    <div class="footer-links">
+      <a href="#support">Support</a>
+      <a href="#terms">Terms & Services</a>
+      <a href="#privacy">Privacy & Policy</a>
+    </div>
+  </div>
+</footer>
+<hr>
 
-    <!-- New Footer Section -->
+<!-- New Footer Section -->
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-row">
@@ -505,13 +480,11 @@
         </ul>
       </div>
     </div>
-    
   </div>
 </footer>
 <hr>
 
-
-<!-- Living WallsConstruction - Extended Footer Section -->
+<!-- Extended Footer Section -->
 <section class="extended-footer">
   <div class="ext-container">
     <div class="ext-section">
@@ -522,7 +495,6 @@
         designed layouts that balance style, strength, and functionality.
       </p>
     </div>
-
     <div class="ext-section">
       <h2>Why Choose Our Plans?</h2>
       <p>
@@ -531,9 +503,7 @@
         structurally sound and compliant with modern construction standards.
       </p>
     </div>
-    
     <div class="ext-section">
-
       <h3>Our Services</h3>
       <ul class="ext-services">
         <li>Residential Floor Plan Design</li>
@@ -547,10 +517,10 @@
       </ul>
     </div>
   </div>
-  <hr>
+</section>
+<hr>
 
-
-<!-- Living Walls Construction - Services Footer Section B2B -->
+<!-- B2B Construction Services -->
 <section class="construction-footer">
   <div class="footer-content">
     <h2>B2B Construction Services</h2>
@@ -558,77 +528,63 @@
       Partner with Living Walls Construction for commercial building solutions. With over 800 contractors and 470+ quality checks,
       we deliver robust, scalable commercial spaces that empower businesses to grow with confidence.
     </p>
-
     <h3>Commercial Construction</h3>
     <p>
       Our team crafts commercial spaces designed for optimal productivity, ensuring every square foot serves your business goals.
     </p>
-
     <h3>Warehouse Construction</h3>
     <p>
       We build secure, accessible warehouses engineered to preserve and manage inventory efficiently.
     </p>
-
     <h3>Retail Construction</h3>
     <p>
       Our designers create dynamic retail environments that enhance customer engagement and streamline shopping experiences.
     </p>
-
     <h3>Hospital Construction</h3>
     <p>
       Constructing hospitals that combine medical functionality with safety and comfort, customized for both patients and staff.
     </p>
-
     <h3>Hospitality Construction</h3>
     <p>
       We design memorable hospitality spaces that prioritize guest experience, ambiance, and operational flow.
     </p>
-
     <h3>School Construction</h3>
     <p>
       Building schools that foster creativity, learning, and growth — aligned with modern education needs and safety standards.
     </p>
     <br>
-    <hr> <br>
+    <hr>
+    <br>
     <h3>Locations</h3>
     <p class="location-text">
       House Construction in Bengaluru, Chennai, Mysuru, NCR Faridabad, NCR Ghaziabad, NCR Noida, NCR Delhi, NCR Gurgaon, Hyderabad, Pune, Hubli
     </p>
-
-
   </div>
-
   <div class="footer-bottom">
     <p>
-      Copyright &copy;
+      Copyright ©
       <script>document.write(new Date().getFullYear());</script> All Rights Reserved | Powered by <a href="https://meghplat.com/" target="_blank" class="text-primary">Meghplat Analytics</a>
-  </p>
+    </p>
   </div>
 </section>
 
- <!--EndB2B-->
- 
-  <script>
-    // Simple script for the mobile menu toggle
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-      document.querySelector('.nav').classList.toggle('nav--active');
-      this.classList.toggle('menu-toggle--active');
-    });
+<script>
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.nav').classList.toggle('nav--active');
+    this.classList.toggle('menu-toggle--active');
+  });
 
-    // Custom cursor
-    const cursor = document.querySelector('.cursor');
-    
-    document.addEventListener('mousemove', e => {
-      cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
-    });
-    
-    document.addEventListener('click', () => {
-      cursor.classList.add("cursor--expand");
-      setTimeout(() => {
-        cursor.classList.remove("cursor--expand");
-      }, 500);
-    });
-  </script>
-   <script src="auth.js"></script>
+  const cursor = document.querySelector('.cursor');
+  document.addEventListener('mousemove', e => {
+    cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
+  });
+  document.addEventListener('click', () => {
+    cursor.classList.add("cursor--expand");
+    setTimeout(() => {
+      cursor.classList.remove("cursor--expand");
+    }, 500);
+  });
+</script>
+<script src="auth.js"></script>
 </body>
 </html>

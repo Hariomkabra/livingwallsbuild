@@ -3,297 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAQ Page - Living Walls</title>
+  <title>Living Walls - Creative Design Agency</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- External Libraries -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.11.4/dist/framer-motion.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="auth.js"></script>
+
   <style>
-    /* Menu Bar Styles */
-    .faq-menu {
-      background-color: #fff;
-      border-bottom: 1px solid #e0e0e0;
-      padding: 120px;
-      width: 100%;
-      padding-bottom: 20px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-      z-index: 1000;
-    }
-
-    .faq-menu h2 {
-      color: #d5193e;
-      font-size: 30px;
-      font-weight: 600;
-      margin-bottom: 15px;
-      text-align: center;
-    }
-
-    .faq-nav {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .faq-nav li {
-      margin: 0;
-    }
-
-    .faq-link {
-      display: inline-block;
-      color: #333;
-      text-decoration: none;
-      font-size: 15px;
-      padding: 12px 15px;
-      border-radius: 4px;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .faq-link:hover {
-      background-color: #f5f5f5;
-      color: #d5193e;
-    }
-
-    .faq-link.active {
-      background-color: #d5193e;
-      color: #fff;
-      font-weight: 500;
-    }
-
-    /* Content Styles (Reduced Width) */
-    .content {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    .faq-section {
-      display: none;
-      padding: 20px 0;
-    }
-
-    .faq-section.active {
-      display: block;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid #ddd;
-      padding: 10px 0;
-      margin-bottom: 10px;
-    }
-
-    .faq-question {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      padding: 10px 0;
-      font-size: 18px;
-    }
-
-    .faq-answer {
-      display: none;
-      padding: 10px 0;
-      color: #000000;
-      font-size: 16px;
-    }
-
-    .faq-answer.active {
-      display: block;
-    }
-
-    .arrow {
-      transition: transform 0.3s;
-      font: 16px "Font Awesome 5 Free";
-    }
-
-    .arrow.active {
-      transform: rotate(180deg);
-    }
-
-    /* Category Header */
-    .category-header {
-      font-size: 28px;
-      font-weight: 600;
-      color: #d5193e;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    /* Hide Hamburger */
-    .hamburger {
-      display: none;
-    }
-
-    /* Toggle All Button */
-    .toggle-all {
-      display: block;
-      margin: 10px auto;
-      padding: 8px 15px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .toggle-all:hover {
-      background-color: #555;
-    }
-
-    /* Back-to-Top Button */
-    .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #d5193e;
-      color: #fff;
-      padding: 10px 15px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      z-index: 1000;
-      font-size: 18px;
-    }
-
-    .back-to-top:hover {
-      background-color: #d5193e;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .faq-nav {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .faq-link {
-        font-size: 14px;
-        padding: 10px;
-        text-align: center;
-        width: 100%;
-      }
-
-      .content {
-        padding: 20px 10px;
-      }
-
-      .category-header {
-        font-size: 24px;
-      }
-    }
-
-    /* Warranty Table Styles */
-    .warranty-table-wrapper {
-      overflow-x: auto;
-      margin-top: 15px;
-    }
-
-    .warranty-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 15px;
-      margin-bottom: 15px;
-    }
-
-    .warranty-table th, .warranty-table td {
-      padding: 12px;
-      border: 1px solid #ddd;
-      text-align: left;
-      vertical-align: top;
-    }
-
-    .warranty-table th {
-      background-color: #f3f3f3;
-      font-weight: bold;
-    }
-
-    .warranty-notes {
-      background: #f9f9f9;
-      padding: 15px;
-      border-left: 4px solid #ccc;
-      font-size: 14px;
-      color: #444;
-    }
-
-    .warranty-notes ol {
-      padding-left: 18px;
-      margin-top: 10px;
-    }
-
-    .warranty-notes ul {
-      padding-left: 18px;
-      margin: 6px 0;
-    }
-
-    @media (max-width: 768px) {
-      .warranty-table th, .warranty-table td {
-        font-size: 13px;
-        padding: 8px;
-      }
-
-      .warranty-notes {
-        font-size: 13px;
-      }
-    }
+    
   </style>
 </head>
+
 <body>
-  <!-- Header (Unchanged) -->
-  <header class="header">
-    <div class="containerr">
-      <div class="logo">
-        <a href="index.html" aria-label="Go to LivinWalls homepage">
-          <img src="img/logo-removebg.png" alt="LivinWalls Logo" class="logo-img">
-        </a>
-      </div>
-      <button class="hamburger" aria-label="Toggle Menu">☰</button>
-      <nav class="nav" aria-label="Main Navigation">
-        <ul class="nav__list">
-          <li><a href="index.html" title="Home Page">Home</a></li>
-          <li><a href="packages.html" title="View Construction Packages">Construction Packages</a></li>
-          <li><a href="design_packages.html" title="View Design Packages">Design Packages</a></li>
-          <li><a href="calculator.html" title="Estimate Construction Cost">Cost Calculator</a></li>
-          <li><a href="work.html" title="See Our Work">Our Work</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" title="More Options">More▾</a>
-            <ul class="dropdown-content">
-              <li><a href="floorplans.html" title="Explore Floor Plans">Floor plans</a></li>
-              <li><a href="Designs.html" title="Browse Designs">Designs</a></li>
-              <li><a href="about.html" title="About Us">About us</a></li>
-              <li><a href="contact.html" title="Contact Us">Contact us</a></li>
-              <li><a href="blog.html" title="Visit Our Blog">Blogs</a></li>
-              <li><a href="Testimonials.html" title="Customer Testimonials">Testimonials</a></li>
-              <li><a href="carrer.html" title="Careers">Careers</a></li>
-              <li><a href="faq.html" title="Frequently Asked Questions">FAQ</a></li>
-              <li><a href="policies.html" title="Careers">Policies</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <div class="right-buttons">
-        <a href="GetQuote.html" class="get-quote" title="Get a Quote from LivinWalls">Lets Talk</a>
-        <a href="login.html" class="login-link" id="login-link" title="Login to Your Account">
-          <span id="login-text">Login</span>
-        </a>
-      </div>
+
+<!-- Header HTML (to be included in all pages) -->
+<header class="header">
+  <div class="containerr">
+    <div class="logo">
+      <a href="index.html" aria-label="Go to LivinWalls homepage">
+        <img src="img/logo-removebg.png" alt="LivinWalls Logo" class="logo-img">
+      </a>
     </div>
-  </header>
+    <button class="hamburger" aria-label="Toggle Menu">☰</button>
+
+    <nav class="nav" aria-label="Main Navigation">
+      <ul class="nav__list">
+        <li><a href="index.html" title="Home Page">Home</a></li>
+        <li><a href="#how-it-works" title="How LivinWalls Works">How it Works</a></li>
+        <li><a href="packages.html" title="View Construction Packages">Construction Packages</a></li>
+        <li><a href="design_packages.html" title="View Design Packages">Design Packages</a></li>
+        <li><a href="calculator.html" title="Estimate Construction Cost">Cost Calculator</a></li>
+        <li><a href="work.html" title="See Our Work">Our Work</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" title="More Options">More▾</a>
+          <ul class="dropdown-content">
+            <li><a href="floorplans.html" title="Explore Floor Plans">Floor plans</a></li>
+            <li><a href="Designs.html" title="Browse Designs">Designs</a></li>
+            <li><a href="about.html" title="About Us">About us</a></li>
+            <li><a href="contact.html" title="Contact Us">Contact us</a></li>
+            <li><a href="blog.html" title="Visit Our Blog">Blogs</a></li>
+            <li><a href="Testimonials.html" title="Customer Testimonials">Testimonials</a></li>
+            <li><a href="carrer.html" title="Careers">Careers</a></li>
+            <li><a href="faq.html" title="Frequently Asked Questions">FAQ</a></li>
+            <li><a href="policies.html" title="Policies">Policies</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="right-buttons">
+      <a href="GetQuote.html" class="get-quote" title="Get a Quote from LivinWalls">Lets Talk</a>
+      <a href="login.html" class="login-link" id="login-link" title="Login to Your Account">
+        <span id="login-text">Login</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  window.addEventListener('scroll', function () {
+    const header = document.querySelector('.header');
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  const hamburger = document.querySelector('.hamburger');
+  const navList = document.querySelector('.nav__list');
+  const rightButtons = document.querySelector('.right-buttons');
+
+  hamburger.addEventListener('click', () => {
+    navList.classList.toggle('active');
+    rightButtons.classList.toggle('active');
+  });
+</script>
 
   <!-- FAQ Menu Bar -->
   <div class="faq-menu">
     <h2>FAQ Categories</h2>
     <ul class="faq-nav">
       <li><a href="#modular-kitchen" class="faq-link active">Modular Kitchen</a></li>
-      <!--<li><a href="#wardrobe" class="faq-link">Wardrobe</a></li>-->
       <li><a href="#interior-design" class="faq-link">Interior Design</a></li>
       <li><a href="#exterior-design" class="faq-link">Exterior Design</a></li>
       <li><a href="#landscaping" class="faq-link">Landscaping</a></li>
@@ -346,60 +149,9 @@
         <div class="faq-question" tabindex="0">How do I design a modular kitchen on a budget? <span class="arrow">▼</span></div>
         <div class="faq-answer">Opt for simple designs, use cost-effective materials like laminates, and prioritize essential units.</div>
       </div>
-     
       <div class="faq-item">
         <div class="faq-question" tabindex="0">What appliances does a modular kitchen include/accommodate? <span class="arrow">▼</span></div>
         <div class="faq-answer">It can accommodate ovens, microwaves, dishwashers, and refrigerators, with built-in slots for seamless integration.</div>
-      </div>
-      
-    </div>
-    <div id="wardrobe" class="faq-section">
-      <div class="faq-item">
-        <div class="faq-question" tabindex="0">How do I choose a wardrobe? <span class="arrow">▼</span></div>
-        <div class="faq-answer">Consider your storage needs, available space, and style preferences when choosing a wardrobe.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question" tabindex="0">What are the types of wardrobe? <span class="arrow">▼</span></div>
-        <div class="faq-answer">The types of wardrobe are hinged, sliding and armadio wardrobes.
-          <ul>
-            <li><a href="#">Hinged Wardrobe</a></li>
-            <li><a href="#">Sliding Wardrobe</a></li>
-            <li><a href="#">Armadio Wardrobe</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question" tabindex="0">Which material is best for wardrobes? <span class="arrow">▼</span></div>
-        <div class="faq-answer">The best material for wardrobes is HDHMR (high-density-high-moisture resistant) due to its water resistance and termite-free nature.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question" tabindex="0">How do I pick the right wardrobe material? <span class="arrow">▼</span></div>
-        <div class="faq-answer">In order to pick the right wardrobe material, you must keep the following tips in mind:
-          <ul>
-            <li><a href="#">PLPB - Eco-friendly & pocket-friendly</a></li>
-            <li><a href="#">HDHMR - Eco-friendly & termite-free</a></li>
-            <li><a href="#">Plywood - Sturdy & long-lasting</a></li>
-          </ul>
-          These are some of the best-selling materials for wardrobes in the modular industry.
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question" tabindex="0">What is the best finish for a wardrobe? <span class="arrow">▼</span></div>
-        <div class="faq-answer">The best finish options for wardrobes are high-gloss laminate and acrylic as they are easy to clean and maintain.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question" tabindex="0">What are the best design ideas for a wardrobe? <span class="arrow">▼</span></div>
-        <div class="faq-answer">The best wardrobe designs are hinged, sliding and armadio wardrobes.
-          <ul>
-            <li><a href="#">Hinged wardrobe - These are widely used, cost-effective and fit corners well</a></li>
-            <li><a href="#">Sliding wardrobe - Modern, space-saving as the doors don't swing out</a></li>
-            <li><a href="#">Floor to ceiling sliding wardrobe (Armadio) - This is a premium finish if you do not like separate loft shutters</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question" tabindex="0">Is MDF good for wardrobes? <span class="arrow">▼</span></div>
-        <div class="faq-answer">Yes, MDF is one of the best materials for wardrobes. It is cost-effective and eco-friendly as it involves a recycling process.</div>
       </div>
     </div>
     <div id="interior-design" class="faq-section">
@@ -445,7 +197,6 @@
         <div class="faq-question" tabindex="0">How do I choose an exterior color scheme? <span class="arrow">▼</span></div>
         <div class="faq-answer">Consider your home’s architectural style, neighborhood aesthetics, and climate; neutral tones with bold accents work well for versatility.</div>
       </div>
-      
       <div class="faq-item">
         <div class="faq-question" tabindex="0">How can I make my home exterior low-maintenance? <span class="arrow">▼</span></div>
         <div class="faq-answer">Use durable materials like vinyl siding, metal roofing, and drought-resistant landscaping to reduce upkeep.</div>
@@ -519,8 +270,7 @@
         <div class="faq-answer">Once you contact our Care Cell with your issue, depending upon the nature of service and the applicable warranty, our care representative will advise you on whether it is covered under warranty or chargeable.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question" tabindex="0">What does HomeLane’s 10-year warranty cover? <span class="arrow">
-</span></div>
+        <div class="faq-question" tabindex="0">What does HomeLane’s 10-year warranty cover? <span class="arrow">▼</span></div>
         <div class="faq-answer">
           <p>HomeLane warrants that all Products will be free from manufacturing defects and faults in installation workmanship when used for normal domestic use.</p>
           <div class="warranty-table-wrapper">
@@ -623,14 +373,266 @@
   <!-- Back-to-Top Button -->
   <button class="back-to-top" id="back-to-top" aria-label="Back to Top"><i class="fas fa-chevron-up"></i></button>
 
-  <!-- WhatsApp Button (Unchanged) -->
+  <!-- WhatsApp Button -->
   <div class="whatsapp-button-container">
     <a href="https://wa.me/919146478677" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
       <img src="https://techfocus24.com/wp-content/uploads/2021/01/whatsapp-button.png" alt="WhatsApp Button" class="whatsapp-button-image" />
     </a>
   </div>
+<!-- End whast app -->
 
-  <!-- Footer (Unchanged) -->
+
+<style>
+    /* Global font settings */
+    * {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400; /* Regular weight for body text */
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600; /* Slightly bold for headers */
+    }
+
+    /* Menu Bar Styles */
+    .faq-menu {
+      background-color: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 120px;
+      width: 100%;
+      padding-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      z-index: 1000;
+    }
+
+    .faq-menu h2 {
+      color: #d5193e;
+      font-size: 30px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .faq-nav {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .faq-nav li {
+      margin: 0;
+    }
+
+    .faq-link {
+      display: inline-block;
+      color: #333;
+      text-decoration: none;
+      font-size: 15px;
+      padding: 12px 15px;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .faq-link:hover {
+      background-color: #f5f5f5;
+      color: #d5193e;
+    }
+
+    .faq-link.active {
+      background-color: #d5193e;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    /* Content Styles (Reduced Width) */
+    .content {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .faq-section {
+      display: none;
+      padding: 20px 0;
+    }
+
+    .faq-section.active {
+      display: block;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+      margin-bottom: 10px;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      padding: 10px 0;
+      font-size: 18px;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 10px 0;
+      color: #000000;
+      font-size: 16px;
+    }
+
+    .faq-answer.active {
+      display: block;
+    }
+
+    .arrow {
+      transition: transform 0.3s;
+      font: 16px "Font Awesome 5 Free";
+    }
+
+    .arrow.active {
+      transform: rotate(180deg);
+    }
+
+    /* Category Header */
+    .category-header {
+      font-size: 28px;
+      color: #d5193e;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* Hide Hamburger */
+    .hamburger {
+      display: none;
+    }
+
+    /* Toggle All Button */
+    .toggle-all {
+      display: block;
+      margin: 10px auto;
+      padding: 8px 15px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .toggle-all:hover {
+      background-color: #555;
+    }
+
+    /* Back-to-Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #d5193e;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+      font-size: 18px;
+    }
+
+    .back-to-top:hover {
+      background-color: #d5193e;
+    }
+
+    /* Ensure all text elements use Playfair Display */
+    .header, .nav__list, .right-buttons, .footer, .faq-menu, .faq-nav, .faq-link, .content, .faq-section, .faq-question, .faq-answer, .category-header, .toggle-all, .back-to-top, .warranty-table, .warranty-notes, a, p, li, span {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .faq-nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .faq-link {
+        font-size: 14px;
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+      }
+
+      .content {
+        padding: 20px 10px;
+      }
+
+      .category-header {
+        font-size: 24px;
+      }
+    }
+
+    /* Warranty Table Styles */
+    .warranty-table-wrapper {
+      overflow-x: auto;
+      margin-top: 15px;
+    }
+
+    .warranty-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+
+    .warranty-table th, .warranty-table td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .warranty-table th {
+      background-color: #f3f3f3;
+    }
+
+    .warranty-notes {
+      background: #f9f9f9;
+      padding: 15px;
+      border-left: 4px solid #ccc;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .warranty-notes ol {
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    .warranty-notes ul {
+      padding-left: 18px;
+      margin: 6px 0;
+    }
+
+    @media (max-width: 768px) {
+      .warranty-table th, .warranty-table td {
+        font-size: 13px;
+        padding: 8px;
+      }
+
+      .warranty-notes {
+        font-size: 13px;
+      }
+    }
+  </style>
+
+
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="footercontainer">
       <div class="footer-sections">
@@ -798,7 +800,7 @@
       </p>
       <h3>Retail Construction</h3>
       <p>
-        Our designers create dynamic retail environments physiotherapistthat enhance customer engagement and streamline shopping experiences.
+        Our designers create dynamic retail environments that enhance customer engagement and streamline shopping experiences.
       </p>
       <h3>Hospital Construction</h3>
       <p>
@@ -829,7 +831,7 @@
 
   <!-- JavaScript -->
   <script>
-    // Header Scroll Effect (Unchanged)
+    // Header Scroll Effect
     window.addEventListener('scroll', function () {
       const header = document.querySelector('.header');
       if (window.scrollY > 50) {
@@ -839,7 +841,7 @@
       }
     });
 
-    // FAQ Menu Functionality (Updated to Remove Search Dependency)
+    // FAQ Menu Functionality
     const faqLinks = document.querySelectorAll('.faq-link');
     const faqSections = document.querySelectorAll('.faq-section');
     const categoryHeader = document.querySelector('.category-header');
@@ -866,7 +868,7 @@
       });
     });
 
-    // Toggle FAQ Answers (Unchanged)
+    // Toggle FAQ Answers
     const faqQuestions = document.querySelectorAll('.faq-question');
     faqQuestions.forEach(question => {
       question.addEventListener('click', () => {
@@ -877,14 +879,14 @@
       });
     });
 
-    // Header Navigation Toggle (Unchanged)
+    // Header Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
     hamburger.addEventListener('click', () => {
       navList.classList.toggle('active');
       rightButtons.classList.toggle('active');
     });
 
-    // Custom Cursor (Unchanged)
+    // Custom Cursor
     const cursor = document.querySelector('.cursor');
     if (cursor) {
       document.addEventListener('mousemove', e => {
@@ -898,7 +900,7 @@
       });
     }
 
-    // Toggle All FAQs (Unchanged)
+    // Toggle All FAQs
     const toggleAllButton = document.getElementById('toggle-all');
     let isExpanded = false;
 
@@ -919,7 +921,7 @@
       });
     });
 
-    // Back-to-Top Button (Unchanged)
+    // Back-to-Top Button
     const backToTopButton = document.getElementById('back-to-top');
     window.addEventListener('scroll', () => {
       backToTopButton.style.display = window.scrollY > 300 ? 'block' : 'none';
@@ -929,7 +931,7 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Keyboard Navigation for FAQs (Unchanged)
+    // Keyboard Navigation for FAQs
     faqQuestions.forEach(question => {
       question.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === 'Space') {

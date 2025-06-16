@@ -6,55 +6,16 @@
   <title>Living Walls - Creative Design Agency</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="css/responsive.css"> <!--responsive-->
+  <link rel="stylesheet" href="css/responsive.css"> <!--responsive-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css">
-  <style>
-    .virtual-tour-container {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-      margin-bottom: 20px;
-      overflow: hidden;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    #virtual-tour-iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .tour-loading {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 1.2rem;
-      color: #fff;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 10px 20px;
-      border-radius: 5px;
-      z-index: 10;
-      display: none;
-    }
-
-    @media (max-width: 768px) {
-      .virtual-tour-container {
-        padding-bottom: 75%; /* Adjust for smaller screens */
-      }
-    }
-  </style>
+  
 </head>
 <body>
-  <!-- Header (Unchanged) -->
+  <!-- Header -->
   <header class="header">
     <div class="containerr">
       <div class="logo">
@@ -115,19 +76,162 @@
     });
   </script>
 
-  <!-- WhatsApp Button (Unchanged) -->
+  <!-- WhatsApp Button -->
   <div class="whatsapp-button-container">
     <a href="https://wa.me/919146478677" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
       <img src="https://techfocus24.com/wp-content/uploads/2021/01/whatsapp-button.png" alt="WhatsApp Button" class="whatsapp-button-image" />
     </a>
   </div>
 
+
+
+  <style>
+    /* Global font settings */
+
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600; /* Slightly bold for headers */
+      
+    }
+
+    /* Virtual Tour Section */
+    .virtual-tour-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      margin-bottom: 20px;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #virtual-tour-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .tour-loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.2rem;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      border-radius: 5px;
+      z-index: 10;
+      display: none;
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+    }
+
+    /* Project Details Section */
+    .project-details {
+      padding: 40px 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .project-title {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+
+    .details-content h3 {
+      font-size: 2.5rem;
+      color: #333;
+      margin: 20px 0 10px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+
+    .details-content p {
+      font-size: 1.5rem;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+    }
+
+    .details-content ul {
+      list-style: none;
+      padding-left: 20px;
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+     
+    }
+
+    .details-content ul li {
+      position: relative;
+      padding-left: 15px;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      color: #555;
+    }
+
+    .details-content ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #d5193e;
+      font-size: 1.4rem;
+    }
+
+    .back-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #d5193e;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.4rem;
+      transition: background 0.3s ease;
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+    }
+
+    .back-btn:hover {
+      background: #b01533;
+    }
+
+    @media (max-width: 768px) {
+      .virtual-tour-container {
+        padding-bottom: 75%; /* Adjust for smaller screens */
+      }
+
+      .project-title {
+        font-size: 2rem;
+      }
+
+      .details-content h3 {
+        font-size: 1.5rem;
+      }
+
+      .details-content p, .details-content ul li {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
   <!-- Main Section: Project Details with Working 3D Virtual Tour -->
   <section class="project-details">
     <div class="container">
-    <h2 class="project-title">Project Details</h2> <br>
-
-
+      <h2 class="project-title">Project Details</h2> <br>
       <div class="details-content">
         <!-- 3D Tour Container -->
         <div class="virtual-tour-container">
@@ -157,7 +261,7 @@
       1: {
         title: "Precious Space",
         image: "https://api.makemyhouse.com/public/Media/rimage/1024/designers_project/1614855820_705.jpeg?watermark=false",
-        virtualTour: "https://my.matterport.com/show/?m=jm5WwEA3HUN&log=0&help=0&nt=0&play=0&qs=0&brand=1&dh=1&tour=1&gt=1&hr=1&mls=0&mt=1&tagNav=1&pin=1&portal=1&f=1&fp=1&nozoom=0&search=1&wh=0&kb=1&lp=0&title=0&tourcta=1&vr=1", // Sample Matterport tour (Residential)
+        virtualTour: "https://my.matterport.com/show/?m=jm5WwEA3HUN&log=0&help=0&nt=0&play=0&qs=0&brand=1&dh=1&tour=1>=1&hr=1&mls=0&mt=1&tagNav=1&pin=1&portal=1&f=1&fp=1&nozoom=0&search=1&wh=0&kb=1&lp=0&title=0&tourcta=1&vr=1",
         location: "Precious Space, Bangalore",
         description: "A modern residential complex with state-of-the-art amenities, designed for luxury living.",
         features: ["3 BHK Apartments", "Swimming Pool", "Landscaped Gardens"],
@@ -166,7 +270,7 @@
       2: {
         title: "Luxury Villa",
         image: "https://housystan.com/_next/image?url=https%3A%2F%2Foss-brigade.s3.ap-southeast-1.amazonaws.com%2Fnpd%2FSita-Aditya-Serene-County.webp&w=1920&q=75",
-        virtualTour: "https://my.matterport.com/show?play=1&lang=en-US&m=YJ3xHZe6hQu", // Sample Matterport tour (Modern Home)
+        virtualTour: "https://my.matterport.com/show?play=1&lang=en-US&m=YJ3xHZe6hQu",
         location: "Luxury Villa, Bangalore",
         description: "A serene residential project surrounded by greenery, offering a peaceful living experience.",
         features: ["2 BHK Villas", "Clubhouse", "Jogging Track"],
@@ -175,7 +279,7 @@
       3: {
         title: "Redwood Estates",
         image: "https://img.squareyards.com/secondaryPortal/IN_638719549195583066-0801250541594159.jpg",
-        virtualTour: "https://my.matterport.com/show?play=1&lang=en-US&m=cYMwAYgCFDj", // Sample Matterport tour (Luxury Home)
+        virtualTour: "https://my.matterport.com/show?play=1&lang=en-US&m=cYMwAYgCFDj",
         location: "Redwood Estates, Bangalore",
         description: "A premium residential estate with modern architecture and eco-friendly design.",
         features: ["4 BHK Duplexes", "Gymnasium", "Solar Panels"],
@@ -184,7 +288,7 @@
       4: {
         title: "La Mivoie Penthouse",
         image: "https://is1-3.housingcdn.com/4f2250e8/4534c19d0807d406b5a86ff9b5e3e12c/v0/fs/shiv_residency-tarsali-vadodara-shiv_developers.jpeg",
-        virtualTour: "https://my.matterport.com/show?play=1&lang=en-US&m=12RwtYJBE2J", // Reused sample for demo
+        virtualTour: "https://my.matterport.com/show?play=1&lang=en-US&m=12RwtYJBE2J",
         location: "La Mivoie Penthouse, Bangalore",
         description: "Another phase of the Shiv Residency project, focusing on spacious living and modern design.",
         features: ["3 BHK Apartments", "Rooftop Terrace", "Parking Facility"],
@@ -193,7 +297,7 @@
       5: {
         title: "Wright House",
         image: "https://www.svadhabuilders.in/wp-content/uploads/2020/03/12.jpg",
-        virtualTour: "https://my.matterport.com/show?play=1&lang=en-US&m=bDwimcTgwmd", // Reused sample for demo
+        virtualTour: "https://my.matterport.com/show?play=1&lang=en-US&m=bDwimcTgwmd",
         location: "Pruthvi Residency, Bangalore",
         description: "A residential project with a focus on community living and modern amenities.",
         features: ["2 BHK Apartments", "Community Hall", "Play Area"],
@@ -202,7 +306,7 @@
       6: {
         title: "Casa Alegria",
         image: "https://www.vikasjoshi.in/wp-content/uploads/2022/05/Luxuryresidentialprojectsinnoida.jpg",
-        virtualTour: "https://my.matterport.com/show?play=1&lang=en-US&m=ngtQYvunHag", // Reused sample for demo
+        virtualTour: "https://my.matterport.com/show?play=1&lang=en-US&m=ngtQYvunHag",
         location: "Casa villa, Bangalore",
         description: "A high-rise residential project offering panoramic views and luxury living.",
         features: ["3 BHK Penthouses", "Infinity Pool", "Concierge Services"],
@@ -211,7 +315,7 @@
       7: {
         title: "Maple Heights",
         image: "https://s3.ap-south-1.amazonaws.com/investormart/uploads/images/2024/image_750x_66f15a9b0b56d.jpg",
-        virtualTour: "https://my.matterport.com/show?play=1&lang=en-US&m=16yP3q3Uc41", // Reused sample for demo
+        virtualTour: "https://my.matterport.com/show?play=1&lang=en-US&m=16yP3q3Uc41",
         location: "Maple Heights, Bangalore",
         description: "A modern residential project with a focus on sustainability and comfort.",
         features: ["3 BHK Apartments", "Rainwater Harvesting", "Green Spaces"],
@@ -220,7 +324,7 @@
       8: {
         title: "Bellbrook House",
         image: "https://is1-2.housingcdn.com/4f2250e8/7a49675c43758d839e754a84879a6b8b/v0/fs/fortune_kumkum_heights-kondapur_hyderabad-hyderabad-fortune_group_builders_%26_developers.jpg",
-        virtualTour: "https://my.matterport.com/show?play=1&lang=en-US&m=YhX9YT4RnWf", // Reused sample for demo
+        virtualTour: "https://my.matterport.com/show?play=1&lang=en-US&m=YhX9YT4RnWf",
         location: "Bellbrook House, Bangalore",
         description: "An extension of Pruthvi Residency, offering modern living spaces with enhanced amenities.",
         features: ["2 BHK Apartments", "Fitness Center", "Security Systems"],
@@ -264,7 +368,7 @@
     }
   </script>
 
-  <!-- Footer (Unchanged) -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="footercontainer">
       <div class="footer-sections">

@@ -6,14 +6,13 @@
   <title>Login - BuildRiser</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="css/responsive.css"> <!--responsive-->
+  <link rel="stylesheet" href="css/responsive.css"> <!--responsive-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css">
-  
 </head>
 <body class="min-h-screen flex flex-col text-gray-800">
 <!-- Header HTML (to be included in all pages, e.g., index.html, packages.html, etc.) -->
@@ -32,25 +31,20 @@
         <li><a href="design_packages.html" title="View Design Packages">Design Packages</a></li>
         <li><a href="calculator.html" title="Estimate Construction Cost">Cost Calculator</a></li>
         <li><a href="work.html" title="See Our Work">Our Work</a></li>
-
-        <!-- If you want to reuse the dropdown later, uncomment this -->
-   
-     <li class="dropdown">
+        <li class="dropdown">
           <a href="#" class="dropdown-toggle" title="More Options">More▾</a>
           <ul class="dropdown-content">
-              <li><a href="floorplans.html" title="Explore Floor Plans">Floor plans</a></li>
+            <li><a href="floorplans.html" title="Explore Floor Plans">Floor plans</a></li>
             <li><a href="Designs.html" title="Browse Designs">Designs</a></li>
             <li><a href="about.html" title="About Us">About us</a></li>
             <li><a href="contact.html" title="Contact Us">Contact us</a></li>
             <li><a href="blog.html" title="Visit Our Blog">Blogs</a></li>
-             <li><a href="Testimonials.html" title="Customer Testimonials">Testimonials</a></li>
+            <li><a href="Testimonials.html" title="Customer Testimonials">Testimonials</a></li>
             <li><a href="carrer.html" title="Careers">Careers</a></li>
             <li><a href="faq.html" title="Frequently Asked Questions">FAQ</a></li>
-            <li><a href="policies.html" title="Careers">Policies</a></li>
-
+            <li><a href="policies.html" title="Plans & Policies">Policies</a></li>
           </ul>
         </li>
-  
       </ul>
     </nav>
     <div class="right-buttons">
@@ -62,9 +56,8 @@
   </div>
 </header>
 
-
 <script>
-    window.addEventListener('scroll', function () {
+  window.addEventListener('scroll', function () {
     const header = document.querySelector('.header');
     if (window.scrollY > 50) {
       header.classList.add('scrolled');
@@ -77,563 +70,540 @@
   const navList = document.querySelector('.nav__list');
   const rightButtons = document.querySelector('.right-buttons');
 
-  hamburger.addEventListener('click', () => {
+  hamburger.addEvent Unhide('click', () => {
     navList.classList.toggle('active');
     rightButtons.classList.toggle('active');
   });
 </script>
 
+<!-- Floating WhatsApp Button -->
+<div class="whatsapp-button-container">
+  <a href="https://wa.me/919146478677" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <img src="https://techfocus24.com/wp-content/uploads/2021/05/whatsapp-button.png" alt="WhatsApp Button" class="whatsapp-button-image" />
+  </a>
+</div>
 
+<style>
+  /* Set global font */
+  * {
+    font-family: 'Playfair Display', serif;
+  }
 
-  <!-- Floating WhatsApp Button -->
-    <div class="whatsapp-button-container">
-    <a href="https://wa.me/919146478677" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
-      <img src="https://techfocus24.com/wp-content/uploads/2021/01/whatsapp-button.png" alt="WhatsApp Button" class="whatsapp-button-image" />
-    </a>
+  /* Make headers bolder */
+  h1, h2, h3, h4, h5, h6, .header, .nav__list a, .dropdown-toggle, .tab, .form-content label, .btn-construction, .social-login, .user-name, .logout-btn {
+    font-weight: 600; /* Slightly bolder for headers and navigation */
+  }
+
+  .form-container {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.9));
+    backdrop-filter: blur(12px);
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(248, 113, 113, 0.2);
+    max-width: 600px;
+    width: 100%;
+    margin-top: 8rem;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .form-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease-in-out;
+  }
+
+  .tab-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid rgba(248, 113, 113, 0.3);
+  }
+
+  .tab {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    color: #2d3748;
+    cursor: pointer;
+    border-radius: 12px 12px 0 0;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .tab:hover {
+    background-color: rgba(248, 113, 113, 0.1);
+    color: #2d3748;
+  }
+
+  .tab-active {
+    background: linear-gradient(to right, #d5193e, #dc2626);
+    color: white;
+    position: relative;
+  }
+
+  .tab-active::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #d5193e;
+  }
+
+  .form-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: slideIn 0.6s ease-out;
+  }
+
+  @keyframes slideIn {
+    0% { opacity: 0; transform: translateX(-20px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+
+  .form-content label {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .form-content input {
+    padding: 1rem;
+    width: 100%;
+    border: 2px solid rgba(248, 113, 113, 0.3);
+    border-radius: 8px;
+    font-size: 2rem;
+    background-color: #f9fafb;
+    transition: all 0.3s ease;
+    animation: inputFadeIn 0.5s ease-out;
+  }
+
+  @keyframes inputFadeIn {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  .form-content input:focus {
+    outline: none;
+    border-color: #d5193e;
+    box-shadow: 0 0 0 4px rgba(248, 113, 113, 0.15);
+  }
+
+  .btn-construction {
+    background: linear-gradient(to right, #d5193e, #dc2626);
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-construction::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .btn-construction:hover::before {
+    left: 100%;
+  }
+
+  .btn-construction:hover {
+    background: linear-gradient(to right, #dc2626, #b91c1c);
+    transform: scale(1.03);
+  }
+
+  .btn-construction:disabled {
+    background: #d1d5db;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .social-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: linear-gradient(to right, #2d3748, #1a202c);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    animation: slideIn 0.7s ease-out;
+  }
+
+  .social-login:hover {
+    background: linear-gradient(to right, #1a202c, #111827);
+    transform: scale(1.02);
+  }
+
+  .whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+  }
+
+  .whatsapp-button img {
+    width: 60px;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+
+  .whatsapp-button img:hover {
+    transform: scale(1.1);
+  }
+
+  .user-name {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    color: #2d3748;
+    border: 2px solid #d5193e;
+    transition: all 0.3s ease;
+  }
+
+  .user-name:hover {
+    background: linear-gradient(to right, #d5193e, #d5193e);
+    color: white;
+    border-color: transparent;
+  }
+
+  .logout-btn {
+    background: none;
+    border: none;
+    color: #d5193e;
+    cursor: pointer;
+    margin-left: 0.75rem;
+    transition: color 0.3s ease;
+  }
+
+  .logout-btn:hover {
+    color: #d5193e;
+  }
+
+  .error-message, .success-message {
+    display: none;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.875rem;
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .error-message {
+    background-color: #fee2e2;
+    color: #d5193e;
+  }
+
+  .success-message {
+    background-color: #d1fae5;
+    color: #059669;
+  }
+</style>
+
+<!-- Main Content -->
+<main class="flex-grow flex items-center justify-center py-12 bg-gradient-to-br from-gray-100 to-gray-200">
+  <div class="form-container">
+    <!-- Tabs -->
+    <div class="tab-container">
+      <button id="login-tab" class="tab tab-active">Login</button>
+      <button id="signup-tab" class="tab">Signup</button>
+    </div>
+    <!-- Login Form -->
+    <div id="login-form" class="form-content">
+      <h2>Welcome Back</h2>
+      <form id="login-form-submit">
+        <div class="mb-4">
+          <label for="login-email" class="block">
+            <i class="fas fa-envelope mr-2 text-red-600"></i>Email
+          </label>
+          <input type="email" id="login-email" name="email" class="mt-1" required>
+        </div>
+        <div class="mb-6">
+          <label for="login-password" class="block">
+            <i class="fas fa-lock mr-2 text-red-600"></i>Password
+          </label>
+          <input type="password" id="login-password" name="password" class="mt-1" required minlength="6">
+        </div>
+        <button type="submit" class="btn-construction" id="login-submit-btn">Enter</button>
+        <div id="login-error" class="error-message"></div>
+        <div id="login-success" class="success-message"></div>
+      </form>
+      <div class="mt-4 text-center">
+        <p class="text-sm text-gray-600">Or continue with</p>
+        <button class="mt-2 w-full social-login" id="google-login">
+          <i class="fab fa-google mr-2"></i> Google
+        </button>
+      </div>
+    </div>
+    <!-- Signup Form -->
+    <div id="signup-form" class="form-content hidden">
+      <h2>Join the LivingWalls</h2>
+      <form id="signup-form-submit">
+        <div class="mb-4">
+          <label for="signup-name" class="block">
+            <i class="fas fa-user mr-2 text-red-600"></i>Name
+          </label>
+          <input type="text" id="signup-name" name="name" class="mt-1" required minlength="2">
+        </div>
+        <div class="mb-4">
+          <label for="signup-email" class="block">
+            <i class="fas fa-envelope mr-2 text-red-600"></i>Email
+          </label>
+          <input type="email" id="signup-email" name="email" class="mt-1" required>
+        </div>
+        <div class="mb-6">
+          <label for="signup-password" class="block">
+            <i class="fas fa-lock mr-2 text-red-600"></i>Password
+          </label>
+          <input type="password" id="signup-password" name="password" class="mt-1" required minlength="6">
+        </div>
+        <button type="submit" class="btn-construction" id="signup-submit-btn">Join Now</button>
+        <div id="signup-error" class="error-message"></div>
+        <div id="signup-success" class="success-message"></div>
+      </form>
+      <div class="mt-4 text-center">
+        <p class="text-sm text-gray-600">Or join with</p>
+        <button class="mt-2 w-full social-login" id="google-signup">
+          <i class="fab fa-google mr-2"></i> Google
+        </button>
+      </div>
+    </div>
   </div>
+</main>
 
+<!-- Footer -->
+<footer class="bg-gray-900 py-4">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-300">
+    <p>
+      Copyright ©
+      <script>document.write(new Date().getFullYear());</script> All Rights Reserved | Powered by <a href="https://meghplat.com/" target="_blank" class="text-primary">Meghplat Analytics</a>
+    </p>
+  </div>
+</footer>
 
-
-  <style>
-    .form-container {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.9));
-      backdrop-filter: blur(12px);
-      padding: 3rem;
-      border-radius: 16px;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(248, 113, 113, 0.2);
-      max-width: 600px;
-      width: 100%;
-      margin-top: 8rem;
-      position: relative;
-      overflow: hidden;
-      animation: fadeInUp 0.8s ease-out;
+<script>
+  // Header scroll effect
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('.header');
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
     }
+  });
 
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+  // Tab switching
+  const loginTab = document.getElementById('login-tab');
+  const signupTab = document.getElementById('signup-tab');
+  const loginForm = document.getElementById('login-form');
+  const signupForm = document.getElementById('signup-form');
 
-    .form-container:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
-      transition: all 0.4s ease-in-out;
-    }
+  loginTab.addEventListener('click', () => {
+    loginTab.classList.add('tab-active');
+    signupTab.classList.remove('tab-active');
+    loginForm.classList.remove('hidden');
+    signupForm.classList.add('hidden');
+    clearMessages();
+  });
 
-    .tab-container {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-bottom: 2rem;
-      border-bottom: 3px solid rgba(248, 113, 113, 0.3);
-    }
+  signupTab.addEventListener('click', () => {
+    signupTab.classList.add('tab-active');
+    loginTab.classList.remove('tab-active');
+    signupForm.classList.remove('hidden');
+    loginForm.classList.add('hidden');
+    clearMessages();
+  });
 
-    .tab {
-      padding: 1rem 2rem;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #2d3748;
-      cursor: pointer;
-      border-radius: 12px 12px 0 0;
-      transition: all 0.3s ease;
-      position: relative;
-    }
+  // Dynamic user name display
+  const loginLink = document.getElementById('login-link');
+  const loginText = document.getElementById('login-text');
+  const loginFormSubmit = document.getElementById('login-form-submit');
+  const signupFormSubmit = document.getElementById('signup-form-submit');
+  const loginSubmitBtn = document.getElementById('login-submit-btn');
+  const signupSubmitBtn = document.getElementById('signup-submit-btn');
+  const loginError = document.getElementById('login-error');
+  const loginSuccess = document.getElementById('login-success');
+  const signupError = document.getElementById('signup-error');
+  const signupSuccess = document.getElementById('signup-success');
 
-    .tab:hover {
-      background-color: rgba(248, 113, 113, 0.1);
-      color: #2d3748;
-    }
+  // Check if user is already logged in
+  const storedUser = localStorage.getItem('userName');
+  if (storedUser) {
+    updateHeader(storedUser);
+  }
 
-    .tab-active {
-      background: linear-gradient(to right, #d5193e, #dc2626);
-      color: white;
-      position: relative;
-    }
+  // Clear error/success messages
+  function clearMessages() {
+    loginError.style.display = 'none';
+    loginSuccess.style.display = 'none';
+    signupError.style.display = 'none';
+    signupSuccess.style.display = 'none';
+  }
 
-    .tab-active::after {
-      content: '';
-      position: absolute;
-      bottom: -3px;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: #d5193e;
-    }
+  // Validate email
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
 
-    .form-content h2 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: #2d3748;
-      margin-bottom: 2rem;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      animation: slideIn 0.6s ease-out;
-    }
+  // Handle login form submission
+  loginFormSubmit.addEventListener('submit', (e) => {
+    e.preventDefault();
+    clearMessages();
+    loginSubmitBtn.disabled = true;
 
-    @keyframes slideIn {
-      0% {
-        opacity: 0;
-        transform: translateX(-20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
 
-    .form-content label {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      font-size: 2rem;
-      font-weight: 800;
-      color: #2d3748;
-      margin-bottom: 0.75rem;
-    }
-
-    .form-content input {
-      padding: 1rem;
-      width: 100%;
-      border: 2px solid rgba(248, 113, 113, 0.3);
-      border-radius: 8px;
-      font-size: 2rem;
-      background-color: #f9fafb;
-      transition: all 0.3s ease;
-      animation: inputFadeIn 0.5s ease-out;
-    }
-
-    @keyframes inputFadeIn {
-      0% {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    .form-content input:focus {
-      outline: none;
-      border-color: #d5193e;
-      box-shadow: 0 0 0 4px rgba(248, 113, 113, 0.15);
-    }
-
-    .btn-construction {
-      background: linear-gradient(to right, #d5193e, #dc2626);
-      color: white;
-      padding: 1rem;
-      width: 100%;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.9rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn-construction::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
-      transition: left 0.5s ease;
-    }
-
-    .btn-construction:hover::before {
-      left: 100%;
-    }
-
-    .btn-construction:hover {
-      background: linear-gradient(to right, #dc2626, #b91c1c);
-      transform: scale(1.03);
-    }
-
-    .btn-construction:disabled {
-      background: #d1d5db;
-      cursor: not-allowed;
-      transform: none;
-    }
-
-    .social-login {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      background: linear-gradient(to right, #2d3748, #1a202c);
-      color: white;
-      padding: 1rem;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      animation: slideIn 0.7s ease-out;
-    }
-
-    .social-login:hover {
-      background: linear-gradient(to right, #1a202c, #111827);
-      transform: scale(1.02);
-    }
-
-    .whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 999;
-    }
-
-    .whatsapp-button img {
-      width: 60px;
-      height: auto;
-      transition: transform 0.3s ease;
-    }
-
-    .whatsapp-button img:hover {
-      transform: scale(1.1);
-    }
-
-    .user-name {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-      padding: 0.75rem 2rem;
-      border-radius: 8px;
-      font-weight: 600;
-      color: #2d3748;
-      border: 2px solid #d5193e;
-      transition: all 0.3s ease;
-    }
-
-    .user-name:hover {
-      background: linear-gradient(to right, #d5193e, #d5193e);
-      color: white;
-      border-color: transparent;
-    }
-
-    .logout-btn {
-      background: none;
-      border: none;
-      color: #d5193e;
-      font-weight: 600;
-      cursor: pointer;
-      margin-left: 0.75rem;
-      transition: color 0.3s ease;
-    }
-
-    .logout-btn:hover {
-      color: #d5193e;
-    }
-
-    .error-message, .success-message {
-      display: none;
-      margin-top: 1.5rem;
-      padding: 1rem;
-      border-radius: 8px;
-      text-align: center;
-      font-size: 0.875rem;
-      animation: fadeIn 0.5s ease-out;
-    }
-
-    .error-message {
-      background-color: #fee2e2;
-      color: #d5193e;
-    }
-
-    .success-message {
-      background-color: #d1fae5;
-      color: #059669;
-    }
-  </style>
-
-
-
-  <!-- Main Content -->
-  <main class="flex-grow flex items-center justify-center py-12 bg-gradient-to-br from-gray-100 to-gray-200">
-    <div class="form-container">
-      <!-- Tabs -->
-      <div class="tab-container">
-        <button id="login-tab" class="tab tab-active">Login</button>
-        <button id="signup-tab" class="tab">Signup</button>
-      </div>
-      <!-- Login Form -->
-      <div id="login-form" class="form-content">
-        <h2>Welcome Back</h2>
-        <form id="login-form-submit">
-          <div class="mb-4">
-            <label for="login-email" class="block">
-              <i class="fas fa-envelope mr-2 text-red-400"></i>Email
-            </label>
-            <input type="email" id="login-email" name="email" class="mt-1" required>
-          </div>
-          <div class="mb-6">
-            <label for="login-password" class="block">
-              <i class="fas fa-lock mr-2 text-red-400"></i>Password
-            </label>
-            <input type="password" id="login-password" name="password" class="mt-1" required minlength="6">
-          </div>
-          <button type="submit" class="btn-construction" id="login-submit-btn">Enter</button>
-          <div id="login-error" class="error-message"></div>
-          <div id="login-success" class="success-message"></div>
-        </form>
-        <div class="mt-4 text-center">
-          <p class="text-sm text-gray-600">Or continue with</p>
-          <button class="mt-2 w-full social-login" id="google-login">
-            <i class="fab fa-google mr-2"></i> Google
-          </button>
-        </div>
-      </div>
-      <!-- Signup Form -->
-      <div id="signup-form" class="form-content hidden">
-        <h2>Join the LivingWalls</h2>
-        <form id="signup-form-submit">
-          <div class="mb-4">
-            <label for="signup-name" class="block">
-              <i class="fas fa-user mr-2 text-red-400"></i>Name
-            </label>
-            <input type="text" id="signup-name" name="name" class="mt-1" required minlength="2">
-          </div>
-          <div class="mb-4">
-            <label for="signup-email" class="block">
-              <i class="fas fa-envelope mr-2 text-red-400"></i>Email
-            </label>
-            <input type="email" id="signup-email" name="email" class="mt-1" required>
-          </div>
-          <div class="mb-6">
-            <label for="signup-password" class="block">
-              <i class="fas fa-lock mr-2 text-red-400"></i>Password
-            </label>
-            <input type="password" id="signup-password" name="password" class="mt-1" required minlength="6">
-          </div>
-          <button type="submit" class="btn-construction" id="signup-submit-btn">Join Now</button>
-          <div id="signup-error" class="error-message"></div>
-          <div id="signup-success" class="success-message"></div>
-        </form>
-        <div class="mt-4 text-center">
-          <p class="text-sm text-gray-600">Or join with</p>
-          <button class="mt-2 w-full social-login" id="google-signup">
-            <i class="fab fa-google mr-2"></i> Google
-          </button>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 py-4">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-300">
-     <p>
-        Copyright ©
-        <script>document.write(new Date().getFullYear());</script> All Rights Reserved | Powered by <a href="https://meghplat.com/" target="_blank" class="text-primary">Meghplat Analytics</a>
-      </p>
-    </div>
-  </footer>
-
-  <script>
-    // Header scroll effect
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('.header');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-
-    // Tab switching
-    const loginTab = document.getElementById('login-tab');
-    const signupTab = document.getElementById('signup-tab');
-    const loginForm = document.getElementById('login-form');
-    const signupForm = document.getElementById('signup-form');
-
-    loginTab.addEventListener('click', () => {
-      loginTab.classList.add('tab-active');
-      signupTab.classList.remove('tab-active');
-      loginForm.classList.remove('hidden');
-      signupForm.classList.add('hidden');
-      clearMessages();
-    });
-
-    signupTab.addEventListener('click', () => {
-      signupTab.classList.add('tab-active');
-      loginTab.classList.remove('tab-active');
-      signupForm.classList.remove('hidden');
-      loginForm.classList.add('hidden');
-      clearMessages();
-    });
-
-    // Dynamic user name display
-    const loginLink = document.getElementById('login-link');
-    const loginText = document.getElementById('login-text');
-    const loginFormSubmit = document.getElementById('login-form-submit');
-    const signupFormSubmit = document.getElementById('signup-form-submit');
-    const loginSubmitBtn = document.getElementById('login-submit-btn');
-    const signupSubmitBtn = document.getElementById('signup-submit-btn');
-    const loginError = document.getElementById('login-error');
-    const loginSuccess = document.getElementById('login-success');
-    const signupError = document.getElementById('signup-error');
-    const signupSuccess = document.getElementById('signup-success');
-
-    // Check if user is already logged in
-    const storedUser = localStorage.getItem('userName');
-    if (storedUser) {
-      updateHeader(storedUser);
-    }
-
-    // Clear error/success messages
-    function clearMessages() {
-      loginError.style.display = 'none';
-      loginSuccess.style.display = 'none';
-      signupError.style.display = 'none';
-      signupSuccess.style.display = 'none';
-    }
-
-    // Validate email
-    function isValidEmail(email) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-
-    // Handle login form submission
-    loginFormSubmit.addEventListener('submit', (e) => {
-      e.preventDefault();
-      clearMessages();
-      loginSubmitBtn.disabled = true;
-
-      const email = document.getElementById('login-email').value;
-      const password = document.getElementById('login-password').value;
-
-      // Basic validation
-      if (!isValidEmail(email)) {
-        loginError.textContent = 'Please enter a valid email address.';
-        loginError.style.display = 'block';
-        loginSubmitBtn.disabled = false;
-        return;
-      }
-      if (password.length < 6) {
-        loginError.textContent = 'Password must be at least 6 characters.';
-        loginError.style.display = 'block';
-        loginSubmitBtn.disabled = false;
-        return;
-      }
-
-      // Simulate successful login
-      const userName = email.split('@')[0]; // Derive name from email
-      localStorage.setItem('userName', userName);
-      updateHeader(userName);
-      loginSuccess.textContent = 'Login successful!';
-      loginSuccess.style.display = 'block';
-      loginFormSubmit.reset();
+    // Basic validation
+    if (!isValidEmail(email)) {
+      loginError.textContent = 'Please enter a valid email address.';
+      loginError.style.display = 'block';
       loginSubmitBtn.disabled = false;
-
-      // Hide success message after 2 seconds
-      setTimeout(() => {
-        loginSuccess.style.display = 'none';
-      }, 2000);
-    });
-
-    // Handle signup form submission
-    signupFormSubmit.addEventListener('submit', (e) => {
-      e.preventDefault();
-      clearMessages();
-      signupSubmitBtn.disabled = true;
-
-      const name = document.getElementById('signup-name').value;
-      const email = document.getElementById('signup-email').value;
-      const password = document.getElementById('signup-password').value;
-
-      // Basic validation
-      if (name.length < 2) {
-        signupError.textContent = 'Name must be at least 2 characters.';
-        signupError.style.display = 'block';
-        signupSubmitBtn.disabled = false;
-        return;
-      }
-      if (!isValidEmail(email)) {
-        signupError.textContent = 'Please enter a valid email address.';
-        signupError.style.display = 'block';
-        signupSubmitBtn.disabled = false;
-        return;
-      }
-      if (password.length < 6) {
-        signupError.textContent = 'Password must be at least 6 characters.';
-        signupError.style.display = 'block';
-        signupSubmitBtn.disabled = false;
-        return;
-      }
-
-      // Simulate successful signup
-      localStorage.setItem('userName', name);
-      updateHeader(name);
-      signupSuccess.textContent = 'Signup successful!';
-      signupSuccess.style.display = 'block';
-      signupFormSubmit.reset();
-      signupSubmitBtn.disabled = false;
-
-      // Hide success message after 2 seconds
-      setTimeout(() => {
-        signupSuccess.style.display = 'none';
-      }, 2000);
-    });
-
-    // Simulate Google login/signup
-    document.getElementById('google-login').addEventListener('click', () => {
-      clearMessages();
-      const userName = 'GoogleUser'; // Placeholder for Google auth
-      localStorage.setItem('userName', userName);
-      updateHeader(userName);
-      loginSuccess.textContent = 'Logged in with Google!';
-      loginSuccess.style.display = 'block';
-      loginFormSubmit.reset();
-      setTimeout(() => {
-        loginSuccess.style.display = 'none';
-      }, 2000);
-    });
-
-    document.getElementById('google-signup').addEventListener('click', () => {
-      clearMessages();
-      const userName = 'GoogleUser'; // Placeholder for Google auth
-      localStorage.setItem('userName', userName);
-      updateHeader(userName);
-      signupSuccess.textContent = 'Signed up with Google!';
-      signupSuccess.style.display = 'block';
-      signupFormSubmit.reset();
-      setTimeout(() => {
-        signupSuccess.style.display = 'none';
-      }, 2000);
-    });
-
-    // Update header with user name and logout button
-    function updateHeader(userName) {
-      loginLink.classList.remove('login-link');
-      loginLink.classList.add('user-name');
-      loginLink.href = '#'; // Could link to user profile
-      loginText.textContent = userName;
-      const logoutBtn = document.createElement('button');
-      logoutBtn.classList.add('logout-btn');
-      logoutBtn.textContent = 'Logout';
-      loginLink.appendChild(logoutBtn);
-      logoutBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        localStorage.removeItem('userName');
-        loginLink.classList.remove('user-name');
-        loginLink.classList.add('login-link');
-        loginLink.href = '/login';
-        loginText.textContent = 'Login';
-        logoutBtn.remove();
-        clearMessages();
-      });
+      return;
     }
-  </script>
+    if (password.length < 6) {
+      loginError.textContent = 'Password must be at least 6 characters.';
+      loginError.style.display = 'block';
+      loginSubmitBtn.disabled = false;
+      return;
+    }
+
+    // Simulate successful login
+    const userName = email.split('@')[0]; // Derive name from email
+    localStorage.setItem('userName', userName);
+    updateHeader(userName);
+    loginSuccess.textContent = 'Login successful!';
+    loginSuccess.style.display = 'block';
+    loginFormSubmit.reset();
+    loginSubmitBtn.disabled = false;
+
+    // Hide success message after 2 seconds
+    setTimeout(() => {
+      loginSuccess.style.display = 'none';
+    }, 2000);
+  });
+
+  // Handle signup form submission
+  signupFormSubmit.addEventListener('submit', (e) => {
+    e.preventDefault();
+    clearMessages();
+    signupSubmitBtn.disabled = true;
+
+    const name = document.getElementById('signup-name').value;
+    const email = document.getElementById('signup-email').value;
+    const password = document.getElementById('signup-password').value;
+
+    // Basic validation
+    if (name.length < 2) {
+      signupError.textContent = 'Name must be at least 2 characters.';
+      signupError.style.display = 'block';
+      signupSubmitBtn.disabled = false;
+      return;
+    }
+    if (!isValidEmail(email)) {
+      signupError.textContent = 'Please enter a valid email address.';
+      signupError.style.display = 'block';
+      signupSubmitBtn.disabled = false;
+      return;
+    }
+    if (password.length < 6) {
+      signupError.textContent = 'Password must be at least 6 characters.';
+      signupError.style.display = 'block';
+      signupSubmitBtn.disabled = false;
+      return;
+    }
+
+    // Simulate successful signup
+    localStorage.setItem('userName', name);
+    updateHeader(name);
+    signupSuccess.textContent = 'Signup successful!';
+    signupSuccess.style.display = 'block';
+    signupFormSubmit.reset();
+    signupSubmitBtn.disabled = false;
+
+    // Hide success message after 2 seconds
+    setTimeout(() => {
+      signupSuccess.style.display = 'none';
+    }, 2000);
+  });
+
+  // Simulate Google login/signup
+  document.getElementById('google-login').addEventListener('click', () => {
+    clearMessages();
+    const userName = 'GoogleUser'; // Placeholder for Google auth
+    localStorage.setItem('userName', userName);
+    updateHeader(userName);
+    loginSuccess.textContent = 'Logged in with Google!';
+    loginSuccess.style.display = 'block';
+    loginFormSubmit.reset();
+    setTimeout(() => {
+      loginSuccess.style.display = 'none';
+    }, 2000);
+  });
+
+  document.getElementById('google-signup').addEventListener('click', () => {
+    clearMessages();
+    const userName = 'GoogleUser'; // Placeholder for Google auth
+    localStorage.setItem('userName', userName);
+    updateHeader(userName);
+    signupSuccess.textContent = 'Signed up with Google!';
+    signupSuccess.style.display = 'block';
+    signupFormSubmit.reset();
+    setTimeout(() => {
+      signupSuccess.style.display = 'none';
+    }, 2000);
+  });
+
+  // Update header with user name and logout button
+  function updateHeader(userName) {
+    loginLink.classList.remove('login-link');
+    loginLink.classList.add('user-name');
+    loginLink.href = '#'; // Could link to user profile
+    loginText.textContent = userName;
+    const logoutBtn = document.createElement('button');
+    logoutBtn.classList.add('logout-btn');
+    logoutBtn.textContent = 'Logout';
+    loginLink.appendChild(logoutBtn);
+    logoutBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      localStorage.removeItem('userName');
+      loginLink.classList.remove('user-name');
+      loginLink.classList.add('login-link');
+      loginLink.href = '/login';
+      loginText.textContent = 'Login';
+      logoutBtn.remove();
+      clearMessages();
+    });
+  }
+</script>
 </body>
 </html>

@@ -30,22 +30,7 @@
     display: flex;
   }
 
-  .right-buttons {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 220px;
-    left: 0;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    gap: 10px;
-  }
 
-  .right-buttons.active {
-    display: flex;
-  }
 
   .dropdown-content {
     position: static;
@@ -471,6 +456,26 @@
     }
   }
 
+/* Header secion */
+   @media (max-width: 768px) {
+      .nav__list,
+      .right-buttons {
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 70px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 999;
+      }
+      .nav__list.active,
+      .right-buttons.active {
+        display: flex;
+      }
+    }
   
 /* Responsive: Very Small Screens */
 @media screen and (max-width: 480px) {
@@ -493,9 +498,6 @@
     padding: 15px;
   }
 
-  .right-buttons {
-    top: 200px;
-  }
 
   .get-quote {
     padding: 5px 10px;

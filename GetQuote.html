@@ -4,16 +4,131 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Living Walls - Creative Design Agency</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="css/responsive.css"> <!--responsive-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- External Libraries -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.11.4/dist/framer-motion.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="auth.js"></script>
 
- 
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+    }
 
+    @media (max-width: 768px) {
+      .nav__list,
+      .right-buttons {
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 70px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 999;
+      }
+      .nav__list.active,
+      .right-buttons.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Header HTML (to be included in all pages) -->
+<header class="header">
+  <div class="containerr">
+    <div class="logo">
+      <a href="index.html" aria-label="Go to LivinWalls homepage">
+        <img src="img/logo-removebg.png" alt="LivinWalls Logo" class="logo-img">
+      </a>
+    </div>
+    <button class="hamburger" aria-label="Toggle Menu">☰</button>
+
+    <nav class="nav" aria-label="Main Navigation">
+      <ul class="nav__list">
+        <li><a href="index.html" title="Home Page">Home</a></li>
+        <li><a href="#how-it-works" title="How LivinWalls Works">How it Works</a></li>
+        <li><a href="packages.html" title="View Construction Packages">Construction Packages</a></li>
+        <li><a href="design_packages.html" title="View Design Packages">Design Packages</a></li>
+        <li><a href="calculator.html" title="Estimate Construction Cost">Cost Calculator</a></li>
+        <li><a href="work.html" title="See Our Work">Our Work</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" title="More Options">More▾</a>
+          <ul class="dropdown-content">
+            <li><a href="floorplans.html" title="Explore Floor Plans">Floor plans</a></li>
+            <li><a href="Designs.html" title="Browse Designs">Designs</a></li>
+            <li><a href="about.html" title="About Us">About us</a></li>
+            <li><a href="contact.html" title="Contact Us">Contact us</a></li>
+            <li><a href="blog.html" title="Visit Our Blog">Blogs</a></li>
+            <li><a href="Testimonials.html" title="Customer Testimonials">Testimonials</a></li>
+            <li><a href="carrer.html" title="Careers">Careers</a></li>
+            <li><a href="faq.html" title="Frequently Asked Questions">FAQ</a></li>
+            <li><a href="policies.html" title="Policies">Policies</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="right-buttons">
+      <a href="GetQuote.html" class="get-quote" title="Get a Quote from LivinWalls">Lets Talk</a>
+      <a href="login.html" class="login-link" id="login-link" title="Login to Your Account">
+        <span id="login-text">Login</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  window.addEventListener('scroll', function () {
+    const header = document.querySelector('.header');
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  const hamburger = document.querySelector('.hamburger');
+  const navList = document.querySelector('.nav__list');
+  const rightButtons = document.querySelector('.right-buttons');
+
+  hamburger.addEventListener('click', () => {
+    navList.classList.toggle('active');
+    rightButtons.classList.toggle('active');
+  });
+</script>
+
+
+<!--Whats app-->
+
+
+  <div style="position: fixed; bottom: 20px; right: 20px; z-index: 999;">
+    <a href="https://wa.me/919146478677" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+      <img src="https://techfocus24.com/wp-content/uploads/2021/01/whatsapp-button.png" alt="WhatsApp Button" style="width: 200px; height: 70px;" />
+    </a>
+  </div>
+
+
+  
 <style>
 :root {
   --primary-color: #2D3041;
@@ -29,6 +144,7 @@
   margin: 0 auto;
   padding: var(--padding-lg);
   overflow: hidden;
+  font-family: 'Playfair Display', serif;
 }
 @media (max-width: 992px) {
   .main-container {
@@ -69,6 +185,7 @@
   color: #fff;
   font-size: 2rem;
   position: relative;
+  font-weight: 600;
 }
 .hero-overlay h2::after {
   content: '';
@@ -94,11 +211,13 @@
   color: var(--primary-color);
   text-align: center;
   position: relative;
+  font-weight: 600;
 }
 .section p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #4a4a4a;
   text-align: center;
+  font-weight: 400;
 }
 
 /* Form */
@@ -127,6 +246,7 @@
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 1rem;
+  font-family: 'Playfair Display', serif;
 }
 .form-container input:focus,
 .form-container textarea:focus {
@@ -142,6 +262,7 @@
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s;
+  font-family: 'Playfair Display', serif;
 }
 .form-container button:hover {
   background: #b31433;
@@ -170,6 +291,7 @@
   font-size: 1.2rem;
   color: var(--primary-color);
   margin: 0.75rem 0;
+  font-weight: 600;
 }
 .card p {
   color: #555;
@@ -188,7 +310,8 @@
   padding: 1rem;
   background: #f9f9f9;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1.9rem;
   color: var(--primary-color);
   display: flex;
   justify-content: space-between;
@@ -226,11 +349,12 @@
   margin-bottom: 0.5rem;
 }
 .highlight-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--primary-color);
+  font-weight: 600;
 }
 .highlight-card p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #666;
 }
 
@@ -244,86 +368,13 @@
   to { opacity: 1; transform: translateY(0); }
 }
 </style>
-
-</head>
-<body>
-  <header class="header">
-  <div class="containerr">
-    <div class="logo">
-      <a href="index.html" aria-label="Go to LivinWalls homepage">
-        <img src="img/logo-removebg.png" alt="LivinWalls Logo" class="logo-img">
-      </a>
-    </div>
-    <button class="hamburger" aria-label="Toggle Menu">☰</button>
-    <nav class="nav" aria-label="Main Navigation">
-      <ul class="nav__list">
-        <li><a href="index.html" title="Home Page">Home</a></li>
-        <li><a href="packages.html" title="View Construction Packages">Construction Packages</a></li>
-        <li><a href="design_packages.html" title="View Design Packages">Design Packages</a></li>
-        <li><a href="calculator.html" title="Estimate Construction Cost">Cost Calculator</a></li>
-        <li><a href="work.html" title="See Our Work">Our Work</a></li>
-
-        <!-- If you want to reuse the dropdown later, uncomment this -->
-      <li class="dropdown">
-          <a href="#" class="dropdown-toggle" title="More Options">More▾</a>
-          <ul class="dropdown-content">
-              <li><a href="floorplans.html" title="Explore Floor Plans">Floor plans</a></li>
-            <li><a href="Designs.html" title="Browse Designs">Designs</a></li>
-            <li><a href="about.html" title="About Us">About us</a></li>
-            <li><a href="contact.html" title="Contact Us">Contact us</a></li>
-            <li><a href="blog.html" title="Visit Our Blog">Blogs</a></li>
-             <li><a href="Testimonials.html" title="Customer Testimonials">Testimonials</a></li>
-            <li><a href="carrer.html" title="Careers">Careers</a></li>
-            <li><a href="faq.html" title="Frequently Asked Questions">FAQ</a></li>
-            <li><a href="policies.html" title="Careers">Policies</a></li>
-
-          </ul>
-        </li>
-      
-      </ul>
-    </nav>
-    <div class="right-buttons">
-      <a href="GetQuote.html" class="get-quote" title="Get a Quote from LivinWalls">Lets Talk</a>
-      <a href="login.html" class="login-link" id="login-link" title="Login to Your Account">
-        <span id="login-text">Login</span>
-      </a>
-    </div>
-  </div>
-</header>
-
-
-<script>
-    window.addEventListener('scroll', function () {
-    const header = document.querySelector('.header');
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
-
-  const hamburger = document.querySelector('.hamburger');
-  const navList = document.querySelector('.nav__list');
-  const rightButtons = document.querySelector('.right-buttons');
-
-  hamburger.addEventListener('click', () => {
-    navList.classList.toggle('active');
-    rightButtons.classList.toggle('active');
-  });
-</script>
-
-
-  <div style="position: fixed; bottom: 20px; right: 20px; z-index: 999;">
-    <a href="https://wa.me/919146478677" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
-      <img src="https://techfocus24.com/wp-content/uploads/2021/01/whatsapp-button.png" alt="WhatsApp Button" style="width: 200px; height: 70px;" />
-    </a>
-  </div>
+  <!--Main content -->
 
   <main class="main-container">
     <section class="hero-section">
       <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Construction site">
       <div class="hero-overlay">
-        <h2>We’re Here to Help You Build</h2>
+        <h2>We're Here to Help You Build</h2>
       </div>
     </section>
 
@@ -561,7 +612,7 @@
         <h2>Build Your Dream with Living Walls</h2>
         <p>
           At Living Walls Construction, we believe every strong foundation begins with a smart floor plan.
-          Whether you’re building your first home or planning a commercial space, we provide expertly
+          Whether you're building your first home or planning a commercial space, we provide expertly
           designed layouts that balance style, strength, and functionality.
         </p>
       </div>

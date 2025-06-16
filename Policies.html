@@ -4,19 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Living Walls - Creative Design Agency</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="css/responsive.css"> <!--responsive-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/responsive.css">
 
-  
-  <link rel="stylesheet" href="styles.css">
+  <!-- External Libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.11.4/dist/framer-motion.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="auth.js"></script>
+
+  <style>
+    
+  </style>
 </head>
+
 <body>
-<!-- Header HTML (to be included in all pages, e.g., index.html, packages.html, etc.) -->
+
+<!-- Header HTML (to be included in all pages) -->
 <header class="header">
   <div class="containerr">
     <div class="logo">
@@ -25,20 +37,19 @@
       </a>
     </div>
     <button class="hamburger" aria-label="Toggle Menu">☰</button>
+
     <nav class="nav" aria-label="Main Navigation">
       <ul class="nav__list">
         <li><a href="index.html" title="Home Page">Home</a></li>
+        <li><a href="#how-it-works" title="How LivinWalls Works">How it Works</a></li>
         <li><a href="packages.html" title="View Construction Packages">Construction Packages</a></li>
         <li><a href="design_packages.html" title="View Design Packages">Design Packages</a></li>
         <li><a href="calculator.html" title="Estimate Construction Cost">Cost Calculator</a></li>
         <li><a href="work.html" title="See Our Work">Our Work</a></li>
-
-        <!-- If you want to reuse the dropdown later, uncomment this -->
-      
-       <li class="dropdown">
+        <li class="dropdown">
           <a href="#" class="dropdown-toggle" title="More Options">More▾</a>
           <ul class="dropdown-content">
-              <li><a href="floorplans.html" title="Explore Floor Plans">Floor plans</a></li>
+            <li><a href="floorplans.html" title="Explore Floor Plans">Floor plans</a></li>
             <li><a href="Designs.html" title="Browse Designs">Designs</a></li>
             <li><a href="about.html" title="About Us">About us</a></li>
             <li><a href="contact.html" title="Contact Us">Contact us</a></li>
@@ -46,13 +57,12 @@
             <li><a href="Testimonials.html" title="Customer Testimonials">Testimonials</a></li>
             <li><a href="carrer.html" title="Careers">Careers</a></li>
             <li><a href="faq.html" title="Frequently Asked Questions">FAQ</a></li>
-            <li><a href="policies.html" title="Careers">Policies</a></li>
-
+            <li><a href="policies.html" title="Policies">Policies</a></li>
           </ul>
         </li>
- 
       </ul>
     </nav>
+
     <div class="right-buttons">
       <a href="GetQuote.html" class="get-quote" title="Get a Quote from LivinWalls">Lets Talk</a>
       <a href="login.html" class="login-link" id="login-link" title="Login to Your Account">
@@ -62,9 +72,8 @@
   </div>
 </header>
 
-
 <script>
-    window.addEventListener('scroll', function () {
+  window.addEventListener('scroll', function () {
     const header = document.querySelector('.header');
     if (window.scrollY > 50) {
       header.classList.add('scrolled');
@@ -83,27 +92,21 @@
   });
 </script>
 
-
-
 <!-- Floating WhatsApp Button -->
-    <div class="whatsapp-button-container">
-    <a href="https://wa.me/919146478677" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
-      <img src="https://techfocus24.com/wp-content/uploads/2021/01/whatsapp-button.png" alt="WhatsApp Button" class="whatsapp-button-image" />
-    </a>
-  </div>
+<div class="whatsapp-button-container">
+  <a href="https://wa.me/919146478677" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <img src="https://techfocus24.com/wp-content/uploads/2021/01/whatsapp-button.png" alt="WhatsApp Button" class="whatsapp-button-image" />
+  </a>
+</div>
 
-
-<!--main section -->
-
+<!-- Main Section -->
 <main class="policies-container">
   <h1 class="policies-title">Policies</h1>
   <p class="policies-subtitle">Get the info you need</p>
   <div class="policies-grid">
     <section class="policy-section">
       <div class="policy-icon">
-        
         <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/cancellation_v1_1.png" alt="Designing with Living Walls" height="60" width="60">
-      
       </div>
       <h2>Terms of Use</h2>
       <ul>
@@ -112,28 +115,23 @@
         <li>Eligibility to Use</li>
         <li>Account Registration</li>
         <li>Usage</li>
-      <!--  <li><a href="#">View More</a></li> -->
       </ul>
     </section>
     <section class="policy-section">
       <div class="policy-icon">
-        
-      <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/getting_started_v1_1.png" alt="gettign started" height="60" width="60">
-          
-
+        <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/getting_started_v1_1.png" alt="Getting Started" height="60" width="60">
       </div>
       <h2>Getting Started</h2>
       <ul>
         <li>Getting Started</li>
         <li>Purpose and Scope</li>
-        <li> Key Concepts and Terminology</li>
+        <li>Key Concepts and Terminology</li>
         <li>Troubleshooting and Support</li>
-          <!--  <li><a href="#">View More</a></li> -->
       </ul>
     </section>
     <section class="policy-section">
       <div class="policy-icon">
-         <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/designing_with_livspace_v1_1.png" alt="Designing with Living Walls" height="60" width="60">
+        <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/designing_with_livspace_v1_1.png" alt="Designing with Living Walls" height="60" width="60">
       </div>
       <h2>Designing with Living Walls</h2>
       <ul>
@@ -141,14 +139,11 @@
         <li>Managing your Home Project</li>
         <li>Problem Identification and Goal Setting</li>
         <li>Paying for my Home Interiors</li>
-                 <!--  <li><a href="#">View More</a></li> -->
       </ul>
     </section>
     <section class="policy-section">
       <div class="policy-icon">
-
-        <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/payment_v1_2.png" alt="payment" height="60" width="60">
-
+        <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/payment_v1_2.png" alt="Payment" height="60" width="60">
       </div>
       <h2>Payments</h2>
       <ul>
@@ -157,14 +152,11 @@
         <li>Transaction Failure</li>
         <li>Payment Terms for a Living Walls Project (Interior Design & Execution)</li>
         <li>Payment Terms as per type of order</li>
-               <!--  <li><a href="#">View More</a></li> -->
       </ul>
     </section>
     <section class="policy-section">
       <div class="policy-icon">
-
-         <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/emi_v1_1.png" alt="EMI Options" height="60" width="60">
-
+        <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/emi_v1_1.png" alt="EMI Options" height="60" width="60">
       </div>
       <h2>EMI Options</h2>
       <ul>
@@ -173,16 +165,11 @@
         <li>Procedure Outline</li>
         <li>Understanding Your Payment Options</li>
         <li>EMI Cancellation & Part Prepayment</li>
-                
       </ul>
     </section>
     <section class="policy-section">
       <div class="policy-icon">
-       
-        
-         <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/cancellation_v1_1.png" alt="Cancellation" height="60" width="60">
-
-
+        <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/cancellation_v1_1.png" alt="Cancellation" height="60" width="60">
       </div>
       <h2>Cancellation</h2>
       <ul>
@@ -190,14 +177,11 @@
         <li>Specific Circumstances</li>
         <li>Communication and Notification</li>
         <li>Cancellation Fees</li>
-        <!--  <li><a href="#">View More</a></li> -->
       </ul>
     </section>
     <section class="policy-section">
       <div class="policy-icon">
-       
-         <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/return_exchange_refund_v1_1.png" alt="return & refund" height="60" width="60">
-
+        <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/return_exchange_refund_v1_1.png" alt="Return & Refund" height="60" width="60">
       </div>
       <h2>Return, Exchange & Refund</h2>
       <ul>
@@ -205,14 +189,11 @@
         <li>Return, Exchange & Refund</li>
         <li>Provide Documentation</li>
         <li>Damage or Tampering</li>
-      <!--  <li><a href="#">View More</a></li> -->
       </ul>
     </section>
     <section class="policy-section">
       <div class="policy-icon">
-       
-         <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/livspace_warranty_v1_1.png" alt="Livspace Warranty" height="60" width="60">
-
+        <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/livspace_warranty_v1_1.png" alt="Livspace Warranty" height="60" width="60">
       </div>
       <h2>Livspace Warranty</h2>
       <ul>
@@ -221,14 +202,11 @@
         <li>Terms, Conditions & Exclusions</li>
         <li>Modular Systems</li>
         <li>Furniture</li>
-        <!--  <li><a href="#">View More</a></li> -->
       </ul>
     </section>
     <section class="policy-section">
       <div class="policy-icon">
-
-         <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/care_instruction_v1_1.png" alt="Care Instructions" height="60" width="60">
-
+        <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/care_instruction_v1_1.png" alt="Care Instructions" height="60" width="60">
       </div>
       <h2>Care Instructions</h2>
       <ul>
@@ -236,15 +214,11 @@
         <li>Regular Inspections</li>
         <li>Guardrails and Safety Nets</li>
         <li>Proper Waste Disposal</li>
-        <li></li>
-        <!--  <li><a href="#">View More</a></li> -->
       </ul>
     </section>
     <section class="policy-section">
       <div class="policy-icon">
-
-         <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/become_design_partner_v1_1.png" alt="Becoming a Design Partner" height="60" width="60">
-
+        <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/become_design_partner_v1_1.png" alt="Becoming a Design Partner" height="60" width="60">
       </div>
       <h2>Becoming a Design Partner</h2>
       <ul>
@@ -252,14 +226,11 @@
         <li>Eligibility & Onboarding</li>
         <li>Design & Installation</li>
         <li>Leveraging the Partnership for Success</li>
-        <!--  <li><a href="#">View More</a></li> -->
       </ul>
     </section>
     <section class="policy-section">
       <div class="policy-icon">
-        
-         <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/reseller_agreement_v1_1.png" alt="Reseller Arrangement" height="60" width="60">
-
+        <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/reseller_agreement_v1_1.png" alt="Reseller Arrangement" height="60" width="60">
       </div>
       <h2>Reseller Arrangement</h2>
       <ul>
@@ -268,14 +239,11 @@
         <li>Invoice and Payment</li>
         <li>Taxes</li>
         <li>Roles and Responsibility</li>
-         <!--  <li><a href="#">View More</a></li> -->
       </ul>
     </section>
     <section class="policy-section">
       <div class="policy-icon">
-
-         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUmyfZQsLn4BcUxLNcuuFma1ObnaXPNlwNpT05RBhs5_VBooVujG5RFi5hhpRPo6vdeaI&usqp=CAU" alt="Getting Started" height="60" width="60">
-
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUmyfZQsLn4BcUxLNcuuFma1ObnaXPNlwNpT05RBhs5_VBooVujG5RFi5hhpRPo6vdeaI&usqp=CAU" alt="Corporate Policies" height="60" width="60">
       </div>
       <h2>Corporate Policies</h2>
       <ul>
@@ -284,28 +252,22 @@
         <li>Ethical Business Practices</li>
         <li>Modern Slavery Prevention</li>
         <li>Code of Conduct - Business Partners</li>
-       <!--  <li><a href="#">View More</a></li> -->
       </ul>
     </section>
     <section class="policy-section">
       <div class="policy-icon">
-
-         <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/grievance_v1_1.png" alt="Grievance Redressal" height="60" width="60">
-
+        <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/grievance_v1_1.png" alt="Grievance Redressal" height="60" width="60">
       </div>
       <h2>Cookie Policy</h2>
       <ul>
         <li>Cookie Policy</li>
         <li>Analytical/Performance Cookies</li>
         <li>Third-Party Cookies</li>
-        <!--  <li><a href="#">View More</a></li> -->
       </ul>
     </section>
     <section class="policy-section">
       <div class="policy-icon">
-
-         <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/terms-of-use_v1_2.png" alt="Customer Terms & Conditions" height="60" width="60">
-
+        <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/terms-of-use_v1_2.png" alt="Customer Terms & Conditions" height="60" width="60">
       </div>
       <h2>Customer Terms & Conditions</h2>
       <ul>
@@ -314,14 +276,11 @@
         <li>Completion of the Project</li>
         <li>Intellectual Property Terms</li>
         <li>Project Delay & Penalty Terms</li>
-       <!--  <li><a href="#">View More</a></li> -->
       </ul>
     </section>
     <section class="policy-section">
       <div class="policy-icon">
-
-         <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/referral-icon-1725878766-07tSa.png" alt="Referral Icon" height="60" width="60">
-
+        <img src="https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/sg/service/referral-icon-1725878766-07tSa.png" alt="Referral Icon" height="60" width="60">
       </div>
       <h2>Referral Policy</h2>
       <ul>
@@ -331,22 +290,31 @@
         <li>Earning Referral</li>
         <li>Paying Terms</li>
         <li>Invalidated Referral</li>
-       <!--  <li><a href="#">View More</a></li> -->
       </ul>
     </section>
   </div>
 </main>
 <style>
+/* Global font settings */
+* {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400; /* Regular weight for body text */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600; /* Slightly bold for headers */
+}
+
 .policies-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 120px;
-  font-family: Arial, sans-serif;
 }
 
 .policies-title {
   color: #ff4d4f;
-  font-size: bolder ;
+  font-size: 2.5rem;
   text-align: center;
   margin-bottom: 10px;
 }
@@ -382,7 +350,6 @@
   font-size: 1.9rem;
   color: #333;
   margin-bottom: 15px;
-  font-weight: bold;
 }
 
 .policy-section ul {
@@ -410,11 +377,16 @@
   color: #ff4d4f;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: bold;
 }
 
 .policy-section ul li a:hover {
   text-decoration: underline;
+}
+
+/* Ensure all text elements use Playfair Display */
+.header, .nav__list, .right-buttons, .footer, .extended-footer, .construction-footer, .whatsapp-button-container, a, p, li, span {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
 }
 
 /* Mobile Responsiveness */
@@ -428,7 +400,7 @@
   }
 
   .policies-subtitle {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .policy-section {
@@ -454,7 +426,7 @@
   }
 
   .policies-subtitle {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
 
   .policy-section {
@@ -467,95 +439,78 @@
 }
 </style>
 
-    
-  <!--footer section-->
-
-    
-    <!--footer section -->
-    <footer class="footer">
-      <div class="footercontainer">
-        <div class="footer-sections">
-          <!-- Column 1: Constructions -->
-          <div class="footer-column">
-            <h3>Constructions</h3>
-            <ul>
-              <li><a href="#residential">Residential Construction</a></li>
-              <li><a href="#commercial">Commercial Construction</a></li>
-              <li><a href="#home">Home Construction</a></li>
-              <li><a href="#farmhouse">Farm House Construction</a></li>
-              <li><a href="#addfloor">Add New Floor</a></li>
-              <li><a href="#duplex">Duplex Home Construction</a></li>
-              <li><a href="#independent">Independent House Construction</a></li>
-              <li><a href="#villa">Villa Construction</a></li>
-              <li><a href="#luxury">Luxury Home Construction</a></li>
-              <li><a href="#cost">Cost of New Home Construction</a></li>
-            </ul>
-          </div>
-    
-          <!-- Column 2: Interiors -->
-          <div class="footer-column">
-            <h3>Interiors</h3>
-            <ul>
-              <li><a href="#res-interior">Residential Interior Design</a></li>
-              <li><a href="#living">Living Room Interior Design</a></li>
-              <li><a href="#kitchen">Kitchen Interior Design</a></li>
-              <li><a href="#bedroom">Bedroom Interior Design</a></li>
-              <li><a href="#bathroom">Bathroom Interior Design</a></li>
-              <li><a href="#office">Office Interior Design</a></li>
-              <li><a href="#commercial-interior">Commercial Interior Design</a></li>
-              <li><a href="#apartment">Apartment Interior Design</a></li>
-            </ul>
-          </div>
-    
-          <!-- Column 3: Calculator -->
-          <div class="footer-column">
-            <h3>Calculator</h3>
-            <ul>
-              <li><a href="#res-cost">Residential Cost Estimator</a></li>
-              <li><a href="#comm-cost">Commercial Cost Estimator</a></li>
-              <li><a href="#interior-cost">Interior Cost Estimator</a></li>
-            </ul>
-            <h3>Packages</h3>
-            <ul>
-              <li><a href="#luxury">Luxury</a></li>
-              <li><a href="#commercial">Commercial</a></li>
-              <li><a href="#interior">Interior</a></li>
-            </ul>
-          </div>
-    
-          <!-- Column 4: Info -->
-          <div class="footer-column">
-            <h3>Your Floor Plan Solution</h3>
-            <p>Find the perfect floor plan for your dream home. We offer a wide selection of customizable designs from top architects and designers.</p>
-    
-            <h4>Get in Touch</h4>
-            <p><a href="tel:+919739011656">+91 9739011656</a><br>
-               <a href="mailto:rajashekarreddy@livinwalls.com">rajashekarreddy@livinwalls.com</a>
-            </p>
-    
-            <h4>Social</h4>
-            <div class="social-icons">
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Optional links -->
-        <div class="footer-links">
-          <a href="#support">Support</a>
-          <a href="#terms">Terms & Services</a>
-          <a href="#privacy">Privacy & Policy</a>
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footercontainer">
+    <div class="footer-sections">
+      <div class="footer-column">
+        <h3>Constructions</h3>
+        <ul>
+          <li><a href="#residential">Residential Construction</a></li>
+          <li><a href="#commercial">Commercial Construction</a></li>
+          <li><a href="#home">Home Construction</a></li>
+          <li><a href="#farmhouse">Farm House Construction</a></li>
+          <li><a href="#addfloor">Add New Floor</a></li>
+          <li><a href="#duplex">Duplex Home Construction</a></li>
+          <li><a href="#independent">Independent House Construction</a></li>
+          <li><a href="#villa">Villa Construction</a></li>
+          <li><a href="#luxury">Luxury Home Construction</a></li>
+          <li><a href="#cost">Cost of New Home Construction</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Interiors</h3>
+        <ul>
+          <li><a href="#res-interior">Residential Interior Design</a></li>
+          <li><a href="#living">Living Room Interior Design</a></li>
+          <li><a href="#kitchen">Kitchen Interior Design</a></li>
+          <li><a href="#bedroom">Bedroom Interior Design</a></li>
+          <li><a href="#bathroom">Bathroom Interior Design</a></li>
+          <li><a href="#office">Office Interior Design</a></li>
+          <li><a href="#commercial-interior">Commercial Interior Design</a></li>
+          <li><a href="#apartment">Apartment Interior Design</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Calculator</h3>
+        <ul>
+          <li><a href="#res-cost">Residential Cost Estimator</a></li>
+          <li><a href="#comm-cost">Commercial Cost Estimator</a></li>
+          <li><a href="#interior-cost">Interior Cost Estimator</a></li>
+        </ul>
+        <h3>Packages</h3>
+        <ul>
+          <li><a href="#luxury">Luxury</a></li>
+          <li><a href="#commercial">Commercial</a></li>
+          <li><a href="#interior">Interior</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Your Floor Plan Solution</h3>
+        <p>Find the perfect floor plan for your dream home. We offer a wide selection of customizable designs from top architects and designers.</p>
+        <h4>Get in Touch</h4>
+        <p><a href="tel:+919739011656">+91 9739011656</a><br>
+           <a href="mailto:rajashekarreddy@livinwalls.com">rajashekarreddy@livinwalls.com</a>
+        </p>
+        <h4>Social</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
-      </div>
-    </footer>
-    <hr>
-    
+    </div>
+    <div class="footer-links">
+      <a href="#support">Support</a>
+      <a href="#terms">Terms & Services</a>
+      <a href="#privacy">Privacy & Policy</a>
+    </div>
+  </div>
+</footer>
+<hr>
 
-    <!-- New Footer Section -->
+<!-- New Footer Section -->
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-row">
@@ -600,13 +555,11 @@
         </ul>
       </div>
     </div>
-    
   </div>
 </footer>
 <hr>
 
-
-<!-- Living WallsConstruction - Extended Footer Section -->
+<!-- Extended Footer Section -->
 <section class="extended-footer">
   <div class="ext-container">
     <div class="ext-section">
@@ -617,7 +570,6 @@
         designed layouts that balance style, strength, and functionality.
       </p>
     </div>
-
     <div class="ext-section">
       <h2>Why Choose Our Plans?</h2>
       <p>
@@ -626,9 +578,7 @@
         structurally sound and compliant with modern construction standards.
       </p>
     </div>
-    
     <div class="ext-section">
-
       <h3>Our Services</h3>
       <ul class="ext-services">
         <li>Residential Floor Plan Design</li>
@@ -642,10 +592,10 @@
       </ul>
     </div>
   </div>
-  <hr>
+</section>
+<hr>
 
-
-<!-- Living Walls Construction - Services Footer Section B2B -->
+<!-- B2B Construction Services Footer Section -->
 <section class="construction-footer">
   <div class="footer-content">
     <h2>B2B Construction Services</h2>
@@ -653,27 +603,22 @@
       Partner with Living Walls Construction for commercial building solutions. With over 800 contractors and 470+ quality checks,
       we deliver robust, scalable commercial spaces that empower businesses to grow with confidence.
     </p>
-
     <h3>Commercial Construction</h3>
     <p>
       Our team crafts commercial spaces designed for optimal productivity, ensuring every square foot serves your business goals.
     </p>
-
     <h3>Warehouse Construction</h3>
     <p>
       We build secure, accessible warehouses engineered to preserve and manage inventory efficiently.
     </p>
-
     <h3>Retail Construction</h3>
     <p>
       Our designers create dynamic retail environments that enhance customer engagement and streamline shopping experiences.
     </p>
-
     <h3>Hospital Construction</h3>
     <p>
       Constructing hospitals that combine medical functionality with safety and comfort, customized for both patients and staff.
     </p>
-
     <h3>Hospitality Construction</h3>
     <p>
       We design memorable hospitality spaces that prioritize guest experience, ambiance, and operational flow.
@@ -688,42 +633,36 @@
     <p class="location-text">
       House Construction in Bengaluru, Chennai, Mysuru, NCR Faridabad, NCR Ghaziabad, NCR Noida, NCR Delhi, NCR Gurgaon, Hyderabad, Pune, Hubli
     </p>
-
-
   </div>
-
   <div class="footer-bottom">
     <p>
-      Copyright &copy;
+      Copyright ©
       <script>document.write(new Date().getFullYear());</script> All Rights Reserved | Powered by <a href="https://meghplat.com/" target="_blank" class="text-primary">Meghplat Analytics</a>
-  </p>
+    </p>
   </div>
 </section>
 
- <!--EndB2B-->
+<script>
+  // Simple script for the mobile menu toggle
+  document.querySelector('.menu-toggle')?.addEventListener('click', function() {
+    document.querySelector('.nav').classList.toggle('nav--active');
+    this.classList.toggle('menu-toggle--active');
+  });
 
-
-  <script>
-    // Simple script for the mobile menu toggle
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-      document.querySelector('.nav').classList.toggle('nav--active');
-      this.classList.toggle('menu-toggle--active');
-    });
-
-    // Custom cursor
-    const cursor = document.querySelector('.cursor');
-    
+  // Custom cursor
+  const cursor = document.querySelector('.cursor');
+  if (cursor) {
     document.addEventListener('mousemove', e => {
       cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
     });
-    
     document.addEventListener('click', () => {
       cursor.classList.add("cursor--expand");
       setTimeout(() => {
         cursor.classList.remove("cursor--expand");
       }, 500);
     });
-  </script>
-   <script src="auth.js"></script>
+  }
+</script>
+<script src="auth.js"></script>
 </body>
 </html>
