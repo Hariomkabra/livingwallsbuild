@@ -1,7 +1,7 @@
 /* Variables */
 :root {
   --color-primary: #000;
-  --color-secondary: #333;
+  --color-secondary: #2D2F40;
   --color-accent: #ff3c00;
   --color-success: #4CAF50;
   --color-warning: #FFC107;
@@ -61,7 +61,7 @@
 }
 
 .section-title {
-   font-family: 'Lato', sans-serif;
+   font-family: 'Poppins', sans-serif;
   font-size: 4rem;
   font-weight: 700;
   color: #000000;
@@ -145,14 +145,14 @@
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
   }
 
 .content{
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
     
@@ -214,7 +214,7 @@ html {
   font-size: 24px;
   background: none;
   border: none;
-  color: #222;
+  color: #2D2F40;
   cursor: pointer;
   padding: 10px;
 }
@@ -231,7 +231,7 @@ html {
 
 .nav__list a {
   text-decoration: none;
-  color: #222;
+  color: #2D2F40;
   font-size: 16px;
   font-weight: 500;
   transition: color 0.3s;
@@ -258,7 +258,7 @@ html {
 }
 
 .get-quote {
-  background-color: #d5193e;
+  background-color: #C8173C;
   color: white;
   padding: 6px 12px;
   border-radius: 10px;
@@ -269,7 +269,7 @@ html {
 }
 
 .get-quote:hover {
-  background-color: #d5193e;
+  background-color: #C8173C;
 }
 
 /* Dropdown */
@@ -302,7 +302,7 @@ html {
 .dropdown-content a {
   display: block;
   padding: 8px 16px;
-  color: #222;
+  color: #2D2F40;
   text-decoration: none;
   font-size: 13px;
   transition: background-color 0.1s ease;
@@ -457,13 +457,13 @@ html {
   top: 10px;
   right: 15px;
   font-size: 20px;
-  color: #d5193e;
+  color: #C8173C;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .popup .close-btn:hover {
-  color: #d5193e;
+  color: #C8173C;
 }
 
 /* Hero Section */
@@ -516,7 +516,7 @@ html {
   font-size: 4.4rem;
   margin-bottom: 3rem;
   font-weight: 900; /* Use numeric value for consistency */
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .hero-content p {
@@ -557,7 +557,7 @@ html {
 
 .svc-title {
   font-size: 2.5rem;
-  color: #333;
+  color: #2D2F40;
   margin-bottom: 40px;
   position: relative;
   text-transform: uppercase;
@@ -569,7 +569,7 @@ html {
   display: block;
   width: 60px;
   height: 3px;
-  background-color: #d5193e;
+  background-color: #C8173C;
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -622,7 +622,7 @@ html {
 
 .svc-card-title {
   font-size: 1.2rem;
-  color: #333;
+  color: #2D2F40;
   margin: 0 0 8px;
   font-weight: bold;
   text-transform: uppercase;
@@ -649,7 +649,7 @@ html {
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 40px;
-  color: #333;
+  color: #2D2F40;
   line-height: 1.2;
 }
 
@@ -755,7 +755,7 @@ html {
 
 .details-content h3 {
   font-size: 28px;
-  color: #333;
+  color: #2D2F40;
   margin-bottom: 15px;
   font-weight: 600;
 }
@@ -806,14 +806,14 @@ html {
 .threeD-gallery {
   padding: 60px 20px;
   text-align: center;
-   font-family: 'Lato', sans-serif;
+   font-family: 'Poppins', sans-serif;
   background: #fff;
 }
 
 .threeD-gallery h2 {
   font-size: 28px;
   margin-bottom: 40px;
-  color: #222;
+  color: #2D2F40;
 }
 
 .threeD-gallery h2 strong {
@@ -877,7 +877,7 @@ html {
   line-height: 1.8;
   text-align: justify;
   margin-bottom: 16px;
-   font-family: 'Lato', sans-serif;
+   font-family: 'Poppins', sans-serif;
 }
 
 .about__stats {
@@ -1007,7 +1007,7 @@ html {
 
 .feature p {
   font-size: 16px;
-  color: #333;
+  color: #2D2F40;
 }
 
 /* Team Section */
@@ -1070,7 +1070,7 @@ html {
 
 .team__name {
   font-size: 20px;
-  color: #333;
+  color: #2D2F40;
   margin-bottom: 5px;
   font-weight: 600;
 }
@@ -1090,7 +1090,7 @@ html {
   .svc-title {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #333;
+    color: #2D2F40;
   }
 
   .svc-container {
@@ -1163,7 +1163,7 @@ html {
   .svc-card-title {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    color: #222;
+    color: #2D2F40;
   }
 
   .svc-card-desc {
@@ -1243,7 +1243,7 @@ html {
 /* Footer Text */
 .footer-text p {
   font-size: 16px;
-  color: #333;
+  color: #2D2F40;
   margin: 5px 0;
 }
 
@@ -1297,7 +1297,7 @@ html {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  color: #333333;
+  color: #2D2F40333;
 }
 
 .step {
@@ -1332,7 +1332,7 @@ html {
 .step-content h3 {
   font-size: 3.50rem;
   margin-bottom: 10px;
-  color: #222;
+  color: #2D2F40;
 }
 
 .step-content p {
@@ -1379,7 +1379,7 @@ html {
 
 .card-img {
   font-size: 3rem; /* Increased from 2rem to 3rem for larger icon */
-  color: #333; /* Maintain existing color */
+  color: #2D2F40; /* Maintain existing color */
   display: inline-block; /* Match image display behavior */
   width: 60px; /* Adjusted to accommodate larger icon */
   height: 60px;
@@ -1388,7 +1388,7 @@ html {
 }
 
 .card h3 {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 2.4rem;
   font-weight: 500;
   color: #000000;
@@ -1397,7 +1397,7 @@ html {
 }
 
 .card p {
-   font-family: 'Lato', sans-serif;
+   font-family: 'Poppins', sans-serif;
   font-size: 1.7rem;
   font-weight: 300;
   color: #000000;
@@ -1414,7 +1414,7 @@ html {
 
 .testimonial-title {
   font-size: 3.1rem;
-  color: #333;
+  color: #2D2F40;
   margin-bottom: 8px;
   font-weight: 800;
 }
@@ -1515,7 +1515,7 @@ html {
 .testimonial-name {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #333;
+  color: #2D2F40;
   margin-bottom: 3px;
 }
 
@@ -1659,7 +1659,7 @@ html {
 }
 
 .refer-earn-right h2 span {
-  color: #d5193e;
+  color: #C8173C;
   font-weight: bold;
 }
 
@@ -1672,7 +1672,7 @@ html {
 
 .refer-earn-right button {
   padding: 28px 45px;
-  background: linear-gradient(90deg, #d5193e, #d5193e);
+  background: linear-gradient(90deg, #C8173C, #C8173C);
   color: #fff;
   border: none;
   border-radius: 35px;
@@ -1685,7 +1685,7 @@ html {
 
 .refer-earn-right button:hover {
   transform: translateY(-3px);
-  background: linear-gradient(90deg, #d5193e, #d5193e);
+  background: linear-gradient(90deg, #C8173C, #C8173C);
   box-shadow: 0 5px 15px rgba(216, 27, 96, 0.4);
 }
 
@@ -1700,7 +1700,7 @@ html {
 .section-heading h1 {
   font-size: 3.6rem;
   font-weight: bolder;
-  color: #333;
+  color: #2D2F40;
   margin-bottom: 0.5rem;
 }
 
@@ -1732,7 +1732,7 @@ html {
 .text-content h2 {
   font-size: 2.6rem;
   margin-bottom: 1rem;
-  color: #333;
+  color: #2D2F40;
   font-weight: bold;
 }
 
@@ -1745,7 +1745,7 @@ html {
 }
 
 .know-more-btn {
-  background-color: #d5193e;
+  background-color: #C8173C;
   color: #fff;
   border: none;
   padding: 0.75rem 1.125rem;
@@ -1772,7 +1772,7 @@ html {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: #d5193e;
+  background: #C8173C;
   color: #fff;
   padding: 0.5rem 0.875rem;
   font-size: 1.875rem;
@@ -1784,7 +1784,7 @@ html {
   position: absolute;
   bottom: 1rem;
   left: 1rem;
-  background-color: #d5193e;
+  background-color: #C8173C;
   color: #fff;
   border: none;
   padding: 0.75rem 1.125rem;
@@ -1797,7 +1797,7 @@ html {
 .why-modern-container {
   background: linear-gradient(to right, #F5F5F5, #FFFFFF);
   padding: 60px 25px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
   text-align: center;
 }
 
@@ -1810,7 +1810,7 @@ html {
 }
 
 .why-modern-title:hover {
-  color: #d5193e;
+  color: #C8173C;
 }
 
 .why-modern-title span {
@@ -1822,7 +1822,7 @@ html {
 }
 
 .why-modern-title span:hover {
-  background: #d5193e;
+  background: #C8173C;
 }
 
 .why-modern-stats {
@@ -1845,7 +1845,7 @@ html {
 .why-modern-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 12px 30px rgba(45, 48, 65, 0.15);
-  border-color: #d5193e;
+  border-color: #C8173C;
 }
 
 .why-modern-card h3 {
@@ -1857,12 +1857,12 @@ html {
 }
 
 .why-modern-card:hover h3 {
-  color: #d5193e;
+  color: #C8173C;
 }
 
 .why-modern-card p {
   font-size: 15px;
-  color: #333;
+  color: #2D2F40;
   transition: color var(--transition-fast);
 }
 
@@ -1892,7 +1892,7 @@ html {
 .why-modern-feature:hover {
   background: #E6E9F0;
   color: #2f3342;
-  border-color: #d5193e;
+  border-color: #C8173C;
   transform: scale(1.05);
   box-shadow: 0 4px 15px rgba(201, 24, 60, 0.2);
 }
@@ -1905,7 +1905,7 @@ html {
 }
 
 .why-modern-feature:hover small {
-  color: #d5193e;
+  color: #C8173C;
 }
 
 /* Partners Section */
@@ -1996,7 +1996,7 @@ html {
   content: '';
   width: 80px;
   height: 2px;
-  background: #d5193e;
+  background: #C8173C;
   position: absolute;
   bottom: -8px;
   left: 50%;
@@ -2050,7 +2050,7 @@ html {
   bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
-  background: #d5193e;
+  background: #C8173C;
   color: #f7f7fa;
   padding: 0.5rem 1.2rem;
   border-radius: 20px;
@@ -2125,7 +2125,7 @@ html {
 }
 
 .luxury-modal-btn {
-  background: #d5193e;
+  background: #C8173C;
   color: #f2f3fb;
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
@@ -2146,7 +2146,7 @@ html {
 
 .luxury-close-details {
   background: #2f3342;
-  color: #d5193e;
+  color: #C8173C;
   padding: 0.5rem 1rem;
   border-radius: 25px;
   font-weight: 600;
@@ -2182,7 +2182,7 @@ html {
   display: block;
   width: 50px;
   height: 4px;
-  background-color: #d5193e;
+  background-color: #C8173C;
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -2206,7 +2206,7 @@ html {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-   font-family: 'Lato', sans-serif;
+   font-family: 'Poppins', sans-serif;
 }
 
 .faq-questionn i {
@@ -2243,7 +2243,7 @@ html {
   background-color: #1A1A2E;
   color: #ccc;
   padding: 50px 20px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .footer-container,
@@ -2322,7 +2322,7 @@ html {
 .footer-bottom {
   text-align: center;
   margin-top: 40px;
-  border-top: 1px solid #333;
+  border-top: 1px solid #2D2F40;
   padding-top: 20px;
   font-size: 13px;
   color: #aaa;
@@ -2357,21 +2357,21 @@ html {
   padding: 0.5rem 1rem;
   border-radius: 4px;
   font-weight: 500;
-  color: #333;
-  border: 1px solid #333;
+  color: #2D2F40;
+  border: 1px solid #2D2F40;
   transition: all var(--transition-fast);
 }
 
 .user-name:hover {
-  background-color: #d5193e;
+  background-color: #C8173C;
   color: white;
-  border-color: #d5193e;
+  border-color: #C8173C;
 }
 
 .logout-btn {
   background: none;
   border: none;
-  color: #d5193e;
+  color: #C8173C;
   font-weight: 500;
   cursor: pointer;
   margin-left: 0.5rem;

@@ -1,0 +1,126 @@
+/* Basic Reset and Body Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Navbar Container */
+.navbar {
+    background: #333;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Keep it at the top */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+/* Brand/Logo */
+.navbar-brand a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Navigation Menu */
+.nav-menu ul {
+    list-style: none;
+    display: flex; /* For horizontal layout on desktop */
+}
+
+.nav-menu ul li {
+    margin-left: 20px; /* Space between links */
+}
+
+.nav-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block; /* Make links clickable across their padding area */
+    transition: background-color 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+/* Hamburger Icon & Checkbox for Mobile */
+.nav-toggle-label {
+    display: none; /* Hidden on desktop */
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav-toggle {
+    display: none; /* Hidden actual checkbox */
+}
+
+/* --- Responsive Design (Media Queries) --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        padding: 1rem 1rem;
+    }
+
+    .nav-toggle-label {
+        display: block; /* Show hamburger icon on mobile */
+        order: 2; /* Position it to the right */
+    }
+
+    .navbar-brand {
+        order: 1; /* Position logo to the left */
+        flex-grow: 1; /* Allow logo to take available space */
+    }
+
+    .nav-menu {
+        width: 100%; /* Take full width on mobile */
+        max-height: 0; /* Initially hide the menu */
+        overflow: hidden; /* Hide overflow content */
+        transition: max-height 0.3s ease-out; /* Smooth transition for showing/hiding */
+        flex-basis: 100%; /* Ensure it occupies full width below brand/toggle */
+        order: 3; /* Position below brand/toggle */
+    }
+
+    .nav-menu ul {
+        flex-direction: column; /* Stack links vertically on mobile */
+        padding: 1rem 0;
+        background: #444; /* Slightly darker background for mobile menu */
+        border-top: 1px solid #555;
+    }
+
+    .nav-menu ul li {
+        margin: 0; /* Remove horizontal margin */
+        text-align: center; /* Center align links */
+    }
+
+    .nav-menu ul li a {
+        padding: 1rem; /* Larger touch targets */
+        border-bottom: 1px solid #555; /* Separator for mobile links */
+    }
+
+    .nav-menu ul li:last-child a {
+        border-bottom: none; /* No border for the last link */
+    }
+
+    /* JavaScript-free Mobile Menu Toggle */
+    .nav-toggle:checked + .nav-toggle-label + .nav-menu {
+        max-height: 300px; /* Adjust as needed, ensure it's larger than menu height */
+        /* You can use a more robust height like 'auto' if you know JS or calc() */
+        /* For purely CSS, a fixed max-height is common. */
+    }
+
+    /* If you prefer to make it slide down from top */
+    /* .nav-toggle:checked + .nav-toggle-label + .nav-menu {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    } */
+}
