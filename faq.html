@@ -8,89 +8,483 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/responsive.css">
-
   <!-- External Libraries -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.11.4/dist/framer-motion.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" defer></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="auth.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.3.6/dist/framer-motion.min.js" integrity="sha256-u6Wv7+0uBkyaB4N5GemV1V3V3oK4q+7Qv9t2uBEd3o=" crossorigin="anonymous" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" integrity="sha256-Jvka1AW7VaWCRPZ5WqIWG6Vp9cF3S2h3H4yOzvW/Bo=" crossorigin="anonymous" defer></script>
+  <script src="https://cdn.tailwindcss.com/3.4.3"></script>
 
   <style>
-    
+    /* Global font settings */
+    * {
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      box-sizing: border-box;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+    }
+
+    /* Header Styles */
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      transition: background-color 0.3s;
+    }
+
+    .header.scrolled {
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    .containerr {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 50px;
+    }
+
+    .nav__list {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav__list li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .nav__list li a:hover {
+      color: #d5193e;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-toggle::after {
+      content: '▾';
+      margin-left: 5px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      list-style: none;
+      padding: 10px;
+      min-width: 150px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content li a {
+      padding: 8px 12px;
+      display: block;
+    }
+
+    .right-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .get-quote, .login-link {
+      padding: 8px 15px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .get-quote {
+      background: #d5193e;
+      color: #fff;
+    }
+
+    .login-link {
+      border: 1px solid #d5193e;
+      color: #d5193e;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* FAQ Menu Styles */
+    .faq-menu {
+      background-color: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 20px;
+      margin-top: 80px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .faq-menu h2 {
+      color: #d5193e;
+      font-size: 30px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .faq-nav {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .faq-link {
+      color: #333;
+      text-decoration: none;
+      font-size: 15px;
+      padding: 12px 15px;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .faq-link:hover {
+      background-color: #f5f5f5;
+      color: #d5193e;
+    }
+
+    .faq-link.active {
+      background-color: #d5193e;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    /* Content Styles */
+    .content {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .faq-section {
+      display: none;
+    }
+
+    .faq-section.active {
+      display: block;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+      margin-bottom: 10px;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      padding: 10px 0;
+      font-size: 18px;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #000;
+    }
+
+    .faq-answer.active {
+      display: block;
+    }
+
+    .arrow {
+      transition: transform 0.3s;
+    }
+
+    .arrow.active {
+      transform: rotate(180deg);
+    }
+
+    .category-header {
+      font-size: 28px;
+      color: #d5193e;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .toggle-all {
+      display: block;
+      margin: 10px auto;
+      padding: 8px 15px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .toggle-all:hover {
+      background-color: #555;
+    }
+
+    /* Back-to-Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background-color: #d5193e;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+      font-size: 18px;
+    }
+
+    .back-to-top:hover {
+      background-color: #b3152f;
+    }
+
+    /* WhatsApp Button */
+    .whatsapp-button-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .whatsapp-button-image {
+      width: 50px;
+      height: 50px;
+    }
+
+    /* Footer Styles */
+    .footer, .extended-footer, .construction-footer {
+      background: #f8f8f8;
+      padding: 40px 20px;
+    }
+
+    .footercontainer, .ext-container, .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-sections, .footer-row, .ext-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-column, .ext-section {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-column h3, .footer-column h4, .ext-section h2, .ext-section h3 {
+      color: #d5193e;
+      margin-bottom: 15px;
+    }
+
+    .footer-column ul, .ext-services {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li a, .ext-services li {
+      color: #333;
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .footer-column ul li a:hover {
+      color: #d5193e;
+    }
+
+    .social-icons a {
+      color: #333;
+      margin-right: 10px;
+      font-size: 18px;
+    }
+
+    .footer-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .footer-links a {
+      color: #333;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .footer-bottom a {
+      color: #d5193e;
+    }
+
+    /* Warranty Table Styles */
+    .warranty-table-wrapper {
+      overflow-x: auto;
+      margin-top: 15px;
+    }
+
+    .warranty-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+
+    .warranty-table th, .warranty-table td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .warranty-table th {
+      background-color: #f3f3f3;
+    }
+
+    .warranty-notes {
+      background: #f9f9f9;
+      padding: 15px;
+      border-left: 4px solid #ccc;
+      font-size: 14px;
+      color: #444;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .nav__list, .right-buttons {
+        display: none;
+      }
+
+      .nav__list.active, .right-buttons.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .nav__list li, .right-buttons a {
+        margin: 10px 0;
+      }
+
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+      }
+
+      .faq-nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .faq-link {
+        font-size: 14px;
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+      }
+
+      .content {
+        padding: 20px 10px;
+      }
+
+      .category-header {
+        font-size: 24px;
+      }
+
+      .warranty-table th, .warranty-table td {
+        font-size: 13px;
+        padding: 8px;
+      }
+
+      .warranty-notes {
+        font-size: 13px;
+      }
+    }
   </style>
 </head>
 
 <body>
-
-<!-- Header HTML (to be included in all pages) -->
-<header class="header">
-  <div class="containerr">
-    <div class="logo">
-      <a href="index.html" aria-label="Go to LivinWalls homepage">
-        <img src="img/logo-removebg.png" alt="LivinWalls Logo" class="logo-img">
-      </a>
+  <!-- Header -->
+  <header class="header">
+    <div class="containerr">
+      <div class="logo">
+        <a href="index.html" aria-label="Go to LivinWalls homepage">
+          <img src="img/logo-removebg.png" alt="LivinWalls Logo" class="logo-img">
+        </a>
+      </div>
+      <button class="hamburger" aria-label="Toggle Menu">☰</button>
+      <nav class="nav" aria-label="Main Navigation">
+        <ul class="nav__list">
+          <li><a href="index.html" title="Home Page">Home</a></li>
+          <li><a href="packages.html" title="View Construction Packages">Construction Packages</a></li>
+          <li><a href="design_packages.html" title="View Design Packages">Design Packages</a></li>
+          <li><a href="calculator.html" title="Estimate Construction Cost">Cost Calculator</a></li>
+          <li><a href="work.html" title="See Our Work">Our Work</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" title="More Options">More</a>
+            <ul class="dropdown-content">
+              <li><a href="floorplans.html" title="Explore Floor Plans">Floor plans</a></li>
+              <li><a href="Designs.html" title="Browse Designs">Designs</a></li>
+              <li><a href="about.html" title="About Us">About us</a></li>
+              <li><a href="contact.html" title="Contact Us">Contact us</a></li>
+              <li><a href="blog.html" title="Visit Our Blog">Blogs</a></li>
+              <li><a href="Testimonials.html" title="Customer Testimonials">Testimonials</a></li>
+              <li><a href="carrer.html" title="Careers">Careers</a></li>
+              <li><a href="faq.html" title="Frequently Asked Questions">FAQ</a></li>
+              <li><a href="policies.html" title="Policies">Policies</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="right-buttons">
+        <a href="GetQuote.html" class="get-quote" title="Get a Quote from LivinWalls">Lets Talk</a>
+        <a href="login.html" class="login-link" id="login-link" title="Login to Your Account">
+          <span id="login-text">Login</span>
+        </a>
+      </div>
     </div>
-    <button class="hamburger" aria-label="Toggle Menu">☰</button>
-
-    <nav class="nav" aria-label="Main Navigation">
-      <ul class="nav__list">
-        <li><a href="index.html" title="Home Page">Home</a></li>
-   
-        <li><a href="packages.html" title="View Construction Packages">Construction Packages</a></li>
-        <li><a href="design_packages.html" title="View Design Packages">Design Packages</a></li>
-        <li><a href="calculator.html" title="Estimate Construction Cost">Cost Calculator</a></li>
-        <li><a href="work.html" title="See Our Work">Our Work</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" title="More Options">More▾</a>
-          <ul class="dropdown-content">
-            <li><a href="floorplans.html" title="Explore Floor Plans">Floor plans</a></li>
-            <li><a href="Designs.html" title="Browse Designs">Designs</a></li>
-            <li><a href="about.html" title="About Us">About us</a></li>
-            <li><a href="contact.html" title="Contact Us">Contact us</a></li>
-            <li><a href="blog.html" title="Visit Our Blog">Blogs</a></li>
-            <li><a href="Testimonials.html" title="Customer Testimonials">Testimonials</a></li>
-            <li><a href="carrer.html" title="Careers">Careers</a></li>
-            <li><a href="faq.html" title="Frequently Asked Questions">FAQ</a></li>
-            <li><a href="policies.html" title="Policies">Policies</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="right-buttons">
-      <a href="GetQuote.html" class="get-quote" title="Get a Quote from LivinWalls">Lets Talk</a>
-      <a href="login.html" class="login-link" id="login-link" title="Login to Your Account">
-        <span id="login-text">Login</span>
-      </a>
-    </div>
-  </div>
-</header>
-
-<script>
-  window.addEventListener('scroll', function () {
-    const header = document.querySelector('.header');
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
-
-  const hamburger = document.querySelector('.hamburger');
-  const navList = document.querySelector('.nav__list');
-  const rightButtons = document.querySelector('.right-buttons');
-
-  hamburger.addEventListener('click', () => {
-    navList.classList.toggle('active');
-    rightButtons.classList.toggle('active');
-  });
-</script>
+  </header>
 
   <!-- FAQ Menu Bar -->
   <div class="faq-menu">
@@ -109,15 +503,13 @@
   <!-- Content -->
   <div class="content">
     <h2 class="category-header">Modular Kitchen</h2>
-    <!-- Toggle All Button -->
     <button class="toggle-all" id="toggle-all">Expand All FAQs</button>
-
     <div id="modular-kitchen" class="faq-section active">
       <div class="faq-item">
         <div class="faq-question" tabindex="0">How do I buy a modular kitchen? <span class="arrow">▼</span></div>
         <div class="faq-answer">You can buy a modular kitchen by consulting with a designer, selecting a layout, choosing materials, and placing an order with a supplier.</div>
       </div>
-      <div class="faq-item">
+      <div class add="faq-item">
         <div class="faq-question" tabindex="0">What is the best modular kitchen design? <span class="arrow">▼</span></div>
         <div class="faq-answer">The best design depends on your space; L-shaped kitchens are great for small spaces, while U-shaped ones suit larger areas.</div>
       </div>
@@ -253,7 +645,7 @@
       </div>
       <div class="faq-item">
         <div class="faq-question" tabindex="0">What is the cost of exterior maintenance? <span class="arrow">▼</span></div>
-        <div class="faq-answer">Annual maintenance cost, depending on the home size and required services like painting or cleaning.</div>
+        <div class="faq-answer">Annual maintenance costs vary, depending on home size and services like painting or cleaning.</div>
       </div>
     </div>
     <div id="homelane-care" class="faq-section">
@@ -354,9 +746,9 @@
               <li>Rusting from chemicals, sprays, or dampness.</li>
               <li>Water leakage due to:
                 <ul>
-                  <li>1.(seventy two) hours for BWP grade plywood (IS710);</li>
-                  <li>2.(forty) hours for BWR grade plywood;</li>
-                  <li>3.(twenty four) hours for PB and HDHMR continuous exposure.</li>
+                  <li>1. (seventy-two) hours for BWP grade plywood (IS710);</li>
+                  <li>2. (forty) hours for BWR grade plywood;</li>
+                  <li>3. (twenty-four) hours for PB and HDHMR continuous exposure.</li>
                 </ul>
               </li>
               <li>Discoloration/fading due to sunlight, heat, or moisture.</li>
@@ -379,258 +771,6 @@
       <img src="https://techfocus24.com/wp-content/uploads/2021/01/whatsapp-button.png" alt="WhatsApp Button" class="whatsapp-button-image" />
     </a>
   </div>
-<!-- End whast app -->
-
-
-<style>
-    /* Global font settings */
-    * {
-      font-family: 'Playfair Display', serif;
-      font-weight: 400; /* Regular weight for body text */
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 600; /* Slightly bold for headers */
-    }
-
-    /* Menu Bar Styles */
-    .faq-menu {
-      background-color: #fff;
-      border-bottom: 1px solid #e0e0e0;
-      padding: 120px;
-      width: 100%;
-      padding-bottom: 20px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-      z-index: 1000;
-    }
-
-    .faq-menu h2 {
-      color: #d5193e;
-      font-size: 30px;
-      margin-bottom: 15px;
-      text-align: center;
-    }
-
-    .faq-nav {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .faq-nav li {
-      margin: 0;
-    }
-
-    .faq-link {
-      display: inline-block;
-      color: #333;
-      text-decoration: none;
-      font-size: 15px;
-      padding: 12px 15px;
-      border-radius: 4px;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .faq-link:hover {
-      background-color: #f5f5f5;
-      color: #d5193e;
-    }
-
-    .faq-link.active {
-      background-color: #d5193e;
-      color: #fff;
-      font-weight: 500;
-    }
-
-    /* Content Styles (Reduced Width) */
-    .content {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    .faq-section {
-      display: none;
-      padding: 20px 0;
-    }
-
-    .faq-section.active {
-      display: block;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid #ddd;
-      padding: 10px 0;
-      margin-bottom: 10px;
-    }
-
-    .faq-question {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      padding: 10px 0;
-      font-size: 18px;
-    }
-
-    .faq-answer {
-      display: none;
-      padding: 10px 0;
-      color: #000000;
-      font-size: 16px;
-    }
-
-    .faq-answer.active {
-      display: block;
-    }
-
-    .arrow {
-      transition: transform 0.3s;
-      font: 16px "Font Awesome 5 Free";
-    }
-
-    .arrow.active {
-      transform: rotate(180deg);
-    }
-
-    /* Category Header */
-    .category-header {
-      font-size: 28px;
-      color: #d5193e;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    /* Hide Hamburger */
-    .hamburger {
-      display: none;
-    }
-
-    /* Toggle All Button */
-    .toggle-all {
-      display: block;
-      margin: 10px auto;
-      padding: 8px 15px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .toggle-all:hover {
-      background-color: #555;
-    }
-
-    /* Back-to-Top Button */
-    .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #d5193e;
-      color: #fff;
-      padding: 10px 15px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      z-index: 1000;
-      font-size: 18px;
-    }
-
-    .back-to-top:hover {
-      background-color: #d5193e;
-    }
-
-    /* Ensure all text elements use Playfair Display */
-    .header, .nav__list, .right-buttons, .footer, .faq-menu, .faq-nav, .faq-link, .content, .faq-section, .faq-question, .faq-answer, .category-header, .toggle-all, .back-to-top, .warranty-table, .warranty-notes, a, p, li, span {
-      font-family: 'Playfair Display', serif;
-      font-weight: 400;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .faq-nav {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .faq-link {
-        font-size: 14px;
-        padding: 10px;
-        text-align: center;
-        width: 100%;
-      }
-
-      .content {
-        padding: 20px 10px;
-      }
-
-      .category-header {
-        font-size: 24px;
-      }
-    }
-
-    /* Warranty Table Styles */
-    .warranty-table-wrapper {
-      overflow-x: auto;
-      margin-top: 15px;
-    }
-
-    .warranty-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 15px;
-      margin-bottom: 15px;
-    }
-
-    .warranty-table th, .warranty-table td {
-      padding: 12px;
-      border: 1px solid #ddd;
-      text-align: left;
-      vertical-align: top;
-    }
-
-    .warranty-table th {
-      background-color: #f3f3f3;
-    }
-
-    .warranty-notes {
-      background: #f9f9f9;
-      padding: 15px;
-      border-left: 4px solid #ccc;
-      font-size: 14px;
-      color: #444;
-    }
-
-    .warranty-notes ol {
-      padding-left: 18px;
-      margin-top: 10px;
-    }
-
-    .warranty-notes ul {
-      padding-left: 18px;
-      margin: 6px 0;
-    }
-
-    @media (max-width: 768px) {
-      .warranty-table th, .warranty-table td {
-        font-size: 13px;
-        padding: 8px;
-      }
-
-      .warranty-notes {
-        font-size: 13px;
-      }
-    }
-  </style>
-
-
 
   <!-- Footer -->
   <footer class="footer">
@@ -683,8 +823,7 @@
           <p>Find the perfect floor plan for your dream home. We offer a wide selection of customizable designs from top architects and designers.</p>
           <h4>Get in Touch</h4>
           <p><a href="tel:+919739011656">+91 9739011656</a><br>
-             <a href="mailto:rajashekarreddy@livinwalls.com">rajashekarreddy@livinwalls.com</a>
-          </p>
+             <a href="mailto:rajashekarreddy@livinwalls.com">rajashekarreddy@livinwalls.com</a></p>
           <h4>Social</h4>
           <div class="social-icons">
             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -753,19 +892,11 @@
     <div class="ext-container">
       <div class="ext-section">
         <h2>Build Your Dream with Living Walls</h2>
-        <p>
-          At Living Walls Construction, we believe every strong foundation begins with a smart floor plan.
-          Whether you’re building your first home or planning a commercial space, we provide expertly
-          designed layouts that balance style, strength, and functionality.
-        </p>
+        <p>At Living Walls Construction, we believe every strong foundation begins with a smart floor plan...</p>
       </div>
       <div class="ext-section">
         <h2>Why Choose Our Plans?</h2>
-        <p>
-          Living Walls offers precision-engineered floor plans tailored to meet your specific needs.
-          Our experienced architects ensure each plan is not only visually appealing but also
-          structurally sound and compliant with modern construction standards.
-        </p>
+        <p>Living Walls offers precision-engineered floor plans tailored to meet your specific needs...</p>
       </div>
       <div class="ext-section">
         <h3>Our Services</h3>
@@ -786,161 +917,149 @@
   <section class="construction-footer">
     <div class="footer-content">
       <h2>B2B Construction Services</h2>
-      <p>
-        Partner with Living Walls Construction for commercial building solutions. With over 800 contractors and 470+ quality checks,
-        we deliver robust, scalable commercial spaces that empower businesses to grow with confidence.
-      </p>
+      <p>Partner with Living Walls Construction for commercial building solutions...</p>
       <h3>Commercial Construction</h3>
-      <p>
-        Our team crafts commercial spaces designed for optimal productivity, ensuring every square foot serves your business goals.
-      </p>
+      <p>Our team crafts commercial spaces designed for optimal productivity...</p>
       <h3>Warehouse Construction</h3>
-      <p>
-        We build secure, accessible warehouses engineered to preserve and manage inventory efficiently.
-      </p>
+      <p>We build secure, accessible warehouses engineered to preserve and manage inventory...</p>
       <h3>Retail Construction</h3>
-      <p>
-        Our designers create dynamic retail environments that enhance customer engagement and streamline shopping experiences.
-      </p>
+      <p>Our designers create dynamic retail environments...</p>
       <h3>Hospital Construction</h3>
-      <p>
-        Constructing hospitals that combine medical functionality with safety and comfort, customized for both patients and staff.
-      </p>
+      <p>Constructing hospitals that combine medical functionality with safety...</p>
       <h3>Hospitality Construction</h3>
-      <p>
-        We design memorable hospitality spaces that prioritize guest experience, ambiance, and operational flow.
-      </p>
+      <p>We design memorable hospitality spaces...</p>
       <h3>School Construction</h3>
-      <p>
-        Building schools that foster creativity, learning, and growth — aligned with modern education needs and safety standards.
-      </p>
+      <p>Building schools that foster creativity, learning, and growth...</p>
       <br>
       <hr><br>
       <h3>Locations</h3>
-      <p class="location-text">
-        House Construction in Bengaluru, Chennai, Mysuru, NCR Faridabad, NCR Ghaziabad, NCR Noida, NCR Delhi, NCR Gurgaon, Hyderabad, Pune, Hubli
-      </p>
+      <p class="location-text">House Construction in Bengaluru, Chennai, Mysuru, NCR Faridabad, NCR Ghaziabad, NCR Noida, NCR Delhi, NCR Gurgaon, Hyderabad, Pune, Hubli</p>
     </div>
     <div class="footer-bottom">
-      <p>
-        Copyright ©
-        <script>document.write(new Date().getFullYear());</script> All Rights Reserved | Powered by <a href="https://meghplat.com/" target="_blank" class="text-primary">Meghplat Analytics</a>
-      </p>
+      <p>Copyright © <script>document.write(new Date().getFullYear());</script> All Rights Reserved | Powered by <a href="https://meghplat.com/" target="_blank" class="text-primary">Meghplat Analytics</a></p>
     </div>
   </section>
 
-  <!-- JavaScript -->
   <script>
-    // Header Scroll Effect
-    window.addEventListener('scroll', function () {
-      const header = document.querySelector('.header');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
+    (function () {
+      try {
+        // Ensure DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+          // Header Scroll Effect
+          const header = document.querySelector('.header');
+          if (header) {
+            window.addEventListener('scroll', () => {
+              header.classList.toggle('scrolled', window.scrollY > 50);
+            });
+          }
+
+          // Hamburger Menu Toggle
+          const hamburger = document.querySelector('.hamburger');
+          const navList = document.querySelector('.nav__list');
+          const rightButtons = document.querySelector('.right-buttons');
+
+          if (hamburger && navList && rightButtons) {
+            hamburger.addEventListener('click', () => {
+              navList.classList.toggle('active');
+              rightButtons.classList.toggle('active');
+              hamburger.textContent = navList.classList.contains('active') ? '✕' : '☰';
+            });
+          }
+
+          // FAQ Menu Functionality
+          const faqLinks = document.querySelectorAll('.faq-link');
+          const faqSections = document.querySelectorAll('.faq-section');
+          const categoryHeader = document.querySelector('.category-header');
+          const toggleAllButton = document.getElementById('toggle-all');
+          let isExpanded = false;
+
+          if (faqLinks.length && faqSections.length && categoryHeader && toggleAllButton) {
+            faqLinks.forEach(link => {
+              link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const categoryName = link.textContent;
+
+                faqLinks.forEach(l => l.classList.remove('active'));
+                faqSections.forEach(section => section.classList.remove('active'));
+
+                link.classList.add('active');
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                  targetSection.classList.add('active');
+                  categoryHeader.textContent = categoryName;
+
+                  if (window.innerWidth <= 768) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+
+                  // Reset FAQ states in the new section
+                  const answers = targetSection.querySelectorAll('.faq-answer');
+                  const arrows = targetSection.querySelectorAll('.arrow');
+                  answers.forEach(answer => answer.classList.remove('active'));
+                  arrows.forEach(arrow => arrow.classList.remove('active'));
+                  toggleAllButton.textContent = 'Expand All FAQs';
+                  isExpanded = false;
+                }
+              });
+            });
+
+            // FAQ Toggle Functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+              question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const arrow = question.querySelector('.arrow');
+                if (answer && arrow) {
+                  answer.classList.toggle('active');
+                  arrow.classList.toggle('active');
+                }
+              });
+
+              question.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  question.click();
+                }
+              });
+            });
+
+            // Toggle All FAQs
+            toggleAllButton.addEventListener('click', () => {
+              const activeSection = document.querySelector('.faq-section.active');
+              if (activeSection) {
+                const answers = activeSection.querySelectorAll('.faq-answer');
+                const arrows = activeSection.querySelectorAll('.arrow');
+
+                isExpanded = !isExpanded;
+                toggleAllButton.textContent = isExpanded ? 'Collapse All FAQs' : 'Expand All FAQs';
+
+                answers.forEach(answer => {
+                  answer.classList.toggle('active', isExpanded);
+                });
+                arrows.forEach(arrow => {
+                  arrow.classList.toggle('active', isExpanded);
+                });
+              }
+            });
+          }
+
+          // Back-to-Top Button
+          const backToTopButton = document.getElementById('back-to-top');
+          if (backToTopButton) {
+            window.addEventListener('scroll', () => {
+              backToTopButton.style.display = window.scrollY > 300 ? 'block' : 'none';
+            });
+
+            backToTopButton.addEventListener('click', () => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+          }
+        });
+      } catch (error) {
+        console.error('Script error:', error);
       }
-    });
-
-    // FAQ Menu Functionality
-    const faqLinks = document.querySelectorAll('.faq-link');
-    const faqSections = document.querySelectorAll('.faq-section');
-    const categoryHeader = document.querySelector('.category-header');
-    const navList = document.querySelector('.nav__list');
-    const rightButtons = document.querySelector('.right-buttons');
-
-    faqLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        const categoryName = link.textContent;
-
-        faqLinks.forEach(l => l.classList.remove('active'));
-        faqSections.forEach(section => section.classList.remove('active'));
-
-        link.classList.add('active');
-        document.getElementById(targetId).classList.add('active');
-
-        categoryHeader.textContent = categoryName;
-
-        if (window.innerWidth <= 768) {
-          document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-
-    // Toggle FAQ Answers
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(question => {
-      question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        const arrow = question.querySelector('.arrow');
-        answer.classList.toggle('active');
-        arrow.classList.toggle('active');
-      });
-    });
-
-    // Header Navigation Toggle
-    const hamburger = document.querySelector('.hamburger');
-    hamburger.addEventListener('click', () => {
-      navList.classList.toggle('active');
-      rightButtons.classList.toggle('active');
-    });
-
-    // Custom Cursor
-    const cursor = document.querySelector('.cursor');
-    if (cursor) {
-      document.addEventListener('mousemove', e => {
-        cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
-      });
-      document.addEventListener('click', () => {
-        cursor.classList.add("cursor--expand");
-        setTimeout(() => {
-          cursor.classList.remove("cursor--expand");
-        }, 500);
-      });
-    }
-
-    // Toggle All FAQs
-    const toggleAllButton = document.getElementById('toggle-all');
-    let isExpanded = false;
-
-    toggleAllButton.addEventListener('click', () => {
-      const activeSection = document.querySelector('.faq-section.active');
-      const answers = activeSection.querySelectorAll('.faq-answer');
-      const arrows = activeSection.querySelectorAll('.arrow');
-
-      isExpanded = !isExpanded;
-      toggleAllButton.textContent = isExpanded ? 'Collapse All FAQs' : 'Expand All FAQs';
-
-      answers.forEach(answer => {
-        answer.classList.toggle('active', isExpanded);
-      });
-
-      arrows.forEach(arrow => {
-        arrow.classList.toggle('active', isExpanded);
-      });
-    });
-
-    // Back-to-Top Button
-    const backToTopButton = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-      backToTopButton.style.display = window.scrollY > 300 ? 'block' : 'none';
-    });
-
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Keyboard Navigation for FAQs
-    faqQuestions.forEach(question => {
-      question.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === 'Space') {
-          e.preventDefault();
-          question.click();
-        }
-      });
-    });
+    })();
   </script>
-  <script src="auth.js"></script>
 </body>
 </html>

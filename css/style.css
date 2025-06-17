@@ -61,7 +61,7 @@
 }
 
 .section-title {
-   font-family: 'Playfair Display', serif;
+   font-family: 'Lato', sans-serif;
   font-size: 4rem;
   font-weight: 700;
   color: #000000;
@@ -145,14 +145,14 @@
 }
 
 body {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Lato', sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
   }
 
 .content{
-  font-family: 'Playfair Display', serif;
+  font-family: 'Lato', sans-serif;
 }
 
     
@@ -516,7 +516,7 @@ html {
   font-size: 4.4rem;
   margin-bottom: 3rem;
   font-weight: 900; /* Use numeric value for consistency */
-  font-family: 'Playfair Display', serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .hero-content p {
@@ -806,7 +806,7 @@ html {
 .threeD-gallery {
   padding: 60px 20px;
   text-align: center;
-   font-family: 'Playfair Display', serif;
+   font-family: 'Lato', sans-serif;
   background: #fff;
 }
 
@@ -877,7 +877,7 @@ html {
   line-height: 1.8;
   text-align: justify;
   margin-bottom: 16px;
-   font-family: 'Playfair Display', serif;
+   font-family: 'Lato', sans-serif;
 }
 
 .about__stats {
@@ -1388,7 +1388,7 @@ html {
 }
 
 .card h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Lato', sans-serif;
   font-size: 2.4rem;
   font-weight: 500;
   color: #000000;
@@ -1397,7 +1397,7 @@ html {
 }
 
 .card p {
-   font-family: 'Playfair Display', serif;
+   font-family: 'Lato', sans-serif;
   font-size: 1.7rem;
   font-weight: 300;
   color: #000000;
@@ -1797,7 +1797,7 @@ html {
 .why-modern-container {
   background: linear-gradient(to right, #F5F5F5, #FFFFFF);
   padding: 60px 25px;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Lato', sans-serif;
   text-align: center;
 }
 
@@ -2206,7 +2206,7 @@ html {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-   font-family: 'Playfair Display', serif;
+   font-family: 'Lato', sans-serif;
 }
 
 .faq-questionn i {
@@ -2243,7 +2243,7 @@ html {
   background-color: #1A1A2E;
   color: #ccc;
   padding: 50px 20px;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .footer-container,
