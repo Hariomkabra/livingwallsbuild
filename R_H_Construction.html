@@ -106,12 +106,12 @@
       <rect id="rhc-house-door" x="95" y="75" width="10" height="15" fill="none" stroke="#C8173C" stroke-width="1"/>
       <text id="rhc-heading" x="100" y="110" font-size="8" fill="#2f3342" opacity="0" text-anchor="middle">Rental House Construction</text>
     </svg>
-    
-    <div class="rhc-hero-content">
+  </section>
+
+   <div class="rhc-hero-content">
       <p>Build rental properties designed for tenant appeal and steady income.</p>
       <button class="rhc-cta-button rhc-magnetic" onclick="rhcScrollToJourney()">Explore the Process</button>
     </div>
-  </section>
 
   <!-- Introduction Section (Unchanged) -->
   <section class="rhc-intro-section">
@@ -301,7 +301,7 @@
       padding-bottom: 5px;
     }
     /* Hero Section */
-    .rhc-hero-section {
+   .rhc-hero-section {
       position: relative;
       height: 60vh;
       display: flex;
@@ -322,7 +322,7 @@
       height: 100%;
       z-index: 1;
       opacity: 0;
-      transition: opacity 2s ease-in-out;
+      
     }
 
     .rhc-hero-image {
@@ -334,12 +334,12 @@
     .rhc-house-svg {
       width: 90%; /* Smaller size for better alignment */
       height: 90%; /* Adjusted height to fit house and heading */
-      opacity: 0.9;
+     
       margin-bottom: 20px; /* Space between SVG and content */
     }
 
     .rhc-hero-content {
-      z-index: 3;
+      z-index: 9;
       padding: 18px;
       display: flex;
       flex-direction: column;
@@ -355,7 +355,7 @@
       background: #C8173C;
       color: #fff;
       border: none;
-      font-size: 1rem;
+      font-size: 1.3rem;
       border-radius: 50px;
       cursor: pointer;
       transition: background 0.3s;
@@ -400,8 +400,7 @@
       flex: 0 0 25%;
       padding: 20px;
       text-align: center;
-      opacity: 0.7;
-      transform: scale(0.9);
+   
       transition: opacity 0.3s, transform 0.3s;
     }
 
@@ -645,7 +644,7 @@
       .to(rhcHouseRoof, { strokeDashoffset: 0, duration: 0.8, ease: "power1.inOut" }) // Draw roof
       .to(rhcHouseDoor, { strokeDashoffset: 0, duration: 0.5, ease: "power1.inOut" }) // Draw door
       .to(rhcHeading, { opacity: 1, y: -5, duration: 1, ease: "power1.inOut" }) // Fade in and slightly move heading
-      .to(rhcHeroBg, { opacity: 0.6, duration: 2, ease: "power1.inOut" }, 0); // Fade in background simultaneously
+      .to(rhcHeroBg, { opacity: 0.1, duration: 2, ease: "power1.inOut" }, 0); // Fade in background simultaneously
 
     // Scroll Animations
     gsap.registerPlugin(ScrollTrigger);
