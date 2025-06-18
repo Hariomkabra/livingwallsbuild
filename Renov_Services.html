@@ -74,7 +74,14 @@
 </header>
 
 <script>
-  
+  window.addEventListener('scroll', function () {
+    const header = document.querySelector('.header');
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
 
   const hamburger = document.querySelector('.hamburger');
   const navList = document.querySelector('.nav__list');
@@ -87,83 +94,91 @@
 </script>
 
 
-<main class="cc-main-content">
-  <!-- Hero Section with Commercial Building Animation -->
-  <section class="cc-hero-section">
-    <div class="cc-hero-bg">
-      <img src="https://media.bizj.us/view/img/12191527/gettyimages-1301768608*1200xx2001-1126-0-187.jpg" alt="Commercial Construction Site" class="cc-hero-image">
+
+ <!-- Floating WhatsApp Button -->
+  <div class="whatsapp-button-container">
+    <a href="https://wa.me/919146478677" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+      <img src="https://techfocus24.com/wp-content/uploads/2021/01/whatsapp-button.png" alt="WhatsApp Button" class="whatsapp-button-image" />
+    </a>
+  </div>
+
+  <!-- floating whats app -->
+
+  <main class="rc-main-content">
+  <!-- Hero Section with Renovation Animation -->
+  <section class="rc-hero-section">
+    <div class="rc-hero-bg">
+      <img src="https://png.pngtree.com/thumb_back/fh260/background/20230704/pngtree-revamping-the-interior-a-blend-of-painting-and-remodeling-with-3d-image_3742628.jpg" alt="Renovation Site" class="rc-hero-image">
     </div>
-    <svg id="cc-building-svg" viewBox="0 0 200 120" class="cc-building-svg">
-      <rect id="cc-building-base" x="70" y="50" width="60" height="40" stroke="#2f3342" stroke-width="2" fill="none"/>
-      <path id="cc-building-roof" d="M70,50 L100,40 L130,50" stroke="#2f3342" stroke-width="2" fill="none"/>
-      <rect id="cc-building-window" x="85" y="65" width="8" height="8" fill="none" stroke="#C8173C" stroke-width="1"/>
-      <rect id="cc-building-window2" x="107" y="65" width="8" height="8" fill="none" stroke="#C8173C" stroke-width="1"/>
-      <text id="cc-heading" x="100" y="110" font-size="8" fill="#2f3342" opacity="0" text-anchor="middle">Commercial Construction</text>
+    <svg id="rc-renovation-svg" viewBox="0 0 200 120" class="rc-beam-svg">
+      <path id="rc-house-base" d="M80,90 L80,60 L120,60 L120,90 L80,90" stroke="#2f3342" stroke-width="2" fill="none"/>
+      <path id="rc-house-roof" d="M80,60 L100,40 L120,60" stroke="#2f3342" stroke-width="2" fill="none"/>
+      <rect id="rc-house-door" x="95" y="75" width="10" height="15" fill="none" stroke="#d5193e" stroke-width="1"/>
+      <path id="rc-renovation-symbol" d="M90,70 L100,60 L110,70" stroke="#d5193e" stroke-width="2" fill="none"/> <!-- Simple renovation symbol (e.g., paintbrush) -->
+      <text id="rc-heading" x="100" y="110" font-size="8" fill="#2f3342" opacity="0" text-anchor="middle">Renovation Services</text>
     </svg>
+   
   </section>
 
-  <!-- Separated Hero Content Section -->
-  <section class="cc-hero-text-section">
-    <div class="cc-hero-content">
-      <p>Construct robust commercial spaces designed for business success and growth.</p>
-      <button class="cc-cta-button cc-magnetic" onclick="ccScrollToJourney()">Explore the Process</button>
+   <div class="rc-hero-content">
+      <p>Transform your space with expert renovation solutions.</p>
+      <button class="rc-cta-button rc-magnetic" onclick="rcScrollToJourney()">Discover the Process</button> 
     </div>
-  </section>
 
   <!-- Introduction Section -->
-  <section class="cc-intro-section">
-    <div class="cc-container">
-      <h2>Build for Business Excellence</h2>
-      <p>AtLivingWalls, we specialize in commercial construction that delivers durable, functional, and modern spaces tailored to your business needs.</p>
+  <section class="rc-intro-section">
+    <div class="rc-container">
+      <h2>Revamp Your Living Space</h2>
+      <p>AtLivingWalls, we deliver premium renovation services to modernize your home or business with durable, stylish upgrades.</p>
     </div>
   </section>
 
-  <!-- Construction Journey Slider -->
-  <section class="cc-journey-section" id="cc-journey">
-    <div class="cc-container">
-      <h2>The Commercial Build Journey</h2>
-      <div class="cc-journey-slider">
-        <div class="cc-slider-track">
-          <div class="cc-journey-slide">
-            <img src="https://constructestimates.com/wp-content/uploads/2024/08/site.jpg" alt="Site Prep" class="cc-slide-image">
-            <h3>1. Site Preparation</h3>
-            <p>Strategic layouts for optimal business operations.</p>
+  <!-- Renovation Journey Slider -->
+  <section class="rc-journey-section" id="rc-journey">
+    <div class="rc-container">
+      <h2>The Renovation Journey</h2>
+      <div class="rc-journey-slider">
+        <div class="rc-slider-track">
+          <div class="rc-journey-slide">
+            <img src="https://media.gettyimages.com/id/1982133786/photo/a-model-house-on-blueprints-with-keys-to-the-new-home-close-up.jpg?b=1&s=2048x2048&w=0&k=20&c=bllPKZbacM0m7PDxWKTpcX68RKcgRJC3F01skRGjGCA=" alt="Assessment" class="rc-slide-image">
+            <h3>1. Initial Assessment</h3>
+            <p>Evaluating your property for customized renovation plans.</p>
           </div>
-          <div class="cc-journey-slide">
-            <img src="https://b2170971.smushcdn.com/2170971/wp-content/uploads/2024/01/steel_frame_building.jpg?lossy=1&strip=1&webp=1" alt="Framing" class="cc-slide-image">
-            <h3>2. Structural Framing</h3>
-            <p>Heavy-duty frameworks for commercial durability.</p>
+          <div class="rc-journey-slide">
+            <img src="https://demolitionhackingworkmalaysia.com/wp-content/uploads/2024/08/demolition-progress-creatin-1024x573.jpg" alt="Demolition" class="rc-slide-image">
+            <h3>2. Demolition & Prep</h3>
+            <p>Clearing and preparing for a seamless renovation.</p>
           </div>
-          <div class="cc-journey-slide">
-            <img src="https://dc672854.delivery.rocketcdn.me/wp-content/uploads/2021/03/WICR_Blog_2021-Commercial-Construction.jpg" alt="Finishes" class="cc-slide-image">
-            <h3>3. Professional Finishes</h3>
-            <p>Modern, low-maintenance interiors for businesses.</p>
+          <div class="rc-journey-slide">
+            <img src="https://touchwoodfurnitures.net/wp-content/uploads/2021/11/Renovation-5-2.jpg" alt="Renovation Work" class="rc-slide-image">
+            <h3>3. Renovation Execution</h3>
+            <p>Skilled work to enhance your space with modern features.</p>
           </div>
-          <div class="cc-journey-slide">
-            <img src="https://housing-images.n7net.in/354cef8f/116c4ecbbb1cb07ba7a4b77a0953d238/v0/medium.jpg" alt="Commercial Ready" class="cc-slide-image">
-            <h3>4. Business Ready</h3>
-            <p>Move-in-ready spaces for immediate operations.</p>
+          <div class="rc-journey-slide">
+            <img src="https://www.realestate.com.au/news-image/w_2000,h_1125,c_auto/v1657744737/news-lifestyle-content-assets/wp-content/production/Catherine-Heraghty-living-room-2_2000x1500.jpg?_i=AA" alt="Completion" class="rc-slide-image">
+            <h3>4. Final Reveal</h3>
+            <p>Polished finishes for a fully transformed area.</p>
           </div>
           <!-- Duplicated slides for continuous effect -->
-          <div class="cc-journey-slide">
-            <img src="https://lirp.cdn-website.com/8d522540/dms3rep/multi/opt/building+site+prep-640w.jpg" alt="Site Prep" class="cc-slide-image">
-            <h3>1. Site Preparation</h3>
-            <p>Strategic layouts for optimal business operations.</p>
+          <div class="rc-journey-slide">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359138775/OO/NZ/AI/99564776/office-renovation-services-500x500.jpg" alt="Assessment" class="rc-slide-image">
+            <h3>1. Initial Assessment</h3>
+            <p>Evaluating your property for customized renovation plans.</p>
           </div>
-          <div class="cc-journey-slide">
-            <img src="https://thumbs.dreamstime.com/b/wide-shot-steel-frame-large-industrial-building-under-construction-showing-concrete-foundation-metal-framework-350876611.jpg" alt="Framing" class="cc-slide-image">
-            <h3>2. Structural Framing</h3>
-            <p>Heavy-duty frameworks for commercial durability.</p>
+          <div class="rc-journey-slide">
+            <img src="https://demolitionhackingworkmalaysia.com/wp-content/uploads/2024/05/Demolition.jpg" alt="Demolition" class="rc-slide-image">
+            <h3>2. Demolition & Prep</h3>
+            <p>Clearing and preparing for a seamless renovation.</p>
           </div>
-          <div class="cc-journey-slide">
-            <img src="https://res.cloudinary.com/dsfzcj5qk/image/upload/v1692212926/What-is-commercial-construction-a-comprehensive-overview/Commercial_construction.png" alt="Finishes" class="cc-slide-image">
-            <h3>3. Professional Finishes</h3>
-            <p>Modern, low-maintenance interiors for businesses.</p>
+          <div class="rc-journey-slide">
+            <img src="https://cdn1.npcdn.net/images/160575509908d5f458641d88757df5edf0e9c62541.jpg?md5id=9866b8a83d35abdd89ed76d565d71f75&new_width=1200&new_height=1200&w=-62170009200" alt="Renovation Work" class="rc-slide-image">
+            <h3>3. Renovation Execution</h3>
+            <p>Skilled work to enhance your space with modern features.</p>
           </div>
-          <div class="cc-journey-slide">
-            <img src="https://img.squareyards.com/secondaryPortal/IN_638704207140855204-2112241131543154.jpeg" alt="Commercial Ready" class="cc-slide-image">
-            <h3>4. Business Ready</h3>
-            <p>Move-in-ready spaces for immediate operations.</p>
+          <div class="rc-journey-slide">
+            <img src="https://www.realestate.com.au/news-image/w_2000,h_1125,c_auto/v1657744627/news-lifestyle-content-assets/wp-content/production/Catherine-Heraghty-outdoor-area-8_2000x1500.jpg?_i=AA" alt="Completion" class="rc-slide-image">
+            <h3>4. Final Reveal</h3>
+            <p>Polished finishes for a fully transformed area.</p>
           </div>
         </div>
       </div>
@@ -171,76 +186,75 @@
   </section>
 
   <!-- Material Visualizer Section -->
-  <section class="cc-material-section">
-    <div class="cc-container">
-      <h2>Durable Commercial Materials</h2>
-      <p>Select materials that ensure longevity and functionality for high-traffic business environments.</p>
-      <div class="cc-material-grid">
-        <div class="cc-material-card" data-material="concrete">
-          <img src="https://sika.scene7.com/is/image/sika/glo-concrete-floor-warehouse-01:16-9?wid=1920&hei=1080&fit=crop%2C1" alt="Concrete Flooring" class="cc-material-image">
-          <h3>Concrete Flooring</h3>
-          <p>Heavy-duty floors for high-traffic areas.</p>
+  <section class="rc-material-section">
+    <div class="rc-container">
+      <h2>Renovation-Ready Materials</h2>
+      <p>Choose materials that bring style and durability to your project.</p> <br>
+      <div class="rc-material-grid">
+        <div class="rc-material-card" data-material="hardwood">
+          <img src="https://cdn-cjcgn.nitrocdn.com/AqZGLUgovpyOEexQpCZfkhWEayCsnoKP/assets/images/optimized/rev-e190e10/www.wagnermeters.com/wp-content/uploads/2024/01/hardwood-flooring-types-of-wood.jpg" alt="Hardwood Flooring" class="rc-slide-image">
+          <h3>Hardwood Flooring</h3>
+          <p>Elegant, long-lasting floors for any room.</p>
         </div>
-        <div class="cc-material-card" data-material="steel">
-          <img src="https://unbakmachinery.com/wp-content/uploads/2024/07/toplu-konut-ticari-insaat-photo-2.jpg" alt="Steel Framing" class="cc-material-image">
-          <h3>Steel Framing</h3>
-          <p>Strong, reliable structures for commercial use.</p>
+        <div class="rc-material-card" data-material="quartz">
+          <img src="https://builderinteriors.s3.us-west-1.amazonaws.com/wp-content/uploads/20240603153409/vibrant-tile-countertop.jpg" alt="Quartz Counter" class="rc-slide-image">
+          <p>Stylish, durable counters for kitchens and baths.</p>
         </div>
-        <div class="cc-material-card" data-material="glass">
-          <img src="https://media.istockphoto.com/id/479842074/photo/empty-road-at-building-exterior.jpg?s=612x612&w=0&k=20&c=SbyfZGN0i2O_QPLCdBcu9vhuzbQvTz4bGEn-lIzrN0E=" alt="Commercial Glass" class="cc-material-image">
-          <h3>Commercial Glass</h3>
-          <p>Modern, energy-efficient windows and facades.</p>
+        <div class="rc-material-card" data-material="tile">
+          <img src="https://bombaytiles.com/wp-content/uploads/2020/03/Different-types-of-flooring-tiles.jpg" alt="Porcelain Tile" class="rc-slide-image">
+          <h3>Porcelain Tiles</h3>
+          <p>Versatile, easy-to-maintain wall and floor options.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Why Choose Us Section -->
-  <section class="cc-why-choose-section">
-    <div class="cc-container">
-      <h2>Why Choose LivingWalls for Commercial Builds?</h2>
-      <div class="cc-why-choose-grid">
-        <div class="cc-why-choose-card">
-          <h3>Business-Focused Design</h3>
-          <p>Layouts optimized for productivity and growth.</p>
+  <section class="rc-why-choose-section">
+    <div class="rc-container">
+      <h2>Why Choose LivingWalls for Renovations?</h2>
+      <div class="rc-why-choose-grid">
+        <div class="rc-why-choose-card">
+          <h3>Personalized Designs</h3>
+          <p>Tailored plans to reflect your unique style.</p>
         </div>
-        <div class="cc-why-choose-card">
-          <h3>High-Durability Builds</h3>
-          <p>Constructed to withstand heavy business use.</p>
+        <div class="rc-why-choose-card">
+          <h3>Expert Craftsmanship</h3>
+          <p>High-quality work for lasting results.</p>
         </div>
-        <div class="cc-why-choose-card">
-          <h3>Efficient Timelines</h3>
-          <p>Fast builds to get your business running sooner.</p>
+        <div class="rc-why-choose-card">
+          <h3>Timely Delivery</h3>
+          <p>Renovations completed on schedule with care.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Project Highlights Section -->
-  <section class="cc-projects-section">
-    <div class="cc-container">
-      <h2>Our Commercial Projects</h2>
-      <p>Explore the commercial spaces we’ve built for success.</p>
-      <div class="cc-projects-grid">
-        <div class="cc-project-card">
-          <img src="https://www.10design.co/tmpub/prev/dd5f616977/b/b794d3fff0_01_10Design_Zhuhai_JinwanMall_Re.jpg" alt="Commercial Project 1" class="cc-project-image">
-          <div class="cc-project-overlay">
-            <h3>Retail Complex</h3>
-            <p>A vibrant space for multiple retail businesses.</p>
+  <section class="rc-projects-section">
+    <div class="rc-container">
+      <h2>Our Renovation Projects</h2>
+      <p>See the transformations we’ve brought to life.</p> <br>
+      <div class="rc-projects-grid">
+        <div class="rc-project-card">
+          <img src="https://www.mydomaine.com/thmb/H7NkMwyuZHoHv_2HLFG7IRALcXA=/1024x0/filters:no_upscale():strip_icc()/kitchen-renovation-ideas-28-katie-martinez-greenwich-village-0dceccfe3e504655b61b8fa075ee7552.jpg" alt="Renovation Project 1" class="rc-project-image">
+          <div class="rc-project-overlay">
+            <h3>Kitchen Makeover</h3>
+            <p>A refreshed kitchen with new cabinetry and counters.</p>
           </div>
         </div>
-        <div class="cc-project-card">
-          <img src="https://www.pakitchen.com/wp-content/uploads/2025/02/office-building.jpg" alt="Commercial Project 2" class="cc-project-image">
-          <div class="cc-project-overlay">
-            <h3>Office Building</h3>
-            <p>Modern offices designed for productivity.</p>
+        <div class="rc-project-card">
+          <img src="https://st.hzcdn.com/simgs/488102680e860dcc_14-6180/home-design.jpg" alt="Renovation Project 2" class="rc-project-image">
+          <div class="rc-project-overlay">
+            <h3>Bathroom Renewal</h3>
+            <p>Modern bath with updated fixtures and tiles.</p>
           </div>
         </div>
-        <div class="cc-project-card">
-          <img src="https://srbuilt-usa.com/wp-content/uploads/2022/04/maxresdefault.jpg" alt="Commercial Project 3" class="cc-project-image">
-          <div class="cc-project-overlay">
-            <h3>Warehouse Facility</h3>
-            <p>Efficient storage solutions for logistics.</p>
+        <div class="rc-project-card">
+          <img src="https://www.mygreataddition.com/wp-content/uploads/2017/01/Moore20.jpg" alt="Renovation Project 3" class="rc-project-image">
+          <div class="rc-project-overlay">
+            <h3>Full Home Renovation</h3>
+            <p>Complete interior and exterior upgrade.</p>
           </div>
         </div>
       </div>
@@ -248,60 +262,62 @@
   </section>
 
   <!-- CTA Section -->
-  <section class="cc-cta-section">
-    <div class="cc-container">
-      <h2>Elevate Your Business</h2>
-      <p>Ready to build a commercial space that drives success? Contact us today.</p>
-      <a href="contact.html" class="cc-cta-button cc-magnetic">Get Started</a>
+  <section class="rc-cta-section">
+    <div class="rc-container">
+      <h2>Begin Your Renovation Today</h2>
+      <p>Ready to upgrade your space? Let’s get started.</p> <br>
+      <a href="contact.html" class="rc-cta-button rc-magnetic">Get Started</a>
     </div>
   </section>
 
   <style>
     /* Scoped Styles for Main Content */
-    .cc-main-content {
-      font-family: 'Playfair Display', serif;
+    .rc-main-content {
+      font-family: 'Lato', sans-serif;
     }
 
-    .cc-container {
+    .rc-container {
       max-width: 1300px;
       margin: 0 auto;
       padding: 0 15px;
     }
 
-    .cc-main-content h1, .cc-main-content h2, .cc-main-content h3 {
+    .rc-main-content h1, .rc-main-content h2, .rc-main-content h3 {
       font-weight: bold;
       color: #2f3342;
+      padding-top: 10px;
     }
 
-    .cc-main-content h1 {
+    .rc-main-content h1 {
       font-size: clamp(2rem, 4vw, 3.2rem);
       margin-bottom: 1.5rem;
     }
 
-    .cc-main-content h2 {
+    .rc-main-content h2 {
       font-size: clamp(1.6rem, 3vw, 2.5rem);
       margin-bottom: 1.5rem;
       text-align: center;
     }
 
-    .cc-main-content h3 {
+    .rc-main-content h3 {
       font-size: clamp(1.2rem, 2vw, 1.6rem);
       margin-bottom: 1rem;
+      color: #fff;
     }
 
-    .cc-main-content p {
-      font-size: clamp(1.9rem, 1.5vw, 1rem);
-      color: #3b3c3e;
+    .rc-main-content p {
+      font-size: clamp(2rem, 1.9vw, 1.4rem);
+      color: #090909;
+      line-height: 1.9;
       text-align: center;
-      
+      padding-top: 19px;   
     }
 
     /* Hero Section */
-    .cc-hero-section {
+    .rc-hero-section {
       position: relative;
-      height: 50vh; /* Reduced height since content is separated */
+      height: 60vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
@@ -309,7 +325,7 @@
       overflow: hidden;
     }
 
-    .cc-hero-bg {
+    .rc-hero-bg {
       position: absolute;
       top: 0;
       left: 0;
@@ -320,132 +336,116 @@
       transition: opacity 2s ease-in-out;
     }
 
-    .cc-hero-image {
+    .rc-hero-image {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    .cc-building-svg {
-      width: 50%;
-      height: 60%; /* Adjusted to fit within the shorter section */
-      z-index: 22;
-   
+    .rc-beam-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      padding-top: 40px;
     }
 
-    /* Separated Hero Text Section */
-    .cc-hero-text-section {
-      padding: 20px 0;
-      background: #f8f9fc; /* Light background for contrast */
+    .rc-hero-content {
+      z-index: 8;
+      padding-top: 10px;
+      border-radius: 10px;
       text-align: center;
+     width: 100%;
+     background-color: #fff;
+     padding-bottom: 20px;
     }
 
-    .cc-hero-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 1.165rem;
-    }
-
-    .cc-cta-button {
-      padding: 12px 24px;
-      background: #C8173C;
+    .rc-cta-button {
+      padding: 12px 20px;
+      background: #d5193e;
       color: #fff;
       border: none;
-      font-size: 1rem;
+      font-size: 1.5rem;
       border-radius: 50px;
       cursor: pointer;
       transition: background 0.3s;
-      margin-top: 10px;
-    } 
+      padding-top: 10px;
+    }
 
-    .cc-cta-button:hover {
+    .rc-cta-button:hover {
       background: #b01532;
     }
 
-    /* Magnetic Effect */
-    .cc-magnetic {
-      position: relative;
-    }
-
     /* Intro Section */
-    .cc-intro-section {
+    .rc-intro-section {
       padding: 50px 0;
       background: #f8f9fc;
       text-align: center;
     }
 
     /* Journey Slider */
-    .cc-journey-section {
+    .rc-journey-section {
       padding: 50px 0;
       background: #fff;
     }
 
-    .cc-journey-slider {
+    .rc-journey-slider {
       position: relative;
       overflow: hidden;
       max-width: 100%;
     }
 
-    .cc-slider-track {
+    .rc-slider-track {
       display: flex;
-      width: 200%;
-      animation: cc-slide 16s linear infinite;
+      width: 200%; /* Double width for continuous loop */
+      animation: rc-slide 16s linear infinite;
     }
 
-    .cc-journey-slide {
+    .rc-journey-slide {
       flex: 0 0 25%;
       padding: 20px;
       text-align: center;
-      opacity: 0.7;
       transform: scale(0.9);
-      transition: opacity 0.3s, transform 0.3s;
+      transition: 0px, transform 0.3s;
     }
 
-    .cc-journey-slide.active {
+    .rc-journey-slide.active {
       opacity: 1;
       transform: scale(1);
     }
 
-    .cc-slide-image {
+    .rc-slide-image {
       width: 100%;
       height: 150px;
-      object-fit: cover;
       border-radius: 8px;
       margin-bottom: 10px;
     }
 
-    @keyframes cc-slide {
+    @keyframes rc-slide {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
 
     /* Material Visualizer */
-    .cc-material-section {
+    .rc-material-section {
       padding: 50px 0;
       background: #2f3342;
       color: #fff;
     }
 
-    .cc-material-section h2, .cc-material-section p {
+    .rc-material-section h2, .rc-material-section p {
       color: #fff;
-      text-align: center;
     }
 
-    .cc-material-grid {
+    .rc-material-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
     }
-     .rrc-material-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 5px 15px rgba(213, 25, 62, 0.4);
-    }
 
-
-    .cc-material-card {
+    .rc-material-card {
       text-align: center;
       padding: 15px;
       background: #3a3f4e;
@@ -453,28 +453,37 @@
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .cc-material-image {
+    .rc-material-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(213, 25, 62, 0.4);
+    }
+
+    .rc-material-image {
       width: 100%;
       height: 140px;
-      
+      object-fit: cover;
       border-radius: 8px;
       margin-bottom: 10px;
       transition: filter 0.3s;
     }
 
+    .rc-material-card:hover .rc-material-image {
+      filter: brightness(1.2);
+    }
+
     /* Why Choose Us Section */
-    .cc-why-choose-section {
+    .rc-why-choose-section {
       padding: 50px 0;
       background: #f8f9fc;
     }
 
-    .cc-why-choose-grid {
+    .rc-why-choose-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
     }
 
-    .cc-why-choose-card {
+    .rc-why-choose-card {
       text-align: center;
       padding: 20px;
       background: #fff;
@@ -483,36 +492,37 @@
       transition: transform 0.3s;
     }
 
-    .cc-why-choose-card:hover {
+    .rc-why-choose-card:hover {
       transform: translateY(-5px);
     }
 
     /* Projects Section */
-    .cc-projects-section {
+    .rc-projects-section {
       padding: 50px 0;
       background: #fff;
     }
 
-    .cc-projects-grid {
+    .rc-projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
     }
 
-    .cc-project-card {
+    .rc-project-card {
       position: relative;
       overflow: hidden;
       border-radius: 10px;
     }
 
-    .cc-project-image {
+    .rc-project-image {
       width: 100%;
       height: 200px;
       object-fit: cover;
+      transition: transform 0.3s;
     }
 
-    .cc-project-overlay {
-   position: absolute;
+    .rc-project-overlay {
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
@@ -529,74 +539,74 @@
       text-align: center;
     }
 
+    .rc-project-card:hover .rc-project-overlay {
+      opacity: 1;
+    }
+
+    .rc-project-card:hover .rc-project-image {
+      transform: scale(1.1);
+    }
+
     /* CTA Section */
-    .cc-cta-section {
+    .rc-cta-section {
       padding: 50px 0;
       text-align: center;
-      background: #C8173C;
+      background: #d5193e;
       color: #fff;
     }
 
-    .cc-cta-section h2, .cc-cta-section p {
+    .rc-cta-section h2, .rc-cta-section p {
       color: #fff;
     }
 
-    .cc-cta-section .cc-cta-button {
+    .rc-cta-section .rc-cta-button {
       background: #2f3342;
       color: #fff;
     }
 
-    .cc-cta-section .cc-cta-button:hover {
+    .rc-cta-section .rc-cta-button:hover {
       background: #3a3f4e;
     }
 
     /* Responsive Design */
     @media (max-width: 768px) {
-      .cc-hero-section {
-        height: 40vh; /* Further reduced for smaller screens */
+      .rc-hero-section {
+        height: 50vh;
       }
 
-      .cc-main-content h1 {
-        font-size: 2rem;
+      .rc-main-content h1 {
+        font-size: 2rem;        
       }
 
-      .cc-main-content h2 {
+      .rc-main-content h2 {
         font-size: 1.6rem;
       }
 
-      .cc-journey-slide {
+      .rc-journey-slide {
         flex: 0 0 50%;
       }
 
-      .cc-material-grid, .cc-why-choose-grid, .cc-projects-grid {
+      .rc-material-grid, .rc-why-choose-grid, .rc-projects-grid {
         grid-template-columns: 1fr;
       }
 
-      .cc-slider-track {
-        animation: cc-slide 12s linear infinite;
+      .rc-slider-track {
+        animation: rc-slide 12s linear infinite;
       }
 
-      .cc-project-image {
+      .rc-project-image {
         height: 180px;
-      }
-
-      #cc-heading {
-        font-size: 6px !important;
       }
     }
 
     @media (max-width: 480px) {
-      .cc-cta-button {
+      .rc-cta-button {
         padding: 10px 20px;
         font-size: 0.9rem;
       }
 
-      .cc-slide-image, .cc-material-image, .cc-project-image {
+      .rc-slide-image, .rc-material-image, .rc-project-image {
         height: 150px;
-      }
-
-      #cc-heading {
-        font-size: 5px !important;
       }
     }
   </style>
@@ -605,42 +615,42 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
   <script>
     // Scroll to Journey
-    function ccScrollToJourney() {
-      document.getElementById('cc-journey').scrollIntoView({ behavior: 'smooth' });
+    function rcScrollToJourney() {
+      document.getElementById('rc-journey').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Commercial Building Animation with Integrated Heading
-    const ccBuildingBase = document.getElementById('cc-building-base');
-    const ccBuildingRoof = document.getElementById('cc-building-roof');
-    const ccBuildingWindow = document.getElementById('cc-building-window');
-    const ccBuildingWindow2 = document.getElementById('cc-building-window2');
-    const ccHeading = document.getElementById('cc-heading');
-    const ccHeroBg = document.querySelector('.cc-hero-bg');
+    // Renovation Animation with Integrated Heading
+    const rcHouseBase = document.getElementById('rc-house-base');
+    const rcHouseRoof = document.getElementById('rc-house-roof');
+    const rcHouseDoor = document.getElementById('rc-house-door');
+    const rcRenovationSymbol = document.getElementById('rc-renovation-symbol');
+    const rcHeading = document.getElementById('rc-heading');
+    const rcHeroBg = document.querySelector('.rc-hero-bg');
 
     // Initialize stroke dash properties for animation
-    ccBuildingBase.style.strokeDasharray = '200';
-    ccBuildingBase.style.strokeDashoffset = '200';
-    ccBuildingRoof.style.strokeDasharray = '100';
-    ccBuildingRoof.style.strokeDashoffset = '100';
-    ccBuildingWindow.style.strokeDasharray = '50';
-    ccBuildingWindow.style.strokeDashoffset = '50';
-    ccBuildingWindow2.style.strokeDasharray = '50';
-    ccBuildingWindow2.style.strokeDashoffset = '50';
+    rcHouseBase.style.strokeDasharray = '200';
+    rcHouseBase.style.strokeDashoffset = '200';
+    rcHouseRoof.style.strokeDasharray = '100';
+    rcHouseRoof.style.strokeDashoffset = '100';
+    rcHouseDoor.style.strokeDasharray = '50';
+    rcHouseDoor.style.strokeDashoffset = '50';
+    rcRenovationSymbol.style.strokeDasharray = '40';
+    rcRenovationSymbol.style.strokeDashoffset = '40';
 
     // Create a GSAP timeline for sequential animation
     const timeline = gsap.timeline({ repeat: -1, repeatDelay: 1 });
 
     timeline
-      .to(ccBuildingBase, { strokeDashoffset: 0, duration: 1, ease: "power1.inOut" })
-      .to(ccBuildingRoof, { strokeDashoffset: 0, duration: 0.8, ease: "power1.inOut" })
-      .to(ccBuildingWindow, { strokeDashoffset: 0, duration: 0.5, ease: "power1.inOut" })
-      .to(ccBuildingWindow2, { strokeDashoffset: 0, duration: 0.5, ease: "power1.inOut" })
-      .to(ccHeading, { opacity: 1, y: -5, duration: 1, ease: "power1.inOut" })
-      .to(ccHeroBg, { opacity: 0.6, duration: 2, ease: "power1.inOut" }, 0);
+      .to(rcHouseBase, { strokeDashoffset: 0, duration: 1, ease: "power1.inOut" }) // Draw house base
+      .to(rcHouseRoof, { strokeDashoffset: 0, duration: 0.8, ease: "power1.inOut" }) // Draw roof
+      .to(rcHouseDoor, { strokeDashoffset: 0, duration: 0.5, ease: "power1.inOut" }) // Draw door
+      .to(rcRenovationSymbol, { strokeDashoffset: 0, duration: 0.5, ease: "power1.inOut" }) // Draw renovation symbol
+      .to(rcHeading, { opacity: 1, y: -5, duration: 1, ease: "power1.inOut" }) // Fade in and slightly move heading
+      .to(rcHeroBg, { opacity: 0.6, duration: 2, ease: "power1.inOut" }, 0); // Fade in background simultaneously
 
     // Scroll Animations
     gsap.registerPlugin(ScrollTrigger);
-    gsap.utils.toArray('.cc-journey-slide, .cc-material-card, .cc-why-choose-card, .cc-project-card, .cc-intro-section').forEach(el => {
+    gsap.utils.toArray('.rc-journey-slide, .rc-material-card, .rc-why-choose-card, .rc-project-card, .rc-intro-section').forEach(el => {
       gsap.from(el, {
         opacity: 0,
         y: 50,
@@ -654,7 +664,7 @@
     });
 
     // Magnetic Hover Effect for Button
-    document.querySelectorAll('.cc-magnetic').forEach(el => {
+    document.querySelectorAll('.rc-magnetic').forEach(el => {
       el.addEventListener('mousemove', (e) => {
         const rect = el.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
@@ -676,8 +686,14 @@
     });
   </script>
 </main>
+   <!--Main hero section-->
 
-<!--footer section -->
+
+  
+  <!--End hero section-->
+
+  
+    <!--footer section -->
     <footer class="footer">
       <div class="footercontainer">
         <div class="footer-sections">
@@ -901,14 +917,14 @@
 
   <div class="footer-bottom">
     <p>
-      Copyright &copy;
+      Copyright ©
       <script>document.write(new Date().getFullYear());</script> All Rights Reserved | Powered by <a href="https://meghplat.com/" target="_blank" class="text-primary">Meghplat Analytics</a>
   </p>
   </div>
 </section>
 
  <!--EndB2B-->
-
+ 
   <script>
     // Simple script for the mobile menu toggle
     document.querySelector('.menu-toggle').addEventListener('click', function() {
@@ -930,5 +946,6 @@
       }, 500);
     });
   </script>
+   <script src="auth.js"></script>
 </body>
 </html>
