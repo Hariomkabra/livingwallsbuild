@@ -6,8 +6,7 @@
   <title>Living Walls - Creative Design Agency</title>
 
   <!-- Fonts -->
- <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/reset.css">
@@ -23,13 +22,318 @@
   <script src="auth.js"></script>
 
   <style>
-    
+    /* Apply Lato font globally */
+    * {
+      font-family: 'Lato', sans-serif;
+    }
+
+    /* Bold headers globally */
+    h1, h2, h3, h4 {
+      font-weight: 700;
+    }
+
+    /* Main section styles with unique prefixes */
+    .lw-hero {
+      position: relative;
+      height: 50vh;
+      color: #ffffff;
+      text-align: center;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .lw-slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    .lw-slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .lw-slide.lw-active { opacity: 1; }
+    .lw-slide video, .lw-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(50%) contrast(120%);
+    }
+    .lw-shine-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
+      animation: lw-shine 3s infinite;
+      z-index: 1;
+    }
+    @keyframes lw-shine {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    .lw-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: lw-fadeInZoom 1.2s ease-out;
+      padding: 0 20px;
+      z-index: 2;
+    }
+    @keyframes lw-fadeInZoom {
+      from { opacity: 0; transform: translate(-50%, -40%) scale(0.9); }
+      to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    }
+    .lw-section {
+      display: none;
+      min-height: 70vh;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+      color: #2D3041;
+      animation: lw-slideFade 0.7s ease-in-out;
+    }
+    @keyframes lw-slideFade {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes lw-pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    .lw-section.lw-active { display: flex; }
+    .lw-details {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .lw-title {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+    .lw-subtitle {
+      font-size: 1.4em;
+      margin-bottom: 15px;
+      color: #2D3041;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .lw-text {
+      font-size: 0.9em;
+      margin-bottom: 15px;
+      color: #2D3041;
+    }
+    .lw-benefits-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      font-size: 0.9rem;
+    }
+    .lw-benefit-item {
+      background: #ffffff;
+      padding: 12px 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      width: 40%;
+      transition: transform 0.3s ease;
+      text-align: center;
+      font-size: 1.4rem;
+    }
+    .lw-benefit-item:hover {
+      transform: translateY(-5px);
+      background: #f9f9fb;
+    }
+    .lw-journey-timeline {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .lw-timeline-path {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: #2D3041;
+      transform: translateY(-50%);
+      z-index: 0;
+    }
+    .lw-timeline-step {
+      position: relative;
+      display: inline-block;
+      width: 100px;
+      text-align: center;
+      z-index: 1;
+      opacity: 0.5;
+      transition: all 0.5s ease;
+      vertical-align: middle;
+      margin: 0 30px;
+    }
+    .lw-timeline-step.lw-active {
+      opacity: 1;
+      color: #C9183C;
+    }
+    .lw-timeline-step::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 15px;
+      height: 15px;
+      background: #2D3041;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .lw-timeline-step.lw-active::before {
+      background: #C9183C;
+      transform: translate(-50%, -50%) scale(1.2);
+    }
+    .lw-timeline-step i {
+      font-size: 2.9em;
+      margin-bottom: 8px;
+      color: #2D3041;
+      transition: color 0.3s ease;
+    }
+    .lw-timeline-step.lw-active i {
+      color: #C9183C;
+    }
+    .lw-timeline-step .lw-text {
+      margin: 15px 0 0;
+      font-size: 1.2em;
+      color: #2D3041;
+      transition: color 0.3s ease;
+    }
+    .lw-timeline-step:hover::before {
+      transform: translate(-50%, -50%) scale(1.5);
+      background: #C9183C;
+    }
+    .lw-timeline-step:hover .lw-text {
+      color: #C9183C;
+    }
+    .lw-timeline-step:hover i {
+      color: #C9183C;
+    }
+    .lw-btn {
+      margin: 10px;
+      padding: 12px 25px;
+      font-size: 0.9em;
+      cursor: pointer;
+      background: #2D3041;
+      color: #ffffff;
+      border: none;
+      border-radius: 25px;
+      transition: all 0.4s ease;
+    }
+    .lw-btn:hover {
+      background: #C9183C;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 5px 15px rgba(201, 24, 60, 0.4);
+    }
+    .lw-highlight {
+      color: #C9183C;
+      font-weight: bold;
+    }
+    /* Responsive Design for Main Section */
+    @media (max-width: 1024px) {
+      .lw-hero { height: 40vh; }
+      .lw-content .lw-title { font-size: 2em; }
+      .lw-content .lw-text { font-size: 0.9em; }
+      .lw-details { max-width: 80%; padding: 15px; }
+      .lw-journey-timeline { max-width: 80%; }
+      .lw-timeline-step { width: 90px; margin: 0 8px; }
+      .lw-benefit-item { width: 45%; }
+    }
+    @media (max-width: 768px) {
+      .lw-hero { height: 30vh; }
+      .lw-content .lw-title { font-size: 1.5em; }
+      .lw-content .lw-text { font-size: 0.8em; }
+      .lw-details { max-width: 90%; padding: 10px; }
+      .lw-journey-timeline { flex-direction: column; max-width: 90%; }
+      .lw-timeline-path { height: 2px; }
+      .lw-timeline-step { width: 80px; margin: 15px 0; display: block; }
+      .lw-timeline-step::before { top: -10px; left: 50%; transform: translateX(-50%); }
+      .lw-benefit-item { width: 100%; margin-bottom: 10px; }
+      .lw-subtitle { font-size: 1.5em; }
+      .lw-text { font-size: 0.9em; }
+    }
+    @media (max-width: 480px) {
+      .lw-hero { height: 25vh; }
+      .lw-content .lw-title { font-size: 1.2em; }
+      .lw-content .lw-text { font-size: 0.7em; }
+      .lw-details { padding: 8px; }
+      .lw-journey-timeline { padding: 10px 0; }
+      .lw-timeline-step { width: 70px; }
+      .lw-timeline-step .lw-text { font-size: 0.8em; }
+      .lw-btn { padding: 8px 15px; font-size: 0.9em; }
+      .lw-benefit-item { padding: 10px 15px; }
+    }
+
+    /* Footer styles with unique prefixes to avoid conflicts */
+    .ft-container {
+      background-color: #1a2a44;
+      color: #ffffff;
+      padding: 20px 0;
+    }
+    .ft-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .ft-title {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+    .ft-text {
+      font-size: 0.9em;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+    .ft-service-list {
+      list-style: none;
+      padding: 0;
+    }
+    .ft-service-item {
+      margin-bottom: 10px;
+    }
+    .ft-location {
+      margin-top: 20px;
+      border-top: 1px solid #ffffff;
+      padding-top: 10px;
+    }
+    .ft-location .ft-text {
+      font-size: 0.85em;
+    }
+    /* Responsive Design for Footer */
+    @media (max-width: 768px) {
+      .ft-title { font-size: 1.2em; }
+      .ft-text { font-size: 0.8em; }
+      .ft-service-item { margin-bottom: 8px; }
+    }
   </style>
 </head>
-
 <body>
-
-<!-- Header HTML (to be included in all pages) -->
+<!-- Header -->
 <header class="header">
   <div class="containerr">
     <div class="logo">
@@ -42,7 +346,6 @@
     <nav class="nav" aria-label="Main Navigation">
       <ul class="nav__list">
         <li><a href="index.html" title="Home Page">Home</a></li>
-      
         <li><a href="packages.html" title="View Construction Packages">Construction Packages</a></li>
         <li><a href="design_packages.html" title="View Design Packages">Design Packages</a></li>
         <li><a href="calculator.html" title="Estimate Construction Cost">Cost Calculator</a></li>
@@ -74,8 +377,6 @@
 </header>
 
 <script>
-  
-
   const hamburger = document.querySelector('.hamburger');
   const navList = document.querySelector('.nav__list');
   const rightButtons = document.querySelector('.right-buttons');
@@ -85,393 +386,96 @@
     rightButtons.classList.toggle('active');
   });
 </script>
+
 <!-- Main Section -->
+<div class="lw-hero">
+  <div class="lw-slider">
+    <div class="lw-slide lw-active"><video autoplay muted loop><source src="https://videos.pexels.com/video-files/6473943/6473943-uhd_2560_1440_25fps.mp4" type="video/mp4"></video></div>
+    <div class="lw-slide"><img src="https://5.imimg.com/data5/AP/EF/NV/SELLER-30407762/3d-floor-plan-designing-service.jpg" alt="Design"></div>
+    <div class="lw-slide"><video autoplay muted loop><source src="https://videos.pexels.com/video-files/8725793/8725793-uhd_2560_1440_25fps.mp4" type="video/mp4"></video></div>
+  </div>
+  <div class="lw-shine-overlay"></div>
+  <div class="lw-content">
+    <h1 class="lw-title">Custom Floor Plans</h1>
+    <p class="lw-text" style="color: #fff; font-size: 1.6em;">Unleash your vision with designs tailored to your unique style and needs.</p>
+  </div>
+</div>
 
-  <style>
-        
-    h1,h2,p,li {
-         font-family: 'Poppins', sans-serif;
+<div id="lw-sections">
+  <div class="lw-section lw-active" id="lw-overview">
+    <div class="lw-details">
+      <h2 class="lw-subtitle">Personalized Living Spaces</h2>
+      <p class="lw-text">At the heart of our custom floor plans is your dream home. We craft every layout to reflect your personal style, blending functionality with elegance. Whether you envision <span class="lw-highlight">open-concept living areas</span> or intimate family corners, our designs adapt to your lifestyle, ensuring a perfect balance of comfort and innovation.</p>
+      <button class="lw-btn" onclick="showSection('lw-process')">Discover the Process</button>
+      <button class="lw-btn" onclick="showSection('lw-benefits')">See the Benefits</button>
+    </div>
+  </div>
+  <div class="lw-section" id="lw-process">
+    <div class="lw-details">
+      <h2 class="lw-subtitle">Design Journey</h2>
+      <div class="lw-journey-timeline" id="lw-design-steps">
+        <div class="lw-timeline-path"></div>
+        <div class="lw-timeline-step"><i class="fas fa-drafting-compass"></i><p class="lw-text">Initial Design</p></div>
+        <div class="lw-timeline-step"><i class="fas fa-ruler-combined"></i><p class="lw-text">Layout Planning</p></div>
+        <div class="lw-timeline-step"><i class="fas fa-cube"></i><p class="lw-text">3D Visualization</p></div>
+      </div>
+      <button class="lw-btn" onclick="showSection('lw-overview')">Back to Overview</button>
+    </div>
+  </div>
+  <div class="lw-section" id="lw-benefits">
+    <div class="lw-details">
+      <h2 class="lw-subtitle">Advantages of Customization</h2>
+      <ul class="lw-benefits-list">
+        <li class="lw-benefit-item">Flexible layouts tailored to your lifestyle.</li>
+        <li class="lw-benefit-item">Energy-efficient designs for sustainability.</li>
+        <li class="lw-benefit-item">Increased property value with unique architecture.</li>
+        <li class="lw-benefit-item">Future-proof spaces for growing families.</li>
+        <li class="lw-benefit-item">Personalized comfort and aesthetic appeal.</li>
+      </ul>
+      <button class="lw-btn" onclick="showSection('lw-overview')">Back to Overview</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function showSection(sectionId) {
+  const sections = document.querySelectorAll('.lw-section');
+  sections.forEach(section => {
+    section.classList.remove('lw-active');
+    if (section.id === sectionId) {
+      section.classList.add('lw-active');
     }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background: #ffffff;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-        header img {
-            height: 40px;
-        }
-        header nav {
-            display: flex;
-            align-items: center;
-        }
-        header nav button {
-            background: none;
-            border: none;
-            font-size: 1.5em;
-            cursor: pointer;
-            color: #2D3041;
-        }
-        #hero {
-            position: relative;
-            height: 50vh;
-            color: #ffffff;
-            text-align: center;
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
-        .slider {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-        .slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        .slide.active { opacity: 1; }
-        .slide video, .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(50%) contrast(120%); /* Clearer filter with increased contrast */
-        }
-        .shine-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
-            animation: shine 3s infinite;
-            z-index: 1;
-        }
-        @keyframes shine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        .content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: fadeInZoom 1.2s ease-out;
-            padding: 0 20px;
-            z-index: 2;
-        }
-        @keyframes fadeInZoom {
-            from { opacity: 0; transform: translate(-50%, -40%) scale(0.9); }
-            to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-        }
-        .section {
-            display: none;
-            min-height: 70vh;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
-            color: #2D3041;
-            animation: slideFade 0.7s ease-in-out;
-        }
-        @keyframes slideFade {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-        }
-        .active { display: flex; }
-        .details {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #ffffff;
-            
-        }
-        h2 {
-            font-size: 1.4em;
-            margin-bottom: 15px;
-            color: #2D3041;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            
-           
-            
-        }
-        p {
-            font-size: 0.9em;
-            margin-bottom: 15px;
-            color: #2D3041;
-        }
-        .benefits-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            font-size: 0.9rem ;
-        }
-        .benefit-item {
-            background: #ffffff;
-            padding: 12px 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            width: 40%;
-            transition: transform 0.3s ease;
-            text-align: center;
-            font-size: 1.4rem;
-        }
-        .benefit-item:hover {
-            transform: translateY(-5px);
-            background: #f9f9fb;
-        }
-        .journey-timeline {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px 0;
-            text-align: center;
-        }
-        .timeline-path {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: #2D3041;
-            transform: translateY(-50%);
-            z-index: 0;
-        }
-        .timeline-step {
-            position: relative;
-            display: inline-block;
-            width: 100px;
-            text-align: center;
-            z-index: 1;
-            opacity: 0.5;
-            transition: all 0.5s ease;
-            vertical-align: middle;
-            margin: 0 30px;
-        }
-        .timeline-step.active {
-            opacity: 1;
-            color: #C9183C;
-        }
-        .timeline-step::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 15px;
-            height: 15px;
-            background: #2D3041;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-        .timeline-step.active::before {
-            background: #C9183C;
-            transform: translate(-50%, -50%) scale(1.2);
-        }
-        .timeline-step i {
-            font-size: 2.9em;
-            margin-bottom: 8px;
-            color: #2D3041;
-            transition: color 0.3s ease;
-        }
-        .timeline-step.active i {
-            color: #C9183C;
-        }
-        .timeline-step p {
-            margin: 15px 0 0;
-            font-size: 1.2em;
-            color: #2D3041;
-            transition: color 0.3s ease;
-        }
-        .timeline-step:hover::before {
-            transform: translate(-50%, -50%) scale(1.5);
-            background: #C9183C;
-        }
-        .timeline-step:hover p {
-            color: #C9183C;
-        }
-        .timeline-step:hover i {
-            color: #C9183C;
-        }
-        .btn {
-            margin: 10px;
-            padding: 12px 25px;
-            font-size: 0.9em;
-            cursor: pointer;
-            background: #2D3041;
-            color: #ffffff;
-            border: none;
-            border-radius: 25px;
-            transition: all 0.4s ease;
-        }
-        .btn:hover {
-            background: #C9183C;
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 5px 15px rgba(201, 24, 60, 0.4);
-        }
-        .highlight {
-            color: #C9183C;
-            font-weight: bold;
-        }
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            #hero { height: 40vh; }
-            .content h1 { font-size: 2em; }
-            .content p { font-size: 0.9em; }
-            .details { max-width: 80%; padding: 15px; }
-            .journey-timeline { max-width: 80%; }
-            .timeline-step { width: 90px; margin: 0 8px; }
-            .benefit-item { width: 45%; }
-        }
-        @media (max-width: 768px) {
-            #hero { height: 30vh; }
-            .content h1 { font-size: 1.5em; }
-            .content p { font-size: 0.8em; }
-            .details { max-width: 90%; padding: 10px; }
-            .journey-timeline { flex-direction: column; max-width: 90%; }
-            .timeline-path { height: 2px; }
-            .timeline-step { width: 80px; margin: 15px 0; display: block; }
-            .timeline-step::before { top: -10px; left: 50%; transform: translateX(-50%); }
-            .benefit-item { width: 100%; margin-bottom: 10px; }
-            h2 { font-size: 1.5em; }
-            p { font-size: 0.9em; }
-        }
-        @media (max-width: 480px) {
-            #hero { height: 25vh; }
-            .content h1 { font-size: 1.2em; }
-            .content p { font-size: 0.7em; }
-            .details { padding: 8px; }
-            .journey-timeline { padding: 10px 0; }
-            .timeline-step { width: 70px; }
-            .timeline-step p { font-size: 0.8em; }
-            .btn { padding: 8px 15px; font-size: 0.9em; }
-            .benefit-item { padding: 10px 15px; }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <img src="https://via.placeholder.com/150x40?text=LivinWalls" alt="LivinWalls Logo">
-        <nav>
-            <button>☰</button>
-        </nav>
-    </header>
-    <div id="hero">
-        <div class="slider">
-            <div class="slide active"><video autoplay muted loop><source src="https://videos.pexels.com/video-files/6473943/6473943-uhd_2560_1440_25fps.mp4" type="video/mp4"></video></div>
-            <div class="slide"><img src="https://5.imimg.com/data5/AP/EF/NV/SELLER-30407762/3d-floor-plan-designing-service.jpg" alt="Design"></div>
-            <div class="slide"><video autoplay muted loop><source src="https://videos.pexels.com/video-files/8725793/8725793-uhd_2560_1440_25fps.mp4" type="video/mp4"></video></div>
-        </div>
-        <div class="shine-overlay"></div>
-        <div class="content">
-            <h1>Custom Floor Plans</h1>
-            <p  style="color: #fff; font-size: 1.6em;">Unleash your vision with designs tailored to your unique style and needs.</p>
-        </div>
-    </div>
-    <div id="sections">
-        <div class="section active" id="overview">
-            <div class="details">
-                <h2>Personalized Living Spaces</h2>
-                <p>At the heart of our custom floor plans is your dream home. We craft every layout to reflect your personal style, blending functionality with elegance. Whether you envision <highlight>open-concept living areas</highlight> or intimate family corners, our designs adapt to your lifestyle, ensuring a perfect balance of comfort and innovation.</p>
-                <button class="btn" onclick="showSection('process')">Discover the Process</button>
-                <button class="btn" onclick="showSection('benefits')">See the Benefits</button>
-            </div>
-        </div>
-        <div class="section" id="process">
-            <div class="details">
-                <h2>Design Journey</h2>
-                <div class="journey-timeline" id="designSteps">
-                    <div class="timeline-path"></div>
-                    <div class="timeline-step"><i class="fas fa-drafting-compass"></i><p>Initial Design</p></div>
-                    <div class="timeline-step"><i class="fas fa-ruler-combined"></i><p>Layout Planning</p></div>
-                    <div class="timeline-step"><i class="fas fa-cube"></i><p>3D Visualization</p></div>
-                </div>
-                <button class="btn" onclick="showSection('overview')">Back to Overview</button>
-            </div>
-        </div>
-        <div class="section" id="benefits">
-            <div class="details">
-                <h2>Advantages of Customization</h2>
-                <ul class="benefits-list">
-                    <li class="benefit-item">Flexible layouts tailored to your lifestyle.</li>
-                    <li class="benefit-item">Energy-efficient designs for sustainability.</li>
-                    <li class="benefit-item">Increased property value with unique architecture.</li>
-                    <li class="benefit-item">Future-proof spaces for growing families.</li>
-                    <li class="benefit-item">Personalized comfort and aesthetic appeal.</li>
-                </ul>
-                <button class="btn" onclick="showSection('overview')">Back to Overview</button>
-            </div>
-        </div>
-    </div>
+  });
+  if (sectionId === 'lw-process') {
+    let stepIndex = 0;
+    const steps = document.querySelectorAll('#lw-design-steps .lw-timeline-step');
+    steps.forEach(step => step.classList.remove('lw-active'));
+    function highlightNextStep() {
+      if (stepIndex < steps.length) {
+        steps[stepIndex].classList.add('lw-active');
+        steps[stepIndex].style.animation = 'lw-pulse 0.5s ease-out';
+        setTimeout(() => {
+          steps[stepIndex].style.animation = '';
+        }, 500);
+        stepIndex++;
+        setTimeout(highlightNextStep, 1000);
+      }
+    }
+    highlightNextStep();
+  }
+  // Slider animation
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.lw-slide');
+  setInterval(() => {
+    slides[slideIndex].classList.remove('lw-active');
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].classList.add('lw-active');
+  }, 5000);
+}
+window.onload = () => showSection('lw-overview');
+</script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-    <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-                if (section.id === sectionId) {
-                    section.classList.add('active');
-                }
-            });
-            if (sectionId === 'process') {
-                let stepIndex = 0;
-                const steps = document.querySelectorAll('#designSteps .timeline-step');
-                steps.forEach(step => step.classList.remove('active'));
-                function highlightNextStep() {
-                    if (stepIndex < steps.length) {
-                        steps[stepIndex].classList.add('active');
-                        steps[stepIndex].style.animation = 'pulse 0.5s ease-out';
-                        setTimeout(() => {
-                            steps[stepIndex].style.animation = '';
-                        }, 500);
-                        stepIndex++;
-                        setTimeout(highlightNextStep, 1000); // 1 second delay between steps
-                    }
-                }
-                highlightNextStep();
-            }
-            // Slider animation
-            let slideIndex = 0;
-            const slides = document.querySelectorAll('.slide');
-            setInterval(() => {
-                slides[slideIndex].classList.remove('active');
-                slideIndex = (slideIndex + 1) % slides.length;
-                slides[slideIndex].classList.add('active');
-            }, 5000);
-        }
-        window.onload = () => showSection('overview');
-    </script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    
-<!--End FAQ's-->
     <!--footer section -->
     <footer class="footer">
       <div class="footercontainer">
@@ -688,6 +692,7 @@
       House Construction in Bengaluru, Chennai, Mysuru, NCR Faridabad, NCR Ghaziabad, NCR Noida, NCR Delhi, NCR Gurgaon, Hyderabad, Pune, Hubli
     </p>
 
+
   </div>
 
   <div class="footer-bottom">
@@ -700,26 +705,5 @@
 
  <!--EndB2B-->
 
-  <script>
-    // Simple script for the mobile menu toggle
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-      document.querySelector('.nav').classList.toggle('nav--active');
-      this.classList.toggle('menu-toggle--active');
-    });
-
-    // Custom cursor
-    const cursor = document.querySelector('.cursor');
-    
-    document.addEventListener('mousemove', e => {
-      cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
-    });
-    
-    document.addEventListener('click', () => {
-      cursor.classList.add("cursor--expand");
-      setTimeout(() => {
-        cursor.classList.remove("cursor--expand");
-      }, 500);
-    });
-  </script>
 </body>
 </html>
