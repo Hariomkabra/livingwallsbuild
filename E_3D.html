@@ -6,8 +6,7 @@
   <title>Living Walls - Creative Design Agency</title>
 
   <!-- Fonts -->
- <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/reset.css">
@@ -22,12 +21,10 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="auth.js"></script>
 
- 
+  
 </head>
-
 <body>
-
-<!-- Header HTML (to be included in all pages) -->
+<!-- Header -->
 <header class="header">
   <div class="containerr">
     <div class="logo">
@@ -40,7 +37,6 @@
     <nav class="nav" aria-label="Main Navigation">
       <ul class="nav__list">
         <li><a href="index.html" title="Home Page">Home</a></li>
-      
         <li><a href="packages.html" title="View Construction Packages">Construction Packages</a></li>
         <li><a href="design_packages.html" title="View Design Packages">Design Packages</a></li>
         <li><a href="calculator.html" title="Estimate Construction Cost">Cost Calculator</a></li>
@@ -72,8 +68,6 @@
 </header>
 
 <script>
-  
-
   const hamburger = document.querySelector('.hamburger');
   const navList = document.querySelector('.nav__list');
   const rightButtons = document.querySelector('.right-buttons');
@@ -83,39 +77,133 @@
     rightButtons.classList.toggle('active');
   });
 </script>
-<!-- main content-->
 
 
+</head>
+<body>
+  <!-- Placeholder for header -->
+  <div id="header-placeholder"></div>
 
+  <!-- Main content, wrapped in .main-content to scope styles -->
+  <main class="main-content">
+    <div id="hero">
+      <div class="slider">
+        <div class="slide active"><video autoplay muted loop><source src="https://videos.pexels.com/video-files/7578023/7578023-uhd_2560_1440_30fps.mp4" type="video/mp4"></video></div>
+        <div class="slide"><img src="https://5.imimg.com/data5/SELLER/Default/2024/3/401518010/FJ/DP/GT/42051613/3d-exterior-design-service.jpg" alt="3D Design"></div>
+        <div class="slide"><video autoplay muted loop><source src="https://videos.pexels.com/video-files/7578012/7578012-uhd_2560_1440_30fps.mp4" type="video/mp4"></video></div>
+      </div>
+      <div class="shine-overlay"></div>
+      <div class="content">
+        <h1>Expert 3D Designs</h1>
+        <p style="color: #fff; font-size: 1.2em;">Stunning 3D visualizations to bring your dream project to life with clarity and precision.</p>
+      </div>
+    </div>
+
+    <div id="sections">
+      <div class="section active" id="overview">
+        <div class="details">
+          <h2>Expert 3D Designs</h2>
+          <p>Experience the future of design with our expert 3D visualizations. We create stunning, precise models that bring your dream project to life, offering clarity and detail at every stage. Whether it's a residential space, commercial building, or unique architectural concept, our designs ensure you can visualize every aspect before construction begins.</p>
+          <button class="btn" onclick="showSection('process')">Explore the Process</button>
+          <button class="btn" onclick="showSection('benefits')">See the Benefits</button>
+        </div>
+      </div>
+      <div class="section" id="process">
+        <div class="details">
+          <h2>Design Journey</h2>
+          <div class="journey-timeline" id="designSteps">
+            <div class="timeline-path"></div>
+            <div class="timeline-step"><i class="fas fa-drafting-compass"></i><p>Concept Sketch</p></div>
+            <div class="timeline-step"><i class="fas fa-ruler-combined"></i><p>3D Modeling</p></div>
+            <div class="timeline-step"><i class="fas fa-cube"></i><p>Final Visualization</p></div>
+          </div>
+          <button class="btn" onclick="showSection('overview')">Back to Overview</button>
+        </div>
+      </div>
+      <div class="section" id="benefits">
+        <div class="details">
+          <h2>Advantages of 3D Designs</h2>
+          <ul class="benefits-list">
+            <li class="benefit-item">Crystal-clear visualizations of your project.</li>
+            <li class="benefit-item">Accurate planning and reduced errors.</li>
+            <li class="benefit-item">Enhanced decision-making with detailed previews.</li>
+            <li class="benefit-item">Cost-effective design adjustments.</li>
+            <li class="benefit-item">Immersive experience for clients and stakeholders.</li>
+          </ul>
+          <button class="btn" onclick="showSection('overview')">Back to Overview</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Placeholder for footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script>
+    // Load header and footer
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+
+    // Main content scripts
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        section.classList.remove('active');
+        if (section.id === sectionId) {
+          section.classList.add('active');
+        }
+      });
+      if (sectionId === 'process') {
+        let stepIndex = 0;
+        const steps = document.querySelectorAll('#designSteps .timeline-step');
+        steps.forEach(step => step.classList.remove('active'));
+        function highlightNextStep() {
+          if (stepIndex < steps.length) {
+            steps[stepIndex].classList.add('active');
+            steps[stepIndex].style.animation = 'pulse 0.5s ease-out';
+            setTimeout(() => {
+              steps[stepIndex].style.animation = '';
+            }, 500);
+            stepIndex++;
+            setTimeout(highlightNextStep, 1000);
+          }
+        }
+        highlightNextStep();
+      }
+    }
+    // Slider functionality
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    function showSlides() {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add('active');
+    }
+    setInterval(showSlides, 5000);
+    window.onload = () => {
+      showSection('overview');
+      showSlides();
+    };
+  </script>
+
+
+  
+  <!-- Main content styles, scoped to .main-content -->
   <style>
-    h1, h2, p, li {
+    .main-content {
       font-family: 'Poppins', sans-serif;
     }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background: #ffffff;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    header img {
-      height: 40px;
-    }
-    header nav {
-      display: flex;
-      align-items: center;
-    }
-    header nav button {
-      background: none;
-      border: none;
-      font-size: 1.5em;
-      cursor: pointer;
-      color: #2D3041;
-    }
-    #hero {
+    .main-content #hero {
       position: relative;
       height: 60vh;
       min-height: 200px;
@@ -124,7 +212,7 @@
       overflow: hidden;
       margin-bottom: 10px;
     }
-    .slider {
+    .main-content .slider {
       position: absolute;
       top: 0;
       left: 0;
@@ -132,21 +220,21 @@
       height: 100%;
       z-index: -1;
     }
-    .slide {
+    .main-content .slide {
       position: absolute;
       width: 100%;
       height: 100%;
       opacity: 0;
       transition: opacity 1s ease-in-out;
     }
-    .slide.active { opacity: 1; }
-    .slide video, .slide img {
+    .main-content .slide.active { opacity: 1; }
+    .main-content .slide video, .main-content .slide img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       filter: brightness(50%) contrast(120%);
     }
-    .shine-overlay {
+    .main-content .shine-overlay {
       position: absolute;
       top: 0;
       left: 0;
@@ -160,7 +248,7 @@
       0% { transform: translateX(-100%); }
       100% { transform: translateX(100%); }
     }
-    .content {
+    .main-content .content {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -175,7 +263,7 @@
       from { opacity: 0; transform: translate(-50%, -40%) scale(0.9); }
       to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
     }
-    .section {
+    .main-content .section {
       display: none;
       min-height: 70vh;
       justify-content: center;
@@ -194,8 +282,8 @@
       50% { transform: scale(1.2); }
       100% { transform: scale(1); }
     }
-    .active { display: flex; }
-    .details {
+    .main-content .active { display: flex; }
+    .main-content .details {
       max-width: 1100px;
       margin: 0 auto;
       padding: 20px;
@@ -205,24 +293,24 @@
       text-align: center;
       width: 90%;
     }
-    h1 {
+    .main-content h1 {
       font-size: 1.8em;
       margin-bottom: 8px;
       color: #ffffff;
     }
-    h2 {
+    .main-content h2 {
       font-size: 1.6em;
       margin-bottom: 12px;
       color: #2D3041;
       text-transform: uppercase;
       letter-spacing: 1.5px;
     }
-    p {
+    .main-content p {
       font-size: 1em;
       margin-bottom: 12px;
       color: #2D3041;
     }
-    .benefits-list {
+    .main-content .benefits-list {
       list-style: none;
       padding: 0;
       display: flex;
@@ -231,7 +319,7 @@
       gap: 12px;
       font-size: 1.2rem;
     }
-    .benefit-item {
+    .main-content .benefit-item {
       background: #ffffff;
       padding: 10px 15px;
       border-radius: 8px;
@@ -241,11 +329,11 @@
       text-align: center;
       font-size: 1.4rem;
     }
-    .benefit-item:hover {
+    .main-content .benefit-item:hover {
       transform: translateY(-5px);
       background: #f9f9fb;
     }
-    .journey-timeline {
+    .main-content .journey-timeline {
       position: relative;
       width: 100%;
       max-width: 600px;
@@ -253,7 +341,7 @@
       padding: 15px 0;
       text-align: center;
     }
-    .timeline-path {
+    .main-content .timeline-path {
       position: absolute;
       top: 50%;
       left: 0;
@@ -263,7 +351,7 @@
       transform: translateY(-50%);
       z-index: 0;
     }
-    .timeline-step {
+    .main-content .timeline-step {
       position: relative;
       display: inline-block;
       width: 90px;
@@ -274,11 +362,11 @@
       vertical-align: middle;
       margin: 0 25px;
     }
-    .timeline-step.active {
+    .main-content .timeline-step.active {
       opacity: 1;
       color: #C9183C;
     }
-    .timeline-step::before {
+    .main-content .timeline-step::before {
       content: '';
       position: absolute;
       top: 50%;
@@ -291,36 +379,36 @@
       z-index: 2;
       transition: background 0.3s ease, transform 0.3s ease;
     }
-    .timeline-step.active::before {
+    .main-content .timeline-step.active::before {
       background: #C9183C;
       transform: translate(-50%, -50%) scale(1.2);
     }
-    .timeline-step i {
+    .main-content .timeline-step i {
       font-size: 2.2em;
       margin-bottom: 6px;
       color: #2D3041;
       transition: color 0.3s ease;
     }
-    .timeline-step.active i {
+    .main-content .timeline-step.active i {
       color: #C9183C;
     }
-    .timeline-step p {
+    .main-content .timeline-step p {
       margin: 12px 0 0;
       font-size: 1em;
       color: #2D3041;
       transition: color 0.3s ease;
     }
-    .timeline-step:hover::before {
+    .main-content .timeline-step:hover::before {
       transform: translate(-50%, -50%) scale(1.5);
       background: #C9183C;
     }
-    .timeline-step:hover p {
+    .main-content .timeline-step:hover p {
       color: #C9183C;
     }
-    .timeline-step:hover i {
+    .main-content .timeline-step:hover i {
       color: #C9183C;
     }
-    .btn {
+    .main-content .btn {
       margin: 8px;
       padding: 10px 20px;
       font-size: 1.2em;
@@ -331,514 +419,53 @@
       border-radius: 20px;
       transition: all 0.4s ease;
     }
-    .btn:hover {
+    .main-content .btn:hover {
       background: #C9183C;
       transform: translateY(-3px) scale(1.05);
       box-shadow: 0 5px 15px rgba(201, 24, 60, 0.4);
     }
-    .highlight {
+    .main-content .highlight {
       color: #C9183C;
       font-weight: bold;
     }
-    /* Responsive Design */
     @media (max-width: 1024px) {
-      #hero { height: 40vh; min-height: 180px; }
-      .content { padding: 0 10px; width: 95%; }
-      .content h1 { font-size: 1.5em; }
-      .content p { font-size: 0.9em; }
-      .details { max-width: 85%; padding: 15px; }
-      .journey-timeline { max-width: 85%; }
-      .timeline-step { width: 80px; margin: 0 6px; }
-      .benefit-item { width: 45%; font-size: 1.2rem; }
+      .main-content #hero { height: 40vh; min-height: 180px; }
+      .main-content .content { padding: 0 10px; width: 95%; }
+      .main-content .content h1 { font-size: 1.5em; }
+      .main-content .content p { font-size: 0.9em; }
+      .main-content .details { max-width: 85%; padding: 15px; }
+      .main-content .journey-timeline { max-width: 85%; }
+      .main-content .timeline-step { width: 80px; margin: 0 6px; }
+      .main-content .benefit-item { width: 45%; font-size: 1.2rem; }
     }
     @media (max-width: 768px) {
-      #hero { height: 30vh; min-height: 150px; }
-      .content { padding: 0 5px; width: 100%; }
-      .content h1 { font-size: 1.2em; }
-      .content p { font-size: 0.8em; }
-      .details { max-width: 90%; padding: 10px; }
-      .journey-timeline { flex-direction: column; max-width: 90%; }
-      .timeline-path { height: 2px; }
-      .timeline-step { width: 70px; margin: 10px 0; display: block; }
-      .timeline-step::before { top: -8px; left: 50%; transform: translateX(-50%); }
-      .benefit-item { width: 100%; margin-bottom: 10px; font-size: 1rem; }
-      h2 { font-size: 1.3em; }
-      p { font-size: 0.9em; }
-      .btn { padding: 8px 15px; font-size: 1em; }
+      .main-content #hero { height: 30vh; min-height: 150px; }
+      .main-content .content { padding: 0 5px; width: 100%; }
+      .main-content .content h1 { font-size: 1.2em; }
+      .main-content .content p { font-size: 0.8em; }
+      .main-content .details { max-width: 90%; padding: 10px; }
+      .main-content .journey-timeline { flex-direction: column; max-width: 90%; }
+      .main-content .timeline-path { height: 2px; }
+      .main-content .timeline-step { width: 70px; margin: 10px 0; display: block; }
+      .main-content .timeline-step::before { top: -8px; left: 50%; transform: translateX(-50%); }
+      .main-content .benefit-item { width: 100%; margin-bottom: 10px; font-size: 1rem; }
+      .main-content h2 { font-size: 1.3em; }
+      .main-content p { font-size: 0.9em; }
+      .main-content .btn { padding: 8px 15px; font-size: 1em; }
     }
     @media (max-width: 400px) {
-      #hero { height: 25vh; min-height: 120px; }
-      .content h1 { font-size: 1em; }
-      .content p { font-size: 0.7em; }
-      .details { padding: 8px; width: 95%; }
-      .journey-timeline { padding: 8px 0; max-width: 95%; }
-      .timeline-step { width: 60px; }
-      .timeline-step p { font-size: 0.8em; }
-      .btn { padding: 6px 12px; font-size: 0.9em; }
-      .benefit-item { padding: 8px 10px; font-size: 0.9rem; }
+      .main-content #hero { height: 25vh; min-height: 120px; }
+      .main-content .content h1 { font-size: 1em; }
+      .main-content .content p { font-size: 0.7em; }
+      .main-content .details { padding: 8px; width: 95%; }
+      .main-content .journey-timeline { padding: 8px 0; max-width: 95%; }
+      .main-content .timeline-step { width: 60px; }
+      .main-content .timeline-step p { font-size: 0.8em; }
+      .main-content .btn { padding: 6px 12px; font-size: 0.9em; }
+      .main-content .benefit-item { padding: 8px 10px; font-size: 0.9rem; }
     }
   </style>
-
-
-
-  <!--main content-->
-  <div id="hero">
-    <div class="slider">
-      <div class="slide active"><video autoplay muted loop><source src="https://videos.pexels.com/video-files/7578023/7578023-uhd_2560_1440_30fps.mp4" type="video/mp4"></video></div>
-      <div class="slide"><img src="https://5.imimg.com/data5/SELLER/Default/2024/3/401518010/FJ/DP/GT/42051613/3d-exterior-design-service.jpg" alt="3D Design"></div>
-      <div class="slide"><video autoplay muted loop><source src="https://videos.pexels.com/video-files/7578012/7578012-uhd_2560_1440_30fps.mp4" type="video/mp4"></video></div>
-    </div>
-    <div class="shine-overlay"></div>
-    <div class="content">
-      <h1>Expert 3D Designs</h1>
-      <p style="color: #fff; font-size: 1.2em;">Stunning 3D visualizations to bring your dream project to life with clarity and precision.</p>
-    </div>
-  </div>
-
-  <div id="sections">
-    <div class="section active" id="overview">
-      <div class="details">
-        <h2>Expert 3D Designs</h2>
-        <p>Experience the future of design with our expert 3D visualizations. We create stunning, precise models that bring your dream project to life, offering clarity and detail at every stage. Whether it's a residential space, commercial building, or unique architectural concept, our designs ensure you can visualize every aspect before construction begins.</p>
-        <button class="btn" onclick="showSection('process')">Explore the Process</button>
-        <button class="btn" onclick="showSection('benefits')">See the Benefits</button>
-      </div>
-    </div>
-    <div class="section" id="process">
-      <div class="details">
-        <h2>Design Journey</h2>
-        <div class="journey-timeline" id="designSteps">
-          <div class="timeline-path"></div>
-          <div class="timeline-step"><i class="fas fa-drafting-compass"></i><p>Concept Sketch</p></div>
-          <div class="timeline-step"><i class="fas fa-ruler-combined"></i><p>3D Modeling</p></div>
-          <div class="timeline-step"><i class="fas fa-cube"></i><p>Final Visualization</p></div>
-        </div>
-        <button class="btn" onclick="showSection('overview')">Back to Overview</button>
-      </div>
-    </div>
-    <div class="section" id="benefits">
-      <div class="details">
-        <h2>Advantages of 3D Designs</h2>
-        <ul class="benefits-list">
-          <li class="benefit-item">Crystal-clear visualizations of your project.</li>
-          <li class="benefit-item">Accurate planning and reduced errors.</li>
-          <li class="benefit-item">Enhanced decision-making with detailed previews.</li>
-          <li class="benefit-item">Cost-effective design adjustments.</li>
-          <li class="benefit-item">Immersive experience for clients and stakeholders.</li>
-        </ul>
-        <button class="btn" onclick="showSection('overview')">Back to Overview</button>
-      </div>
-    </div>
-  </div>
-
-  <footer class="footer">
-    <div class="footercontainer">
-      <div class="footer-sections">
-        <!-- Column 1: Constructions -->
-        <div class="footer-column">
-          <h3>Constructions</h3>
-          <ul>
-            <li><a href="#residential">Residential Construction</a></li>
-            <li><a href="#commercial">Commercial Construction</a></li>
-            <li><a href="#home">Home Construction</a></li>
-            <li><a href="#farmhouse">Farm House Construction</a></li>
-            <li><a href="#addfloor">Add New Floor</a></li>
-            <li><a href="#duplex">Duplex Home Construction</a></li>
-            <li><a href="#independent">Independent House Construction</a></li>
-            <li><a href="#villa">Villa Construction</a></li>
-            <li><a href="#luxury">Luxury Home Construction</a></li>
-            <li><a href="#cost">Cost of New Home Construction</a></li>
-          </ul>
-        </div>
-
-        <!-- Column 2: Interiors -->
-        <div class="footer-column">
-          <h3>Interiors</h3>
-          <ul>
-            <li><a href="#res-interior">Residential Interior Design</a></li>
-            <li><a href="#living">Living Room Interior Design</a></li>
-            <li><a href="#kitchen">Kitchen Interior Design</a></li>
-            <li><a href="#bedroom">Bedroom Interior Design</a></li>
-            <li><a href="#bathroom">Bathroom Interior Design</a></li>
-            <li><a href="#office">Office Interior Design</a></li>
-            <li><a href="#commercial-interior">Commercial Interior Design</a></li>
-            <li><a href="#apartment">Apartment Interior Design</a></li>
-          </ul>
-        </div>
-
-        <!-- Column 3: Calculator -->
-        <div class="footer-column">
-          <h3>Calculator</h3>
-          <ul>
-            <li><a href="calculator.html">Residential Cost Estimator</a></li>
-            <li><a href="calculator.html">Commercial Cost Estimator</a></li>
-            <li><a href="calculator.html">Interior Cost Estimator</a></li>
-          </ul>
-          <h3>Packages</h3>
-          <ul>
-            <li><a href="packages.html">Luxury</a></li>
-            <li><a href="packages.html">Commercial</a></li>
-            <li><a href="packages.html">Interior</a></li>
-          </ul>
-        </div>
-
-        <!-- Column 4: Info -->
-        <div class="footer-column">
-          <h3>Your Floor Plan Solution</h3>
-          <p>Find the perfect floor plan for your dream home. We offer a wide selection of customizable designs from top architects and designers.</p>
-
-          <h4>Get in Touch</h4>
-          <p><a href="tel:+919739011656">+91 9739011656</a><br>
-            <a href="mailto:rajashekarreddy@livinwalls.com">rajashekarreddy@livinwalls.com</a>
-          </p>
-
-          <h4>Social</h4>
-          <div class="social-icons">
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Optional links -->
-      <div class="footer-links">
-        <a href="GetQuote.html">Support</a>
-        <a href="#terms">Terms & Services</a>
-        <a href="Policies.html">Privacy & Policy</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-  function showSection(sectionId) {
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(section => {
-      section.classList.remove('active');
-      if (section.id === sectionId) {
-        section.classList.add('active');
-      }
-    });
-    if (sectionId === 'process') {
-      let stepIndex = 0;
-      const steps = document.querySelectorAll('#designSteps .timeline-step');
-      steps.forEach(step => step.classList.remove('active'));
-      function highlightNextStep() {
-        if (stepIndex < steps.length) {
-          steps[stepIndex].classList.add('active');
-          steps[stepIndex].style.animation = 'pulse 0.5s ease-out';
-          setTimeout(() => {
-            steps[stepIndex].style.animation = '';
-          }, 500);
-          stepIndex++;
-          setTimeout(highlightNextStep, 1000);
-        }
-      }
-      highlightNextStep();
-    }
-  }
-  window.onload = () => showSection('overview');
-
-  // Slider functionality
-  let slideIndex = 0;
-  const slides = document.querySelectorAll('.slide');
-  function showSlides() {
-    slides.forEach(slide => slide.classList.remove('active'));
-    slideIndex = (slideIndex + 1) % slides.length;
-    slides[slideIndex].classList.add('active');
-  }
-  setInterval(showSlides, 5000); // Change slide every 5 seconds
-  window.onload = () => {
-    showSection('overview');
-    showSlides(); // Initial slide activation
-  };
-</script>
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-
-  <!-- Footer Section -->
-  <footer class="footer">
-    <div class="footercontainer">
-      <div class="footer-sections">
-        <!-- Column 1: Constructions -->
-        <div class="footer-column">
-          <h3>Constructions</h3>
-          <ul>
-            <li><a href="#residential">Residential Construction</a></li>
-            <li><a href="#commercial">Commercial Construction</a></li>
-            <li><a href="#home">Home Construction</a></li>
-            <li><a href="#farmhouse">Farm House Construction</a></li>
-            <li><a href="#addfloor">Add New Floor</a></li>
-            <li><a href="#duplex">Duplex Home Construction</a></li>
-            <li><a href="#independent">Independent House Construction</a></li>
-            <li><a href="#villa">Villa Construction</a></li>
-            <li><a href="#luxury">Luxury Home Construction</a></li>
-            <li><a href="#cost">Cost of New Home Construction</a></li>
-          </ul>
-        </div>
-
-        <!-- Column 2: Interiors -->
-        <div class="footer-column">
-          <h3>Interiors</h3>
-          <ul>
-            <li><a href="#res-interior">Residential Interior Design</a></li>
-            <li><a href="#living">Living Room Interior Design</a></li>
-            <li><a href="#kitchen">Kitchen Interior Design</a></li>
-            <li><a href="#bedroom">Bedroom Interior Design</a></li>
-            <li><a href="#bathroom">Bathroom Interior Design</a></li>
-            <li><a href="#office">Office Interior Design</a></li>
-            <li><a href="#commercial-interior">Commercial Interior Design</a></li>
-            <li><a href="#apartment">Apartment Interior Design</a></li>
-          </ul>
-        </div>
-
-        <!-- Column 3: Calculator -->
-        <div class="footer-column">
-          <h3>Calculator</h3>
-          <ul>
-            <li><a href="calculator.html">Residential Cost Estimator</a></li>
-            <li><a href="calculator.html">Commercial Cost Estimator</a></li>
-            <li><a href="calculator.html">Interior Cost Estimator</a></li>
-          </ul>
-          <h3>Packages</h3>
-          <ul>
-            <li><a href="packages.html">Luxury</a></li>
-            <li><a href="packages.html">Commercial</a></li>
-            <li><a href="packages.html">Interior</a></li>
-          </ul>
-        </div>
-
-        <!-- Column 4: Info -->
-        <div class="footer-column">
-          <h3>Your Floor Plan Solution</h3>
-          <p>Find the perfect floor plan for your dream home. We offer a wide selection of customizable designs from top architects and designers.</p>
-
-          <h4>Get in Touch</h4>
-          <p><a href="tel:+919739011656">+91 9739011656</a><br>
-            <a href="mailto:rajashekarreddy@livinwalls.com">rajashekarreddy@livinwalls.com</a>
-          </p>
-
-          <h4>Social</h4>
-          <div class="social-icons">
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Optional links -->
-      <div class="footer-links">
-        <a href="GetQuote.html">Support</a>
-        <a href="#terms">Terms & Services</a>
-        <a href="Policies.html">Privacy & Policy</a>
-      </div>
-    </div>
-  </div>
-</footer>
-<hr>
-
-<!-- New Footer Section -->
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-row">
-      <div class="footer-column">
-        <h4>Construction Services</h4>
-        <ul>
-          <li><a href="Residential_Construction.html">Residential Construction</a></li>
-          <li><a href="Commercial_Construction.html">Commercial Construction</a></li>
-          <li><a href="Interior_Design.html">Interior Design</a></li>
-          <li><a href="Renov_Services.html">Renovation Construction</a></li>
-          <li><a href="R_H_Construction.html">Rental Construction</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Project Features</h4>
-        <ul>
-          <li><a href="Design_packages.html">Modular Kitchens</a></li>
-          <li><a href="Design_packages.html">Smart Home Integration</a></li>
-          <li><a href="Design_packages.html">Green Buildings</a></li>
-          <li><a href="Design_packages.html">Premium Materials</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>About Living Walls</h4>
-        <ul>
-          <li><a href="about.html">Our Vision</a></li>
-          <li><a href="about.html">Meet the Team</a></li>
-          <li><a href="work.html">Our Projects</a></li>
-          <li><a href="Testimonials.html">Client Testimonials</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Help & Support</h4>
-        <ul>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="faq.html">FAQs</a></li>
-          <li><a href="GetQuote.html">Get a Quote</a></li>
-          <li><a href="Policies.html">Terms & Conditions</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
-<hr>
-
-<!-- Living Walls Construction - Extended Footer Section -->
-<section class="extended-footer">
-  <div class="ext-container">
-    <div class="ext-section">
-      <h2>Build Your Dream with Living Walls</h2>
-      <p>
-        At Living Walls Construction, we believe every strong foundation begins with a smart floor plan.
-        Whether you’re building your first home or planning a commercial space, we provide expertly
-        designed layouts that balance style, strength, and functionality.
-      </p>
-    </div>
-
-    <div class="ext-section">
-      <h2>Why Choose Our Plans?</h2>
-      <p>
-        Living Walls offers precision-engineered floor plans tailored to meet your specific needs.
-        Our experienced architects ensure each plan is not only visually appealing but also
-        structurally sound and compliant with modern construction standards.
-      </p>
-    </div>
-    
-    <div class="ext-section">
-      <h3>Our Services</h3>
-      <ul class="ext-services">
-        <li>Residential Floor Plan Design</li>
-        <li>Custom Home Layouts</li>
-        <li>3D Elevation & Visualization</li>
-        <li>Plan Modifications</li>
-        <li>Vastu-Compliant Plans</li>
-        <li>1 BHK to 5 BHK Designs</li>
-        <li>Duplex and Villa Plans</li>
-        <li>Commercial Layout Planning</li>
-      </ul>
-    </div>
-  </div>
-  <hr>
-</section>
-
-<!-- Living Walls Construction - Services Footer Section B2B -->
-<section class="construction-footer">
-  <div class="footer-content">
-    <h2>B2B Construction Services</h2>
-    <p>
-      Partner with Living Walls Construction for commercial building solutions. With over 800 contractors and 470+ quality checks,
-      we deliver robust, scalable commercial spaces that empower businesses to grow with confidence.
-    </p>
-
-    <h3>Commercial Construction</h3>
-    <p>
-      Our team crafts commercial spaces designed for optimal productivity, ensuring every square foot serves your business goals.
-    </p>
-
-    <h3>Warehouse Construction</h3>
-    <p>
-      We build secure, accessible warehouses engineered to preserve and manage inventory efficiently.
-    </p>
-
-    <h3>Retail Construction</h3>
-    <p>
-      Our designers create dynamic retail environments that enhance customer engagement and streamline shopping experiences.
-    </p>
-
-    <h3>Hospital Construction</h3>
-    <p>
-      Constructing hospitals that combine medical functionality with safety and comfort, customized for both patients and staff.
-    </p>
-
-    <h3>Hospitality Construction</h3>
-    <p>
-      We design memorable hospitality spaces that prioritize guest experience, ambiance, and operational flow.
-    </p>
-
-    <h3>School Construction</h3>
-    <p>
-      Building schools that foster creativity, learning, and growth — aligned with modern education needs and safety standards.
-    </p>
-    <br>
-    <hr>
-    <br>
-    <h3>Locations</h3>
-    <p class="location-text">
-      House Construction in Bengaluru, Chennai, Mysuru, NCR Faridabad, NCR Ghaziabad, NCR Noida, NCR Delhi, NCR Gurgaon, Hyderabad, Pune, Hubli
-    </p>
-  </div>
-
-  <div class="footer-bottom">
-    <p>
-      Copyright ©
-      <script>document.write(new Date().getFullYear());</script> All Rights Reserved | Powered by <a href="https://meghplat.com/" target="_blank" class="text-primary">Meghplat Analytics</a>
-    </p>
-  </div>
-</section>
-
-<script>
-  // Simple script for the mobile menu toggle
-  document.querySelector('.menu-toggle').addEventListener('click', function() {
-    document.querySelector('.nav').classList.toggle('nav--active');
-    this.classList.toggle('menu-toggle--active');
-  });
-
- 
   
-  document.addEventListener('mousemove', e => {
-    cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
-  });
-  
-  document.addEventListener('click', () => {
-    cursor.classList.add("cursor--expand");
-    setTimeout(() => {
-      cursor.classList.remove("cursor--expand");
-    }, 500);
-  });
-
-  function showSection(sectionId) {
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(section => {
-      section.classList.remove('active');
-      if (section.id === sectionId) {
-        section.classList.add('active');
-      }
-    });
-    if (sectionId === 'process') {
-      let stepIndex = 0;
-      const steps = document.querySelectorAll('#designSteps .timeline-step');
-      steps.forEach(step => step.classList.remove('active'));
-      function highlightNextStep() {
-        if (stepIndex < steps.length) {
-          steps[stepIndex].classList.add('active');
-          steps[stepIndex].style.animation = 'pulse 0.5s ease-out';
-          setTimeout(() => {
-            steps[stepIndex].style.animation = '';
-          }, 500);
-          stepIndex++;
-          setTimeout(highlightNextStep, 1000);
-        }
-      }
-      highlightNextStep();
-    }
-    let slideIndex = 0;
-    const slides = document.querySelectorAll('.slide');
-    setInterval(() => {
-      slides[slideIndex].classList.remove('active');
-      slideIndex = (slideIndex + 1) % slides.length;
-      slides[slideIndex].classList.add('active');
-    }, 5000);
-  }
-  window.onload = () => showSection('overview');
-</script>
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-
-<!--End FAQ's-->
     <!--footer section -->
     <footer class="footer">
       <div class="footercontainer">
@@ -1068,26 +695,5 @@
 
  <!--EndB2B-->
 
-  <script>
-    // Simple script for the mobile menu toggle
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-      document.querySelector('.nav').classList.toggle('nav--active');
-      this.classList.toggle('menu-toggle--active');
-    });
-
-    // Custom cursor
-    const cursor = document.querySelector('.cursor');
-    
-    document.addEventListener('mousemove', e => {
-      cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
-    });
-    
-    document.addEventListener('click', () => {
-      cursor.classList.add("cursor--expand");
-      setTimeout(() => {
-        cursor.classList.remove("cursor--expand");
-      }, 500);
-    });
-  </script>
 </body>
 </html>
