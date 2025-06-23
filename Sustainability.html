@@ -86,38 +86,41 @@
   });
 </script>
 
-<!--main content -->
 
-<div id="blog-insights-content">
-  <div class="insights-hero">
-    <div class="insights-slider">
-      <div class="insights-slide active"><video autoplay muted loop><source src="https://videos.pexels.com/video-files/7646765/7646765-uhd_2560_1440_25fps.mp4" type="video/mp4"></video></div>
-      <div class="insights-slide"><img src="https://itbrief.co.uk/uploads/story/2023/11/28/img-XNpvPHL3aaxvPlsVuHEsMiOy.webp" alt="Blog Insights"></div>
-      <div class="insights-slide"><video autoplay muted loop><source src="https://videos.pexels.com/video-files/7577724/7577724-uhd_2560_1440_30fps.mp4" type="video/mp4"></video></div>
+<div id="sustainability-content">
+  <div class="sustain-hero">
+    <div class="sustain-slider">
+      <div class="sustain-slide active"><video autoplay muted loop><source src="https://videos.pexels.com/video-files/4475612/4475612-uhd_2560_1440_25fps.mp4" type="video/mp4"></video></div>
+      <div class="sustain-slide"><img src="https://savetreessaveearth.com/wp-content/uploads/2025/01/energy-efficiency-and-conservation.jpg" alt="Sustainability"></div>
+      <div class="sustain-slide"><video autoplay muted loop><source src="https://videos.pexels.com/video-files/7048759/7048759-uhd_2560_1440_30fps.mp4" type="video/mp4"></video></div>
     </div>
-    <div class="insights-shine"></div>
-    <div class="insights-text">
-      <h1>Blog Insights</h1>
-      <p style="color: #fff; font-size: 1.2em;">Expert articles and updates to inspire your next project.</p>
+    <div class="sustain-glow"></div>
+    <div class="sustain-text">
+      <h1>Sustainability</h1>
+      <p style="color: #fff; font-size: 1.2em;">Building a greener future with eco-friendly solutions.</p>
     </div>
   </div>
 
-  <div class="insights-main">
-    <div class="insights-detail">
-      <h2>Blog Insights</h2>
-      <p>Explore our Blog Insights section for expert articles, industry trends, and practical tips to inspire and guide your next project. From innovative design ideas to construction best practices, our content is crafted to keep you informed and ahead in the world of architecture and building as of 2025.</p>
-      <div class="insights-grid">
-        <div class="insights-item"> 
-          <h3>Design Trends</h3>
-          <p>Stay updated with the latest design trends shaping modern architecture.</p>
+  <div class="sustain-main">
+    <div class="sustain-info">
+      <h2>Sustainability</h2>
+      <p>We integrate eco-friendly practices into every project, promoting a greener future through innovative design and construction methods. Our sustainability initiatives include the use of renewable materials, energy-efficient systems, waste reduction strategies, and adherence to green building certifications like LEED and BREEAM.</p>
+      <div class="sustain-grid">
+        <div class="sustain-item">
+          <h3>Eco-Friendly Materials</h3>
+          <p>Utilize sustainable materials like bamboo, recycled steel, and low-VOC paints to minimize environmental impact.</p>
         </div>
-        <div class="insights-item">
-          <h3>Construction Tips</h3>
-          <p>Practical advice to optimize your construction process and reduce costs.</p>
+        <div class="sustain-item">
+          <h3>Energy Efficiency</h3>
+          <p>Implement solar panels, smart thermostats, and insulation to reduce energy consumption by up to 30%.</p>
         </div>
-        <div class="insights-item">
-          <h3>Industry Updates</h3>
-          <p>Get the latest news and insights from the architecture and construction sector.</p>
+        <div class="sustain-item">
+          <h3>Waste Reduction</h3>
+          <p>Adopt recycling programs and modular construction to cut construction waste by 20% or more.</p>
+        </div>
+        <div class="sustain-item">
+          <h3>Green Certifications</h3>
+          <p>Achieve LEED and BREEAM certifications to ensure compliance with global sustainability standards.</p>
         </div>
       </div>
     </div>
@@ -125,7 +128,7 @@
 </div>
 
 <style>
-  #blog-insights-content .insights-hero {
+  #sustainability-content .sustain-hero {
     position: relative;
     height: 60vh;
     min-height: 200px;
@@ -134,7 +137,7 @@
     overflow: hidden;
     margin-bottom: 10px;
   }
-  #blog-insights-content .insights-slider {
+  #sustainability-content .sustain-slider {
     position: absolute;
     top: 0;
     left: 0;
@@ -142,63 +145,63 @@
     height: 100%;
     z-index: -1;
   }
-  #blog-insights-content .insights-slide {
+  #sustainability-content .sustain-slide {
     position: absolute;
     width: 100%;
     height: 100%;
     opacity: 0;
     transition: opacity 1s ease-in-out;
   }
-  #blog-insights-content .insights-slide.active { opacity: 1; }
-  #blog-insights-content .insights-slide video, #blog-insights-content .insights-slide img {
+  #sustainability-content .sustain-slide.active { opacity: 1; }
+  #sustainability-content .sustain-slide video, #sustainability-content .sustain-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     filter: brightness(50%) contrast(120%);
   }
-  #blog-insights-content .insights-shine {
+  #sustainability-content .sustain-glow {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
-    animation: shineEffect 3s infinite;
+    animation: sustainGlow 3s infinite;
     z-index: 1;
   }
-  @keyframes shineEffect {
+  @keyframes sustainGlow {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(100%); }
   }
-  #blog-insights-content .insights-text {
+  #sustainability-content .sustain-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: fadeInScale 1.2s ease-out;
+    animation: fadeInExpand 1.2s ease-out;
     padding: 0 15px;
     z-index: 2;
     width: 90%;
     max-width: 600px;
   }
-  @keyframes fadeInScale {
+  @keyframes fadeInExpand {
     from { opacity: 0; transform: translate(-50%, -40%) scale(0.9); }
     to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
   }
-  #blog-insights-content .insights-main {
+  #sustainability-content .sustain-main {
     min-height: 70vh;
     justify-content: center;
     align-items: center;
     padding: 20px;
     background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
     color: #2D3041;
-    animation: slideUp 0.7s ease-in-out;
+    animation: liftUp 0.7s ease-in-out;
   }
-  @keyframes slideUp {
+  @keyframes liftUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
-  #blog-insights-content .insights-detail {
+  #sustainability-content .sustain-info {
     max-width: 1100px;
     margin: 0 auto;
     padding: 20px;
@@ -208,31 +211,31 @@
     text-align: center;
     width: 90%;
   }
-  #blog-insights-content h1 {
+  #sustainability-content h1 {
     font-size: 1.8em;
     margin-bottom: 8px;
     color: #ffffff;
   }
-  #blog-insights-content h2 {
+  #sustainability-content h2 {
     font-size: 1.6em;
     margin-bottom: 12px;
     color: #2D3041;
     text-transform: uppercase;
     letter-spacing: 1.5px;
   }
-  #blog-insights-content p {
+  #sustainability-content p {
     font-size: 1em;
     margin-bottom: 12px;
     color: #2D3041;
   }
-  #blog-insights-content .insights-grid {
+  #sustainability-content .sustain-grid {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px 0;
   }
-  #blog-insights-content .insights-item {
+  #sustainability-content .sustain-item {
     background: #ffffff;
     padding: 20px;
     border-radius: 15px;
@@ -241,48 +244,48 @@
     text-align: center;
     transition: transform 0.3s ease;
   }
-  #blog-insights-content .insights-item:hover {
+  #sustainability-content .sustain-item:hover {
     transform: translateY(-5px);
     background: #f9f9fb;
   }
-  #blog-insights-content .insights-item h3 {
+  #sustainability-content .sustain-item h3 {
     font-size: 1.5em;
     color: #2D3041;
     margin-bottom: 10px;
   }
-  #blog-insights-content .insights-item p {
+  #sustainability-content .sustain-item p {
     font-size: 1em;
     color: #2D3041;
   }
   /* Responsive Design */
   @media (max-width: 1024px) {
-    #blog-insights-content .insights-hero { height: 40vh; min-height: 180px; }
-    #blog-insights-content .insights-text { padding: 0 10px; width: 95%; }
-    #blog-insights-content .insights-text h1 { font-size: 1.5em; }
-    #blog-insights-content .insights-text p { font-size: 0.9em; }
-    #blog-insights-content .insights-detail { max-width: 85%; padding: 15px; }
-    #blog-insights-content .insights-item { width: 250px; }
+    #sustainability-content .sustain-hero { height: 40vh; min-height: 180px; }
+    #sustainability-content .sustain-text { padding: 0 10px; width: 95%; }
+    #sustainability-content .sustain-text h1 { font-size: 1.5em; }
+    #sustainability-content .sustain-text p { font-size: 0.9em; }
+    #sustainability-content .sustain-info { max-width: 85%; padding: 15px; }
+    #sustainability-content .sustain-item { width: 250px; }
   }
   @media (max-width: 768px) {
-    #blog-insights-content .insights-hero { height: 30vh; min-height: 150px; }
-    #blog-insights-content .insights-text { padding: 0 5px; width: 100%; }
-    #blog-insights-content .insights-text h1 { font-size: 1.2em; }
-    #blog-insights-content .insights-text p { font-size: 0.8em; }
-    #blog-insights-content .insights-detail { max-width: 90%; padding: 10px; }
-    #blog-insights-content .insights-item { width: 100%; }
+    #sustainability-content .sustain-hero { height: 30vh; min-height: 150px; }
+    #sustainability-content .sustain-text { padding: 0 5px; width: 100%; }
+    #sustainability-content .sustain-text h1 { font-size: 1.2em; }
+    #sustainability-content .sustain-text p { font-size: 0.8em; }
+    #sustainability-content .sustain-info { max-width: 90%; padding: 10px; }
+    #sustainability-content .sustain-item { width: 100%; }
   }
   @media (max-width: 400px) {
-    #blog-insights-content .insights-hero { height: 25vh; min-height: 120px; }
-    #blog-insights-content .insights-text h1 { font-size: 1em; }
-    #blog-insights-content .insights-text p { font-size: 0.7em; }
-    #blog-insights-content .insights-detail { padding: 8px; width: 95%; }
-    #blog-insights-content .insights-item { padding: 15px; }
+    #sustainability-content .sustain-hero { height: 25vh; min-height: 120px; }
+    #sustainability-content .sustain-text h1 { font-size: 1em; }
+    #sustainability-content .sustain-text p { font-size: 0.7em; }
+    #sustainability-content .sustain-info { padding: 8px; width: 95%; }
+    #sustainability-content .sustain-item { padding: 15px; }
   }
 </style>
 
 <script>
   let slideIndex = 0;
-  const slides = document.querySelectorAll('#blog-insights-content .insights-slide');
+  const slides = document.querySelectorAll('#sustainability-content .sustain-slide');
   function showSlides() {
     slides.forEach(slide => slide.classList.remove('active'));
     slideIndex = (slideIndex + 1) % slides.length;
@@ -549,3 +552,4 @@
 </html>
 
 <!--Footer-end  -->
+
