@@ -540,7 +540,7 @@
     <button class="arrow" onclick="changeStep(-1)">←</button>
 
     <div class="step active">
-      <img src="https://img.freepik.com/free-vector/customer-support-flat-design-illustration_23-2148887720.jpg" alt="Step 1">
+      <img src="https://www.scale-team.com/static/media/contact-banner.d852fb7f.svg" alt="Step 1">
       <div class="step-content">
         <h4>Step 1</h4>
         <h3>Book with us</h3>
@@ -549,7 +549,7 @@
     </div>
 
     <div class="step">
-      <img src="https://img.freepik.com/free-vector/foreman-architects-contractors-showing-site-engineer-building-plans-draftsbuilder-inspector-holding-blueprint-clipart_575670-995.jpg" alt="Step 2">
+      <img src="https://media.istockphoto.com/id/842461944/vector/builders.jpg?s=170667a&w=0&k=20&c=c3e88vN2Ss9ERRcFAkNPjWZKjwD50XnCr0Boux-RLiI=" alt="Step 2">
       <div class="step-content">
         <h4>Step 2</h4>
         <h3>Meet Our Experts</h3>
@@ -558,7 +558,7 @@
     </div>
 
     <div class="step">
-      <img src="https://www.shreejeeinfosolution.com/assets/img/sellexpert_home.svg" alt="Step 3">
+      <img src="https://murovany-dom.sk/wp-content/uploads/2025/05/vystavba-rodinnych-domov-bratislava.jpg" alt="Step 3">
       <div class="step-content">
         <h4>Step 3</h4>
         <h3>Complete Your Design</h3>
@@ -567,7 +567,7 @@
     </div>
 
     <div class="step">
-      <img src="https://img.freepik.com/premium-vector/man-grimacing-hands-ears-laptop-displaying-fake-news-headline-frustration-disbelief-evident-his-expression-as-he-shields-himself-from-false-information-cartoon-vector-illustration_1016-17563.jpg" alt="Step 4">
+      <img src="https://img.freepik.com/premium-vector/man-sits-couch-room-with-laptop-computer-with-her-cat_217290-191.jpg" alt="Step 4">
       <div class="step-content">
         <h4>Step 4</h4>
         <h3>Monitor Your Construction</h3>
@@ -576,7 +576,7 @@
     </div>
 
     <div class="step">
-      <img src="https://img.freepik.com/premium-vector/happy-family-with-house-concept-illustration-mortgage-buying-house-real-estate_113065-211.jpg?w=360" alt="Step 5">
+      <img src="https://st4.depositphotos.com/1001599/41873/v/450/depositphotos_418737042-stock-illustration-real-estate-photography-abstract-concept.jpg" alt="Step 5">
       <div class="step-content">
         <h4>Step 5</h4>
         <h3>Move In</h3>
@@ -591,14 +591,45 @@
 <script>
   let currentStep = 0;
   const steps = document.querySelectorAll('.step');
+  const intervalTime = 3000; // 5 seconds
+  let autoSlide;
+
+  function showStep(index) {
+    steps.forEach((step, i) => {
+      step.classList.toggle('active', i === index);
+    });
+  }
 
   function changeStep(direction) {
-    steps[currentStep].classList.remove('active');
     currentStep = (currentStep + direction + steps.length) % steps.length;
-    steps[currentStep].classList.add('active');
+    showStep(currentStep);
+    restartAutoSlide(); // reset timer when arrow is clicked
   }
-  
+
+  function autoChangeStep() {
+    currentStep = (currentStep + 1) % steps.length;
+    showStep(currentStep);
+  }
+
+  function startAutoSlide() {
+    autoSlide = setInterval(autoChangeStep, intervalTime);
+  }
+
+  function restartAutoSlide() {
+    clearInterval(autoSlide);
+    startAutoSlide();
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    showStep(currentStep);
+    startAutoSlide();
+
+    // OPTIONAL: If you have arrow buttons, wire them up
+    document.querySelector('.left-arrow')?.addEventListener('click', () => changeStep(-1));
+    document.querySelector('.right-arrow')?.addEventListener('click', () => changeStep(1));
+  });
 </script>
+
 
  <!--End how it work-->
 
