@@ -196,8 +196,8 @@ html {
 
 /* Logo */
 .logo-img {
-  height: 80px;
-  width: 140px;
+  height: 90px;
+  width: 160px;
   object-fit: contain;
   display: block;
   transition: transform 0.3s, opacity 0.3s;
@@ -232,9 +232,10 @@ html {
 .nav__list a {
   text-decoration: none;
   color: #2D2F40;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 2.1rem;
+  font-weight: 540;
   transition: color 0.3s;
+  
 }
 
 .nav__list a:hover {
