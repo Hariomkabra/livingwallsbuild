@@ -137,10 +137,9 @@
       color: #4a4a4a;
       text-align: center;
       font-weight: 400;
-      padding-top: 10px ;
+      padding-top: 10px;
       padding-bottom: 10px;
     }
-
 
     /* Form */
     .form-section-container {
@@ -188,6 +187,15 @@
     }
     .form-container button:hover {
       background: #b31433;
+    }
+    .form-message {
+      display: none; /* Hide by default */
+      color: green;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .form-message.visible {
+      display: block; /* Show when the 'visible' class is added */
     }
 
     /* Cards Grid */
@@ -272,8 +280,8 @@
     .faq-answer p {
       margin: 0;
       line-height: 2.6rem;
-    
     }
+
     /* Highlights */
     .support-highlights {
       display: flex;
@@ -331,7 +339,7 @@
           <li><a href="index.html" title="Home Page">Home</a></li>
           <li><a href="packages.html" title="View Construction Packages">Construction Packages</a></li>
           <li><a href="design_packages.html" title="View Design Packages">Design Packages</a></li>
-          <li><a href="calculator.html" title="Estimate Construction Cost">Cost Calculator</a></li>
+          <li><a href="calculator.html" title Estimate Construction Cost">Cost Calculator</a></li>
           <li><a href="work.html" title="See Our Work">Our Work</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" title="More Options">More▾</a>
@@ -723,25 +731,38 @@
       });
     });
 
-    // Simple script for the mobile menu toggle
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-      document.querySelector('.nav').classList.toggle('nav--active');
-      this.classList.toggle('menu-toggle--active');
-    });
+    // Form Submission Handler
+    function handleSubmit(event) {
+      event.preventDefault(); // Prevent default form submission
+      const form = document.getElementById('contactForm');
+      const formMessage = document.getElementById('formMessage');
 
-    // Custom cursor
+      // Show the success message
+      formMessage.classList.add('visible');
+
+      // Reset the form
+      form.reset();
+
+      // Hide the message after 5 seconds
+      setTimeout(() => {
+        formMessage.classList.remove('visible');
+      }, 5000);
+    }
+
+    // Note: The following custom cursor code references a '.cursor' element that doesn't exist in the HTML.
+    // If you intend to use a custom cursor, add the corresponding HTML element (e.g., <div class="cursor"></div>).
+    /*
     const cursor = document.querySelector('.cursor');
-    
     document.addEventListener('mousemove', e => {
       cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
     });
-    
     document.addEventListener('click', () => {
       cursor.classList.add("cursor--expand");
       setTimeout(() => {
         cursor.classList.remove("cursor--expand");
       }, 500);
     });
+    */
   </script>
 </body>
 </html>
